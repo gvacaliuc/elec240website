@@ -1,0 +1,73 @@
+site_name: ELEC 240 Labs
+theme: readthedocs
+pages:
+- Lab Home:
+  - {Home: index.md}
+  - {Introduction: chapter1.md}
+  - {Your Lab Report: chapter2.md}
+  - {Tools and Resources: chapter3.md}
+  - {VirtualBench: chapter4.md}
+- References:
+  - {Patch Cords and Cables: references/file.3.md}
+  - {The Breadboard: references/breadboard.md}
+  - {The Interface Modules: references/interface.md}
+  - {Wiring: references/wiring.md}
+  - {Resistor Color Code: references/color_code.md}
+- Lab 1:
+  - {Home: lab1/index.md}
+  - {Safety: lab1/safety.md}
+  - {Background: lab1/file.6.md}
+  - {'DC Measurements: the DMM': lab1/exp1.1.md}
+  - {Plotting Data in Matlab: lab1/file.8.md}
+  - {Grounds and Grounding: lab1/file.9.md}
+  - {The Oscilloscope and Function Generator: lab1/exp1.2.md}
+  - {Cleaning Up: lab1/file.10.md}
+- Lab 2:
+  - {Home: lab2/index.md}
+  - {Background: lab2/file.12.md}
+  - {Before You Begin: lab2/file.13.md}
+  - {Electroacoustic Transducers I: lab2/exp2.1.md}
+  - {The Breadboard: lab2/file.14.md}
+  - {Electroacoustic Transducers II: lab2/exp2.2.md}
+  - {Optoelectronic Signal Sources and Sinks: lab2/exp2.3.md}
+- Lab 3:
+  - {Home: lab3/index.md}
+  - {Introduction: lab3/file.16.md}
+  - {Resistive Voltage Dividers: lab3/exp3.1.md}
+  - {Measuring the Transfer Function: lab3/file.19.md}
+  - {Filters and Transfer Function: lab3/exp3.2.md}
+- Lab 4:
+  - {Home: lab4/index.md}
+  - {Introduction: lab4/file.21.md}
+  - {Before Lab: lab4/file.22.md}
+  - {Organizing Your Breadboard: lab4/file.23.md}
+  - {The 741 Op-Amp: lab4/exp4.1.md}
+  - {The Inverting Configuration: lab4/exp4.2.md}
+  - {Standard Signal Levels: lab4/file.24.md}
+  - {Transducer Amplifiers: lab4/exp4.3.md}
+- Lab 5:
+  - {Home: lab5/index.md}
+  - {Introduction: lab5/file.28.md}
+  - {Building a Function Generator: lab5/exp5.1.md}
+  - {Bode Plots: lab5/exp5.2.md}
+- Lab 6:
+  - {Home: lab6/index.md}
+  - {Introduction: lab6/file.26.md}
+  - {Decibels: lab6/file.27.md}
+  - {Measuring Signal Spectrum: lab6/exp6.1.md}
+  - {The Spectrum of Acoustic Signals: lab6/exp6.2.md}
+- Lab 7:
+  - {Home: lab7/index.md}
+  - {Sampling and Quantization: lab7/exp7.1.md}
+  - {Recording a Reference Signal: lab7/exp7.2.md}
+  - {Signal Processing: lab7/exp7.3.md}
+  - {'Filtering, Continued': lab7/exp7.4.md}
+  - {Some DSP Applications: lab7/exp7.5.md}
+- Miscellanous Images:
+  - {Home: misc_images/index.md}
+docs_dir: /home/gvacaliuc/Documents/school/elec240/website/mkdocs_sitehome/docs
+markdown_extensions:
+    - pymdownx.arithmatex
+extra_javascript:
+  - mathjax-config.js
+  - https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
