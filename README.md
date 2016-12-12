@@ -25,4 +25,4 @@ tornado==4.4.2
 
 ## On Rice Network
 
-The site isn't currently live publically on the Rice ECE pages, however if you are inside the Rice Network, you should be able to access it [here](10.100.26.7).
+The site isn't currently live publically on the Rice ECE pages, however if you are inside the Rice Network, you should be able to access it [here](http://10.100.26.7).
