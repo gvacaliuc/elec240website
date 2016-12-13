@@ -4,7 +4,7 @@ The old website for ELEC 240 was very out of date, and not very functional.  Thi
 
 ## Python Dependencies
 
-Since the website needs to be built with mkdocs, I included a virtualenv that can be copied to your virtualenv folder if you'd like, in order to hold the Python Dependencies for building.  Otherwise, this is the output of ```pip freeze``` for me:  
+The website needs to be built with mkdocs, and has a few other dependencies. This is the output of ```pip freeze```, which lists the dependencies and versions:  
 ```bash
 backports-abc==0.5
 certifi==2016.9.26
@@ -22,7 +22,11 @@ singledispatch==3.4.0.3
 six==1.10.0
 tornado==4.4.2
 ```
+For convenience, I included a script that installs the dependencies and verifies their correct installation. To use this, make a new virtual environment for the website and call the script on the included ```pythondepends``` file:  
+```bash
+(virtualenvname) ... $ python installdepends.py pythondepends
+```
 
-## On Rice Network
+## Access On Rice Network
 
 The site isn't currently live publically on the Rice ECE pages, however if you are inside the Rice Network, you should be able to access it [here](http://10.100.26.7:8000).
