@@ -65,7 +65,7 @@ pages:
   - {Some DSP Applications: lab7/exp7.5.md}
 - Miscellanous Images:
   - {Home: misc_images/index.md}
-docs_dir: /home/gvacaliuc/Documents/school/elec240/website/mkdocs_sitehome/docs
+docs_dir: ./docs
 markdown_extensions:
     - pymdownx.arithmatex
 extra_javascript:
