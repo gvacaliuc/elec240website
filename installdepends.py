@@ -17,8 +17,6 @@ warnings = [];
 def gt(a, b):
     if type(a) == unicode:
         a = str(a);
-    #print a, type(a);
-    #print b, type(b);
     if type(b) == unicode:
         b = str(b);
 
@@ -56,6 +54,7 @@ def check(mod, dep, req):
 #   Some useful mappings to what packages should be imported as
 import_names = {
     'PyYaml':'yaml',
+    'PyYAML':'yaml',
     'Jinja2':'jinja2',
     'Django':'django',
     'mod-wsgi':'mod_wsgi',
@@ -65,6 +64,11 @@ import_names = {
     'biopython':'Bio',
     'python-dateutil':'dateutil',
     'scikit-learn':'sklearn',
+    'backports-abc':'backports_abc',
+    'python-markdown-math':'mdx_math',
+    'MarkupSafe':'markupsafe',
+    'Pygments':'pygments',
+    'pymdown-extensions':'pymdownx',
                 };
 
 def install_dependencies(dependencies):
@@ -75,10 +79,7 @@ def install_dependencies(dependencies):
 
     for depend in dependencies.keys():
         print depend;
-        if depend in import_names.keys():
-            call = import_names[depend];
-        else:
-            call = depend;
+        call = import_names[depend];
         try:
             mod = import_module(call);
             check(mod, depend, dependencies[depend]);
@@ -102,5 +103,7 @@ if __name__ == '__main__':
     for line in data:
         package, version = line.split('==');
         dependencies[package] = version;
+        if package not in import_names.keys():
+            import_names[package] = package;
 
     install_dependencies(dependencies);
