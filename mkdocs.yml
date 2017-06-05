@@ -1,5 +1,5 @@
 site_name: ELEC 240 Labs
-theme: readthedocs
+theme: 'material'
 pages:
 - Lab Home:
   - {Home: index.md}
