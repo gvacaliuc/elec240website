@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Electroacoustic Transducers II - ELEC 240 Labs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Electroacoustic Transducers II";
+    var mkdocs_page_input_path = "lab2/exp2.2.md";
+    var mkdocs_page_url = "/lab2/exp2.2/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> ELEC 240 Labs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Lab Home</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../..">Home</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../chapter1/">Introduction</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../chapter2/">Your Lab Report</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../chapter3/">Tools and Resources</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../chapter4/">VirtualBench</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">References</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../references/file.3/">Patch Cords and Cables</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../references/breadboard/">The Breadboard</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../references/interface/">The Interface Modules</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../references/wiring/">Wiring</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../references/color_code/">Resistor Color Code</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Lab 1</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../lab1/">Home</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab1/safety/">Safety</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab1/file.6/">Background</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab1/exp1.1/">DC Measurements: the DMM</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab1/file.8/">Plotting Data in Matlab</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab1/file.9/">Grounds and Grounding</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab1/exp1.2/">The Oscilloscope and Function Generator</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab1/file.10/">Cleaning Up</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Lab 2</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../">Home</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../file.12/">Background</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../file.13/">Before You Begin</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../exp2.1/">Electroacoustic Transducers I</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../file.14/">The Breadboard</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Electroacoustic Transducers II</a>
+    <ul class="subnav">
+            
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../exp2.3/">Optoelectronic Signal Sources and Sinks</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Lab 3</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../lab3/">Home</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab3/file.16/">Introduction</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab3/exp3.1/">Resistive Voltage Dividers</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab3/file.19/">Measuring the Transfer Function</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab3/exp3.2/">Filters and Transfer Function</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Lab 4</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../lab4/">Home</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab4/file.21/">Introduction</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab4/file.22/">Before Lab</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab4/file.23/">Organizing Your Breadboard</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab4/exp4.1/">The 741 Op-Amp</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab4/exp4.2/">The Inverting Configuration</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab4/file.24/">Standard Signal Levels</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab4/exp4.3/">Transducer Amplifiers</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Lab 5</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../lab5/">Home</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab5/file.28/">Introduction</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab5/exp5.1/">Building a Function Generator</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab5/exp5.2/">Bode Plots</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Lab 6</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../lab6/">Home</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab6/file.26/">Introduction</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab6/file.27/">Decibels</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab6/exp6.1/">Measuring Signal Spectrum</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab6/exp6.2/">The Spectrum of Acoustic Signals</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Lab 7</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../lab7/">Home</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab7/exp7.1/">Sampling and Quantization</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab7/exp7.2/">Recording a Reference Signal</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab7/exp7.3/">Signal Processing</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab7/exp7.4/">Filtering, Continued</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab7/exp7.5/">Some DSP Applications</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Miscellanous Images</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../misc_images/">Home</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">ELEC 240 Labs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Lab 2 &raquo;</li>
+        
+      
+    
+    <li>Electroacoustic Transducers II</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h3>ELEC 240 Lab<hr></h3>
+
+<p><center>
+<h2>
+Experiment 2.2
+</h2>
+<h2>
+Electroacoustic Transducers II
+</h2>
+</center>
+<p>
+    In this section we will discover different ways to detect and change a signal.
+</p>
+<h3>
+    Equipment
+</h3>
+<ul>
+<li>Test board
+<li>Speaker
+<li>Microphone
+</ul>
+<h3>
+    Part A: Microphone
+</h3>
+<p>
+    So far we have used an acoustic output device, the speaker, to convert electrical signals to sound. Now we need an input device to convert acoustic signals to electric ones.
+</p>
+<p>
+    - Get a microphone from the supply room. It has two connectors: we will use the larger one.
+    <br/>
+    <img width="320" height="240" src="../figs/mic_conns.jpg"/>
+</p>
+<p>
+- Use a BNC patch cord to connect CH1 of the oscilloscope to J1-1 of the test board (refer to the    <a href=/references/interface>test board pin assigments</a>).
+</p>
+<p>
+    - Plug the microphone into J1-4 of the test board.
+</p>
+<p>
+    - Take a piece of wire and strip 6-7 mm of insulation from each end. The end of the wire should look like this:
+    <br/>
+    <img border="0" width="275" height="158" src="../figs/stripped.jpg"/>
+</p>
+<p>
+<DT>
+<DD>    o<strong>Note: The stripped length of a wire is very important. If it is too short, the insulation can prevent contact within the socket resulting in an intermittent connection. THIS IS ONE OF THE MOST COMMON PROBLEMS IN THE LAB. If it is too long, the exposed portion of the wire can short to other wires.</strong>
+</p></DD>
+<p>
+    - Plug one end of the wire to <a href=/references/interface>pin1</a> and the
+    other end to <a href=/references/interface>pin 4</a>. This will connect the
+    microphone to the scope (CH1). The grounds are automatically connected by the test board.
+    <br/>
+    <em>
+        <img border="0" width="427" height="320" src="../figs/photo2.2.1a1.jpg"/>
+    </em>
+</p>
+<p>
+    - Ensure the following settings on the oscilloscope:
+</p></p>
+<DD><p>
+    o CH1
+</p></DD>
+
+<DD><p>
+    o Volts/Div : 5mV
+</p></DD>
+
+<DD><p>
+    o Time/Div: 1ms
+</p></DD>
+
+<DD><p>
+    o 1X setting on CH1
+</p></DD>
+
+<p>
+    - Speak, sing, or whistle into the microphone and observe the signal on the scope. If the amplitude is too small, you can use the Volts/Div setting to get
+    a little more resolution.
+</p>
+
+<p>
+    - Experiment with the Time/Div settings to see what effect it has on the display.
+</p>
+
+<p>
+- Trigger: Drag the trigger icon (arrow followed by a T) just outside the signal display so that it crosses the signal.    <strong>What happens to the display?</strong>
+</p>
+
+<DD><p>
+    o What is Trigger? The oscilloscope has to continually refresh its display since a continuous signal is being fed to it. If each MISSINGDATAsweepMISSINGDATA (refresh of data)
+    started at a different place on the signal all we would get is a jumble of waveforms. The trigger sets an origin from which each sweep should start. That
+    way, particularly for periodic signals, the new waveform traces onto the old waveform and the signal appears static.
+</p></DD>
+
+<p>
+    - Measure the amplitude of the signal.
+</p>
+
+<p>
+    - Produce a sustained vowel sound. <strong>Which appears most sinusoidal?</strong>
+</p>
+
+<p>
+    - Continue producing a sustained vowel sound and measure its frequency (by measuring the period).
+</p>
+
+<p>
+    - If you are musically inclined, sing or whistle the note <em>A</em> and measure its frequency. Otherwise search for the tone and play it on your phone. How does
+    your measured frequency compare with the <em>official</em> value for the frequency of <em>A</em>?<strong>If there is a discrepancy, explain why it might be.</strong>
+</p>
+
+<h3>
+    Part B: The Lab PC as a Signal Source
+</h3>
+
+<p>
+    The microphone is a device that converts an acoustic pressure into a voltage. The Lab PC contains a device, the Sound Card, that converts a sequence of
+    numbers into a voltage. This sequence of numbers could represent the <em>samples</em> of a physical signal that you learned about in ELEC 241.
+</p>
+
+<p>
+    Since the computer can compute functions and the sound card can produce electrical output we could use the Lab PC as our 'function generator', which can produce more interesting functions than our VirtualBench <tt>FGEN</tt> can. Another advantage is that R<sub>out</sub> of the sound card is less than that of the function generator, so we can connect the speaker directly with less signal loss. Let's look at a few examples.
+
+</p>
+
+<p>
+    - Plug the sound card cable from the Lab PC (with the <a href=/misc_images/#din8>8-pin round connector</a>) into J2-1 on the
+    test board.
+</p>
+
+<p>
+    - Connect a BNC clip lead to J1-3 and the clips to the loudspeaker.
+</p>
+
+<p>
+    - Connect the speaker to the sound card speaker output but connecting a piece of wire between pins 3 and 20 on the test board.
+</p>
+
+<p>
+    - View the speaker output on CH1 (connect a wire from pin 20 to pin 1).
+</p>
+
+<p>
+    - Listen to and observe the waveform for the following signals:
+</p>
+
+<DD><p>
+    o <a href=../signals/sine.au>Signal 1</a>
+</p></DD>
+
+<DD><p>
+    o <a href=../signals/gong.au>Signal 2</a>
+</p></DD>
+
+<DD><p>
+    o <a href=../signals/shepard30.au>Mystery Signal</a>
+</p></DD>
+
+<p>
+    - We'll look at this signal again in a few weeks when we have some more sophisticated analysis tools. In the meantime, based on what you can hear and what you can see on the scope, <strong>can you figure out the trick?</strong>
+<p>
+    - Disconnect speaker and sound card cable.
+</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../exp2.3/" class="btn btn-neutral float-right" title="Optoelectronic Signal Sources and Sinks">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../file.14/" class="btn btn-neutral" title="The Breadboard"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../file.14/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../exp2.3/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../../js/theme.js"></script>
+      <script src="../../mathjax-config.js"></script>
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+</body>
+</html>

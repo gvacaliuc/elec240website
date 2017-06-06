@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>The Interface Modules - ELEC 240 Labs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "The Interface Modules";
+    var mkdocs_page_input_path = "references/interface.md";
+    var mkdocs_page_url = "/references/interface/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> ELEC 240 Labs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Lab Home</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../..">Home</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../chapter1/">Introduction</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../chapter2/">Your Lab Report</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../chapter3/">Tools and Resources</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../chapter4/">VirtualBench</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">References</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../file.3/">Patch Cords and Cables</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../breadboard/">The Breadboard</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">The Interface Modules</a>
+    <ul class="subnav">
+            
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../wiring/">Wiring</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../color_code/">Resistor Color Code</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Lab 1</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../lab1/">Home</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab1/safety/">Safety</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab1/file.6/">Background</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab1/exp1.1/">DC Measurements: the DMM</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab1/file.8/">Plotting Data in Matlab</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab1/file.9/">Grounds and Grounding</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab1/exp1.2/">The Oscilloscope and Function Generator</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab1/file.10/">Cleaning Up</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Lab 2</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../lab2/">Home</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab2/file.12/">Background</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab2/file.13/">Before You Begin</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab2/exp2.1/">Electroacoustic Transducers I</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab2/file.14/">The Breadboard</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab2/exp2.2/">Electroacoustic Transducers II</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab2/exp2.3/">Optoelectronic Signal Sources and Sinks</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Lab 3</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../lab3/">Home</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab3/file.16/">Introduction</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab3/exp3.1/">Resistive Voltage Dividers</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab3/file.19/">Measuring the Transfer Function</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab3/exp3.2/">Filters and Transfer Function</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Lab 4</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../lab4/">Home</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab4/file.21/">Introduction</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab4/file.22/">Before Lab</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab4/file.23/">Organizing Your Breadboard</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab4/exp4.1/">The 741 Op-Amp</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab4/exp4.2/">The Inverting Configuration</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab4/file.24/">Standard Signal Levels</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab4/exp4.3/">Transducer Amplifiers</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Lab 5</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../lab5/">Home</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab5/file.28/">Introduction</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab5/exp5.1/">Building a Function Generator</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab5/exp5.2/">Bode Plots</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Lab 6</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../lab6/">Home</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab6/file.26/">Introduction</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab6/file.27/">Decibels</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab6/exp6.1/">Measuring Signal Spectrum</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab6/exp6.2/">The Spectrum of Acoustic Signals</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Lab 7</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../lab7/">Home</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab7/exp7.1/">Sampling and Quantization</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab7/exp7.2/">Recording a Reference Signal</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab7/exp7.3/">Signal Processing</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab7/exp7.4/">Filtering, Continued</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab7/exp7.5/">Some DSP Applications</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Miscellanous Images</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../misc_images/">Home</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">ELEC 240 Labs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>References &raquo;</li>
+        
+      
+    
+    <li>The Interface Modules</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h3>ELEC 241 Lab<hr></h3>
+
+<p><center>
+<h1>
+Pin Connections and the Interface Module
+</h1>
+<h1></p>
+<p></h1>
+</center>
+<a name=interface_picture></a>
+The path from the instruments to the breadboard is provided
+by the
+<em>Interface Module</em>.
+This is a printed circuit board with a variety of different
+connectors and two short, single-row socket strips.
+<center>
+<IMG
+ WIDTH="719" HEIGHT="310" ALIGN="BOTTOM" BORDER="0"
+ SRC="/references/figs/img4.gif"
+ ALT="\includegraphics[scale=0.800000]{interface.ps}"></p>
+<p></center>
+These are like the socket strips on the breadboard
+(five points connected together) except that
+instead of being connected just to themselves,
+the pins are also connected to the other
+connectors on the board.
+<p></p>
+<p><a name=interface_socket></a>
+Here's a closeup of the two halves of the socket strip
+(shown separately to fit the page better):
+<center>
+<IMG
+ WIDTH="461" HEIGHT="268" ALIGN="BOTTOM" BORDER="0"
+ SRC="/references/figs/img5.gif"
+ ALT="\includegraphics[scale=0.500000]{iface_temp.ps}"></p>
+<p></center>
+<a name=interface_table></a>
+And here's a table of what the pins are connected to:
+<center>
+<table>
+<tr>
+<td>
+<b>Pin</b>
+<td>
+<b>Signal</b>
+<td>
+<b>Conn</b>
+<td>
+<b>Function</b>
+<td>
+<b>Pin</b>
+<td>
+<b>Signal</b>
+<td>
+<b>Function</b>
+<tr>
+<td>
+1
+<td>
+bnc1
+<td></p>
+<td>
+J1-1 BNC 1
+<td>
+28
+<td>
+nc
+<td>
+No connection
+<tr>
+<td>
+2
+<td>
+bnc2
+<td>
+
+<td>
+J1-2 BNC 2
+<td>
+29
+<td>
+Rx
+<td>
+receiver
+<tr>
+<td>
+3
+<td>
+bnc3
+<td>
+
+<td>
+J1-3 BNC 3
+<td>
+30
+<td>
+nc
+<td>
+No connection
+<tr>
+<td>
+4
+<td>
+ph1l
+<td>
+
+<td>
+J1-4 Phone Plug 1 left
+<td>
+31
+<td>
+nc
+<td>
+No connection
+<tr>
+<td>
+5
+<td>
+ph1r
+<td>
+
+<td>
+J1-4 Phone Plug 1 right
+<td>
+32
+<td>
+nc
+<td>
+No connection
+<tr>
+<td>
+6
+<td>
+ph2l
+<td>
+
+<td>
+J1-5 Phone Plug 2 left
+<td>
+33
+<td>
+nc
+<td>
+No connection
+<tr>
+<td>
+7
+<td>
+ph2r
+<td>
+
+<td>
+J1-5 Phone Plug 2 right
+<td>
+34
+<td>
+nc
+<td>
+No connection
+<tr>
+<td>
+8
+<td>
+ph3l
+<td>
+
+<td>
+J1-6 Phone Plug 3 left
+<td>
+35
+<td>
+nc
+<td>
+No connection
+<tr>
+<td>
+9
+<td>
+ph3r
+<td>
+
+<td>
+J1-6 Phone Plug 3 right
+<td>
+36
+<td>
+nc
+<td>
+No connection
+<tr>
+<td>
+10
+<td>
+ear1
+<td>
+
+<td>
+J1-7 Handset earpiece
+<td>
+37
+<td>
+nc
+<td>
+No connection
+<tr>
+<td>
+11
+<td>
+ear2
+<td>
+
+<td>
+J1-7 Handset earpiece
+<td>
+38
+<td>
+nc
+<td>
+No connection
+<tr>
+<td>
+12
+<td>
+mic1
+<td>
+
+<td>
+J1-7 Handset microphone
+<td>
+39
+<td>
+Tx
+<td>
+transmitter
+<tr>
+<td>
+13
+<td>
+mic2
+<td>
+
+<td>
+J1-7 Handset microphone
+<td>
+40
+<td>
+nc
+<td>
+No connection
+<tr>
+<td>
+14
+<td>
+gnd
+<td>
+
+<td>
+Ground
+<td>
+41
+<td>
+gnd
+<td>
+Ground
+<tr>
+<td>
+15
+<td>
+sound_mic
+<td>
+
+<td>
+J2-1  microphone
+<td>
+42
+<td>
+ach0
+<td>
+input0
+<tr>
+<td>
+16
+<td>
+sound_spkrl
+<td>
+
+<td>
+J2-1 speaker left
+<td>
+43
+<td>
+ach1
+<td>
+input1
+<tr>
+<td>
+17
+<td>
+sound_spkrr
+<td>
+
+<td>
+J2-1 speaker right
+<td>
+44
+<td>
+ach2
+<td>
+input2
+<tr>
+<td>
+18
+<td>
+sound_lin_inl
+<td>
+
+<td>
+J2-1 line in left
+<td>
+45
+<td>
+ach3
+<td>
+input3
+<tr>
+<td>
+19
+<td>
+sound_lin_inr
+<td>
+
+<td>
+J2-1 line in right
+<td>
+46
+<td>
+ach4
+<td>
+input4
+<tr>
+<td>
+20
+<td>
+sound_lin_outl
+<td>
+
+<td>
+J2-1 line out left
+<td>
+47
+<td>
+ach5
+<td>
+input5
+<tr>
+<td>
+21
+<td>
+sound_lin_outr
+<td>
+
+<td>
+J2-1 line out right
+<td>
+48
+<td>
+ach6
+<td>
+input6
+<tr>
+<td>
+22
+<td>
+gnd
+<td>
+
+<td>
+Ground
+<td>
+49
+<td>
+ach7
+<td>
+input7
+<tr>
+<td>
+23
+<td>
+ph4l
+<td>
+
+<td>
+J2-2 Phone Plug 4 left
+<td>
+50
+<td>
+nc
+<td>
+No connection
+<tr>
+<td>
+24
+<td>
+ph4r
+<td>
+
+<td>
+J2-2 Phone Plug 4 right
+<td>
+51
+<td>
+dac0
+<td>
+output 0
+<tr>
+<td>
+25
+<td>
+bnc1
+<td>
+
+<td>
+J2-3 BNC 4
+<td>
+52
+<td>
+dac1
+<td>
+output 1
+<tr>
+<td>
+26
+<td>
+bnc2
+<td>
+
+<td>
+J2-4 BNC 5
+<td>
+53
+<td>
+nc
+<td>
+No connection
+<tr>
+<td>
+27
+<td>
+bnc3
+<td>
+
+<td>
+J2-5 BNC 6
+<td>
+54
+<td>
+nc
+<td>
+No connection
+</table>
+Note: pins 15-21 go to PC sound card
+</center>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../wiring/" class="btn btn-neutral float-right" title="Wiring">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../breadboard/" class="btn btn-neutral" title="The Breadboard"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../breadboard/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../wiring/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../../js/theme.js"></script>
+      <script src="../../mathjax-config.js"></script>
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+</body>
+</html>

@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Transducer Amplifiers - ELEC 240 Labs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Transducer Amplifiers";
+    var mkdocs_page_input_path = "lab4/exp4.3.md";
+    var mkdocs_page_url = "/lab4/exp4.3/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> ELEC 240 Labs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Lab Home</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../..">Home</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../chapter1/">Introduction</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../chapter2/">Your Lab Report</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../chapter3/">Tools and Resources</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../chapter4/">VirtualBench</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">References</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../references/file.3/">Patch Cords and Cables</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../references/breadboard/">The Breadboard</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../references/interface/">The Interface Modules</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../references/wiring/">Wiring</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../references/color_code/">Resistor Color Code</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Lab 1</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../lab1/">Home</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab1/safety/">Safety</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab1/file.6/">Background</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab1/exp1.1/">DC Measurements: the DMM</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab1/file.8/">Plotting Data in Matlab</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab1/file.9/">Grounds and Grounding</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab1/exp1.2/">The Oscilloscope and Function Generator</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab1/file.10/">Cleaning Up</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Lab 2</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../lab2/">Home</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab2/file.12/">Background</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab2/file.13/">Before You Begin</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab2/exp2.1/">Electroacoustic Transducers I</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab2/file.14/">The Breadboard</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab2/exp2.2/">Electroacoustic Transducers II</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab2/exp2.3/">Optoelectronic Signal Sources and Sinks</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Lab 3</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../lab3/">Home</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab3/file.16/">Introduction</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab3/exp3.1/">Resistive Voltage Dividers</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab3/file.19/">Measuring the Transfer Function</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab3/exp3.2/">Filters and Transfer Function</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Lab 4</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../">Home</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../file.21/">Introduction</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../file.22/">Before Lab</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../file.23/">Organizing Your Breadboard</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../exp4.1/">The 741 Op-Amp</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../exp4.2/">The Inverting Configuration</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../file.24/">Standard Signal Levels</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Transducer Amplifiers</a>
+    <ul class="subnav">
+            
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Lab 5</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../lab5/">Home</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab5/file.28/">Introduction</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab5/exp5.1/">Building a Function Generator</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab5/exp5.2/">Bode Plots</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Lab 6</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../lab6/">Home</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab6/file.26/">Introduction</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab6/file.27/">Decibels</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab6/exp6.1/">Measuring Signal Spectrum</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab6/exp6.2/">The Spectrum of Acoustic Signals</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Lab 7</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../lab7/">Home</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab7/exp7.1/">Sampling and Quantization</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab7/exp7.2/">Recording a Reference Signal</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab7/exp7.3/">Signal Processing</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab7/exp7.4/">Filtering, Continued</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab7/exp7.5/">Some DSP Applications</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Miscellanous Images</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../misc_images/">Home</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">ELEC 240 Labs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Lab 4 &raquo;</li>
+        
+      
+    
+    <li>Transducer Amplifiers</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h3>ELEC 240 Lab<hr></h3>
+
+<p><center>
+<h2>
+Experiment 4.3
+</h2>
+<h2>
+Transducer Amplifiers
+</h2></p>
+<p></center>
+<h3></p>
+<h3>
+    Equipment
+</h3>
+
+<ul>
+<li>Test board
+<li>741 Op Amp
+<li>10 k&#8486; Resistors
+<li>100 k&#8486; Resistors
+<li>Other resistors according to your design
+<li> 0.1 &#181;F Capacitor
+<li> Dynamic microphone
+<li> Telephone handset
+</ul>
+
+<p>
+    In Lab 2 we saw that our input transducers (microphone and photodiode) produced signals of only a few millivolts, while our output transducers (speaker and
+    LED) required signals of a few volts. To make up this discrepancy, we need to amplify the signal levels produced by the input transducers.
+</p>
+
+<h3>
+    Part A: Photodiode Amplifier
+</h3>
+
+<p>
+    The inverting op-amp circuit works by taking the current that flows into the "virtual ground" at the inverting input and forcing it to flow in the feedback
+    resistor. Since the voltage across R<sub>F</sub> is equal to R<sub>F</sub>I<sub>F</sub>, the output voltage (on the other terminal of R<sub>F</sub> is
+    proportional to the current flowing into the virtual ground. What if instead of this current originating from the voltage across R<sub>1</sub>, it instead
+came directly from a current source? Well, the output voltage would still be proportional to it: <em>v</em><sub>out</sub>=-R<sub>F</sub>I<sub>F</sub>=-R<sub>F</sub>I<sub>in</sub>, i.e., we have an amplifier which accepts a current as an input and produces a voltage as an output. This is called a    <em>transresistance amplifier</em>. (Since a resistance converts its current to a voltage (v=R*i), a transresistance converts a current in one part of the circuit to a voltage in another.)
+</p>
+
+<p>
+    In Lab 2 we measured the <em>voltage</em> across the photodiode and found some fairly distorted waveforms. It turns out that the <em>current</em> produced
+    by a photodiode is proportional to the intensity of the light falling on it, while the voltage is proportional to the <em>logarithm</em> of the intensity,
+    hence the distortion. If we could produce an output signal proportional to the photodiode current, we would have a much better transducer.
+</p>
+
+<p>
+    - Wire the following circuit. (You can modify the previous circuit by removing the 10 k&#8486; resistor and replacing it with the photodiode (connected
+    to ground rather than to the function generator)).
+    <br/>
+    <img width="306" height="177" src="../figs/img176.png"/>
+</p>
+
+<p>
+    - As you did in Lab 2, note the output voltage, v<sub>out</sub>, and observe how it changes as you cover and uncover the photodiode with your hand.
+</p>
+
+<p>
+    - Set the function generator to produce an 8 V p-p, 100 Hz triangle wave.
+</p>
+
+<p>
+    - Disconnect the BNC patch cord from the function generator output and connect the BNC clip leads. Connect your red LED to the clip leads (like you did
+    with the photodiode in Exp. 2.3 Part B).
+</p>
+
+<p>
+    - Hold the LED directly above the photodiode and observe v<sub>out</sub>.<strong> Is it less distorted than in Lab 2?</strong> Switch the function
+    generator to sine wave and observe the waveshape.
+</p>
+
+<p>
+    - Switch the function generator to square wave and increase the amplitude to maximum. Slowly separate the LED from the photodiode, adjusting the alignment
+    to maintain the best signal (just like Lab 2). What is the maximum distance you can get with this configuration and still get a recognizable square wave
+    signal? <strong>How does it compare with what you got in Lab 2?</strong>
+</p>
+
+<p>
+    - Remove the BNC clip leads, reduce the amplitude of the function generator, and reconnect the BNC patch cord. Unplug the photodiode.
+</p>
+
+<p>
+-    <strong>Analyze the transresistance amplifier using the op-amp design rules and show that v<sub>out</sub> does equal ?R<sub>F</sub>i<sub>d</sub>.</strong>
+</p>
+
+<h3>
+    Part B: Microphone Amplifier
+</h3>
+
+<p>
+The microphone we used in Lab 2 is called a <em>dynamic</em> microphone. The microphone that is housed in a telephone handset is called a    <em>carbon-button</em> (or <em>carbon</em> for short) microphone. The output of the carbon microphone is close to our standard 1 V level, but for the
+    dynamic microphone to be useful, we will need to amplify its output. If we don't mind the change of sign (which we don't for this application), we have
+    just the circuit we need.
+</p>
+
+<p>
+    We will use this circuit in several subsequent labs, so build it in a convenient part of the breadboard (see discussion in "Organizing your Breadboard"
+    above) and leave it assembled when lab is over.
+</p>
+
+<p>
+    - Look back in your lab notebook to find the value you measured for the output voltage of the dynamic microphone. <strong>Calculate the gain G</strong>
+    required to amplify this to a 1 V p-p signal.
+</p>
+
+<p>
+    - <strong>Calculate the value of R<sub>1</sub></strong> that will give the circuit below a gain of G:
+    <br/>
+    <img width="314" height="177" src="../figs/img177.png"/>
+</p>
+
+<p>
+    - Wire the above circuit by modifying your circuit from Part A, and connect v<sub>in</sub> to J1-6-left (Pin 8 on the Interface Board socket strip). Plug
+    the dynamic microphone into J1-6.
+</p>
+
+<p>
+    - Speak into the microphone and observe v<sub>out</sub>. Does it have the amplitude you expected? If not, adjust R<sub>1</sub> until v<sub>out</sub> is
+    approximately 1 V p-p when speaking in a normal voice.
+</p>
+
+<h3>
+    Part C: Mixer
+</h3>
+
+<p>
+    We want to be able to use both the dynamic microphone and the carbon microphone. We could build separate amplifiers for each and switch back and forth, but
+    it would be more convenient to be able to use either one (or both) with no changes to the circuit.
+</p>
+
+<p>
+    Since Kirchhoff's Current Law must hold true at the negative input/virtual ground, if more than one current source is connected to it, the output voltage
+    must be proportional to the sum of the currents. Consider the following circuit:
+    <br/>
+    <img width="311" height="173" src="../figs/img178.png"/>
+    <br/>
+    - <strong>Show in your report that the output is a weighted sum of its inputs</strong>, in other words:
+    <br/>
+    <img width="173" height="30" src="../figs/mixereqn.png"/>
+</p>
+
+<p>
+    We can use this circuit as a <em>mixer</em> to amplify both the dynamic microphone output and the carbon microphone output by the appropriate amount, and
+    then combine them into a single signal.
+</p>
+
+<p>
+    - First construct the carbon microphone interface.
+</p>
+
+<DT>
+<DD>
+<p>
+    o Note: the carbon microphone is a resistive, or passive transducer. This means that it doesn't convert acoustical energy to electrical energy directly,
+    but instead the acoustical energy varies some electrical parameter (i.e., resistance). In order to interpret this change in resistance, the transducer
+    needs to be powered by an external source which then produces a voltage output corresponding to the change in resistance. We do this by powering the carbon
+    microphone with a voltage source in series with a large resistor (i.e., creating a voltage divider circuit).
+</p></DD>
+<DD><p>
+    o The following circuit should do nicely. Wire this circuit to the right of your dynamic microphone amplifier, and we will connect the two in a couple of
+    steps. (The carbon microphone is pins 12 and 13 on the interface connector. There is a ground on pin 14).
+    <br/>
+    <img width="301" height="160" src="../figs/img179.png"/>
+</p></DD>
+<p>
+    - Plug the handset into J1-7. Speak into the handset microphone and verify that the above circuit works. Speak in the same normal voice you used for the
+    dynamic microphone and <strong>measure the peak-to-peak amplitude of the signal</strong>.
+</p>
+<p>
+    - We need to get rid of the pesky DC offset in the carbon microphone output. On the scope we can do this by switching to the AC position. Or instead, we
+    can put a capacitor in series with the input. Putting it all together gives us the following circuit:
+    <br/>
+    <img width="537" height="192" src="../figs/img180.png"/>
+</p>
+<p>
+    - <strong>Compute the value of R<sub>2</sub></strong> required to give an output of 1V p-p. Put together your two subcircuits and create the above circuit.
+</p>
+<p>
+    - Speak into each microphone and verify that v<sub>out</sub> is about 1 V p-p in each case.
+</p>
+<p>
+    - Since the op-amp can drive a 100&#8486; resistance to more than our standard voltage level, and since the handset earpiece resistance is greater than
+    100&#8486;, we should be able to drive it from the op-amp output. Connect one side of the earpiece (Pin 11 on the interface board) to ground (Pin 14).
+    Connect the other side (Pin 10) to v<sub>out</sub>. Have your lab partner speak into the dynamic microphone while you hold the handset to your ear and
+    speak into its microphone. Verify that both voices are audible simultaneously.
+</p>
+<p>
+    - Do not dissemble this circuit. We will use it in subsequent labs.
+</p>
+</DT>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../lab5/" class="btn btn-neutral float-right" title="Home">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../file.24/" class="btn btn-neutral" title="Standard Signal Levels"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../file.24/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../lab5/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../../js/theme.js"></script>
+      <script src="../../mathjax-config.js"></script>
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+</body>
+</html>
