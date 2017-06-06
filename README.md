@@ -1,32 +1,27 @@
 ## ELEC 240 Website
 
-The old website for ELEC 240 was very out of date, and not very functional.  This repo has a the new website, as well as a script in Python that was used to convert *most* of the old website to a prettier and more useful version that [MkDocs](http://www.mkdocs.org/) could work with.
+The old website for ELEC 240 was a bit out of date, and needed some help.
+This repo has an updated website, as well as a script in Python that was used to
+convert *most* of the old website to a prettier and more useful version that
+[MkDocs](http://www.mkdocs.org/) could work with.
 
-## Python Dependencies
+## Building the Site
 
-The website needs to be built with mkdocs, and has a few other dependencies. This is the output of ```pip freeze```, which lists the dependencies and versions:  
+If you'd like, you can build the site from the (admittedly) mixed Markdown and HTML source files,
+which are stored in [./docs](./docs).  The site was built with [MkDocs](http://mkdocs.org), and
+is very simple to build.  It's suggested you create a blank python virtual environment, either
+with Anaconda or ```virtualenv```.  Assuming you have ```pip``` installed, it's as easy as:
+
 ```bash
-backports-abc==0.5
-certifi==2016.9.26
-click==6.6
-Jinja2==2.8
-livereload==2.5.0
-Markdown==2.6.7
-MarkupSafe==0.23
-mkdocs==0.16.0
-Pygments==2.1.3
-pymdown-extensions==1.2
-python-markdown-math==0.2
-PyYAML==3.12
-singledispatch==3.4.0.3
-six==1.10.0
-tornado==4.4.2
-```
-For convenience, I included a script that installs the dependencies and verifies their correct installation. To use this, make a new virtual environment for the website and call the script on the included ```pythondepends``` file:  
-```bash
-(virtualenvname) ... $ python installdepends.py pythondepends
-```
+path/to/repo/dir$ pip install -r requirements.txt
+path/to/repo/dir$ mkdocs build
+```  
 
-## Access On Rice Network
+where [requirements.txt](./requirements.txt) is found in the repository, and you're working
+from the project directory.
 
-The site isn't currently live publically on the Rice ECE pages, however if you are inside the Rice Network, you should be able to access it [here](http://10.100.26.7:8000).
+## Deploying the Site
+
+After (optionally) building the site, simply either copy (worse), or symlink (better) the [static
+site files](./site) to the root directory you host your site from.
+
