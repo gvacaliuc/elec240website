@@ -57,19 +57,19 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../chapter1/">Introduction</a>
+    <a class="" href="../../introduction/">Introduction</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../chapter2/">Your Lab Report</a>
+    <a class="" href="../../lab-report/">Your Lab Report</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../chapter3/">Tools and Resources</a>
+    <a class="" href="../../tools-and-resources/">Tools and Resources</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../chapter4/">VirtualBench</a>
+    <a class="" href="../../virtualbench/">VirtualBench</a>
                 </li>
     </ul>
 	    </li>
@@ -80,7 +80,7 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../references/file.3/">Patch Cords and Cables</a>
+    <a class="" href="../../references/patch-cords-and-cables/">Patch Cords and Cables</a>
                 </li>
                 <li class="">
                     
@@ -115,27 +115,27 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../lab1/file.6/">Background</a>
+    <a class="" href="../../lab1/background/">Background</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../lab1/exp1.1/">DC Measurements: the DMM</a>
+    <a class="" href="../../lab1/experiment_1-1/">DC Measurements: the DMM</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../lab1/file.8/">Plotting Data in Matlab</a>
+    <a class="" href="../../lab1/plotting-help/">Plotting Data in Matlab</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../lab1/file.9/">Grounds and Grounding</a>
+    <a class="" href="../../lab1/interlude/">Grounds and Grounding</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../lab1/exp1.2/">The Oscilloscope and Function Generator</a>
+    <a class="" href="../../lab1/experiment_1-2/">The Oscilloscope and Function Generator</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../lab1/file.10/">Cleaning Up</a>
+    <a class="" href="../../lab1/postlude/">Cleaning Up</a>
                 </li>
     </ul>
 	    </li>
@@ -188,12 +188,6 @@
     <a class="current" href="./">Introduction</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#elec-240-lab">ELEC 240 Lab</a></li>
-    
-
-    <li class="toctree-l3"><a href="#introduction">Introduction</a></li>
-    
-
     </ul>
                 </li>
                 <li class="">
@@ -378,63 +372,45 @@
           <div role="main">
             <div class="section">
               
-                <h3 id="elec-240-lab">ELEC 240 Lab</h3>
-<h1 id="introduction">Introduction</h1>
-<p>In the last 2 labs we looked at various kinds of signals: DC, sinusoidal, square waves, speech, etc. But to build our optical communication system, we will have to do more than look. We need to be able to manipulate signals so that we can impress the desired information onto a &quot;carrier" signal to transmit it and then extract the information from the received signal. Another term for this signal manipulation is <em>signal processing</em>.  </p>
-<p>For this lab you will need to be familiar with MATLAB, so it is advised to look over some online tutorials.</p>
-<p>The following figure shows the basic voltage divider circuit:<br />
-<center>
-<img alt="voltage divider" src="../figs/img160.png" />
-</center></p>
-<p>for which we have the familiar relation: <span>\(v_\text{out} = \frac{R_2}{R_1 + R_2} v_\text{in}\)</span> or <span>\(\frac{v_\text{out}}{v_\text{in}} = \frac{R_2}{R_1 + R_2}\)</span>. If <span>\(R_1\)</span> and <span>\(R_2\)</span> are fixed then the output voltage is a constant fraction of the input, i.e. we have a fixed attenuator. If either or both of them vary, we have a variable attenuator (e.g. a volume control). If <span>\(v_\text{in}\)</span> is constant and one or both of <span>\(R_1\)</span> or <span>\(R_2\)</span> vary with time, then <span>\(v_\text{out}\)</span> will be a function of time, following the change in <span>\(R\)</span>. If either or both of <span>\(R_1\)</span> and <span>\(R_2\)</span> vary with frequency (i.e. they are impedances rather than pure resistances) then the attenuation (or transfer function) will be a function of frequency, i.e. we have a <em>filter</em>. Finally, if one or the other of <span>\(R_1\)</span> or <span>\(R_2\)</span> is non-linear, then the input-output relation will reflect that nonlinearity.  </p>
-<p>If we replace resistances <span>\(R_1\)</span> and <span>\(R_2\)</span> by impedances <span>\(Z_1\)</span> and <span>\(Z_2\)</span> and use the phasor representation (<span>\(V_\text{in}\)</span> and <span>\(V_\text{out}\)</span>) for the input and output voltages, then the voltage divider relation still holds. We define the ratio of the output voltage phasor to the input
-voltage phasor to be the <em>transfer function</em>:  </p>
-<p><center>
-<span>\(H(f)\equiv\frac{V_\text{out}}{V_\text{in}} = \frac{Z_2}{Z_1 + Z_2}\)</span>
-</center>    </p>
-<p>For example if we replace <span>\(R_2\)</span> with a capacitor, we get the following
-circuit:<br />
-<center>
-<img alt="lowpass" src="../figs/img161.png" />
-</center>    </p>
-<p>for which <span>\(H(f)=\frac{V_\text{out}}{V_\text{in}} = \frac{Z_2}{Z_1 + Z_2} = \frac{1/j2\pi fC}{(1/j2\pi fC)+R} = \frac{1}{j2\pi fRC+1}\)</span>.  </p>
-<p>Since <span>\(H(f)\)</span> is close to one for small values of <span>\(f\)</span> and goes to zero for large <span>\(f\)</span> (i.e. it passes low frequencies) we call this circuit a <em>low pass filter</em>.</p>
-<!--Basically, signal processing is simply doing math on signals:
-adding or multiplying them together, scaling them to make them
-smaller or larger, filtering them to make them &quot;smoother"
-or to separate a desired signal from an undesired one.
-In this Lab and the next we will begin investigating basic signal
-processing operations including attenuation, amplification,
-and filtering.
-<p>
-
-Another theme of the first two labs was the study of
-<em>components</em>.
-With this lab we will begin studying
-<em>circuits</em>,
-or combinations of components.
-The simplest circuit
-(well, maybe the second simplest)
-is the
-<em>voltage divider:</em>
-just two resistors
-(or more generally two impedances)
-in series.
-Yet this simple
-configuration is the heart of some of the most important circuits
-in all of EE.
-
-Combined with the notion of Th&eacute;venin equivalence,
-it describes the behavior of subsystems when they are interconnected.
-It is the basis for
-attenuators, filters, amplifiers, logic gates,
-many types of transducers,
-and a host of other functions that make up electronic systems.
-<p>
-In this lab we will look at a number of basic circuits
-(all derived from the voltage divider)
-and see how we might use them in processing
-(and originating) signals.-->
+                <p>### ELEC 240 Lab # Introduction In the last 2 labs we looked at
+various kinds of signals: DC, sinusoidal, square waves, speech, etc. But
+to build our optical communication system, we will have to do more than
+look. We need to be able to manipulate signals so that we can impress
+the desired information onto a "carrier" signal to transmit it and then
+extract the information from the received signal. Another term for this
+signal manipulation is *signal processing*. For this lab you will need
+to be familiar with MATLAB, so it is advised to look over some online
+tutorials. The following figure shows the basic voltage divider circuit:
+![voltage divider](figs/img160.png)
+for which we have the familiar relation: $v_\text{out} =
+\frac{R_2}{R_1 + R_2} v_\text{in}$ or
+$\frac{v_\text{out}}{v_\text{in}} = \frac{R_2}{R_1 + R_2}$.
+If $R_1$ and $R_2$ are fixed then the output voltage is a constant
+fraction of the input, i.e. we have a fixed attenuator. If either or
+both of them vary, we have a variable attenuator (e.g. a volume
+control). If $v_\text{in}$ is constant and one or both of $R_1$
+or $R_2$ vary with time, then $v_\text{out}$ will be a function
+of time, following the change in $R$. If either or both of $R_1$
+and $R_2$ vary with frequency (i.e. they are impedances rather than
+pure resistances) then the attenuation (or transfer function) will be a
+function of frequency, i.e. we have a *filter*. Finally, if one or the
+other of $R_1$ or $R_2$ is non-linear, then the input-output
+relation will reflect that nonlinearity. If we replace resistances
+$R_1$ and $R_2$ by impedances $Z_1$ and $Z_2$ and use the
+phasor representation ($V_\text{in}$ and $V_\text{out}$) for the
+input and output voltages, then the voltage divider relation still
+holds. We define the ratio of the output voltage phasor to the input
+voltage phasor to be the *transfer function*:
+$H(f)\equiv\frac{V_\text{out}}{V_\text{in}} = \frac{Z_2}{Z_1 +
+Z_2}$
+For example if we replace $R_2$ with a capacitor, we get the
+following circuit:
+![lowpass](figs/img161.png)
+for which $H(f)=\frac{V_\text{out}}{V_\text{in}} =
+\frac{Z_2}{Z_1 + Z_2} = \frac{1/j2\pi fC}{(1/j2\pi fC)+R} =
+\frac{1}{j2\pi fRC+1}$. Since $H(f)$ is close to one for small
+values of $f$ and goes to zero for large $f$ (i.e. it passes low
+frequencies) we call this circuit a *low pass filter*.</p>
               
             </div>
           </div>

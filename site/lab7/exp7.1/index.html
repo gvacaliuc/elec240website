@@ -57,19 +57,19 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../chapter1/">Introduction</a>
+    <a class="" href="../../introduction/">Introduction</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../chapter2/">Your Lab Report</a>
+    <a class="" href="../../lab-report/">Your Lab Report</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../chapter3/">Tools and Resources</a>
+    <a class="" href="../../tools-and-resources/">Tools and Resources</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../chapter4/">VirtualBench</a>
+    <a class="" href="../../virtualbench/">VirtualBench</a>
                 </li>
     </ul>
 	    </li>
@@ -80,7 +80,7 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../references/file.3/">Patch Cords and Cables</a>
+    <a class="" href="../../references/patch-cords-and-cables/">Patch Cords and Cables</a>
                 </li>
                 <li class="">
                     
@@ -115,27 +115,27 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../lab1/file.6/">Background</a>
+    <a class="" href="../../lab1/background/">Background</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../lab1/exp1.1/">DC Measurements: the DMM</a>
+    <a class="" href="../../lab1/experiment_1-1/">DC Measurements: the DMM</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../lab1/file.8/">Plotting Data in Matlab</a>
+    <a class="" href="../../lab1/plotting-help/">Plotting Data in Matlab</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../lab1/file.9/">Grounds and Grounding</a>
+    <a class="" href="../../lab1/interlude/">Grounds and Grounding</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../lab1/exp1.2/">The Oscilloscope and Function Generator</a>
+    <a class="" href="../../lab1/experiment_1-2/">The Oscilloscope and Function Generator</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../lab1/file.10/">Cleaning Up</a>
+    <a class="" href="../../lab1/postlude/">Cleaning Up</a>
                 </li>
     </ul>
 	    </li>
@@ -304,6 +304,22 @@
     <a class="current" href="./">Sampling and Quantization</a>
     <ul class="subnav">
             
+    <li class="toctree-l3"><a href="#experiment-71">Experiment 7.1</a></li>
+    
+
+    <li class="toctree-l3"><a href="#sampling-and-quantization">Sampling and Quantization</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#equipment">Equipment</a></li>
+        
+            <li><a class="toctree-l4" href="#part-a-sample-rate-and-aliasing">Part A: Sample Rate and Aliasing</a></li>
+        
+            <li><a class="toctree-l4" href="#part-b-amplitude-quantization">Part B: Amplitude Quantization</a></li>
+        
+        </ul>
+    
+
     </ul>
                 </li>
                 <li class="">
@@ -372,115 +388,133 @@
           <div role="main">
             <div class="section">
               
-                <h3>ELEC 240 Lab<hr></h3>
-
-<p><center>
-<h2>
-Experiment 7.1
-</h2>
-<h2>
-Sampling and Quantization
-</h2>
-</center>
-<h3>
-    Equipment
-</h3>
+                <p>ELEC 240 Lab</p>
+<hr />
+<h2 id="experiment-71">Experiment 7.1</h2>
+<h2 id="sampling-and-quantization">Sampling and Quantization</h2>
+<h3 id="equipment">Equipment</h3>
+<ul>
+<li>Test board</li>
+</ul>
+<h3 id="part-a-sample-rate-and-aliasing">Part A: Sample Rate and Aliasing</h3>
+<p>When we convert a continuous, analog signal to a digital signal
+(digitize it), we <em>sample</em> its value at regular intervals. The sequence
+of numbers that results represents the original signal at these sample
+points, but ignores what goes on between them. If the signal is
+sufficiently well-behaved (i.e. it satisfies the Nyquist criterion and
+contains no energy at frequencies greater than half the sampling
+frequency), then these sample points are enough to represent the
+original signal exactly. But if the original signal contains a frequency
+greater than half the sampling rate, that frequency will be <em>aliased</em> to
+a lower frequency.</p>
+<p>Let's start by looking at what sampling looks like in the time domain.</p>
 <ul>
 <li>
-    Test board
+<p>Connect the function generator output and CH1 of the scope to A/D
+input4 (pin 46 on the interface board socket strip).</p>
+</li>
+<li>
+<p>Set the function generator to produce a 5 V p-p, 300 Hz sine wave.</p>
+</li>
+<li>
+<p>Download the <a href="../../labview/Lab7_Spectrum_Analyzer.vi">spectrum analyzer</a>
+and open in Labview. Set "number of samples per channel" and "rate" to</p>
+</li>
+<li>
+<p>Set "averaging mode" to RMS averaging. Start the program by
+pressing the run button or by pressing CTRL-R with the cursor over the
+window.</p>
+</li>
+<li>
+<p>Here's what we have:\
+<img alt="" src="../../figs/img183.png" />{width="318" height="113"}</p>
+</li>
+<li>
+<p>Right-click on the black box indicating waveform type above the Signal
+waveform, which says Dev1/ai4. Select Common Plots and select the 2nd
+option (points only). You should see about three cycles of a sine wave
+displayed in the waveform graph. Unlike last week's display, the samples
+are shown as individual dots, rather than connected line segments.</p>
+</li>
+<li>
+<p>Slowly increase the frequency to 2 kHz and note how the waveform
+becomes less clear.</p>
+</li>
+<li>
+<p>At 2 kHz, press STOP. You should see either several lines or several
+overlapping sine waves. This is an illusion caused by the fact that only
+a few samples of each cycle are being taken.</p>
+</li>
+<li>
+<p>Make a sketch to illustrate what happens when the frequency of the
+waveform is equal to a small submultiple (1/5, in this case) of the
+sampling rate.</p>
+</li>
+<li>
+<p>To see the actual underlying waveform more clearly, switch the display
+to connected lines: Place the cursor on the box marked "display style"
+underneath the display and select the continuous line style from the
+"Common Plots" submenu.</p>
+</li>
+<li>
+<p>Restart the program and continue increasing the frequency of the
+function generator until you reach 5 kHz, stopping at several points
+along the way to examine the waveform. When the function generator
+frequency is exactly half the sampling frequency the samples will
+alternate the same positive and negative values. (This may be easier to
+see by switching to the vertical line plot display style.)</p>
+</li>
+<li>
+<p>Continue increasing the function generator frequency. Notice that as
+you approach 10 kHz, you begin to see a well-defined sine wave which
+<em>decreases</em> in frequency as you increase the function generator
+frequency. This is the <em>alias</em> of the generator frequency. At exactly 10
+kHz you should get a zero frequency sine wave.</p>
+</li>
+<li>
+<p>Continue increasing the function generator frequency past 10 kHz. Note
+that you once again have a sine wave that increases in frequency as the
+input frequency increases.</p>
+</li>
+<li>
+<p><strong>Explain the concept of aliasing, folding, and the Nyquist criterion,
+and relate to your results.</strong></p>
+</li>
+<li>
+<p>Try square and triangle waves of various frequencies and see what
+happens to them as the frequency changes. ****</p>
+</li>
+<li>
+<p>Press the STOP button and exit the waveform view program. <strong>\
+\
+</strong></p>
+</li>
 </ul>
-<h3>
-    Part A: Sample Rate and Aliasing
-</h3>
-<p>
-    When we convert a continuous, analog signal to a digital signal (digitize it), we <em>sample</em> its value at regular intervals. The sequence of numbers
-    that results represents the original signal at these sample points, but ignores what goes on between them. If the signal is sufficiently well-behaved (i.e.
-    it satisfies the Nyquist criterion and contains no energy at frequencies greater than half the sampling frequency), then these sample points are enough to
-represent the original signal exactly. But if the original signal contains a frequency greater than half the sampling rate, that frequency will be    <em>aliased</em> to a lower frequency.
-</p>
-<p>
-    Let's start by looking at what sampling looks like in the time domain.
-</p>
-<p>
-    - Connect the function generator output and CH1 of the scope to A/D input4 (pin 46 on the interface board socket strip).
-</p>
-<p>
-    - Set the function generator to produce a 5 V p-p, 300 Hz sine wave.
-</p>
-<p>
-- Download the <a name="Lab9_Spectrum__Analyzer.vi" href=../labview/Lab7_Spectrum_Analyzer.vi> spectrum analyzer</a> and open in Labview. Set "number of samples per
-    channel" and "rate" to 10000. Set "averaging mode" to RMS averaging. Start the program by pressing the run button or by pressing CTRL-R with the cursor
-    over the window.
-</p>
-<p>
-    - Here's what we have:
-    <br/>
-    <img border="0" width="318" height="113" src="../figs/img183.png"/>
-</p>
-<p>
-    - Right-click on the black box indicating waveform type above the Signal waveform, which says Dev1/ai4. Select Common Plots and select the 2nd option
-    (points only). You should see about three cycles of a sine wave displayed in the waveform graph. Unlike last week's display, the samples are shown as
-    individual dots, rather than connected line segments.
-</p>
-<p>
-    - Slowly increase the frequency to 2 kHz and note how the waveform becomes less clear.
-</p>
-<p>
-    - At 2 kHz, press STOP. You should see either several lines or several overlapping sine waves. This is an illusion caused by the fact that only a few
-    samples of each cycle are being taken.
-</p>
-<p>
-    - Make a sketch to illustrate what happens when the frequency of the waveform is equal to a small submultiple (1/5, in this case) of the sampling rate.
-</p>
-<p>
-    - To see the actual underlying waveform more clearly, switch the display to connected lines: Place the cursor on the box marked "display style" underneath
-    the display and select the continuous line style from the "Common Plots" submenu.
-</p>
-<p>
-    - Restart the program and continue increasing the frequency of the function generator until you reach 5 kHz, stopping at several points along the way to
-    examine the waveform. When the function generator frequency is exactly half the sampling frequency the samples will alternate the same positive and
-    negative values. (This may be easier to see by switching to the vertical line plot display style.)
-</p>
-<p>
-- Continue increasing the function generator frequency. Notice that as you approach 10 kHz, you begin to see a well-defined sine wave which    <em>decreases</em> in frequency as you increase the function generator frequency. This is the <em>alias </em>of the generator frequency. At exactly 10 kHz
-    you should get a zero frequency sine wave.
-</p>
-<p>
-    - Continue increasing the function generator frequency past 10 kHz. Note that you once again have a sine wave that increases in frequency as the input
-    frequency increases.
-</p>
-<p>
-    - <strong>Explain the concept of aliasing, folding, and the Nyquist criterion, and relate to your results.</strong>
-</p>
-<p>
-    - Try square and triangle waves of various frequencies and see what happens to them as the frequency changes. <strong></strong>
-</p>
-<p>
-    - Press the STOP button and exit the waveform view program.
-    <strong>
-        <br/>
-        <br/>
-    </strong>
-</p>
-<h3>
-    Part B: Amplitude Quantization
-</h3>
-<p>
-    Once the input signal has been sampled, it must be represented as a number in the computer. Since there are a limited number of bits available to encode
-    the number (12 in this case), there are only a limited number of values that can be exactly represented. Values in between two successive encodings must be
-    rounded or truncated to one or the other. This process of forcing the continuous input range into a discrete set of values is called <em>quantization</em>.
-</p>
-<p>
-    - On the left hand side of the spectrum analyzer are two controls which control the quantization of the sampled signal. The <em>full scale</em> control
-    sets the maximum allowed bits of the signal. The number of bits control sets the <em>number of bits</em> that may be represented within the allowed range.
-</p>
-<p>
-    - Experiment with different values for <em>full scale</em> and <em>number of bits</em>. What do you notice in the waveform display? What is the relation
-    between the number of levels and spectrum of the resulting signal?
-</p>
-<p>
-    - Stop and exit the spectrum analyzer program.
-</p></p>
+<h3 id="part-b-amplitude-quantization">Part B: Amplitude Quantization</h3>
+<p>Once the input signal has been sampled, it must be represented as a
+number in the computer. Since there are a limited number of bits
+available to encode the number (12 in this case), there are only a
+limited number of values that can be exactly represented. Values in
+between two successive encodings must be rounded or truncated to one or
+the other. This process of forcing the continuous input range into a
+discrete set of values is called <em>quantization</em>.</p>
+<ul>
+<li>
+<p>On the left hand side of the spectrum analyzer are two controls which
+control the quantization of the sampled signal. The <em>full scale</em> control
+sets the maximum allowed bits of the signal. The number of bits control
+sets the <em>number of bits</em> that may be represented within the allowed
+range.</p>
+</li>
+<li>
+<p>Experiment with different values for <em>full scale</em> and <em>number of
+bits</em>. What do you notice in the waveform display? What is the relation
+between the number of levels and spectrum of the resulting signal?</p>
+</li>
+<li>
+<p>Stop and exit the spectrum analyzer program.</p>
+</li>
+</ul>
               
             </div>
           </div>

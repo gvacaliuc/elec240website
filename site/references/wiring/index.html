@@ -57,19 +57,19 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../chapter1/">Introduction</a>
+    <a class="" href="../../introduction/">Introduction</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../chapter2/">Your Lab Report</a>
+    <a class="" href="../../lab-report/">Your Lab Report</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../chapter3/">Tools and Resources</a>
+    <a class="" href="../../tools-and-resources/">Tools and Resources</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../chapter4/">VirtualBench</a>
+    <a class="" href="../../virtualbench/">VirtualBench</a>
                 </li>
     </ul>
 	    </li>
@@ -80,7 +80,7 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../file.3/">Patch Cords and Cables</a>
+    <a class="" href="../patch-cords-and-cables/">Patch Cords and Cables</a>
                 </li>
                 <li class="">
                     
@@ -95,6 +95,17 @@
     <a class="current" href="./">Wiring</a>
     <ul class="subnav">
             
+    <li class="toctree-l3"><a href="#wiring">Wiring</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#organizing-your-breadboard">Organizing Your Breadboard</a></li>
+        
+            <li><a class="toctree-l4" href="#real-world-circuit-problems">Real World Circuit Problems</a></li>
+        
+        </ul>
+    
+
     </ul>
                 </li>
                 <li class="">
@@ -118,27 +129,27 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../lab1/file.6/">Background</a>
+    <a class="" href="../../lab1/background/">Background</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../lab1/exp1.1/">DC Measurements: the DMM</a>
+    <a class="" href="../../lab1/experiment_1-1/">DC Measurements: the DMM</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../lab1/file.8/">Plotting Data in Matlab</a>
+    <a class="" href="../../lab1/plotting-help/">Plotting Data in Matlab</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../lab1/file.9/">Grounds and Grounding</a>
+    <a class="" href="../../lab1/interlude/">Grounds and Grounding</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../lab1/exp1.2/">The Oscilloscope and Function Generator</a>
+    <a class="" href="../../lab1/experiment_1-2/">The Oscilloscope and Function Generator</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../lab1/file.10/">Cleaning Up</a>
+    <a class="" href="../../lab1/postlude/">Cleaning Up</a>
                 </li>
     </ul>
 	    </li>
@@ -372,300 +383,202 @@
           <div role="main">
             <div class="section">
               
-                <h3>ELEC 240 Lab<hr></h3>
-
+                <p>ELEC 240 Lab</p>
+<hr />
+<h1 id="wiring">Wiring</h1>
+<h3 id="organizing-your-breadboard">Organizing Your Breadboard</h3>
+<p>The first few Labs are something of a "warmup" in terms of utilizing the
+breadboard. We will use only one or two of the interface components at a time
+and will build circuits consisting of 2 or 3 components which are disassembled
+at the end of lab. As we get closer to the final project, we will be
+constructing more complicated circuits having more external connections. Since
+some of these will perform functions needed in subsequent Labs, we will want to
+leave them in place on the breadboard for future use. We will need a plan for
+organizing the layout and wiring on the breadboard and interface board.</p>
+<p>There are several aspects to this organization ranging from small details to
+the big picture.</p>
+<h4 id="color-coding">Color Coding</h4>
+<p>Your wire kit contains an assortment of different colored wires. You could just
+pick pieces of wire at random, or you could try to use the different colors to
+designate different signals. There aren't enough colors for each signal to have
+its own, but you can use different colors to denote different classes of
+signals.</p>
+<p>One set of signals you should color code are power and ground. In particular,
+you should have a different color for <span>\(+15V\)</span>, <span>\(-15V\)</span>, and ground. You should
+not use any of these colors for other signals. It would be nice to use
+"standard" colors for these, but unfortunately there are several competing
+standards. One color that nearly everyone agrees on is that red should be the
+positive power supply voltage. Most automotive and electronic wiring uses black
+to denote ground. Electronic wiring which uses black for ground often uses blue
+for the negative supply. However, our power supply and breadboard use green to
+denote ground (the convention used in house wiring) and use black to denote the
+negative supply.</p>
+<p>So we have two possible "standard" color codes for power: </p>
+<ol>
+<li>red = +, green = gnd, black = -</li>
+<li>red = +, black = gnd, blue = - </li>
+</ol>
+<p>You could use either of these, or make up your own.</p>
+<p>Another useful thing to color code would be the wires or "probes" from the
+interface board connector. That way you can tell which wire is <code>CH1</code> of the
+scope or which is the function generator output without having to trace from
+one end of the wire to the other.</p>
+<h4 id="power-bussing">Power Bussing</h4>
+<p>There are a few different ways to figure out the orientation of an Integrated
+Chip (IC) such as an an <a href="../../misc_images/#741-op-amp">op-amp</a>.  The first step
+is to figure out where pin 1 is. The remaining pins are in chronological order
+and increment in a counter-clockwise direction.</p>
+<p>If pin 1 is in the lower left corner, then the writing on the package reads
+left to right. Alternately, some ICs will have a dot above pin 1.  A third
+indication is a semi-circle indentation on the top end of the chip - pin 1 will
+be to the left of it.</p>
+<p>To simplify power wiring, we should run the positive bus above each socket
+strip and the negative bus below. Doing this and running ground on the
+remaining buses gives us the following layout for power:</p>
+<p><img alt="Missing image file." src="../figs/img6.gif" /></p>
+<h4 id="interface-board-connector-assignments">Interface Board Connector Assignments</h4>
+<p>Some of the connectors on the Interface Board are dedicated to a single
+function (e.g. the telephone handset or the sound card). Others (e.g.
+the BNC and phone jacks) are more flexible and may be connected to a
+variety of signal sources or destinations. It will be helpful to
+establish standard assignments for these connectors as well.</p>
+<p>In the instructions and photographs, we will be using the following
+assignment:</p>
+<hr />
+<table>
+<thead>
+<tr>
+<th><strong>Connector</strong></th>
+<th><strong>Socket Pin</strong></th>
+<th><strong>Signal</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>J1-1</td>
+<td>1</td>
+<td>Oscilloscope channel 1</td>
+</tr>
+<tr>
+<td>J1-2</td>
+<td>2</td>
+<td>Oscilloscope channel 2</td>
+</tr>
+<tr>
+<td>J1-3</td>
+<td>3</td>
+<td>Function generator output</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="overall-layout">Overall Layout</h4>
+<p>This final project will be a fairly complex circuit. Good engineering practice
+is to break down a complex system into a number of simple subsystems, each of
+which performs a single, well-defined function.</p>
+<p>In the unlikely event that your circuit does not work perfectly the first time
+you turn it on, it will make it easier for you (and your labbie) to debug it if
+each of these subcircuits is laid out (neatly, of course) on its own little
+patch of breadboard and is connected to the other subcircuits in such a way
+that it may be easilly disconnected from them for testing in isolation.</p>
+<p>One additional advantage of a tidy layout with short wires is that it is more
+rugged. Remember that you will have to transport your circuit from your lab
+bench to the testing station without parts falling off or loops of wire getting
+caught and mysteriously pulled loose.</p>
+<h3 id="real-world-circuit-problems">Real World Circuit Problems</h3>
+<p>On paper all our components are ideal and no components exist where we don't
+draw them. In an actual circuit, things are not quite so tidy: wires have non
+zero resistance and inductance, sources have output resistance, parasitic
+capacitances and mutual inductances exist between wires, and a host of other
+gremlins. In addition, although we are only applying input signals up to a few
+10s of kHz, the active devices (op amps and transistors) we use have gain at
+frequencies up to a few MHz (op amps) or 100s of MHz (transistors). This means
+that all of the "little" pieces of wire can become fairly effective antennas,
+radiating energy to (and receiving from) the rest of the world, and more
+significantly, to other parts of the circuit.</p>
+<p>What all this means is that a circuit which is wired correctly topologically
+may fail to function as expected. Although we can't eliminate all of these
+effects, we can do some things to minimize them.  Here are a few.</p>
+<h4 id="layout">Layout</h4>
+<p>Try to arrange your layout so that each function is grouped together in a
+single area of the board and so that stages that are connected together are
+close to each other. This will allow connections to be made with shorter wires.
+Also try to avoid having high level signals near low level stages.</p>
+<h4 id="twisted-pairs">Twisted Pairs</h4>
+<p>One way to reduce unwanted coupling between different signals in your circuit
+is to use <em>twisted pairs</em>, i.e. a pair of wires twisted together with one wire
+connected to ground and the other carrying the signal.</p>
+<p>To make a twisted pair, select two wires having an aesthetically pleasing
+combination of colors and twist them together.</p>
 <p><center>
-<h1>
-Wiring
-</h1>
-<h1></p>
-<p></h1>
-</center>
-<h3>Organizing Your Breadboard</h3>
-<p>
-The first few Labs are something of a &quot;warmup"
-in terms of utilizing the breadboard.
-We will use only one or two of the interface components at a time
-and will build circuits consisting of 2 or 3 components
-which are disassembled at the end of lab.
-As we get closer to the final project,
-we will be constructing
-more complicated circuits
-having more external connections.
-Since some of these will perform functions needed in subsequent Labs,
-we will want to leave them in place on the breadboard for
-future use.
-We will need a plan for organizing the layout and wiring on the breadboard and interface board.
-<p>
-There are several aspects to this organization
-ranging from small details to the big picture.</p>
-<h4>Color Coding.</h4>
-
-<p>Your wire kit contains an assortment of different colored wires.
-You could just pick pieces of wire at random,
-or you could try to use the different colors to designate different signals.
-There aren't enough colors for each signal to have its own,
-but you can use different colors to denote different classes
-of signals.
-<p>
-One set of signals you should color code are power and ground.
-In particular, you should have a different color for +15&nbsp;V,
--15&nbsp;V, and ground and you should not use any of these colors
-for other signals.
-It would be nice to use &quot;standard" colors for these,
-but unfortunately there are several competing standards.
-One color that nearly everyone agrees on is that red should be the positive power supply voltage.
-Most automotive and electronic wiring uses black to denote ground.
-Electronic wiring which uses black for ground often uses blue
-for the negative supply.
-However, our power supply and breadboard use green to denote
-ground (the convention used in house wiring) and use black
-to denote the negative supply.
-<p>
-So we have two possible &quot;standard" color codes for power:
-(1) red&nbsp;=&nbsp;+, green&nbsp;=&nbsp;gnd, black&nbsp;=&nbsp;-, and
-(2) red&nbsp;=&nbsp;+, black&nbsp;=&nbsp;gnd, blue&nbsp; =&nbsp;-.
-You could use either of these, or make up your own.
-<p>
-Another useful thing to color code would be the wires or
-&quot;probes" from the interface board connector.
-That way you can tell which wire is
-<tt>CH1</tt>
-of the scope or which is the function generator output
-without having to trace from one end of the wire to the other.</p>
-<h4>Power Bussing.</h4>
-
-<p>There are a few different ways to figure out the orientation of an Integrated Chip (IC) such as an an
-<a name=op-amp href=/misc_images/#741-op-amp>op-amp</a>. The first step is to figure out where pin 1 is. The remaining pins are in chronological order and increment in a counter-clockwise direction.
-<p>If pin 1 is in the lower left corner,
-then the writing on the package reads left to right. Alternately, some ICs will have a dot above pin 1. A third indication is a semi-circle indentation on the top end of the chip - pin 1 will be to the left of it.</p>
-<p>To simplify power wiring, we should run the positive bus above each socket strip and the negative bus below.
-Doing this and running ground on the remaining buses gives us
-the following layout for power:
-<center>
-<IMG
- WIDTH="595" HEIGHT="299" ALIGN="BOTTOM" BORDER="0"
- SRC="/references/figs/img6.gif"
- ALT="\includegraphics[scale=0.650000]{pwr_bus3.ps}"></p>
-<p></center>
-</p></p>
-<h4>Interface Board Connector Assignments.</h4>
-
-<p>Some of the connectors on the Interface Board are dedicated to
-a single function (e.g. the telephone handset or the sound card).
-Others (e.g. the BNC and phone jacks) are more flexible and may
-be connected to a variety of signal sources or destinations.
-It will be helpful to establish standard assignments for these
-connectors as well.
-<p>
-In the instructions and photographs, we will be using the
-following assignment:
-<center>
-<table>
-<tr>
-<td>
-<b>Connector</b>
-<td>
-<b>Socket Pin</b>
-<td>
-<b>Signal</b>
-<tr>
-<td>
-J1-1
-<td>
-1
-<td>
-Oscilloscope channel 1
-<tr>
-<td>
-J1-2
-<td>
-2
-<td>
-Oscilloscope channel 2
-<tr>
-<td>
-J1-3
-<td>
-3
-<td>
-Function generator output
-</table>
+<img alt="" src="../figs/twisted.jpg" />
 </center></p>
-<h4>Overall Layout.</h4>
-
-<p>
-This
-final project
-will be a fairly complex circuit.
-Good engineering practice is to break down a complex system
-into a number of simple
-subsystems, each of which performs a single,
-well-defined function.
-<p>
-In the unlikely event that your circuit does not work perfectly
-the first time you turn it on,
-it will make it easier for you (and your labbie) to debug it
-if each of these subcircuits is laid out (neatly, of course)
-on its own little patch of breadboard
-and is connected to the other subcircuits in such a way
-that it may be easilly disconnected from them for testing
-in isolation.
-<p>
-One additional advantage of a tidy layout with short wires is that
-it is more rugged.
-Remember that you will have to transport your circuit from your
-lab bench to the testing station without parts falling off or
-loops of wire getting caught and mysteriously pulled loose.
-
-<h3>Real World Circuit Problems</h3>
-<p>
-On paper all our components are ideal
-and no components exist where we don't draw them.
-In an actual circuit, things are not
-quite so tidy:
-wires have non zero resistance and inductance,
-sources have output resistance,
-parasitic capacitances and mutual inductances exist between
-wires,
-and a host of other gremlins.
-In addition, although we are only applying input signals
-up to a few 10s of kHz, the active devices
-(op amps and transistors) we use have gain
-at frequencies up to a few MHz (op amps) or 100s of MHz
-(transistors).
-This means that all of the &quot;little"
-pieces of wire can become fairly effective antennas,
-radiating energy to
-(and receiving from) the rest of the world,
-and more significantly, to other parts of the circuit.
-<p>
-What all this means is that a circuit which is wired correctly
-topologically may fail to function as expected.
-Although we can't eliminate all of these effects, we can
-do some things to minimize them. Here are a few.
-<h4>Layout.</h4>
-Try to arrange your layout so that each function is grouped together
-in a single area of the board
-and so that stages that are connected together are close to
-each other.
-This will allow connections to be made with shorter wires.
-Also try to avoid having high level signals near low level stages.
-
-<p>
-<h4>Twisted Pairs.</h4>
-One way to reduce unwanted coupling between
-different signals in your circuit is to use
-<em>twisted pairs</em>,
-i.e. a pair of wires twisted together with one wire connected
-to ground and the other carrying the signal.
-<p>
-To make a twisted pair,
-select two wires having an aesthetically pleasing combination of colors
-and twist them together.
-<center>
-<img src=../figs/twisted.jpg>
-</center>
-You could use twisted pair wires for connections between the
-interface board and your circuit,
-as well as any other long runs of wire.
-<center>
-<img src=../figs/twist_connect.jpg>
-</center>
-Use one wire for the signal and connect the other to ground,
-at both ends of the run.
-<center>
-<table>
-<tr>
-<td>
-<center><img src=../figs/twist_connect3.jpg style="width: 50%; height: 50%"></center>
-<td>
-<center><img src=../figs/twist_connect4.jpg style="width: 50%; height: 50%"></center>
-</table>
-</center>
-Some signals (e.g. the photodiode input)
-don't have a ground.
-In this case, you can still use a twisted pair,
-but neither wire will be grounded.
-
-<p>
-<h4>Routing.</h4>
-Twisted pair or not, try to keep wires carrying high level signals
-(large voltages or currents)
-(e.g. the LED or earphone)
-away from those carrying
-low level signals
-(e.g. the photodiode or dynamic microphone).
-A corollary to this is to keep outputs away from inputs,
-especially in the same subcircuit.
-It's better for wires to cross at right angles
-than to run parallel to each other.
-
-<p>
-<h4>Bypass Capacitors.</h4>
-Another path for unwanted coupling between stages is via the
-power supply.
-To reduce this, use some of your electrolytic capacitors as
-<em>bypass capacitors</em>,
-i.e. connect them between the power supply voltages and ground
-(be sure to observe correct polarity on the electrolytic capacitors - the shorter wire is usually negative polarity, and you will also see a neg sign above this wire).
-Ideally each op amp should be bypassed, but you may be able
-to get by with a single pair of capacitors for the entire circuit.
-
-<p>
-<h4>Wiring Technique</h3>
-<p>
-The basic idea of wiring on a solderless breadboard is simple:
-just stick the ends of the component leads or wires into the holes.
-But like any seemingly simple process, there are a few subtleties that can make the difference between success and failure.
-<p>
-First a note of caution.
-The material that the clips inside the breadboard are made of
-(so called &quot;nickel silver") is a compromise between
-good conductivity, corrosion resistance, and springiness.
-In particular the elastic limit is considerably less than
-of a good steel spring
-and if spread too far, can be permanently distorted.
-
-To avoid deforming the connector clips:
+<p>You could use twisted pair wires for connections between the interface board
+and your circuit, as well as any other long runs of wire.</p>
+<p><center>
+<img alt="" src="../figs/twist_connect.jpg" />
+</center></p>
+<p>Use one wire for the signal and connect the other to ground, at both ends of
+the run.</p>
+<hr />
+<p><center>
+<img alt="" src="../figs/twist_connect3.jpg" /></p>
+<p><img alt="" src="../figs/twist_connect4.jpg" />
+</center></p>
+<hr />
+<p>Some signals (e.g. the photodiode input) don't have a ground. In this case, you
+can still use a twisted pair, but neither wire will be grounded.</p>
+<h4 id="routing">Routing</h4>
+<p>Twisted pair or not, try to keep wires carrying high level signals (large
+voltages or currents) (e.g. the LED or earphone) away from those carrying low
+level signals (e.g. the photodiode or dynamic microphone).  A corollary to this
+is to keep outputs away from inputs, especially in the same subcircuit. It's
+better for wires to cross at right angles than to run parallel to each other.</p>
+<h4 id="bypass-capacitors">Bypass Capacitors</h4>
+<p>Another path for unwanted coupling between stages is via the power supply. To
+reduce this, use some of your electrolytic capacitors as <em>bypass capacitors</em>,
+i.e. connect them between the power supply voltages and ground (be sure to
+observe correct polarity on the electrolytic capacitors - the shorter wire is
+usually negative polarity, and you will also see a neg sign above this wire).
+Ideally each op amp should be bypassed, but you may be able to get by with a
+single pair of capacitors for the entire circuit.</p>
+<h4 id="wiring-technique">Wiring Technique</h4>
+<p>The basic idea of wiring on a solderless breadboard is simple: just stick the
+ends of the component leads or wires into the holes. But like any seemingly
+simple process, there are a few subtleties that can make the difference between
+success and failure.</p>
+<p>First a note of caution. The material that the clips inside the breadboard are
+made of (so called "nickel silver") is a compromise between good conductivity,
+corrosion resistance, and springiness. In particular the elastic limit is
+considerably less than of a good steel spring and if spread too far, can be
+permanently distorted. To avoid deforming the connector clips:</p>
 <ul>
-<li> 
-Use only the wire that is supplied to you
-(24 gauge, solid telephone cable).
-<li> 
-Use only components with small diameter leads
-(1/4 watt resistors, capacitors, ICs, etc.).
-<li> 
-Do not
-insert power resistor leads into the breadboard.
-<li> 
-When using power transistors in the breadboard,
-use your pliers to twist each lead 90 degrees so that
-they are gripped by the broad face rather than the narrow edge.
-<li> 
-Never insert more than one wire in a hole.
+<li>Use only the wire that is supplied to you (24 gauge, solid
+  telephone cable).</li>
+<li>Use only components with small diameter leads (1/4 watt resistors,
+  capacitors, ICs, etc.).</li>
+<li>Do not insert power resistor leads into the breadboard.  When using power</li>
+<li>transistors in the breadboard, use your pliers to
+  twist each lead 90 degrees so that they are gripped by the broad face rather
+  than the narrow edge.</li>
+<li>Never insert more than one wire in a hole.</li>
 </ul>
-<p>
-With the health of our breadboard assured, there
-are a few more things we can do to make sure that our connections
-are good ones.
+<p>With the health of our breadboard assured, there are a few more things we can
+do to make sure that our connections are good ones.</p>
 <ul>
-<li> 
-Strip about 7&nbsp;mm of insulation from each end of a piece of wire.
-Less than that raises the risk that insulation will be forced
-between the fingers of the clip.
-More leaves bare wire exposed that can short to adjacent components. Don't try to jam the wires far down into the breadboard because it can scratch the bottom and damage the connection.
-One exception: strip about 15&nbsp;mm from the end of a wire that
-will be clamped in one of the binding posts. Make sure copper is
-showing on both sides of the post when it is clamped down.
-<li> 
-When inserting a wire or component, use your needle nosed pliers
-rather than your fingers to hold it.
-Grip the wire or lead about 10&nbsp;mm from 
-the end and press straight down.
-<li> 
-If the end of a wire becomes kinked, cut it off or
-use your pliers to straighten it.
+<li>Strip about 7 mm of insulation from each end of a piece of wire.
+  Less than that raises the risk that insulation will be forced between the
+  fingers of the clip. More leaves bare wire exposed that can short to adjacent
+  components. Don't try to jam the wires far down into the breadboard because
+  it can scratch the bottom and damage the connection. One exception: strip
+  about 15 mm from the end of a wire that will be clamped in one of the binding
+  posts. Make sure copper is showing on both sides of the post when it is
+  clamped down.</li>
+<li>When inserting a wire or component, use your needle nosed pliers
+  rather than your fingers to hold it. Grip the wire or lead about 10 mm from
+  the end and press straight down.</li>
+<li>If the end of a wire becomes kinked, cut it off or use your pliers
+  to straighten it.</li>
 </ul>
               
             </div>

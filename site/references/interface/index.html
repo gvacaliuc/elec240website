@@ -57,19 +57,19 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../chapter1/">Introduction</a>
+    <a class="" href="../../introduction/">Introduction</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../chapter2/">Your Lab Report</a>
+    <a class="" href="../../lab-report/">Your Lab Report</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../chapter3/">Tools and Resources</a>
+    <a class="" href="../../tools-and-resources/">Tools and Resources</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../chapter4/">VirtualBench</a>
+    <a class="" href="../../virtualbench/">VirtualBench</a>
                 </li>
     </ul>
 	    </li>
@@ -80,7 +80,7 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../file.3/">Patch Cords and Cables</a>
+    <a class="" href="../patch-cords-and-cables/">Patch Cords and Cables</a>
                 </li>
                 <li class="">
                     
@@ -91,6 +91,15 @@
     <a class="current" href="./">The Interface Modules</a>
     <ul class="subnav">
             
+    <li class="toctree-l3"><a href="#pin-connections-and-the-interface-module">Pin Connections and the Interface Module</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#pin-connections">Pin Connections</a></li>
+        
+        </ul>
+    
+
     </ul>
                 </li>
                 <li class="">
@@ -118,27 +127,27 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../lab1/file.6/">Background</a>
+    <a class="" href="../../lab1/background/">Background</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../lab1/exp1.1/">DC Measurements: the DMM</a>
+    <a class="" href="../../lab1/experiment_1-1/">DC Measurements: the DMM</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../lab1/file.8/">Plotting Data in Matlab</a>
+    <a class="" href="../../lab1/plotting-help/">Plotting Data in Matlab</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../lab1/file.9/">Grounds and Grounding</a>
+    <a class="" href="../../lab1/interlude/">Grounds and Grounding</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../lab1/exp1.2/">The Oscilloscope and Function Generator</a>
+    <a class="" href="../../lab1/experiment_1-2/">The Oscilloscope and Function Generator</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../lab1/file.10/">Cleaning Up</a>
+    <a class="" href="../../lab1/postlude/">Cleaning Up</a>
                 </li>
     </ul>
 	    </li>
@@ -372,468 +381,257 @@
           <div role="main">
             <div class="section">
               
-                <h3>ELEC 241 Lab<hr></h3>
-
+                <p>ELEC 241 Lab</p>
+<hr />
+<h1 id="pin-connections-and-the-interface-module">Pin Connections and the Interface Module</h1>
+<p>The path from the instruments to the breadboard is provided by the
+<em>Interface Module</em>. This is a printed circuit board with a variety of
+different connectors and two short, single-row socket strips.</p>
 <p><center>
-<h1>
-Pin Connections and the Interface Module
-</h1>
-<h1></p>
-<p></h1>
-</center>
-<a name=interface_picture></a>
-The path from the instruments to the breadboard is provided
-by the
-<em>Interface Module</em>.
-This is a printed circuit board with a variety of different
-connectors and two short, single-row socket strips.
-<center>
-<IMG
- WIDTH="719" HEIGHT="310" ALIGN="BOTTOM" BORDER="0"
- SRC="/references/figs/img4.gif"
- ALT="\includegraphics[scale=0.800000]{interface.ps}"></p>
-<p></center>
-These are like the socket strips on the breadboard
-(five points connected together) except that
-instead of being connected just to themselves,
-the pins are also connected to the other
-connectors on the board.
-<p></p>
-<p><a name=interface_socket></a>
-Here's a closeup of the two halves of the socket strip
-(shown separately to fit the page better):
-<center>
-<IMG
- WIDTH="461" HEIGHT="268" ALIGN="BOTTOM" BORDER="0"
- SRC="/references/figs/img5.gif"
- ALT="\includegraphics[scale=0.500000]{iface_temp.ps}"></p>
-<p></center>
-<a name=interface_table></a>
-And here's a table of what the pins are connected to:
-<center>
+<img alt="" src="../figs/img4.gif" />
+</center></p>
+<p>These are like the socket strips on the breadboard (five points connected
+together) except that instead of being connected just to themselves, the pins
+are also connected to the other connectors on the board.</p>
+<p>Here's a closeup of the two halves of the socket strip (shown separately to fit
+the page better):</p>
+<p><center>
+<img alt="" src="../figs/img5.gif" />
+</center></p>
+<h3 id="pin-connections">Pin Connections</h3>
+<p>Here's a table of what each breadboard pin is connected to:</p>
+<hr />
 <table>
+<thead>
 <tr>
-<td>
-<b>Pin</b>
-<td>
-<b>Signal</b>
-<td>
-<b>Conn</b>
-<td>
-<b>Function</b>
-<td>
-<b>Pin</b>
-<td>
-<b>Signal</b>
-<td>
-<b>Function</b>
+<th><strong>Pin</strong></th>
+<th><strong>Signal</strong></th>
+<th><strong>Function</strong></th>
+<th><strong>Pin</strong></th>
+<th><strong>Signal</strong></th>
+<th><strong>Function</strong></th>
+</tr>
+</thead>
+<tbody>
 <tr>
-<td>
-1
-<td>
-bnc1
-<td></p>
-<td>
-J1-1 BNC 1
-<td>
-28
-<td>
-nc
-<td>
-No connection
+<td>1</td>
+<td>bnc1</td>
+<td>J1-1 BNC 1</td>
+<td>28</td>
+<td>nc</td>
+<td>No connection</td>
+</tr>
 <tr>
-<td>
-2
-<td>
-bnc2
-<td>
-
-<td>
-J1-2 BNC 2
-<td>
-29
-<td>
-Rx
-<td>
-receiver
+<td>2</td>
+<td>bnc2</td>
+<td>J1-2 BNC 2</td>
+<td>29</td>
+<td>Rx</td>
+<td>receiver</td>
+</tr>
 <tr>
-<td>
-3
-<td>
-bnc3
-<td>
-
-<td>
-J1-3 BNC 3
-<td>
-30
-<td>
-nc
-<td>
-No connection
+<td>3</td>
+<td>bnc3</td>
+<td>J1-3 BNC 3</td>
+<td>30</td>
+<td>nc</td>
+<td>No connection</td>
+</tr>
 <tr>
-<td>
-4
-<td>
-ph1l
-<td>
-
-<td>
-J1-4 Phone Plug 1 left
-<td>
-31
-<td>
-nc
-<td>
-No connection
+<td>4</td>
+<td>ph1l</td>
+<td>J1-4 Phone Plug 1 left</td>
+<td>31</td>
+<td>nc</td>
+<td>No connection</td>
+</tr>
 <tr>
-<td>
-5
-<td>
-ph1r
-<td>
-
-<td>
-J1-4 Phone Plug 1 right
-<td>
-32
-<td>
-nc
-<td>
-No connection
+<td>5</td>
+<td>ph1r</td>
+<td>J1-4 Phone Plug 1 right</td>
+<td>32</td>
+<td>nc</td>
+<td>No connection</td>
+</tr>
 <tr>
-<td>
-6
-<td>
-ph2l
-<td>
-
-<td>
-J1-5 Phone Plug 2 left
-<td>
-33
-<td>
-nc
-<td>
-No connection
+<td>6</td>
+<td>ph2l</td>
+<td>J1-5 Phone Plug 2 left</td>
+<td>33</td>
+<td>nc</td>
+<td>No connection</td>
+</tr>
 <tr>
-<td>
-7
-<td>
-ph2r
-<td>
-
-<td>
-J1-5 Phone Plug 2 right
-<td>
-34
-<td>
-nc
-<td>
-No connection
+<td>7</td>
+<td>ph2r</td>
+<td>J1-5 Phone Plug 2 right</td>
+<td>34</td>
+<td>nc</td>
+<td>No connection</td>
+</tr>
 <tr>
-<td>
-8
-<td>
-ph3l
-<td>
-
-<td>
-J1-6 Phone Plug 3 left
-<td>
-35
-<td>
-nc
-<td>
-No connection
+<td>8</td>
+<td>ph3l</td>
+<td>J1-6 Phone Plug 3 left</td>
+<td>35</td>
+<td>nc</td>
+<td>No connection</td>
+</tr>
 <tr>
-<td>
-9
-<td>
-ph3r
-<td>
-
-<td>
-J1-6 Phone Plug 3 right
-<td>
-36
-<td>
-nc
-<td>
-No connection
+<td>9</td>
+<td>ph3r</td>
+<td>J1-6 Phone Plug 3 right</td>
+<td>36</td>
+<td>nc</td>
+<td>No connection</td>
+</tr>
 <tr>
-<td>
-10
-<td>
-ear1
-<td>
-
-<td>
-J1-7 Handset earpiece
-<td>
-37
-<td>
-nc
-<td>
-No connection
+<td>10</td>
+<td>ear1</td>
+<td>J1-7 Handset earpiece</td>
+<td>37</td>
+<td>nc</td>
+<td>No connection</td>
+</tr>
 <tr>
-<td>
-11
-<td>
-ear2
-<td>
-
-<td>
-J1-7 Handset earpiece
-<td>
-38
-<td>
-nc
-<td>
-No connection
+<td>11</td>
+<td>ear2</td>
+<td>J1-7 Handset earpiece</td>
+<td>38</td>
+<td>nc</td>
+<td>No connection</td>
+</tr>
 <tr>
-<td>
-12
-<td>
-mic1
-<td>
-
-<td>
-J1-7 Handset microphone
-<td>
-39
-<td>
-Tx
-<td>
-transmitter
+<td>12</td>
+<td>mic1</td>
+<td>J1-7 Handset microphone</td>
+<td>39</td>
+<td>Tx</td>
+<td>transmitter</td>
+</tr>
 <tr>
-<td>
-13
-<td>
-mic2
-<td>
-
-<td>
-J1-7 Handset microphone
-<td>
-40
-<td>
-nc
-<td>
-No connection
+<td>13</td>
+<td>mic2</td>
+<td>J1-7 Handset microphone</td>
+<td>40</td>
+<td>nc</td>
+<td>No connection</td>
+</tr>
 <tr>
-<td>
-14
-<td>
-gnd
-<td>
-
-<td>
-Ground
-<td>
-41
-<td>
-gnd
-<td>
-Ground
+<td>14</td>
+<td>gnd</td>
+<td>Ground</td>
+<td>41</td>
+<td>gnd</td>
+<td>Ground</td>
+</tr>
 <tr>
-<td>
-15
-<td>
-sound_mic
-<td>
-
-<td>
-J2-1  microphone
-<td>
-42
-<td>
-ach0
-<td>
-input0
+<td>15</td>
+<td>sound_mic</td>
+<td>J2-1  microphone</td>
+<td>42</td>
+<td>ach0</td>
+<td>input0</td>
+</tr>
 <tr>
-<td>
-16
-<td>
-sound_spkrl
-<td>
-
-<td>
-J2-1 speaker left
-<td>
-43
-<td>
-ach1
-<td>
-input1
+<td>16</td>
+<td>sound_spkrl</td>
+<td>J2-1 speaker left</td>
+<td>43</td>
+<td>ach1</td>
+<td>input1</td>
+</tr>
 <tr>
-<td>
-17
-<td>
-sound_spkrr
-<td>
-
-<td>
-J2-1 speaker right
-<td>
-44
-<td>
-ach2
-<td>
-input2
+<td>17</td>
+<td>sound_spkrr</td>
+<td>J2-1 speaker right</td>
+<td>44</td>
+<td>ach2</td>
+<td>input2</td>
+</tr>
 <tr>
-<td>
-18
-<td>
-sound_lin_inl
-<td>
-
-<td>
-J2-1 line in left
-<td>
-45
-<td>
-ach3
-<td>
-input3
+<td>18</td>
+<td>sound_lin_inl</td>
+<td>J2-1 line in left</td>
+<td>45</td>
+<td>ach3</td>
+<td>input3</td>
+</tr>
 <tr>
-<td>
-19
-<td>
-sound_lin_inr
-<td>
-
-<td>
-J2-1 line in right
-<td>
-46
-<td>
-ach4
-<td>
-input4
+<td>19</td>
+<td>sound_lin_inr</td>
+<td>J2-1 line in right</td>
+<td>46</td>
+<td>ach4</td>
+<td>input4</td>
+</tr>
 <tr>
-<td>
-20
-<td>
-sound_lin_outl
-<td>
-
-<td>
-J2-1 line out left
-<td>
-47
-<td>
-ach5
-<td>
-input5
+<td>20</td>
+<td>sound_lin_outl</td>
+<td>J2-1 line out left</td>
+<td>47</td>
+<td>ach5</td>
+<td>input5</td>
+</tr>
 <tr>
-<td>
-21
-<td>
-sound_lin_outr
-<td>
-
-<td>
-J2-1 line out right
-<td>
-48
-<td>
-ach6
-<td>
-input6
+<td>21</td>
+<td>sound_lin_outr</td>
+<td>J2-1 line out right</td>
+<td>48</td>
+<td>ach6</td>
+<td>input6</td>
+</tr>
 <tr>
-<td>
-22
-<td>
-gnd
-<td>
-
-<td>
-Ground
-<td>
-49
-<td>
-ach7
-<td>
-input7
+<td>22</td>
+<td>gnd</td>
+<td>Ground</td>
+<td>49</td>
+<td>ach7</td>
+<td>input7</td>
+</tr>
 <tr>
-<td>
-23
-<td>
-ph4l
-<td>
-
-<td>
-J2-2 Phone Plug 4 left
-<td>
-50
-<td>
-nc
-<td>
-No connection
+<td>23</td>
+<td>ph4l</td>
+<td>J2-2 Phone Plug 4 left</td>
+<td>50</td>
+<td>nc</td>
+<td>No connection</td>
+</tr>
 <tr>
-<td>
-24
-<td>
-ph4r
-<td>
-
-<td>
-J2-2 Phone Plug 4 right
-<td>
-51
-<td>
-dac0
-<td>
-output 0
+<td>24</td>
+<td>ph4r</td>
+<td>J2-2 Phone Plug 4 right</td>
+<td>51</td>
+<td>dac0</td>
+<td>output 0</td>
+</tr>
 <tr>
-<td>
-25
-<td>
-bnc1
-<td>
-
-<td>
-J2-3 BNC 4
-<td>
-52
-<td>
-dac1
-<td>
-output 1
+<td>25</td>
+<td>bnc1</td>
+<td>J2-3 BNC 4</td>
+<td>52</td>
+<td>dac1</td>
+<td>output 1</td>
+</tr>
 <tr>
-<td>
-26
-<td>
-bnc2
-<td>
-
-<td>
-J2-4 BNC 5
-<td>
-53
-<td>
-nc
-<td>
-No connection
+<td>26</td>
+<td>bnc2</td>
+<td>J2-4 BNC 5</td>
+<td>53</td>
+<td>nc</td>
+<td>No connection</td>
+</tr>
 <tr>
-<td>
-27
-<td>
-bnc3
-<td>
-
-<td>
-J2-5 BNC 6
-<td>
-54
-<td>
-nc
-<td>
-No connection
+<td>27</td>
+<td>bnc3</td>
+<td>J2-5 BNC 6</td>
+<td>54</td>
+<td>nc</td>
+<td>No connection</td>
+</tr>
+</tbody>
 </table>
-Note: pins 15-21 go to PC sound card
-</center>
+<h4 id="note-pins-15-21-are-reserved-for-the-pc-sound-card-connection">Note: Pins 15-21 are reserved for the PC sound card connection.</h4>
               
             </div>
           </div>

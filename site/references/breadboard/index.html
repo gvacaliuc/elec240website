@@ -57,19 +57,19 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../chapter1/">Introduction</a>
+    <a class="" href="../../introduction/">Introduction</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../chapter2/">Your Lab Report</a>
+    <a class="" href="../../lab-report/">Your Lab Report</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../chapter3/">Tools and Resources</a>
+    <a class="" href="../../tools-and-resources/">Tools and Resources</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../chapter4/">VirtualBench</a>
+    <a class="" href="../../virtualbench/">VirtualBench</a>
                 </li>
     </ul>
 	    </li>
@@ -80,13 +80,24 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../file.3/">Patch Cords and Cables</a>
+    <a class="" href="../patch-cords-and-cables/">Patch Cords and Cables</a>
                 </li>
                 <li class=" current">
                     
     <a class="current" href="./">The Breadboard</a>
     <ul class="subnav">
             
+    <li class="toctree-l3"><a href="#the-breadboard">The Breadboard</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#the-concept">The Concept</a></li>
+        
+            <li><a class="toctree-l4" href="#how-it-works">How it Works</a></li>
+        
+        </ul>
+    
+
     </ul>
                 </li>
                 <li class="">
@@ -118,27 +129,27 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../lab1/file.6/">Background</a>
+    <a class="" href="../../lab1/background/">Background</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../lab1/exp1.1/">DC Measurements: the DMM</a>
+    <a class="" href="../../lab1/experiment_1-1/">DC Measurements: the DMM</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../lab1/file.8/">Plotting Data in Matlab</a>
+    <a class="" href="../../lab1/plotting-help/">Plotting Data in Matlab</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../lab1/file.9/">Grounds and Grounding</a>
+    <a class="" href="../../lab1/interlude/">Grounds and Grounding</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../lab1/exp1.2/">The Oscilloscope and Function Generator</a>
+    <a class="" href="../../lab1/experiment_1-2/">The Oscilloscope and Function Generator</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../lab1/file.10/">Cleaning Up</a>
+    <a class="" href="../../lab1/postlude/">Cleaning Up</a>
                 </li>
     </ul>
 	    </li>
@@ -372,96 +383,59 @@
           <div role="main">
             <div class="section">
               
-                <h3>ELEC 240 Lab<hr></h3>
-
+                <p>ELEC 240 Lab</p>
+<hr />
+<h1 id="the-breadboard">The Breadboard</h1>
+<h3 id="the-concept">The Concept</h3>
+<p>When building a "permanent circuit" the components can be "grown" together (as
+in an integrated circuit), soldered together (as on a printed circuit board),
+or held together by screws and clamps (as in house wiring). In lab, we want
+something that is easy to assemble and easy to change. We also want something
+that can be used with the same components that "real" circuits use. Most of
+these components have pieces of wire or metal tabs sticking out of them to form
+their terminals.</p>
+<h3 id="how-it-works">How it Works</h3>
+<p>The heart of the solderless breadboard is a small metal clip that looks like
+this:</p>
 <p><center>
-<h1>
-The Breadboard
-</h1>
-<h1></p>
-<p></h1>
+<img alt="" src="../figs/ap4.jpg" />
 </center></p>
-<h3>The Concept</h3>
-
-<p>
-When building a &quot;permanent circuit" the components can be
-&quot;grown" together (as in an integrated circuit),
-soldered together (as on a printed circuit board),
-or held together by screws and clamps (as in house wiring).
-In lab, we want something that is easy to assemble and easy to change.
-We also want something that can be used with the same components that
-&quot;real" circuits use.
-Most of these components have pieces of wire or metal tabs sticking
-out of them to form their terminals.
-<h3>How it Works</h3>
-<p>
-The heart of the solderless breadboard is a small metal clip
-that looks like this:
-<center>
-<img src=../figs/ap4.jpg>
-</center>
-Each of the pairs of fingers is mechanically independent from the others, so
-we can insert the end of a wire between any pair
-without reducing the tension in any of the other fingers. However when we insert a wire between any pair, we electrically connect all metal fingers together.
-<p>
-To make a breadboard, an array of these clips is embedded in
-a plastic block which holds them in place and insulates
-them from each other, like this:
-<center>
-<img src=../figs/ap2.jpg>
-</center>
-
-<p>
-Depending on the size and arrangement of the clips, we get
-either a socket strip or a bus strip.
-
-The socket strip is used for connecting components together.
-It has two rows of short (5 contact) clips
-arranged one above another, like this:
-<center>
-<IMG
- WIDTH="561" HEIGHT="102" ALIGN="BOTTOM" BORDER="0"
- SRC="../figs/img1.gif"
- ALT="\includegraphics[scale=0.650000]{socket.ps}">
-
-
-</center>
-
-The bus strip is used to distribute power and ground voltages
-through the circuit.
-It has has six long (24 contact) clips
-arranged lengthwise, like this:
-<center>
-<IMG
- WIDTH="534" HEIGHT="24" ALIGN="BOTTOM" BORDER="0"
- SRC="../figs/img2.gif"
- ALT="\includegraphics[scale=0.650000]{bus.ps}">
-
-
-</center>
-Note that the bus strip is not electrically connected in the center. If you want a single, continuous bus, you will have to bridge that central gap yourself.
-<p>
-When we combine two socket strips, three bus strips,
-power connectors, power tie points, interface modules,
-and an interface connector on a large printed circuit board,
-we get the complete breadboard:
-<center>
-<IMG
- WIDTH="634" HEIGHT="489" ALIGN="BOTTOM" BORDER="0"
- SRC="../figs/img3.gif"
- ALT="\includegraphics[scale=0.750000]{sb_123.ps}">
-
-
-</center>
-(In this picture we have replaced the plastic covers, hiding the
-connection between the terminal points).
-<p>
-The breadboard lets us connect components together
-and by wiring the bus strips to the binding posts and the binding
-posts to the power supply, to connect the power supply to the
-circuit.
-Now what we need is a way to bring
-connections from the rest of the instruments into the breadboard.
+<p>Each of the pairs of fingers is mechanically independent from the others, so we
+can insert the end of a wire between any pair without reducing the tension in
+any of the other fingers. However when we insert a wire between any pair, we
+electrically connect all metal fingers together.</p>
+<p>To make a breadboard, an array of these clips is embedded in a plastic block
+which holds them in place and insulates them from each other, like this:</p>
+<p><center>
+<img alt="" src="../figs/ap2.jpg" />
+</center></p>
+<p>Depending on the size and arrangement of the clips, we get either a socket
+strip or a bus strip. The socket strip is used for connecting components
+together. It has two rows of short (5 contact) clips arranged one above
+another, like this:</p>
+<p><center>
+<img alt="" src="../figs/img1.gif" />
+</center></p>
+<p>The bus strip is used to distribute power and ground voltages through the
+circuit. It has has six long (24 contact) clips arranged lengthwise, like this:</p>
+<p><center>
+<img alt="" src="../figs/img2.gif" />
+</center></p>
+<p>Note that the bus strip is not electrically connected in the center. If you
+want a single, continuous bus, you will have to bridge that central gap
+yourself.</p>
+<p>When we combine two socket strips, three bus strips, power connectors, power
+tie points, interface modules, and an interface connector on a large printed
+circuit board, we get the complete breadboard:</p>
+<p><center>
+<img alt="" src="../figs/img3.gif" />
+</center></p>
+<p>(In this picture we have replaced the plastic covers, hiding the connection
+between the terminal points).</p>
+<p>The breadboard lets us connect components together and by wiring the bus strips
+to the binding posts and the binding posts to the power supply, to connect the
+power supply to the circuit. Now what we need is a way to bring connections
+from the rest of the instruments into the breadboard.</p>
               
             </div>
           </div>
@@ -472,7 +446,7 @@ connections from the rest of the instruments into the breadboard.
         <a href="../interface/" class="btn btn-neutral float-right" title="The Interface Modules">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../file.3/" class="btn btn-neutral" title="Patch Cords and Cables"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../patch-cords-and-cables/" class="btn btn-neutral" title="Patch Cords and Cables"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -498,7 +472,7 @@ connections from the rest of the instruments into the breadboard.
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../file.3/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../patch-cords-and-cables/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
         <span style="margin-left: 15px"><a href="../interface/" style="color: #fcfcfc">Next &raquo;</a></span>

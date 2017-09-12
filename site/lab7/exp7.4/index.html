@@ -57,19 +57,19 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../chapter1/">Introduction</a>
+    <a class="" href="../../introduction/">Introduction</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../chapter2/">Your Lab Report</a>
+    <a class="" href="../../lab-report/">Your Lab Report</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../chapter3/">Tools and Resources</a>
+    <a class="" href="../../tools-and-resources/">Tools and Resources</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../chapter4/">VirtualBench</a>
+    <a class="" href="../../virtualbench/">VirtualBench</a>
                 </li>
     </ul>
 	    </li>
@@ -80,7 +80,7 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../references/file.3/">Patch Cords and Cables</a>
+    <a class="" href="../../references/patch-cords-and-cables/">Patch Cords and Cables</a>
                 </li>
                 <li class="">
                     
@@ -115,27 +115,27 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../lab1/file.6/">Background</a>
+    <a class="" href="../../lab1/background/">Background</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../lab1/exp1.1/">DC Measurements: the DMM</a>
+    <a class="" href="../../lab1/experiment_1-1/">DC Measurements: the DMM</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../lab1/file.8/">Plotting Data in Matlab</a>
+    <a class="" href="../../lab1/plotting-help/">Plotting Data in Matlab</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../lab1/file.9/">Grounds and Grounding</a>
+    <a class="" href="../../lab1/interlude/">Grounds and Grounding</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../lab1/exp1.2/">The Oscilloscope and Function Generator</a>
+    <a class="" href="../../lab1/experiment_1-2/">The Oscilloscope and Function Generator</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../lab1/file.10/">Cleaning Up</a>
+    <a class="" href="../../lab1/postlude/">Cleaning Up</a>
                 </li>
     </ul>
 	    </li>
@@ -316,10 +316,7 @@
     <a class="current" href="./">Filtering, Continued</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#part-a-new-filters">Part A: New Filters</a></li>
-    
-
-    <li class="toctree-l3"><a href="#part-b-better-iir-filters">Part B: Better IIR Filters</a></li>
+    <li class="toctree-l3"><a href="#experiment-74">Experiment 7.4</a></li>
     
 
     </ul>
@@ -378,70 +375,77 @@
           <div role="main">
             <div class="section">
               
-                <h3>ELEC 240 Lab<hr></h3>
-
-<p><center>
-<h2>
-Experiment 7.4
-</h2></center></p>
-<h3 id="part-a-new-filters">Part A: New Filters</h3>
-<p>Since multiplying a time function by <span>\(cos(2f_0n)\)</span> shifts the spectrum of the signal by <span>\(f_0\)</span> in the frequency domain, we can shift the frequency response of a filter by multiplying its time domain representation (its unit-pulse response) by <span>\(cos(2f_0n)\)</span>. In the case of an FIR filter, this is particularly handy, because the unit-sample response <em>is</em> the filter. So if we multiply the coefficients of an FIR filter by <span>\(cos(2f_0n)\)</span> we get a new filter having the same <em>shape</em> as the old one (including <em>negative</em> frequencies) but centered about <span>\(f_0\)</span> rather than zero.  </p>
-<p>We saw this happen indirectly when we changed the sign of <span>\(a_1\)</span> in our first-order IIR filter. The frequency response went from low pass to high pass and the new pulse response contained the same values as the old, but they alternated in sign, i.e. were multiplied by:<br />
-<span>\(cos(2\pi\frac{1}{2}n) = cos({\pi}n) = (-1)^n\)</span>  </p>
-<p>Let's try this with an FIR filter. Generate a length 50 FIR filter having a bandwidth of 1000 Hz.  </p>
-<pre><code class="matlab">b0=fir1(50,1000/5000);
-</code></pre>
-
-<p>Plot its frequency response to verify it is correct.  </p>
-<pre><code class="matlab">freqz(b0,1)
-</code></pre>
-
-<p>Create a new filter by multiplying the coefficients by <span>\(cos({\pi}n)\)</span>.  </p>
-<pre><code class="matlab">b1 = b0 .* cos(pi*[0:50]);
-</code></pre>
-
-<p>Once again we have a high pass filter, but this time much more nearly ideal than our simple IIR.  </p>
-<pre><code class="matlab">freqz(b1,1)
-</code></pre>
-
-<p>Apply this filter to your speech reference signal.  </p>
-<pre><code class="matlab">out1=filter(b1, 1, sig1);
-</code></pre>
-
-<p>Listen to the filter output and plot its spectrogram. What happens if we don't shift all the way to <span>\(\frac{Fs}{2}\)</span>? Let's try this, but with a narrower filter. Generate a length 50 FIR filter having a bandwidth of 200 Hz.  </p>
-<pre><code class="matlab">b=fir1(50,200/5000);
-</code></pre>
-
-<p>Plot its frequency response to verify it is correct.  </p>
-<pre><code class="matlab">freqz(b,1)
-</code></pre>
-
-<p>Shift its response up to 2 kHz (<span>\(0.2*Fs\)</span>).  </p>
-<pre><code class="matlab">b2 = b .* cos(0.4*pi*[0:50]);
-freqz(b2,1)
-</code></pre>
-
-<p><strong>What is the bandwidth of this bandpass filter? How does it relate to the bandwidth of the lowpass filter?</strong>  </p>
-<p>Apply it to your speech reference signal.  </p>
-<pre><code class="matlab">out2=filter(b2, 1, sig1);
-</code></pre>
-
-<p>Listen to the filter output and plot its spectrogram.  </p>
-<p>Hint: When a signal is so small that it is hard to hear, or so large that it distorts, use the <code>soundsc()</code> function instead of <code>sound()</code>. This scales the signal to just fill the available output range.  </p>
-<pre><code class="matlab">soundsc(out2, Fs)
-</code></pre>
-
-<h3 id="part-b-better-iir-filters">Part B: Better IIR Filters</h3>
-<p>So far, we've seen that long (in our case) FIR filters can be pretty good and that short filters of either type are pretty bad. What about long IIR filters? It turns out that if we let our transfer function have both a numerator and a denominator (i.e., both <span>\(a\)</span> and <span>\(b\)</span> coefficients) we can get filters of 'good' shape with a modest number of total coefficients. Filters of this form have been used in analog circuits (where filter order corresponds to the number of inductors and capacitors and op amps, and hence smaller is better) and the techniques for designing them carry over to digital filters. One of these is the Butterworth, which we've already seen. Another is the Elliptic or Cauer filter (so called because its design involves the use of the Jacobi elliptic function).  </p>
-<p>Let's design an <span>\(8^{th}\)</span> order Elliptic low pass filter with a cutoff frequency of <span>\(\frac{Fs}{8}\)</span>:  </p>
-<pre><code class="matlab">[b,a] = ellip(8, 1, 60, 1000/5000);
-freqz(b,a)
-</code></pre>
-
-<p>The first argument (8) is the filter order. The second argument (1) is the <em>passband ripple</em>, the amount (in dB) that we're willing to allow the actual value of the transfer function in the passband to deviate from the desired value (1, or 0 dB). The third argument (60) is the maximum value (in dB) that we're willing to allow the transfer function to have in the stopband. Subject to these constraints, the Elliptic design gives us the shortest possible <em>transition band</em>, the region where the transfer function is changing from one to zero.  </p>
-<p>Apply this filter to your reference signal, listen to the results, and look at the spectrogram. <strong>Can you see the difference between this filter and the 'equivalent' FIR filter (<span>\(b_0\)</span>)? Can you hear it?</strong>  </p>
-<p><strong>Write a summary of each of the different types of filter we've looked at (boxcar, first order IIR, Butterworth, fir1, elliptic). Consider such factors as the shape of the frequency response, phase characteristics, computational complexity, etc.</strong>  </p>
-<p><strong>Is any one type of filter clearly the "best" (or the "worst")? If not, can you identify circumstances where a particular filter <em>would</em> be the best choice (or should <em>not</em> be chosen)?</strong></p>
+                <p>ELEC 240 Lab</p>
+<hr />
+<h2 id="experiment-74">Experiment 7.4</h2>
+<p>### Part A: New Filters Since multiplying a time function by
+$cos(2f_0n)$ shifts the spectrum of the signal by $f_0$ in the
+frequency domain, we can shift the frequency response of a filter by
+multiplying its time domain representation (its unit-pulse response) by
+$cos(2f_0n)$. In the case of an FIR filter, this is particularly
+handy, because the unit-sample response *is* the filter. So if we
+multiply the coefficients of an FIR filter by $cos(2f_0n)$ we get a
+new filter having the same *shape* as the old one (including
+*negative* frequencies) but centered about $f_0$ rather than zero.
+We saw this happen indirectly when we changed the sign of $a_1$ in
+our first-order IIR filter. The frequency response went from low pass to
+high pass and the new pulse response contained the same values as the
+old, but they alternated in sign, i.e. were multiplied by:
+$cos(2\pi\frac{1}{2}n) = cos({\pi}n) = (-1)\^n$ Let's try this with
+an FIR filter. Generate a length 50 FIR filter having a bandwidth of
+1000 Hz. ```matlab b0=fir1(50,1000/5000); ``` Plot its frequency
+response to verify it is correct. ```matlab freqz(b0,1) ``` Create
+a new filter by multiplying the coefficients by $cos({\pi}n)$.
+```matlab b1 = b0 .* cos(pi*[0:50]); ``` Once again we have a
+high pass filter, but this time much more nearly ideal than our simple
+IIR. ```matlab freqz(b1,1) ``` Apply this filter to your speech
+reference signal. ```matlab out1=filter(b1, 1, sig1); ``` Listen
+to the filter output and plot its spectrogram. What happens if we don't
+shift all the way to $\frac{Fs}{2}$? Let's try this, but with a
+narrower filter. Generate a length 50 FIR filter having a bandwidth of
+200 Hz. ```matlab b=fir1(50,200/5000); ``` Plot its frequency
+response to verify it is correct. ```matlab freqz(b,1) ``` Shift
+its response up to 2 kHz ($0.2*Fs$). ```matlab b2 = b .*
+cos(0.4*pi*[0:50]); freqz(b2,1) ``` **What is the bandwidth of
+this bandpass filter? How does it relate to the bandwidth of the lowpass
+filter?** Apply it to your speech reference signal. ```matlab
+out2=filter(b2, 1, sig1); ``` Listen to the filter output and plot
+its spectrogram. Hint: When a signal is so small that it is hard to
+hear, or so large that it distorts, use the ```soundsc()```
+function instead of ```sound()```. This scales the signal to just
+fill the available output range. ```matlab soundsc(out2, Fs) ```
+### Part B: Better IIR Filters So far, we've seen that long (in our
+case) FIR filters can be pretty good and that short filters of either
+type are pretty bad. What about long IIR filters? It turns out that if
+we let our transfer function have both a numerator and a denominator
+(i.e., both $a$ and $b$ coefficients) we can get filters of 'good'
+shape with a modest number of total coefficients. Filters of this form
+have been used in analog circuits (where filter order corresponds to the
+number of inductors and capacitors and op amps, and hence smaller is
+better) and the techniques for designing them carry over to digital
+filters. One of these is the Butterworth, which we've already seen.
+Another is the Elliptic or Cauer filter (so called because its design
+involves the use of the Jacobi elliptic function). Let's design an
+$8\^{th}$ order Elliptic low pass filter with a cutoff frequency of
+$\frac{Fs}{8}$: ```matlab [b,a] = ellip(8, 1, 60, 1000/5000);
+freqz(b,a) ``` The first argument (8) is the filter order. The second
+argument (1) is the *passband ripple*, the amount (in dB) that we're
+willing to allow the actual value of the transfer function in the
+passband to deviate from the desired value (1, or 0 dB). The third
+argument (60) is the maximum value (in dB) that we're willing to allow
+the transfer function to have in the stopband. Subject to these
+constraints, the Elliptic design gives us the shortest possible
+*transition band*, the region where the transfer function is changing
+from one to zero. Apply this filter to your reference signal, listen to
+the results, and look at the spectrogram. **Can you see the difference
+between this filter and the 'equivalent' FIR filter ($b_0$)? Can you
+hear it?** **Write a summary of each of the different types of
+filter we've looked at (boxcar, first order IIR, Butterworth, fir1,
+elliptic). Consider such factors as the shape of the frequency response,
+phase characteristics, computational complexity, etc.** **Is any one
+type of filter clearly the "best" (or the "worst")? If not, can you
+identify circumstances where a particular filter *would* be the best
+choice (or should *not* be chosen)?**</p>
               
             </div>
           </div>

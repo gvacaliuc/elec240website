@@ -57,19 +57,19 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../chapter1/">Introduction</a>
+    <a class="" href="../../introduction/">Introduction</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../chapter2/">Your Lab Report</a>
+    <a class="" href="../../lab-report/">Your Lab Report</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../chapter3/">Tools and Resources</a>
+    <a class="" href="../../tools-and-resources/">Tools and Resources</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../chapter4/">VirtualBench</a>
+    <a class="" href="../../virtualbench/">VirtualBench</a>
                 </li>
     </ul>
 	    </li>
@@ -80,7 +80,7 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../references/file.3/">Patch Cords and Cables</a>
+    <a class="" href="../../references/patch-cords-and-cables/">Patch Cords and Cables</a>
                 </li>
                 <li class="">
                     
@@ -115,27 +115,27 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../lab1/file.6/">Background</a>
+    <a class="" href="../../lab1/background/">Background</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../lab1/exp1.1/">DC Measurements: the DMM</a>
+    <a class="" href="../../lab1/experiment_1-1/">DC Measurements: the DMM</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../lab1/file.8/">Plotting Data in Matlab</a>
+    <a class="" href="../../lab1/plotting-help/">Plotting Data in Matlab</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../lab1/file.9/">Grounds and Grounding</a>
+    <a class="" href="../../lab1/interlude/">Grounds and Grounding</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../lab1/exp1.2/">The Oscilloscope and Function Generator</a>
+    <a class="" href="../../lab1/experiment_1-2/">The Oscilloscope and Function Generator</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../lab1/file.10/">Cleaning Up</a>
+    <a class="" href="../../lab1/postlude/">Cleaning Up</a>
                 </li>
     </ul>
 	    </li>
@@ -192,6 +192,26 @@
     <a class="current" href="./">Resistive Voltage Dividers</a>
     <ul class="subnav">
             
+    <li class="toctree-l3"><a href="#experiment-31">Experiment 3.1</a></li>
+    
+
+    <li class="toctree-l3"><a href="#resistive-voltage-dividers">Resistive Voltage Dividers</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#equipment">Equipment</a></li>
+        
+            <li><a class="toctree-l4" href="#part-a-measuring-ac-voltage-with-the-dmm">Part A: Measuring AC Voltage with the DMM</a></li>
+        
+            <li><a class="toctree-l4" href="#part-b-the-basic-voltage-divider">Part B: The Basic Voltage Divider</a></li>
+        
+            <li><a class="toctree-l4" href="#part-c-the-potentiometer">Part C: The Potentiometer</a></li>
+        
+            <li><a class="toctree-l4" href="#part-d-thevenin-equivalent-circuit-of-a-microphone">Part D: Thevenin Equivalent Circuit of a Microphone</a></li>
+        
+        </ul>
+    
+
     </ul>
                 </li>
                 <li class="">
@@ -372,208 +392,208 @@
           <div role="main">
             <div class="section">
               
-                <h3>ELEC 240 Lab<hr></h3>
-
-<p><center>
-<h2>
-Experiment 3.1
-</h2>
-<h2>
-Resistive Voltage Dividers
-</h2></center>
-<h3>
-    Equipment
-</h3>
+                <p>ELEC 240 Lab</p>
+<hr />
+<h2 id="experiment-31">Experiment 3.1</h2>
+<h2 id="resistive-voltage-dividers">Resistive Voltage Dividers</h2>
+<h3 id="equipment">Equipment</h3>
 <ul>
-<li>Test board
-<li>Resistors
-<li>1-k&#8486; Potentiometer
+<li>Test board</li>
+<li>Resistors</li>
+<li>1-kΩ Potentiometer</li>
 </ul>
-<p>
-    <a href=/misc_images/#bnc-t>BNC T Connector</a>
-</p>
-<h3>
-    Part A: Measuring AC Voltage with the DMM
-</h3>
-<p>
-    - Connect the BNC T-connector to CH1 of the scope.
-</p>
-<p>
-    - Use a BNC patch cord to connect one end of the T to the <tt>FGEN</tt> output. Connect a BNC clip lead to the other end of the T.
-    <br/>
-    <img
-        border="0"
-        width="350"
-        height="288"
-        src="../figs/img200.png"/>
-</p>
-<p>
-    - Set the <tt>FGEN</tt> to produce a 2-V peak-to-peak, 100Hz sine wave.
-</p>
-<p>
-    - Set the DMM to AC Volts and connect the probes to the clip leads.<strong> What is the voltage reading on the DMM?</strong>
-</p>
-<p>
-    - Set the <tt>FGEN</tt> to produce a square wave. What is the voltage reading on the DMM?
-</p>
-<p>
-    - Reset the <tt>FGEN</tt> to sine wave. Note the reading on the DMM at 5 Hz, 50 Hz, 500 Hz, 5 kHz, and 50 kHz.
-</p>
-<p>
-    - <strong>What is the useful frequency range of the DMM for measuring AC signals?</strong>
-</p>
-<DT>
-<DD><p>
-    o The AC voltage function of the DMM is calibrated to read (approximately) the <em>RMS</em> value of the waveform. RMS stands for root-mean-square i.e. the
-    square root of the mean value of the square of the function:
-    <br/>
-    <strong>
-        <img border="0" width="185" height="62" src="../figs/rmseqn.png"/>
-    </strong>
-</p></DD>
-<DD><p>
-o We'll see the importance of this when we study power. For now just remember that for a sine wave, V<sub>RMS</sub> = 0.707 V<sub>peak</sub>.    <strong></strong>
-</p></DD>
-<h3>
-    Part B: The Basic Voltage Divider
-</h3>
-<p>
-    - Wire the following circuit using 10k&#8486; (brown-black-orange) resistors for both R<sub>1</sub> and R<sub>2</sub>:
-    <br/>
-    <strong>
-        <img border="0" width="348" height="151" src="../figs/img162.png"/>
-    </strong>
-</p>
-<p>
-    - <strong>What should the voltage divider ratio (v<sub>out</sub>/v<sub>s</sub>) be? </strong>
-</p>
-<p>
-    - Set the <tt>FGEN</tt> to produce a 2 V p-p sine wave.<strong></strong>
-</p>
-<p>
-    - <strong>Measure v<sub>out</sub> with the oscilloscope. Is it what you expect?</strong>
-</p>
-<p>
-    - Change R<sub>1</sub> and R<sub>2</sub> to 47&#8486; (yellow-violet-black). <strong>What is the output voltage?</strong>
-</p>
-<p>
-    - Now change R<sub>1</sub> and R<sub>2</sub> to 1M&#8486;. <strong>What is the output voltage?</strong>
-</p>
-<DD><p>
-    o No circuit exists in isolation. To be useful its input or output (or both) should be connected to some other circuit. Unfortunately the interaction
-    between the circuit and a non-ideal source or load causes it to behave differently than it would in an idealized situation. With careful design, this
-    interaction can be minimized or accounted for. If ignored it can reduce the performance of the system, or keep it from working altogether.<strong></strong>
-</p></DD>
-<p>
-    - A more accurate model of the system we measured would be:
-    <br/>
-    <strong>
-        <img border="0" width="369" height="95" src="../figs/img163.png"/>
-    </strong>
-</p>
-<p>
-- Based on your measurements,    <strong>what are the output resistance (R<sub>S</sub>) of the function generator and the input resistance (R<sub>L</sub>) of the scope?</strong>
-</p>
-<h3>
-    Part C: The Potentiometer
-</h3>
-<p>
-    - A potentiometer (pot for short) is a fixed value resistor with a third, movable contact or <em>slider </em>which may be positioned anywhere along the
-    resistive element. If we represent the position of the slider by &#945;, where &#945; varies between 0 (fully counterclockwise) and 1 (fully clockwise), then the
-    resistance between the lower end of the resistor and the slider will be &#945;R and between the slider and the upper end will be (1-&#945;)R, where R is the total
-    resistance of the potentiometer.
-</p>
-<p>
-    - If we connect the two fixed contacts to a voltage source and measure the output between the movable contact and one fixed contact, we get a variable
-    voltage divider:
-    <br/>
-    <img border="0" width="521" height="143" src="../figs/img164.png"/>
-</p>
-<p>
-    - Then the output is:
-    <br/>
-    <img border="0" width="352" height="48" src="../figs/poteqn.png"/>
-</p>
-<p>
-    - Select a 10k&#8486;. It will have three short wires sticking out in a triangular pattern. The center terminal is the slider contact and the two outer terminals
-    are the fixed contacts.
-    <br/>
-    <img border="0" width="377" height="196" src="../figs/pots.jpg"/>
-</p>
-<DD><p>
-    o
-    <em>
-        Note: Figuring out the value of a pot can be tricky. Some pots are labeled directly with the value (e.g. "100" or "10K"). Others are labeled using the
-        same code as for fixed resistors, except that numbers, rather than colors, are used. For example, a 10k&#8486; resistor would have the bands
-        brown-black-orange. The values of these colors are 1, 0, and 3, so a 10k&#8486; pot would have the label "103".
-    </em>
-</p></DD>
-<p>
-    - Wire the following circuit:
-    <br/>
-    <img border="0" width="366" height="121" src="../figs/img165.png"/>
-</p>
-<p>
-    - Set the function generator to produce a 2 V p-p 100-Hz sine wave.
-</p>
-<p>
-    - Set the potentiometer adjustment screw to midscale and <strong>measure v<sub>out</sub>.</strong>
-</p>
-<p>
-    - The pot has a scale divided into 10 equal divisions, presumably representing 10 equal divisions of resistance. Set the pot to each of these 10 divisions
-    and measure v<sub>out</sub>. <strong>Is this presumption correct?</strong>
-</p>
-<h3>
-    Part D: Thevenin Equivalent Circuit of a Microphone
-</h3>
-<p>
-    - Recall that the Thevenin theory states that any DC circuit can be modeled as a power source and resistance. If a known resistive load is attached to a
-'blackbox' circuit, such as an unknown power supply, the Thevenin equivalence can be found for this blackbox circuit.    <strong>How do you find the Thevenin equivalent circuit?</strong>
-</p>
-<p>
-    - Another advantage of knowing the Thevenin equivalence of a blackbox circuit is that we can determine a load resistance that maximizes the power transfer
-    to the load. <strong>What should the load resistance be for maximum power transfer?</strong>
-</p>
-<DD><p>
-    o Note: Thevenin theory not only applies to power supplies and function generators, but also to sensors. When sensors detect signals and provide some
-    outputs, they can be considered as sources with dependent voltage or current supplies.
-</p></DD>
-<DD><p>
-    o Recall that a speaker produces sound by converting current flowing through the voice coil into mechanical motion of the speaker cone. By reversing this
-    process, it is also possible to use a speaker as a microphone. Sound waves will cause the speaker cone and voice coil to move. As the voice coil moves
-    through the permanent magnet, a current is induced in the voice coil and a voltage appears across the voice coil.
-</p></DD>
-<p>
-    - Two speakers will be used here as a pair. One of them is the speaker, converting the sine wave generated from function generator to sound. The other
-    plays the role of a microphone, and reverses the sound to electrical waves. They are connected as below.<br />
-    <br/>
-    <img border="0" width="273" height="273" src="../figs/img201.png"/>
-</p>
-<p>
-    - Now the two wires connected to the microphone (the upper speaker) can be considered as the two terminals of the load resistance. The whole system
-    consisting of the function generator, the speaker and the microphone should be seen as a circuit with a sine wave power supply (Thevenin voltage) and an
-    internal resistance (Thevenin resistance).
-</p>
-<p>
-- Set the <tt>FGEN</tt> to generate a sinusoid within audible range and connect the upper speaker (microphone) to the oscilloscope.    <strong>Measure the peak-to-peak amplitude, which will be the Thevenin voltage.</strong>
-</p>
-<p>
-    - Connect different resistances between 1 and 10 ohms to the output of the microphone and measure the load voltage V<sub>L</sub> of these resistances.
-</p>
-<p>
-    -
-    <strong>
-        Calculate the Thevenin resistance of the system for each load and the power transferred to each load resistance. What is the average Thevenin
-        resistance and is there any significant variation between measurements?
-    </strong>
-</p>
-<p>
-    - <strong>Draw the power vs. resistance diagram</strong> and find the maximum point.
-</p>
-<p>
-    <strong> </strong>
-</p>
-</DT></p>
+<p><a href="../../misc_images/#bnc-t">BNC T Connector</a></p>
+<h3 id="part-a-measuring-ac-voltage-with-the-dmm">Part A: Measuring AC Voltage with the DMM</h3>
+<ul>
+<li>
+<p>Connect the BNC T-connector to CH1 of the scope.</p>
+</li>
+<li>
+<p>Use a BNC patch cord to connect one end of the T to the <code>FGEN</code> output.
+Connect a BNC clip lead to the other end of the T.\
+<img alt="" src="../../figs/img200.png" />{width="350" height="288"}</p>
+</li>
+<li>
+<p>Set the <code>FGEN</code> to produce a 2-V peak-to-peak, 100Hz sine wave.</p>
+</li>
+<li>
+<p>Set the DMM to AC Volts and connect the probes to the clip leads.
+<strong>What is the voltage reading on the DMM?</strong></p>
+</li>
+<li>
+<p>Set the <code>FGEN</code> to produce a square wave. What is the voltage reading
+on the DMM?</p>
+</li>
+<li>
+<p>Reset the <code>FGEN</code> to sine wave. Note the reading on the DMM at 5 Hz, 50
+Hz, 500 Hz, 5 kHz, and 50 kHz.</p>
+</li>
+<li>
+<p><strong>What is the useful frequency range of the DMM for measuring AC
+signals?</strong></p>
+</li>
+</ul>
+<p>o The AC voltage function of the DMM is calibrated to read
+(approximately) the <em>RMS</em> value of the waveform. RMS stands for
+root-mean-square i.e. the square root of the mean value of the square of
+the function:\
+<strong><img alt="" src="../../figs/rmseqn.png" />{width="185" height="62"}</strong></p>
+<p>o We'll see the importance of this when we study power. For now just
+remember that for a sine wave, V~RMS~ = 0.707 V~peak~. ****</p>
+<h3 id="part-b-the-basic-voltage-divider">Part B: The Basic Voltage Divider</h3>
+<ul>
+<li>
+<p>Wire the following circuit using 10kΩ (brown-black-orange) resistors
+for both R~1~ and R~2~:\
+<strong><img alt="" src="../../figs/img162.png" />{width="348" height="151"}</strong></p>
+</li>
+<li>
+<p><strong>What should the voltage divider ratio (v~out~/v~s~) be?</strong></p>
+</li>
+<li>
+<p>Set the <code>FGEN</code> to produce a 2 V p-p sine wave.****</p>
+</li>
+<li>
+<p><strong>Measure v~out~ with the oscilloscope. Is it what you expect?</strong></p>
+</li>
+<li>
+<p>Change R~1~ and R~2~ to 47Ω (yellow-violet-black). <strong>What is the
+output voltage?</strong></p>
+</li>
+<li>
+<p>Now change R~1~ and R~2~ to 1MΩ. <strong>What is the output voltage?</strong></p>
+</li>
+</ul>
+<p>o No circuit exists in isolation. To be useful its input or output (or
+both) should be connected to some other circuit. Unfortunately the
+interaction between the circuit and a non-ideal source or load causes it
+to behave differently than it would in an idealized situation. With
+careful design, this interaction can be minimized or accounted for. If
+ignored it can reduce the performance of the system, or keep it from
+working altogether.****</p>
+<ul>
+<li>
+<p>A more accurate model of the system we measured would be:\
+<strong><img alt="" src="../../figs/img163.png" />{width="369" height="95"}</strong></p>
+</li>
+<li>
+<p>Based on your measurements, <strong>what are the output resistance (R~S~) of
+the function generator and the input resistance (R~L~) of the scope?</strong></p>
+</li>
+</ul>
+<h3 id="part-c-the-potentiometer">Part C: The Potentiometer</h3>
+<ul>
+<li>
+<p>A potentiometer (pot for short) is a fixed value resistor with a
+third, movable contact or <em>slider</em> which may be positioned anywhere
+along the resistive element. If we represent the position of the slider
+by α, where α varies between 0 (fully counterclockwise) and 1 (fully
+clockwise), then the resistance between the lower end of the resistor
+and the slider will be αR and between the slider and the upper end will
+be (1-α)R, where R is the total resistance of the potentiometer.</p>
+</li>
+<li>
+<p>If we connect the two fixed contacts to a voltage source and measure
+the output between the movable contact and one fixed contact, we get a
+variable voltage divider:\
+<img alt="" src="../../figs/img164.png" />{width="521" height="143"}</p>
+</li>
+<li>
+<p>Then the output is:\
+<img alt="" src="../../figs/poteqn.png" />{width="352" height="48"}</p>
+</li>
+<li>
+<p>Select a 10kΩ. It will have three short wires sticking out in a
+triangular pattern. The center terminal is the slider contact and the
+two outer terminals are the fixed contacts.\
+<img alt="" src="../../figs/pots.jpg" />{width="377" height="196"}</p>
+</li>
+</ul>
+<p>o <em>Note: Figuring out the value of a pot can be tricky. Some pots are
+labeled directly with the value (e.g. "100" or "10K"). Others are
+labeled using the same code as for fixed resistors, except that numbers,
+rather than colors, are used. For example, a 10kΩ resistor would have
+the bands brown-black-orange. The values of these colors are 1, 0, and
+3, so a 10kΩ pot would have the label "103".</em></p>
+<ul>
+<li>
+<p>Wire the following circuit:\
+<img alt="" src="../../figs/img165.png" />{width="366" height="121"}</p>
+</li>
+<li>
+<p>Set the function generator to produce a 2 V p-p 100-Hz sine wave.</p>
+</li>
+<li>
+<p>Set the potentiometer adjustment screw to midscale and <strong>measure
+v~out~.</strong></p>
+</li>
+<li>
+<p>The pot has a scale divided into 10 equal divisions, presumably
+representing 10 equal divisions of resistance. Set the pot to each of
+these 10 divisions and measure v~out~. <strong>Is this presumption correct?</strong></p>
+</li>
+</ul>
+<h3 id="part-d-thevenin-equivalent-circuit-of-a-microphone">Part D: Thevenin Equivalent Circuit of a Microphone</h3>
+<ul>
+<li>
+<p>Recall that the Thevenin theory states that any DC circuit can be
+modeled as a power source and resistance. If a known resistive load is
+attached to a 'blackbox' circuit, such as an unknown power supply, the
+Thevenin equivalence can be found for this blackbox circuit. <strong>How do
+you find the Thevenin equivalent circuit?</strong></p>
+</li>
+<li>
+<p>Another advantage of knowing the Thevenin equivalence of a blackbox
+circuit is that we can determine a load resistance that maximizes the
+power transfer to the load. <strong>What should the load resistance be for
+maximum power transfer?</strong></p>
+</li>
+</ul>
+<p>o Note: Thevenin theory not only applies to power supplies and function
+generators, but also to sensors. When sensors detect signals and provide
+some outputs, they can be considered as sources with dependent voltage
+or current supplies.</p>
+<p>o Recall that a speaker produces sound by converting current flowing
+through the voice coil into mechanical motion of the speaker cone. By
+reversing this process, it is also possible to use a speaker as a
+microphone. Sound waves will cause the speaker cone and voice coil to
+move. As the voice coil moves through the permanent magnet, a current is
+induced in the voice coil and a voltage appears across the voice coil.</p>
+<ul>
+<li>
+<p>Two speakers will be used here as a pair. One of them is the speaker,
+converting the sine wave generated from function generator to sound. The
+other plays the role of a microphone, and reverses the sound to
+electrical waves. They are connected as below.\
+<img alt="" src="../../figs/img201.png" />{width="273" height="273"}</p>
+</li>
+<li>
+<p>Now the two wires connected to the microphone (the upper speaker) can
+be considered as the two terminals of the load resistance. The whole
+system consisting of the function generator, the speaker and the
+microphone should be seen as a circuit with a sine wave power supply
+(Thevenin voltage) and an internal resistance (Thevenin resistance).</p>
+</li>
+<li>
+<p>Set the <code>FGEN</code> to generate a sinusoid within audible range and connect
+the upper speaker (microphone) to the oscilloscope. <strong>Measure the
+peak-to-peak amplitude, which will be the Thevenin voltage.</strong></p>
+</li>
+<li>
+<p>Connect different resistances between 1 and 10 ohms to the output of
+the microphone and measure the load voltage V~L~ of these resistances.</p>
+</li>
+<li>
+<p><strong>Calculate the Thevenin resistance of the system for each load and
+the power transferred to each load resistance. What is the average
+Thevenin resistance and is there any significant variation between
+measurements?</strong></p>
+</li>
+<li>
+<p><strong>Draw the power vs. resistance diagram</strong> and find the maximum point.</p>
+</li>
+</ul>
+<hr />
               
             </div>
           </div>
