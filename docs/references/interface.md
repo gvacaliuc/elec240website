@@ -1,468 +1,63 @@
-<h3>ELEC 241 Lab<hr></h3>
-<center>
-<h1>
+ELEC 241 Lab
+
+------------------------------------------------------------------------
+
 Pin Connections and the Interface Module
-</h1>
-<h1>
- 
-</h1>
-</center>
-<a name=interface_picture></a>
-The path from the instruments to the breadboard is provided
-by the
-<em>Interface Module</em>.
-This is a printed circuit board with a variety of different
-connectors and two short, single-row socket strips.
+========================================
+
+The path from the instruments to the breadboard is provided by the
+*Interface Module*. This is a printed circuit board with a variety of
+different connectors and two short, single-row socket strips.
+
 <center>
-<IMG
- WIDTH="719" HEIGHT="310" ALIGN="BOTTOM" BORDER="0"
- SRC="/references/figs/img4.gif"
- ALT="\includegraphics[scale=0.800000]{interface.ps}">
-
-
+![](./figs/img4.gif)
 </center>
-These are like the socket strips on the breadboard
-(five points connected together) except that
-instead of being connected just to themselves,
-the pins are also connected to the other
-connectors on the board.
-<p>
 
-<a name=interface_socket></a>
-Here's a closeup of the two halves of the socket strip
-(shown separately to fit the page better):
+These are like the socket strips on the breadboard (five points connected
+together) except that instead of being connected just to themselves, the pins
+are also connected to the other connectors on the board.
+
+Here's a closeup of the two halves of the socket strip (shown separately to fit
+the page better):
+
 <center>
-<IMG
- WIDTH="461" HEIGHT="268" ALIGN="BOTTOM" BORDER="0"
- SRC="/references/figs/img5.gif"
- ALT="\includegraphics[scale=0.500000]{iface_temp.ps}">
-
-
+![](./figs/img5.gif)
 </center>
-<a name=interface_table></a>
-And here's a table of what the pins are connected to:
-<center>
-<table>
-<tr>
-<td>
-<b>Pin</b>
-<td>
-<b>Signal</b>
-<td>
-<b>Conn</b>
-<td>
-<b>Function</b>
-<td>
-<b>Pin</b>
-<td>
-<b>Signal</b>
-<td>
-<b>Function</b>
-<tr>
-<td>
-1
-<td>
-bnc1
-<td>
- 
-<td>
-J1-1 BNC 1
-<td>
-28
-<td>
-nc
-<td>
-No connection
-<tr>
-<td>
-2
-<td>
-bnc2
-<td>
- 
-<td>
-J1-2 BNC 2
-<td>
-29
-<td>
-Rx
-<td>
-receiver
-<tr>
-<td>
-3
-<td>
-bnc3
-<td>
- 
-<td>
-J1-3 BNC 3
-<td>
-30
-<td>
-nc
-<td>
-No connection
-<tr>
-<td>
-4
-<td>
-ph1l
-<td>
- 
-<td>
-J1-4 Phone Plug 1 left
-<td>
-31
-<td>
-nc
-<td>
-No connection
-<tr>
-<td>
-5
-<td>
-ph1r
-<td>
- 
-<td>
-J1-4 Phone Plug 1 right
-<td>
-32
-<td>
-nc
-<td>
-No connection
-<tr>
-<td>
-6
-<td>
-ph2l
-<td>
- 
-<td>
-J1-5 Phone Plug 2 left
-<td>
-33
-<td>
-nc
-<td>
-No connection
-<tr>
-<td>
-7
-<td>
-ph2r
-<td>
- 
-<td>
-J1-5 Phone Plug 2 right
-<td>
-34
-<td>
-nc
-<td>
-No connection
-<tr>
-<td>
-8
-<td>
-ph3l
-<td>
- 
-<td>
-J1-6 Phone Plug 3 left
-<td>
-35
-<td>
-nc
-<td>
-No connection
-<tr>
-<td>
-9
-<td>
-ph3r
-<td>
- 
-<td>
-J1-6 Phone Plug 3 right
-<td>
-36
-<td>
-nc
-<td>
-No connection
-<tr>
-<td>
-10
-<td>
-ear1
-<td>
- 
-<td>
-J1-7 Handset earpiece
-<td>
-37
-<td>
-nc
-<td>
-No connection
-<tr>
-<td>
-11
-<td>
-ear2
-<td>
- 
-<td>
-J1-7 Handset earpiece
-<td>
-38
-<td>
-nc
-<td>
-No connection
-<tr>
-<td>
-12
-<td>
-mic1
-<td>
- 
-<td>
-J1-7 Handset microphone
-<td>
-39
-<td>
-Tx
-<td>
-transmitter
-<tr>
-<td>
-13
-<td>
-mic2
-<td>
- 
-<td>
-J1-7 Handset microphone
-<td>
-40
-<td>
-nc
-<td>
-No connection
-<tr>
-<td>
-14
-<td>
-gnd
-<td>
- 
-<td>
-Ground
-<td>
-41
-<td>
-gnd
-<td>
-Ground
-<tr>
-<td>
-15
-<td>
-sound_mic
-<td>
- 
-<td>
-J2-1  microphone
-<td>
-42
-<td>
-ach0
-<td>
-input0
-<tr>
-<td>
-16
-<td>
-sound_spkrl
-<td>
- 
-<td>
-J2-1 speaker left
-<td>
-43
-<td>
-ach1
-<td>
-input1
-<tr>
-<td>
-17
-<td>
-sound_spkrr
-<td>
- 
-<td>
-J2-1 speaker right
-<td>
-44
-<td>
-ach2
-<td>
-input2
-<tr>
-<td>
-18
-<td>
-sound_lin_inl
-<td>
- 
-<td>
-J2-1 line in left
-<td>
-45
-<td>
-ach3
-<td>
-input3
-<tr>
-<td>
-19
-<td>
-sound_lin_inr
-<td>
- 
-<td>
-J2-1 line in right
-<td>
-46
-<td>
-ach4
-<td>
-input4
-<tr>
-<td>
-20
-<td>
-sound_lin_outl
-<td>
- 
-<td>
-J2-1 line out left
-<td>
-47
-<td>
-ach5
-<td>
-input5
-<tr>
-<td>
-21
-<td>
-sound_lin_outr
-<td>
- 
-<td>
-J2-1 line out right
-<td>
-48
-<td>
-ach6
-<td>
-input6
-<tr>
-<td>
-22
-<td>
-gnd
-<td>
- 
-<td>
-Ground
-<td>
-49
-<td>
-ach7
-<td>
-input7
-<tr>
-<td>
-23
-<td>
-ph4l
-<td>
- 
-<td>
-J2-2 Phone Plug 4 left
-<td>
-50
-<td>
-nc
-<td>
-No connection
-<tr>
-<td>
-24
-<td>
-ph4r
-<td>
- 
-<td>
-J2-2 Phone Plug 4 right
-<td>
-51
-<td>
-dac0
-<td>
-output 0
-<tr>
-<td>
-25
-<td>
-bnc1
-<td>
- 
-<td>
-J2-3 BNC 4
-<td>
-52
-<td>
-dac1
-<td>
-output 1
-<tr>
-<td>
-26
-<td>
-bnc2
-<td>
- 
-<td>
-J2-4 BNC 5
-<td>
-53
-<td>
-nc
-<td>
-No connection
-<tr>
-<td>
-27
-<td>
-bnc3
-<td>
- 
-<td>
-J2-5 BNC 6
-<td>
-54
-<td>
-nc
-<td>
-No connection
-</table>
-Note: pins 15-21 go to PC sound card
-</center>
+
+### Pin Connections
+
+Here's a table of what each breadboard pin is connected to:
+
+------------------------------------------------------------------------
+
+| **Pin** | **Signal** | **Function** | **Pin** | **Signal** | **Function** | 
+| --- | ------ | -------- | --- | ------ | -------- |
+| 1   | bnc1 | J1-1 BNC 1 | 28 | nc | No connection | 
+| 2   | bnc2 | J1-2 BNC 2 | 29 | Rx | receiver | 
+| 3   | bnc3 | J1-3 BNC 3 | 30 | nc | No connection | 
+| 4   | ph1l | J1-4 Phone Plug 1 left | 31 | nc | No connection | 
+| 5   | ph1r | J1-4 Phone Plug 1 right | 32 | nc | No connection | 
+| 6   | ph2l | J1-5 Phone Plug 2 left | 33 | nc | No connection | 
+| 7   | ph2r | J1-5 Phone Plug 2 right | 34 | nc | No connection | 
+| 8   | ph3l | J1-6 Phone Plug 3 left | 35 | nc | No connection | 
+| 9   | ph3r | J1-6 Phone Plug 3 right | 36 | nc | No connection | 
+| 10  | ear1 | J1-7 Handset earpiece | 37 | nc | No connection | 
+| 11  | ear2 | J1-7 Handset earpiece | 38 | nc | No connection | 
+| 12  | mic1 | J1-7 Handset microphone | 39 | Tx | transmitter | 
+| 13  | mic2 | J1-7 Handset microphone | 40 | nc | No connection | 
+| 14  | gnd | Ground | 41 | gnd | Ground | 
+| 15  | sound_mic | J2-1  microphone | 42 | ach0 | input0 | 
+| 16  | sound_spkrl | J2-1 speaker left | 43 | ach1 | input1 | 
+| 17  | sound_spkrr | J2-1 speaker right | 44 | ach2 | input2 | 
+| 18  | sound_lin_inl | J2-1 line in left | 45 | ach3 | input3 | 
+| 19  | sound_lin_inr | J2-1 line in right | 46 | ach4 | input4 | 
+| 20  | sound_lin_outl | J2-1 line out left | 47 | ach5 | input5 | 
+| 21  | sound_lin_outr | J2-1 line out right | 48 | ach6 | input6 | 
+| 22  | gnd | Ground | 49 | ach7 | input7 | 
+| 23  | ph4l | J2-2 Phone Plug 4 left | 50 | nc | No connection | 
+| 24  | ph4r | J2-2 Phone Plug 4 right | 51 | dac0 | output 0 | 
+| 25  | bnc1 | J2-3 BNC 4 | 52 | dac1 | output 1 | 
+| 26  | bnc2 | J2-4 BNC 5 | 53 | nc | No connection | 
+| 27  | bnc3 | J2-5 BNC 6 | 54 | nc | No connection | 
+
+#### Note: Pins 15-21 are reserved for the PC sound card connection.

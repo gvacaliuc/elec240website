@@ -1,23 +1,20 @@
-<h3>ELEC 240 Lab<hr></h3>
-<center>
-<h1>
+ELEC 240 Lab
+
+------------------------------------------------------------------------
+
 Laboratory 5
-</h1>
-<h1>
+============
+
 More Op Amp Circuits
-</h1>
-</center>
+====================
 
+[](file.28)
 
-<a name=Introduction href=file.28><h3>Introduction</h3></a>
+### Introduction
 
+Experiments
+-----------
 
-<h2>Experiments</h2>
-<ul>
-<li>
-Experiment 5.1:
-<a name=Building a Function Generator href=exp5.1>Building a Function Generator</a>
-<li>
-Experiment 5.2:
-<a name=Bode Plots href=exp5.2>Bode Plots</a>
-</ul>
+-   Experiment 5.1: [Building a Function Generator](exp5.1)
+-   Experiment 5.2: [Bode Plots](exp5.2)
+

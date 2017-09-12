@@ -28,18 +28,10 @@ internally connected to the different types of terminals you see on the
 modules. This allows you to interface your circuits with the instruments
 and lab PC.
 
-[](file.3.html)
+### [Patch Cords and Cables](./references/patch-cords-and-cables)
 
-### Patch Cords and Cables
+### [The Breadboard](./references/breadboard)
 
-[](breadboard.html)
+### [Pin Connections](./references/interface)
 
-### The Breadboard
-
-[](interface.html)
-
-### Pin Connections
-
-[](wiring.html)
-
-### Wiring
+### [Wiring](./references/wiring)
