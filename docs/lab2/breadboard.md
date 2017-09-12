@@ -2,69 +2,58 @@ ELEC 240 Lab
 
 ------------------------------------------------------------------------
 
+Interlude
+---------
+
 The Breadboard
-==============
+--------------
 
-### The Concept
+Most instruments have banana plugs or BNC connectors, so we can interconnect
+them with patch cords. But as we begin to build our own circuits, we find that
+many components have different kinds of connectors and most just have pieces of
+wire coming out of them.
 
-When building a "permanent circuit" the components can be "grown"
-together (as in an integrated circuit), soldered together (as on a
-printed circuit board), or held together by screws and clamps (as in
-house wiring). In lab, we want something that is easy to assemble and
-easy to change. We also want something that can be used with the same
-components that "real" circuits use. Most of these components have
-pieces of wire or metal tabs sticking out of them to form their
-terminals.
+To connect a single component (or maybe two) to an instrument we can use the
+BNC clip leads or alligator clips on the banana plug patch cords, But for
+anything more complex, we need a scheme designed for connecting things with
+pieces of wire. The system we will use goes by a number of names: solderless
+breadboard, AP strip (after the original manufacturer), or proto-board. We will
+simply call them "breadboards".
 
-### How it Works
+Our breadboards actually consist of two parts: the lower portion which is the
+breadboard proper, and the upper part which contains the *interface modules*.
 
-The heart of the solderless breadboard is a small metal clip that looks
-like this:
+These are discussed in detail [here](../references/breadboard).
 
-![](../figs/ap4.jpg)
+In either case, we make connections between one component and another by
+pushing the ends of pieces of wire (possibly attached to a component) into the
+holes in the breadboard. Although this is simple in concept, there is a bit of
+art required to do it properly. See [here](../references/wiring) for information
+on the art of wiring.
 
-Each of the pairs of fingers is mechanically independent from the
-others, so we can insert the end of a wire between any pair without
-reducing the tension in any of the other fingers. However when we insert
-a wire between any pair, we electrically connect all metal fingers
-together.
+### The Interface Modules
 
-To make a breadboard, an array of these clips is embedded in a plastic
-block which holds them in place and insulates them from each other, like
-this:
+The purpose of the Interface Modules is to bring signals from other parts of
+the Lab Station to the breadboard for convenient wiring. To do this we must
+connect those components to the Interface Modules via the appropriate cables.
+Here is a drawing of the interface module with the names of the various
+connectors.
 
-![](../figs/ap2.jpg)
+<center>
+![](./figs/img158.png)
+</center>
 
-Depending on the size and arrangement of the clips, we get either a
-socket strip or a bus strip. The socket strip is used for connecting
-components together. It has two rows of short (5 contact) clips arranged
-one above another, like this:
+There is a table of connector pin assignments [here](../references/interface).
 
-![\\includegraphics\[scale=0.650000\]{socket.ps}](img1.gif){width="561"
-height="102"}
+In the next experiment we will use the interface module to access the
+oscilloscope, the function generator, and the Lab PC sound card. To connect the
+sound card, plug the round cable from the Lab PC (with the 8-pin round
+connector)
 
-The bus strip is used to distribute power and ground voltages through
-the circuit. It has has six long (24 contact) clips arranged lengthwise,
-like this:
+<center>
+![](./figs/din8.jpg)
+</center>
 
-![\\includegraphics\[scale=0.650000\]{bus.ps}](img2.gif){width="534"
-height="24"}
-
-Note that the bus strip is not electrically connected in the center. If
-you want a single, continuous bus, you will have to bridge that central
-gap yourself.
-
-When we combine two socket strips, three bus strips, power connectors,
-power tie points, interface modules, and an interface connector on a
-large printed circuit board, we get the complete breadboard:
-
-![\\includegraphics\[scale=0.750000\]{sb\_123.ps}](img3.gif){width="634"
-height="489"}
-
-(In this picture we have replaced the plastic covers, hiding the
-connection between the terminal points).
-
-The breadboard lets us connect components together and by wiring the bus
-strips to the binding posts and the binding posts to the power supply,
-to connect the power supply to the circuit. Now what we need is a way to
-bring connections from the rest of the instruments into the breadboard.
+into `J2-1` on the interface module. To connect the oscilloscope, use a BNC
+patch cord to connect `CH 1` of the scope to `J1-1` of the Interface module.
+Similarly, connect `CH 2` to `J1-2`.
