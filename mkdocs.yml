@@ -1,14 +1,14 @@
 site_name: ELEC 240 Labs
-theme: 'material'
+theme: 'readthedocs'
 pages:
 - Lab Home:
   - {Home: index.md}
-  - {Introduction: chapter1.md}
-  - {Your Lab Report: chapter2.md}
-  - {Tools and Resources: chapter3.md}
-  - {VirtualBench: chapter4.md}
+  - {Introduction: introduction.md}
+  - {Your Lab Report: lab-report.md}
+  - {Tools and Resources: tools-and-resources.md}
+  - {VirtualBench: virtualbench.md}
 - References:
-  - {Patch Cords and Cables: references/file.3.md}
+  - {Patch Cords and Cables: references/patch-cords-and-cables.md}
   - {The Breadboard: references/breadboard.md}
   - {The Interface Modules: references/interface.md}
   - {Wiring: references/wiring.md}
@@ -16,12 +16,12 @@ pages:
 - Lab 1:
   - {Home: lab1/index.md}
   - {Safety: lab1/safety.md}
-  - {Background: lab1/file.6.md}
-  - {'DC Measurements: the DMM': lab1/exp1.1.md}
-  - {Plotting Data in Matlab: lab1/file.8.md}
-  - {Grounds and Grounding: lab1/file.9.md}
-  - {The Oscilloscope and Function Generator: lab1/exp1.2.md}
-  - {Cleaning Up: lab1/file.10.md}
+  - {Background: lab1/background.md}
+  - {'DC Measurements: the DMM': lab1/experiment_1-1.md}
+  - {Plotting Data in Matlab: lab1/plotting-help.md}
+  - {Grounds and Grounding: lab1/interlude.md}
+  - {The Oscilloscope and Function Generator: lab1/experiment_1-2.md}
+  - {Cleaning Up: lab1/postlude.md}
 - Lab 2:
   - {Home: lab2/index.md}
   - {Background: lab2/file.12.md}
@@ -68,6 +68,7 @@ pages:
 docs_dir: ./docs
 markdown_extensions:
     - pymdownx.arithmatex
+    - admonition
 extra_javascript:
   - mathjax-config.js
   - https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
