@@ -18,8 +18,8 @@
   <script>
     // Current page data
     var mkdocs_page_name = "Electroacoustic Transducers II";
-    var mkdocs_page_input_path = "lab2/exp2.2.md";
-    var mkdocs_page_url = "/lab2/exp2.2/";
+    var mkdocs_page_input_path = "lab2/experiment_2-2.md";
+    var mkdocs_page_url = "/lab2/experiment_2-2/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -150,19 +150,19 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../file.12/">Background</a>
+    <a class="" href="../background/">Background</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../file.13/">Before You Begin</a>
+    <a class="" href="../before-you-begin/">Before You Begin</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../exp2.1/">Electroacoustic Transducers I</a>
+    <a class="" href="../experiment_2-1/">Electroacoustic Transducers I</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../file.14/">The Breadboard</a>
+    <a class="" href="../breadboard/">The Breadboard</a>
                 </li>
                 <li class=" current">
                     
@@ -189,7 +189,7 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../exp2.3/">Optoelectronic Signal Sources and Sinks</a>
+    <a class="" href="../experiment_2-3/">Optoelectronic Signal Sources and Sinks</a>
                 </li>
     </ul>
 	    </li>
@@ -402,73 +402,77 @@ signal.</p>
 </ul>
 <h3 id="part-a-microphone">Part A: Microphone</h3>
 <p>So far we have used an acoustic output device, the speaker, to convert
-electrical signals to sound. Now we need an input device to convert
-acoustic signals to electric ones.</p>
+electrical signals to sound. Now we need an input device to convert acoustic
+signals to electric ones.</p>
+<ol>
+<li>
+<p>Get a microphone from the supply room. It has two connectors: we will use
+   the larger one:</p>
+<p><center>
+<img alt="" src="../figs/mic_conns.jpg" />
+</center></p>
+</li>
+<li>
+<p>Use a BNC patch cord to connect <code>CH1</code> of the oscilloscope to <code>J1-1</code> of the test
+   board (refer to the <a href="../../references/interface">test board pin assigments</a>).</p>
+</li>
+<li>
+<p>Plug the microphone into <code>J1-4</code> of the test board.</p>
+</li>
+<li>
+<p>Take a piece of wire and strip 6-7 mm of insulation from each end. The end
+   of the wire should look like this:</p>
+<p><center>
+<img alt="" src="../figs/stripped.jpg" />
+</center></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The stripped length of a wire is very important. If it is too short,
+the insulation can prevent contact within the socket resulting in an
+intermittent connection. <strong>THIS IS ONE OF THE MOST COMMON PROBLEMS IN
+THE LAB.</strong> If it is too long, the exposed portion of the wire can short
+to other wires.</p>
+</div>
+</li>
+<li>
+<p>Plug one end of the wire to <a href="../../references/interface">pin1</a> and the other end
+   to <a href="../../references/interface">pin 4</a>. This will connect the microphone to the
+   scope (<code>CH1</code>). The grounds are automatically connected by the test board.</p>
+<p><center>
+<img alt="" src="../figs/photo2.2.1a1.jpg" />
+</center></p>
+</li>
+<li>
+<p>Ensure the following settings on the oscilloscope:  </p>
 <ul>
-<li>
-<p>Get a microphone from the supply room. It has two connectors: we will
-use the larger one.\
-<img alt="" src="../../figs/mic_conns.jpg" />{width="320" height="240"}</p>
-</li>
-<li>
-<p>Use a BNC patch cord to connect CH1 of the oscilloscope to J1-1 of the
-test board (refer to the <a href="../../references/interface">test board pin
-assigments</a>).</p>
-</li>
-<li>
-<p>Plug the microphone into J1-4 of the test board.</p>
-</li>
-<li>
-<p>Take a piece of wire and strip 6-7 mm of insulation from each end. The
-end of the wire should look like this:\
-<img alt="" src="../../figs/stripped.jpg" />{width="275" height="158"}</p>
-</li>
+<li>CH1</li>
+<li>Volts/Div : 5mV</li>
+<li>Time/Div: 1ms</li>
+<li>1X setting on CH1</li>
 </ul>
-<p>o**Note: The stripped length of a wire is very important. If it is too
-short, the insulation can prevent contact within the socket resulting in
-an intermittent connection. THIS IS ONE OF THE MOST COMMON PROBLEMS IN
-THE LAB. If it is too long, the exposed portion of the wire can short to
-other wires.**</p>
+</li>
+<li>
+<p>Speak, sing, or whistle into the microphone and observe the signal on the
+   scope. If the amplitude is too small, you can use the Volts / Div setting to
+   get a little more resolution.</p>
+</li>
+<li>
+<p>Experiment with the Time / Div settings to see what effect it has on the
+   display.</p>
+</li>
+<li>
+<p>Trigger: Drag the trigger icon (arrow followed by a T) just outside the
+   signal display so that it crosses the signal. <strong>What happens to the
+   display?</strong></p>
 <ul>
-<li>
-<p>Plug one end of the wire to <a href="../../references/interface">pin1</a> and the
-other end to <a href="../../references/interface">pin 4</a>. This will connect the
-microphone to the scope (CH1). The grounds are automatically connected
-by the test board.\
-<em><img alt="" src="../../figs/photo2.2.1a1.jpg" />{width="427" height="320"}</em></p>
-</li>
-<li>
-<p>Ensure the following settings on the oscilloscope:</p>
-</li>
+<li>What is Trigger? The oscilloscope has to continually refresh its
+  display since a continuous signal is being fed to it. If each "sweep"
+  (refresh of data) started at a different place on the signal all we would
+  get is a jumble of waveforms. The trigger sets an origin from which each
+  sweep should start. That way, particularly for periodic signals, the new
+  waveform traces onto the old waveform and the signal appears static.</li>
 </ul>
-<p>o CH1</p>
-<p>o Volts/Div : 5mV</p>
-<p>o Time/Div: 1ms</p>
-<p>o 1X setting on CH1</p>
-<ul>
-<li>
-<p>Speak, sing, or whistle into the microphone and observe the signal on
-the scope. If the amplitude is too small, you can use the Volts/Div
-setting to get a little more resolution.</p>
 </li>
-<li>
-<p>Experiment with the Time/Div settings to see what effect it has on the
-display.</p>
-</li>
-<li>
-<p>Trigger: Drag the trigger icon (arrow followed by a T) just outside
-the signal display so that it crosses the signal. <strong>What happens to the
-display?</strong></p>
-</li>
-</ul>
-<p>o What is Trigger? The oscilloscope has to continually refresh its
-display since a continuous signal is being fed to it. If each
-MISSINGDATAsweepMISSINGDATA (refresh of data) started at a different
-place on the signal all we would get is a jumble of waveforms. The
-trigger sets an origin from which each sweep should start. That way,
-particularly for periodic signals, the new waveform traces onto the old
-waveform and the signal appears static.</p>
-<ul>
 <li>
 <p>Measure the amplitude of the signal.</p>
 </li>
@@ -476,62 +480,59 @@ waveform and the signal appears static.</p>
 <p>Produce a sustained vowel sound. <strong>Which appears most sinusoidal?</strong></p>
 </li>
 <li>
-<p>Continue producing a sustained vowel sound and measure its frequency
-(by measuring the period).</p>
+<p>Continue producing a sustained vowel sound and measure its frequency (by
+    measuring the period).</p>
 </li>
 <li>
-<p>If you are musically inclined, sing or whistle the note <em>A</em> and
-measure its frequency. Otherwise search for the tone and play it on your
-phone. How does your measured frequency compare with the <em>official</em>
-value for the frequency of <em>A</em>?<strong>If there is a discrepancy, explain why
-it might be.</strong></p>
+<p>If you are musically inclined, sing or whistle the note <span>\(A\)</span> and measure its
+    frequency. Otherwise search for the tone and play it on your phone. How
+    does your measured frequency compare with the <em>official</em> value for the
+    frequency of <span>\(A\)</span>? <strong>If there is a discrepancy, explain why it might be.</strong></p>
 </li>
-</ul>
+</ol>
 <h3 id="part-b-the-lab-pc-as-a-signal-source">Part B: The Lab PC as a Signal Source</h3>
-<p>The microphone is a device that converts an acoustic pressure into a
-voltage. The Lab PC contains a device, the Sound Card, that converts a
-sequence of numbers into a voltage. This sequence of numbers could
-represent the <em>samples</em> of a physical signal that you learned about in
-ELEC 241.</p>
+<p>The microphone is a device that converts an acoustic pressure into a voltage.
+The Lab PC contains a device, the Sound Card, that converts a sequence of
+numbers into a voltage. This sequence of numbers could represent the <em>samples</em>
+of a physical signal that you learned about in ELEC 241.</p>
 <p>Since the computer can compute functions and the sound card can produce
-electrical output we could use the Lab PC as our 'function generator',
-which can produce more interesting functions than our VirtualBench
-<code>FGEN</code> can. Another advantage is that R~out~ of the sound card is less
-than that of the function generator, so we can connect the speaker
-directly with less signal loss. Let's look at a few examples.</p>
-<ul>
+electrical output we could use the Lab PC as our 'function generator', which
+can produce more interesting functions than our VirtualBench <code>FGEN</code> can.
+Another advantage is that <span>\(R_{out}\)</span> of the sound card is less than that of the
+function generator, so we can connect the speaker directly with less signal
+loss. Let's look at a few examples.</p>
+<ol>
 <li>
 <p>Plug the sound card cable from the Lab PC (with the <a href="../../misc_images/#din8">8-pin round
-connector</a>) into J2-1 on the test board.</p>
+   connector</a>) into <code>J2-1</code> on the test board.</p>
 </li>
 <li>
-<p>Connect a BNC clip lead to J1-3 and the clips to the loudspeaker.</p>
+<p>Connect a BNC clip lead to <code>J1-3</code> and the clips to the loudspeaker.</p>
 </li>
 <li>
-<p>Connect the speaker to the sound card speaker output but connecting a
-piece of wire between pins 3 and 20 on the test board.</p>
+<p>Connect the speaker to the sound card speaker output but connecting a piece
+   of wire between pins 3 and 20 on the test board.</p>
 </li>
 <li>
-<p>View the speaker output on CH1 (connect a wire from pin 20 to pin 1).</p>
+<p>View the speaker output on <code>CH1</code> (connect a wire from pin 20 to pin 1).</p>
 </li>
 <li>
 <p>Listen to and observe the waveform for the following signals:</p>
-</li>
-</ul>
-<p>o <a href="../../signals/sine.au">Signal 1</a></p>
-<p>o <a href="../../signals/gong.au">Signal 2</a></p>
-<p>o <a href="../../signals/shepard30.au">Mystery Signal</a></p>
 <ul>
+<li><a href="../signals/sine.au">Signal 1</a></li>
+<li><a href="../signals/gong.au">Signal 2</a></li>
+<li><a href="../signals/shepard30.au">Mystery Signal</a></li>
+</ul>
+</li>
 <li>
 <p>We'll look at this signal again in a few weeks when we have some more
-sophisticated analysis tools. In the meantime, based on what you can
-hear and what you can see on the scope, <strong>can you figure out the
-trick?</strong></p>
+   sophisticated analysis tools. In the meantime, based on what you can hear
+   and what you can see on the scope, <strong>can you figure out the trick?</strong></p>
 </li>
 <li>
 <p>Disconnect speaker and sound card cable.</p>
 </li>
-</ul>
+</ol>
               
             </div>
           </div>
@@ -539,10 +540,10 @@ trick?</strong></p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../exp2.3/" class="btn btn-neutral float-right" title="Optoelectronic Signal Sources and Sinks">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../experiment_2-3/" class="btn btn-neutral float-right" title="Optoelectronic Signal Sources and Sinks">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../file.14/" class="btn btn-neutral" title="The Breadboard"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../breadboard/" class="btn btn-neutral" title="The Breadboard"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -568,10 +569,10 @@ trick?</strong></p>
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../file.14/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../breadboard/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../exp2.3/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../experiment_2-3/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

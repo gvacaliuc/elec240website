@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Electroacoustic Transducers I - ELEC 240 Labs</title>
+  <title>Before You Begin - ELEC 240 Labs</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Electroacoustic Transducers I";
-    var mkdocs_page_input_path = "lab2/exp2.1.md";
-    var mkdocs_page_url = "/lab2/exp2.1/";
+    var mkdocs_page_name = "Before You Begin";
+    var mkdocs_page_input_path = "lab2/before-you-begin.md";
+    var mkdocs_page_url = "/lab2/before-you-begin/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -150,46 +150,33 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../file.12/">Background</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../file.13/">Before You Begin</a>
+    <a class="" href="../background/">Background</a>
                 </li>
                 <li class=" current">
                     
-    <a class="current" href="./">Electroacoustic Transducers I</a>
+    <a class="current" href="./">Before You Begin</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#experiment-21">Experiment 2.1</a></li>
-    
-
-    <li class="toctree-l3"><a href="#electroacoustic-transducers-i">Electroacoustic Transducers I</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l4" href="#equipment">Equipment</a></li>
-        
-            <li><a class="toctree-l4" href="#part-a-listening-to-a-signal">Part A: Listening to a Signal</a></li>
-        
-            <li><a class="toctree-l4" href="#part-b-thevenin-equivalent-and-maximum-power-transfer">Part B: Thevenin Equivalent and Maximum Power Transfer</a></li>
-        
-        </ul>
+    <li class="toctree-l3"><a href="#before-you-begin">Before You Begin</a></li>
     
 
     </ul>
                 </li>
                 <li class="">
                     
-    <a class="" href="../file.14/">The Breadboard</a>
+    <a class="" href="../experiment_2-1/">Electroacoustic Transducers I</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../exp2.2/">Electroacoustic Transducers II</a>
+    <a class="" href="../breadboard/">The Breadboard</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../exp2.3/">Optoelectronic Signal Sources and Sinks</a>
+    <a class="" href="../experiment_2-2/">Electroacoustic Transducers II</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../experiment_2-3/">Optoelectronic Signal Sources and Sinks</a>
                 </li>
     </ul>
 	    </li>
@@ -378,7 +365,7 @@
         
       
     
-    <li>Electroacoustic Transducers I</li>
+    <li>Before You Begin</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -390,78 +377,13 @@
               
                 <p>ELEC 240 Lab</p>
 <hr />
-<h2 id="experiment-21">Experiment 2.1</h2>
-<h2 id="electroacoustic-transducers-i">Electroacoustic Transducers I</h2>
-<p>In this section we will discover different ways to detect and change a
-signal.</p>
-<h3 id="equipment">Equipment</h3>
-<ul>
-<li><a href="../../misc_images/#bnc-cliplead">BNC Male to Clips test lead</a></li>
-<li><a href="../../misc_images/#vb-probe">Oscilloscope probe</a></li>
-</ul>
-<h3 id="part-a-listening-to-a-signal">Part A: Listening to a Signal</h3>
-<ul>
-<li>
-<p>Set up the function generator to produce a 1-kHz sine wave with a
-peak-to-peak (p-p) amplitude of 5 Volts. Verify settings by viewing on
-the oscilloscope.</p>
-</li>
-<li>
-<p>Using the BNC-to-clip test lead, connect the output of the function
-generator to the speaker leads. <strong>What do you hear?</strong></p>
-</li>
-<li>
-<p>With the speaker still connected to the FGEN, measure the amplitude of
-the voltage across the speaker. This time, connect an oscilloscope probe
-to one of the speaker leads. (The ground lead can remain disconnected
-because it is already internally connected to the FGEN ground). <strong>What
-is the peak-to-peak measurement now? Why did it change?</strong></p>
-</li>
-<li>
-<p>Using FGEN controls, vary the amplitude, frequency, and shape of the
-signal. <strong>How does the nature of the sound change as these signal
-parameters change?</strong></p>
-</li>
-<li>
-<p>Disconnect the speaker.</p>
-</li>
-</ul>
-<h3 id="part-b-thevenin-equivalent-and-maximum-power-transfer">Part B: Thevenin Equivalent and Maximum Power Transfer</h3>
-<p>Looking back at the diagram in the Background section we can see what
-caused the reduction in signal amplitude (attenuation): R~out~ of the
-function generator and R~L~ of the speaker form a voltage divider. To
-reduce the attenuation, one possibility is to either reduce R~out~ or
-increase R~L~. For this, the first step would be to determine what
-R~out~ is.</p>
-<ul>
-<li>
-<p>Assuming that the oscilloscope provides infinite load, <strong>determine the
-Thevenin voltage</strong> (use same FGEN settings as in Part A).</p>
-</li>
-<li>
-<p>Referring to the Background section, <strong>calculate the Thevenin
-resistance</strong> for various R~L~: 20, 30, 50, 100 Ohms. <strong>Does the Thevenin
-resistance vary?</strong></p>
-</li>
-<li>
-<p><strong>Calculate the average power</strong> dissipated by each load.</p>
-</li>
-</ul>
-<p>o The amount of average power dissipated by the load is another way of
-stating the amount of average power delivered to the load.</p>
-<p>o P~avg~=0.5*(V~m~^2^/R~L~) where V~m~ is the maximum amplitude of
-voltage across R~L~.</p>
-<p>Maximum Power Transfer: The maximum power transfer theorem states that
-the maximum power is delivered to the load when the load resistance is
-equal to the Thevenin resistance of the source. This is important in
-applications such as when the load is a cell phone antenna and you need
-maximum power delivered to improve coverage area; another example is the
-load being an audio speaker that requires maximum power to deliver the
-highest sound level.</p>
-<ul>
-<li><strong>Make a graph of P~avg~ vs. R~L~</strong> and show how the maximum power
-transfer theorem is verified by these results.</li>
-</ul>
+<h1 id="before-you-begin">Before You Begin</h1>
+<p>Last week we were able to use banana and BNC patch cords to make the
+connections we required. The components we will be using this week don't have
+banana or BNC connectors. Instead we will be using the <em>breadboard</em> and
+<em>interface modules</em> to make connections.</p>
+<p>You should carefully study the workings of the breadboard and interface modules
+in the <a href="../../lab-report">Lab Station Handbook</a>) first.</p>
               
             </div>
           </div>
@@ -469,10 +391,10 @@ transfer theorem is verified by these results.</li>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../file.14/" class="btn btn-neutral float-right" title="The Breadboard">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../experiment_2-1/" class="btn btn-neutral float-right" title="Electroacoustic Transducers I">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../file.13/" class="btn btn-neutral" title="Before You Begin"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../background/" class="btn btn-neutral" title="Background"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -498,10 +420,10 @@ transfer theorem is verified by these results.</li>
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../file.13/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../background/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../file.14/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../experiment_2-1/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
