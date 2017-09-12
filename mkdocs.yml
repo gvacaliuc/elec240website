@@ -24,12 +24,12 @@ pages:
   - {Cleaning Up: lab1/postlude.md}
 - Lab 2:
   - {Home: lab2/index.md}
-  - {Background: lab2/file.12.md}
-  - {Before You Begin: lab2/file.13.md}
-  - {Electroacoustic Transducers I: lab2/exp2.1.md}
-  - {The Breadboard: lab2/file.14.md}
-  - {Electroacoustic Transducers II: lab2/exp2.2.md}
-  - {Optoelectronic Signal Sources and Sinks: lab2/exp2.3.md}
+  - {Background: lab2/background.md}
+  - {Before You Begin: lab2/before-you-begin.md}
+  - {Electroacoustic Transducers I: lab2/experiment_2-1.md}
+  - {The Breadboard: lab2/breadboard.md}
+  - {Electroacoustic Transducers II: lab2/experiment_2-2.md}
+  - {Optoelectronic Signal Sources and Sinks: lab2/experiment_2-3.md}
 - Lab 3:
   - {Home: lab3/index.md}
   - {Introduction: lab3/file.16.md}
