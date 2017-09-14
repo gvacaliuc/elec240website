@@ -68,7 +68,7 @@ pages:
 docs_dir: ./docs
 markdown_extensions:
     - pymdownx.arithmatex
-    - admonition
+    - markdown.extensions.admonition
     - fontawesome_markdown
 extra_javascript:
   - mathjax-config.js
