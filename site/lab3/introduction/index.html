@@ -18,8 +18,8 @@
   <script>
     // Current page data
     var mkdocs_page_name = "Introduction";
-    var mkdocs_page_input_path = "lab3/file.16.md";
-    var mkdocs_page_url = "/lab3/file.16/";
+    var mkdocs_page_input_path = "lab3/introduction.md";
+    var mkdocs_page_url = "/lab3/introduction/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -188,19 +188,25 @@
     <a class="current" href="./">Introduction</a>
     <ul class="subnav">
             
+    <li class="toctree-l3"><a href="#elec-240-lab">ELEC 240 Lab</a></li>
+    
+
+    <li class="toctree-l3"><a href="#introduction">Introduction</a></li>
+    
+
     </ul>
                 </li>
                 <li class="">
                     
-    <a class="" href="../exp3.1/">Resistive Voltage Dividers</a>
+    <a class="" href="../experiment_3-1/">Resistive Voltage Dividers</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../file.19/">Measuring the Transfer Function</a>
+    <a class="" href="../interlude/">Measuring the Transfer Function</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../exp3.2/">Filters and Transfer Function</a>
+    <a class="" href="../experiment_3-2/">Filters and Transfer Function</a>
                 </li>
     </ul>
 	    </li>
@@ -372,45 +378,49 @@
           <div role="main">
             <div class="section">
               
-                <p>### ELEC 240 Lab # Introduction In the last 2 labs we looked at
+                <h3 id="elec-240-lab">ELEC 240 Lab</h3>
+<h1 id="introduction">Introduction</h1>
+<p>In the last 2 labs we looked at
 various kinds of signals: DC, sinusoidal, square waves, speech, etc. But
 to build our optical communication system, we will have to do more than
 look. We need to be able to manipulate signals so that we can impress
 the desired information onto a "carrier" signal to transmit it and then
 extract the information from the received signal. Another term for this
-signal manipulation is *signal processing*. For this lab you will need
+signal manipulation is <em>signal processing</em>. For this lab you will need
 to be familiar with MATLAB, so it is advised to look over some online
-tutorials. The following figure shows the basic voltage divider circuit:
-![voltage divider](figs/img160.png)
-for which we have the familiar relation: $v_\text{out} =
-\frac{R_2}{R_1 + R_2} v_\text{in}$ or
-$\frac{v_\text{out}}{v_\text{in}} = \frac{R_2}{R_1 + R_2}$.
-If $R_1$ and $R_2$ are fixed then the output voltage is a constant
-fraction of the input, i.e. we have a fixed attenuator. If either or
-both of them vary, we have a variable attenuator (e.g. a volume
-control). If $v_\text{in}$ is constant and one or both of $R_1$
-or $R_2$ vary with time, then $v_\text{out}$ will be a function
-of time, following the change in $R$. If either or both of $R_1$
-and $R_2$ vary with frequency (i.e. they are impedances rather than
-pure resistances) then the attenuation (or transfer function) will be a
-function of frequency, i.e. we have a *filter*. Finally, if one or the
-other of $R_1$ or $R_2$ is non-linear, then the input-output
-relation will reflect that nonlinearity. If we replace resistances
-$R_1$ and $R_2$ by impedances $Z_1$ and $Z_2$ and use the
-phasor representation ($V_\text{in}$ and $V_\text{out}$) for the
-input and output voltages, then the voltage divider relation still
-holds. We define the ratio of the output voltage phasor to the input
-voltage phasor to be the *transfer function*:
-$H(f)\equiv\frac{V_\text{out}}{V_\text{in}} = \frac{Z_2}{Z_1 +
-Z_2}$
-For example if we replace $R_2$ with a capacitor, we get the
-following circuit:
-![lowpass](figs/img161.png)
-for which $H(f)=\frac{V_\text{out}}{V_\text{in}} =
-\frac{Z_2}{Z_1 + Z_2} = \frac{1/j2\pi fC}{(1/j2\pi fC)+R} =
-\frac{1}{j2\pi fRC+1}$. Since $H(f)$ is close to one for small
-values of $f$ and goes to zero for large $f$ (i.e. it passes low
-frequencies) we call this circuit a *low pass filter*.</p>
+tutorials. The following figure shows the basic voltage divider circuit:</p>
+<p><center>
+<img alt="voltage divider" src="../figs/img160.png" />
+</center></p>
+<p>for which we have the familiar relation: </p>
+<span>\[ 
+v_{out} = \frac{R_2}{R_1 + R_2}v_{in} \text{  or  } \frac{v_{out}}{v_{in}} = \frac{R_2}{R_1 + R_2}
+\]</span><p>If <span>\(R_1\)</span> and <span>\(R_2\)</span> are fixed then the output voltage is a constant fraction of
+the input, i.e. we have a fixed attenuator. If either or both of them vary, we
+have a variable attenuator (e.g. a volume control). If <span>\(v_{in}\)</span> is constant and
+one or both of <span>\(R_1\)</span> or <span>\(R_2\)</span> vary with time, then <span>\(v_{out}\)</span> will be a function
+of time, following the change in <span>\(R\)</span>. If either or both of <span>\(R_1\)</span> and <span>\(R_2\)</span> vary
+with frequency (i.e. they are impedances rather than pure resistances) then the
+attenuation (or transfer function) will be a function of frequency, i.e. we
+have a <em>filter</em>. </p>
+<p>Finally, if one or the other of <span>\(R_1\)</span> or <span>\(R_2\)</span> is non-linear, then the
+input-output relation will reflect that nonlinearity. If we replace resistances
+<span>\(R_1\)</span> and <span>\(R_2\)</span> by impedances <span>\(Z_1\)</span> and <span>\(Z_2\)</span> and use the phasor representation
+(<span>\(V_{in}\)</span> and <span>\(V_{out}\)</span>) for the input and output voltages, then the voltage
+divider relation still holds. We define the ratio of the output voltage phasor
+to the input voltage phasor to be the <em>transfer function</em>:</p>
+<span>\[
+H(f)\equiv\frac{V_{out}}{V_{in}} = \frac{Z_2}{Z_1 + Z_2}
+\]</span><p>For example if we replace <span>\(R_2\)</span> with a capacitor, we get the following circuit:</p>
+<p><center>
+<img alt="lowpass" src="../figs/img161.png" />
+</center></p>
+<p>for which </p>
+<span>\[
+H(f)=\frac{V_{out}}{V_{in}} = \frac{Z_2}{Z_1 + Z_2} = \frac{1/j2\pi
+fC}{(1/j2\pi fC)+R} = \frac{1}{j2\pi fRC+1}
+\]</span><p>Since <span>\(H(f)\)</span> is close to one for small values of <span>\(f\)</span> and goes to zero for large
+<span>\(f\)</span> (i.e. it passes low frequencies) we call this circuit a <em>low pass filter</em>.</p>
               
             </div>
           </div>
@@ -418,7 +428,7 @@ frequencies) we call this circuit a *low pass filter*.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../exp3.1/" class="btn btn-neutral float-right" title="Resistive Voltage Dividers">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../experiment_3-1/" class="btn btn-neutral float-right" title="Resistive Voltage Dividers">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../" class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -450,7 +460,7 @@ frequencies) we call this circuit a *low pass filter*.</p>
         <span><a href="../" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../exp3.1/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../experiment_3-1/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

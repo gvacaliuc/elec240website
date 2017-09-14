@@ -18,8 +18,8 @@
   <script>
     // Current page data
     var mkdocs_page_name = "Measuring the Transfer Function";
-    var mkdocs_page_input_path = "lab3/file.19.md";
-    var mkdocs_page_url = "/lab3/file.19/";
+    var mkdocs_page_input_path = "lab3/interlude.md";
+    var mkdocs_page_url = "/lab3/interlude/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -185,11 +185,11 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../file.16/">Introduction</a>
+    <a class="" href="../introduction/">Introduction</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../exp3.1/">Resistive Voltage Dividers</a>
+    <a class="" href="../experiment_3-1/">Resistive Voltage Dividers</a>
                 </li>
                 <li class=" current">
                     
@@ -206,7 +206,7 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../exp3.2/">Filters and Transfer Function</a>
+    <a class="" href="../experiment_3-2/">Filters and Transfer Function</a>
                 </li>
     </ul>
 	    </li>
@@ -382,70 +382,82 @@
 <hr />
 <h2 id="interlude">Interlude</h2>
 <h2 id="measuring-the-transfer-function">Measuring the Transfer Function</h2>
-<p>Consider an RC circuit connected to a sinusoidal voltage source on one
-end and some load on the other end. The RC circuit alters the signal
-coming from the source that reaches the load. How that signal is altered
-is described by a transfer function.</p>
-<p>An RC circuit is an example of a linear, time-invariant (LTI) circuit.
-An LTI circuit can alter the magnitude and phase of the input sinusoidal
-signal but not the actual frequency.</p>
+<p>Consider an RC circuit connected to a sinusoidal voltage source on one end and
+some load on the other end. The RC circuit alters the signal coming from the
+source that reaches the load. How that signal is altered is described by a
+transfer function.</p>
+<p>An RC circuit is an example of a linear, time-invariant (LTI) circuit.  An LTI
+circuit can alter the magnitude and phase of the input sinusoidal signal but
+not the actual frequency.</p>
 <p>Mathematically, an expression can be created to describe this transfer
-function - it is the ratio of the load voltage (or output) to the source
-voltage (or input). When it comes time to measure the actual transfer
-function in the lab, things are a bit harder.</p>
-<p>One obvious difficulty is that instead of simply making the measurement
-at a single frequency (e.g. zero), we have to make it at <em>all</em>
-frequencies, a rather daunting task. Fortunately, the function we expect
-to get is well behaved, so a few judiciously chosen frequencies should
-suffice.</p>
-<p>The other problem is that we have to measure both the magnitude and the
-phase of the input and output signals. We already know how to measure
-magnitude. Let's see if we can figure out how to measure phase.</p>
+function: it is the ratio of the load voltage (or output) to the source voltage
+(or input). When it comes time to measure the actual transfer function in the
+lab, things are a bit harder.</p>
+<p>One obvious difficulty is that instead of simply making the measurement at a
+single frequency (e.g. zero), we have to make it at <em>all</em> frequencies, a rather
+daunting task. Fortunately, the function we expect to get is well behaved, so a
+few judiciously chosen frequencies should suffice.</p>
+<p>The other problem is that we have to measure both the magnitude and the phase
+of the input and output signals. We already know how to measure magnitude.
+Let's see if we can figure out how to measure phase.</p>
 <p>We will use the following technique:</p>
 <ol>
-<li>Connect the function generator to the input of the system being
-    measured:
-    <img alt="\includegraphics[scale=0.650000]{freq_resp.ps}" src="../../figs/img169.png" />{width="366"
-    height="113"}</li>
-<li>Connect <code>CH1</code> of the scope to vin and <code>CH2</code> to vout.</li>
-<li>Make sure both CH 1 and 2 (red and yellow) are displaying on
-    the oscilloscope.</li>
-<li>Set both channels to <code>DC</code>. In a case where there is a DC offset on
-    either the input or the output, set the corresponding switch to
-    <code>AC</code>. If you do so, be aware that this will influence the low
-    frequency portion of the measurement (below about 20 Hz).</li>
-<li>Overlay both traces on top of each other and set your display window
-    such that 1-2 cycles of the sinusoids appear.</li>
-<li>Set the function generator frequency to the first frequency to be
-    measured, say $f_1$. until the display looks similar to this:
-    <img alt="\includegraphics[scale=0.650000]{phase.ps}" src="../../figs/img170.png" />{width="487"
-    height="300"}
-    In particular, you should have just over one cycle of the input
-    waveform displayed. Pick a salient feature of the sinusoid (i.e.,
-    the max point, or upward x-axis crossing) measure the time delay
-    between when they occur on the input and output sinusoids. Use the
-    cursor feature of VirtualBench and click on the ruler for exact
-    measurement values.</li>
+<li>
+<p>Connect the function generator to the input of the system being
+    measured:</p>
+<p><center>
+<img alt="" src="../figs/img169.png" />
+</center></p>
+</li>
+<li>
+<p>Connect <code>CH1</code> of the scope to <span>\(v_{in}\)</span> and <code>CH2</code> to <span>\(v_{out}\)</span>.</p>
+</li>
+<li>
+<p>Make sure both <code>CH 1</code> and <code>CH 2</code> (red and yellow) are displaying on the
+    oscilloscope.</p>
+</li>
+<li>
+<p>Set both channels to <code>DC</code>. In a case where there is a DC offset on either
+    the input or the output, set the corresponding switch to <code>AC</code>. If you do
+    so, be aware that this will influence the low frequency portion of the
+    measurement (below about 20 Hz).</p>
+</li>
+<li>
+<p>Overlay both traces on top of each other and set your display window such
+    that 1-2 cycles of the sinusoids appear.</p>
+</li>
+<li>
+<p>Set the function generator frequency to the first frequency to be
+    measured, say <span>\(f_1\)</span>, until the display looks similar to this:</p>
+<p><center>
+<img alt="" src="../figs/img170.png" />
+</center></p>
+<p>In particular, you should have just over one cycle of the input waveform
+displayed. Pick a salient feature of the sinusoid (i.e., the max point, or
+upward x-axis crossing) measure the time delay between when they occur on
+the input and output sinusoids. Use the cursor feature of VirtualBench and
+click on the ruler for exact measurement values.</p>
+</li>
 </ol>
 <p>Let's see what we've got:</p>
 <ol>
 <li>By measuring the height of the peaks of <code>CH1</code> we get
-    \(\vert V_\text{in}\vert\).</li>
+    <span>\(\vert V_\text{in}\vert\)</span>.</li>
 <li>Similarly, the peaks of <code>CH2</code> give
-    \(\vert V_\text{out}\vert\).</li>
-<li>Calculate \(\vert H(f_1)\vert = \frac{\vert
-    V_{out}\vert}{\vert V_{in}\vert}\).</li>
-<li>Measure \(t'\), the distance between successive zero crossings of
-    the same slope. This zero crossing corresponds to \(\sin(2\pi
-    f_1 t)=0\) for \(v_{in}\) and \(\sin(2\pi f_1 t' +
-    \phi)=0\) for \(v_{out}\), where \(\phi = \angle H(f_1)\).
-    So we have \(2\pi f_1 t' + \phi = 0\) or \(\phi = -2\pi f_1
-    t' = -2\pi t'/T\), where \(T\) is the period of the waveform.
+    <span>\(\vert V_\text{out}\vert\)</span>.</li>
+<li>Calculate <span>\(\vert H(f_1)\vert = \frac{\vert
+    V_{out}\vert}{\vert V_{in}\vert}\)</span>.</li>
+<li>Measure <span>\(t'\)</span>, the distance between successive zero crossings of
+    the same slope. This zero crossing corresponds to <span>\(\sin(2\pi
+    f_1 t)=0\)</span> for <span>\(v_{in}\)</span> and <span>\(\sin(2\pi f_1 t' +
+    \phi)=0\)</span> for <span>\(v_{out}\)</span>, where <span>\(\phi = \angle H(f_1)\)</span>.
+    So we have <span>\(2\pi f_1 t' + \phi = 0\)</span> or <span>\(\phi = -2\pi f_1
+    t' = -2\pi t'/T\)</span>, where <span>\(T\)</span> is the period of the waveform.
     This gives the phase in radians. To express the phase in degrees, we
-    would use: \(\angle H(f_1) = -360\frac{t'}{T}\)</li>
+    would use: <span>\(\angle H(f_1) = -360\frac{t'}{T}\)</span></li>
 </ol>
 <p>This gives us the magnitude and angle of the transfer at a single
-frequency, \(f_1\). To get the complete transfer function, we repeat
+frequency, <span>\(f_1\)</span>. To get the complete transfer function, we repeat
 the procedure at different frequencies.</p>
               
             </div>
@@ -454,10 +466,10 @@ the procedure at different frequencies.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../exp3.2/" class="btn btn-neutral float-right" title="Filters and Transfer Function">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../experiment_3-2/" class="btn btn-neutral float-right" title="Filters and Transfer Function">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../exp3.1/" class="btn btn-neutral" title="Resistive Voltage Dividers"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../experiment_3-1/" class="btn btn-neutral" title="Resistive Voltage Dividers"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -483,10 +495,10 @@ the procedure at different frequencies.</p>
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../exp3.1/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../experiment_3-1/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../exp3.2/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../experiment_3-2/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
