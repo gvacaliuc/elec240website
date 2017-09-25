@@ -8,20 +8,16 @@ Laboratory 4
 Signal Processing II: Active Circuits
 =====================================
 
-[](file.21)
+### [ Introduction ](./introduction)
 
-### Introduction
-
-[](file.22)
-
-### Before Lab
+### [Before Lab](./before-lab)
 
 Experiments
 -----------
 
--   Prelude: [Organizing Your Breadboard](file.23)
--   Experiment 4.1: [The 741 Op-Amp](exp4.1)
--   Experiment 4.2: [The Inverting Configuration](exp4.2)
--   Interlude: [Standard Signal Levels](file.24)
--   Experiment 4.3: [Transducer Amplifiers](exp4.3)
+* Prelude: [Organizing Your Breadboard](./organizing-your-breadboard)
+* Experiment 4.1: [The 741 Op-Amp](./experiment_4-1)
+* Experiment 4.2: [The Inverting Configuration](./experiment_4-2)
+* Interlude: [Standard Signal Levels](./standard-signal-levels)
+* Experiment 4.3: [Transducer Amplifiers](./experiment_4-3)
 
