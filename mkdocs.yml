@@ -38,13 +38,13 @@ pages:
   - {Filters and Transfer Function: lab3/experiment_3-2.md}
 - Lab 4:
   - {Home: lab4/index.md}
-  - {Introduction: lab4/file.21.md}
-  - {Before Lab: lab4/file.22.md}
-  - {Organizing Your Breadboard: lab4/file.23.md}
-  - {The 741 Op-Amp: lab4/exp4.1.md}
-  - {The Inverting Configuration: lab4/exp4.2.md}
-  - {Standard Signal Levels: lab4/file.24.md}
-  - {Transducer Amplifiers: lab4/exp4.3.md}
+  - {Introduction: lab4/introduction.md}
+  - {Before Lab: lab4/before-lab.md}
+  - {Organizing Your Breadboard: lab4/organizing-your-breadboard.md}
+  - {The 741 Op-Amp: lab4/experiment_4-1.md}
+  - {The Inverting Configuration: lab4/experiment_4-2.md}
+  - {Standard Signal Levels: lab4/standard-signal-levels.md}
+  - {Transducer Amplifiers: lab4/experiment_4-3.md}
 - Lab 5:
   - {Home: lab5/index.md}
   - {Introduction: lab5/file.28.md}
