@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Introduction - ELEC 240 Labs</title>
+  <title>Transducer Amplifiers - ELEC 240 Labs</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Introduction";
-    var mkdocs_page_input_path = "lab4/file.21.md";
-    var mkdocs_page_url = "/lab4/file.21/";
+    var mkdocs_page_name = "Transducer Amplifiers";
+    var mkdocs_page_input_path = "lab4/experiment_4-3.md";
+    var mkdocs_page_url = "/lab4/experiment_4-3/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -210,36 +210,54 @@
                     
     <a class="" href="../">Home</a>
                 </li>
+                <li class="">
+                    
+    <a class="" href="../introduction/">Introduction</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../before-lab/">Before Lab</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../organizing-your-breadboard/">Organizing Your Breadboard</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../experiment_4-1/">The 741 Op-Amp</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../experiment_4-2/">The Inverting Configuration</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../standard-signal-levels/">Standard Signal Levels</a>
+                </li>
                 <li class=" current">
                     
-    <a class="current" href="./">Introduction</a>
+    <a class="current" href="./">Transducer Amplifiers</a>
     <ul class="subnav">
             
+    <li class="toctree-l3"><a href="#experiment-43">Experiment 4.3</a></li>
+    
+
+    <li class="toctree-l3"><a href="#transducer-amplifiers">Transducer Amplifiers</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#equipment">Equipment</a></li>
+        
+            <li><a class="toctree-l4" href="#part-a-photodiode-amplifier">Part A: Photodiode Amplifier</a></li>
+        
+            <li><a class="toctree-l4" href="#part-b-microphone-amplifier">Part B: Microphone Amplifier</a></li>
+        
+            <li><a class="toctree-l4" href="#part-c-mixer">Part C: Mixer</a></li>
+        
+        </ul>
+    
+
     </ul>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../file.22/">Before Lab</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../file.23/">Organizing Your Breadboard</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../exp4.1/">The 741 Op-Amp</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../exp4.2/">The Inverting Configuration</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../file.24/">Standard Signal Levels</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../exp4.3/">Transducer Amplifiers</a>
                 </li>
     </ul>
 	    </li>
@@ -362,7 +380,7 @@
         
       
     
-    <li>Introduction</li>
+    <li>Transducer Amplifiers</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -372,23 +390,203 @@
           <div role="main">
             <div class="section">
               
-                <p>### ELEC 240 Lab # Introduction In Lab 3 we saw that the voltage
-divider was an attenuator:
-$v_\text{out} = \frac{R_2}{R_1 + R_2} v_\text{in} = G
-v_\text{in}$
-where $G \le 1$. If we had a box where $v_{out} = G v_{in}$ with
-$G&gt;1$ we would have an *amplifier*. To be more precise, we would
-have a *non-inverting*, *voltage* amplifier. If $G &lt; -1$, we
-would still be increasing the magnitude of the signal, but would change
-its sign. This is called an *inverting* amplifier. We could also have
-a *current amplifier* where $i_\text{out} = G_i i_\text{in}$.
-Circuits containing only resistors, capacitors, and inductors (e.g.
-attenuators or RC filters) are *passive*. An amplifier is an
-*active* circuit element; it delivers more power to its load than it
-receives from its source. (In fact this additional power comes from an
-external power supply, so no laws of physics are being violated, but
-when we're drawing circuit diagrams we usually draw only the amplifier
-and ignore the power supply.)</p>
+                <p>ELEC 240 Lab</p>
+<hr />
+<h2 id="experiment-43">Experiment 4.3</h2>
+<h2 id="transducer-amplifiers">Transducer Amplifiers</h2>
+<h3 id="_1"></h3>
+<h3 id="equipment">Equipment</h3>
+<ul>
+<li>Test board</li>
+<li>741 Op Amp</li>
+<li>10 kΩ Resistors</li>
+<li>100 kΩ Resistors</li>
+<li>Other resistors according to your design</li>
+<li>0.1 µF Capacitor</li>
+<li>Dynamic microphone</li>
+<li>Telephone handset</li>
+</ul>
+<p>In Lab 2 we saw that our input transducers (microphone and photodiode) produced
+signals of only a few millivolts, while our output transducers (speaker and
+LED) required signals of a few volts. To make up this discrepancy, we need to
+amplify the signal levels produced by the input transducers.</p>
+<h3 id="part-a-photodiode-amplifier">Part A: Photodiode Amplifier</h3>
+<p>The inverting op-amp circuit works by taking the current that flows into
+the "virtual ground" at the inverting input and forcing it to flow in
+the feedback resistor. Since the voltage across <span>\(R_F\)</span> is equal to
+<span>\(R_FI_F\)</span>, the output voltage (on the other terminal of <span>\(R_F\)</span> is
+proportional to the current flowing into the virtual ground. What if
+instead of this current originating from the voltage across <span>\(R_1\)</span>, it
+instead came directly from a current source? Well, the output voltage
+would still be proportional to it: <span>\(v_{out} = -R_FI_F = -R_FI_{in}\)</span>, i.e.,
+we have an amplifier which accepts a current as an input and produces a
+voltage as an output. This is called a <em>transresistance amplifier</em>.
+(Since a resistance converts its current to a voltage (<span>\(v=Ri\)</span>), a
+transresistance converts a current in one part of the circuit to a
+voltage in another.)</p>
+<p>In Lab 2 we measured the <em>voltage</em> across the photodiode and found some fairly
+distorted waveforms. It turns out that the <em>current</em> produced by a photodiode
+is proportional to the intensity of the light falling on it, while the voltage
+is proportional to the <em>logarithm</em> of the intensity, hence the distortion. If
+we could produce an output signal proportional to the photodiode current, we
+would have a much better transducer.</p>
+<ol>
+<li>Wire the following circuit. (You can modify the previous circuit by removing
+   the 10 kΩ resistor and replacing it with the photodiode (connected to ground
+   rather than to the function generator)).</li>
+</ol>
+<p><center>
+   <img alt="" src="../figs/img176.png" />
+   </center></p>
+<ol>
+<li>
+<p>As you did in Lab 2, note the output voltage, <span>\(v_{out}\)</span>, and observe how it
+   changes as you cover and uncover the photodiode with your hand.</p>
+</li>
+<li>
+<p>Set the function generator to produce an <span>\(8 V_{ pp }\)</span>, 100 Hz triangle wave.</p>
+</li>
+<li>
+<p>Disconnect the BNC patch cord from the function generator output and connect
+   the BNC clip leads. Connect your red LED to the clip leads (like you did
+   with the photodiode in Exp. 2.3 Part B).</p>
+</li>
+<li>
+<p>Hold the LED directly above the photodiode and observe <span>\(v_{out}\)</span>. <strong>Is it less
+   distorted than in Lab 2?</strong> Switch the function generator to sine wave and
+   observe the waveshape.</p>
+</li>
+<li>
+<p>Switch the function generator to square wave and increase the amplitude to
+   maximum. Slowly separate the LED from the photodiode, adjusting the
+   alignment to maintain the best signal (just like Lab 2).  What is the
+   maximum distance you can get with this configuration and still get a
+   recognizable square wave signal? <strong>How does it compare with what you got in
+   Lab 2?</strong></p>
+</li>
+<li>
+<p>Remove the BNC clip leads, reduce the amplitude of the function generator,
+   and reconnect the BNC patch cord. Unplug the photodiode.</p>
+</li>
+<li>
+<p><strong>Analyze the transresistance amplifier using the op-amp design rules and
+   show that <span>\(v_{out} = R_Fi_d\)</span>.</strong></p>
+</li>
+</ol>
+<h3 id="part-b-microphone-amplifier">Part B: Microphone Amplifier</h3>
+<p>The microphone we used in Lab 2 is called a <em>dynamic</em> microphone. The
+microphone that is housed in a telephone handset is called a <em>carbon-button</em>
+(or <em>carbon</em> for short) microphone. The output of the carbon microphone is
+close to our standard <span>\(1 V\)</span> level, but for the dynamic microphone to be useful,
+we will need to amplify its output. If we don't mind the change of sign (which
+we don't for this application), we have just the circuit we need.</p>
+<p>We will use this circuit in several subsequent labs, so build it in a
+convenient part of the breadboard (see discussion in <a href="../organizing-your-breadboard">Organizing your
+Breadboard</a>) and leave it assembled when lab is
+over.</p>
+<ol>
+<li>
+<p>Look back in your lab notebook to find the value you measured for the output
+   voltage of the dynamic microphone. <strong>Calculate the gain <span>\(G\)</span></strong> required to
+   amplify this to a <span>\(1 V_{ pp }\)</span> signal.</p>
+</li>
+<li>
+<p><strong>Calculate the value of <span>\(R_1\)</span></strong> that will give the circuit below a
+gain of <span>\(G\)</span>:</p>
+<p><center>
+<img alt="" src="../figs/img177.png" />
+</center></p>
+</li>
+<li>
+<p>Wire the above circuit by modifying your circuit from Part A, and
+connect <span>\(v_in\)</span> to J1-6-left (Pin 8 on the Interface Board socket strip).
+Plug the dynamic microphone into J1-6.</p>
+</li>
+<li>
+<p>Speak into the microphone and observe <span>\(v_{out}\)</span>. Does it have the amplitude
+   you expected? If not, adjust <span>\(R_1\)</span> until <span>\(v_{out}\)</span> is approximately <span>\(1 V_{ pp
+   }\)</span> when speaking in a normal voice.</p>
+</li>
+</ol>
+<h3 id="part-c-mixer">Part C: Mixer</h3>
+<p>We want to be able to use both the dynamic microphone and the carbon
+microphone. We could build separate amplifiers for each and switch back and
+forth, but it would be more convenient to be able to use either one (or both)
+with no changes to the circuit.</p>
+<p>Since Kirchhoff's Current Law must hold true at the negative input/virtual
+ground, if more than one current source is connected to it, the output voltage
+must be proportional to the sum of the currents.  Consider the following
+circuit:</p>
+<p><center>
+<img alt="" src="../figs/img178.png" />
+</center></p>
+<ol>
+<li>
+<p><strong>Show in your report that the output is a weighted sum of its inputs</strong>, in
+   other words:</p>
+<span>\[
+v_{out} = - \left( \frac{R_F}{R_1}v_1 + \frac{R_F}{R_2}v_2 \right)
+\]</span><p>We can use this circuit as a <em>mixer</em> to amplify both the dynamic microphone
+output and the carbon microphone output by the appropriate amount, and then
+combine them into a single signal.</p>
+</li>
+<li>
+<p>First construct the carbon microphone interface.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The carbon microphone is a resistive, or passive transducer.  This
+means that it doesn't convert acoustical energy to electrical energy
+directly, but instead the acoustical energy varies some electrical
+parameter (i.e., resistance). In order to interpret this change in
+resistance, the transducer needs to be powered by an external source
+which then produces a voltage output corresponding to the change in
+resistance. We do this by powering the carbon microphone with a voltage
+source in series with a large resistor (i.e., creating a voltage
+divider circuit).</p>
+</div>
+<p>The following circuit should do nicely. Wire this circuit to the right of
+your dynamic microphone amplifier, and we will connect the two in a couple
+of steps. (The carbon microphone is pins 12 and 13 on the interface
+connector. There is a ground on pin 14).</p>
+<p><center> <img alt="" src="../figs/img179.png" /> </center>  </p>
+</li>
+<li>
+<p>Plug the handset into J1-7. Speak into the handset microphone and verify
+   that the above circuit works. Speak in the same normal voice you used for
+   the dynamic microphone and <strong>measure the peak-to-peak amplitude of the
+   signal</strong>.</p>
+</li>
+<li>
+<p>We need to get rid of the pesky DC offset in the carbon microphone output.
+   On the scope we can do this by switching to the AC position. Or instead, we
+   can put a capacitor in series with the input. Putting it all together gives
+   us the following circuit:</p>
+<p><center>
+<img alt="" src="../figs/img180.png" />
+</center></p>
+</li>
+<li>
+<p><strong>Compute the value of <span>\(R_2\)</span></strong> required to give an output of <span>\(1V_{ pp }\)</span>.
+   Put together your two subcircuits and create the above circuit.</p>
+</li>
+<li>
+<p>Speak into each microphone and verify that <span>\(v_{out}\)</span> is about <span>\(1 V_{ pp }\)</span> in
+   each case.</p>
+</li>
+<li>
+<p>Since the op-amp can drive a 100Ω resistance to more than our standard
+   voltage level, and since the handset earpiece resistance is greater than
+   100Ω, we should be able to drive it from the op-amp output. Connect one side
+   of the earpiece (Pin 11 on the interface board) to ground (Pin 14).  Connect
+   the other side (Pin 10) to <span>\(v_{out}\)</span>. Have your lab partner speak into the
+   dynamic microphone while you hold the handset to your ear and speak into its
+   microphone. Verify that both voices are audible simultaneously.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Do not dissemble this circuit. We will use it in subsequent labs.</p>
+</div>
+</li>
+</ol>
               
             </div>
           </div>
@@ -396,10 +594,10 @@ and ignore the power supply.)</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../file.22/" class="btn btn-neutral float-right" title="Before Lab">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../lab5/" class="btn btn-neutral float-right" title="Home">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../" class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../standard-signal-levels/" class="btn btn-neutral" title="Standard Signal Levels"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -425,10 +623,10 @@ and ignore the power supply.)</p>
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../standard-signal-levels/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../file.22/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../../lab5/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

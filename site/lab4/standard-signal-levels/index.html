@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>The Inverting Configuration - ELEC 240 Labs</title>
+  <title>Standard Signal Levels - ELEC 240 Labs</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "The Inverting Configuration";
-    var mkdocs_page_input_path = "lab4/exp4.2.md";
-    var mkdocs_page_url = "/lab4/exp4.2/";
+    var mkdocs_page_name = "Standard Signal Levels";
+    var mkdocs_page_input_path = "lab4/standard-signal-levels.md";
+    var mkdocs_page_url = "/lab4/standard-signal-levels/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -212,48 +212,40 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../file.21/">Introduction</a>
+    <a class="" href="../introduction/">Introduction</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../file.22/">Before Lab</a>
+    <a class="" href="../before-lab/">Before Lab</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../file.23/">Organizing Your Breadboard</a>
+    <a class="" href="../organizing-your-breadboard/">Organizing Your Breadboard</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../exp4.1/">The 741 Op-Amp</a>
+    <a class="" href="../experiment_4-1/">The 741 Op-Amp</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../experiment_4-2/">The Inverting Configuration</a>
                 </li>
                 <li class=" current">
                     
-    <a class="current" href="./">The Inverting Configuration</a>
+    <a class="current" href="./">Standard Signal Levels</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#experiment-42">Experiment 4.2</a></li>
+    <li class="toctree-l3"><a href="#interlude">Interlude</a></li>
     
 
-    <li class="toctree-l3"><a href="#the-inverting-configuration">The Inverting Configuration</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l4" href="#equipment">Equipment</a></li>
-        
-            <li><a class="toctree-l4" href="#part-a-the-basic-inverting-amplifier">Part A: The Basic Inverting Amplifier</a></li>
-        
-        </ul>
+    <li class="toctree-l3"><a href="#standard-signal-levels">Standard Signal Levels</a></li>
     
 
     </ul>
                 </li>
                 <li class="">
                     
-    <a class="" href="../file.24/">Standard Signal Levels</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../exp4.3/">Transducer Amplifiers</a>
+    <a class="" href="../experiment_4-3/">Transducer Amplifiers</a>
                 </li>
     </ul>
 	    </li>
@@ -376,7 +368,7 @@
         
       
     
-    <li>The Inverting Configuration</li>
+    <li>Standard Signal Levels</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -388,64 +380,21 @@
               
                 <p>ELEC 240 Lab</p>
 <hr />
-<h2 id="experiment-42">Experiment 4.2</h2>
-<h2 id="the-inverting-configuration">The Inverting Configuration</h2>
-<h3 id="_1"></h3>
-<h3 id="equipment">Equipment</h3>
-<ul>
-<li>741 Op Amp</li>
-<li>10 kΩ Resistors (2)</li>
-</ul>
-<p>As we saw in the previous experiment, the op-amp isn't very useful in an
-"open-loop" configuration (i.e. without feedback). The most common
-configuration for op-amp circuits is the <em>inverting amplifier</em> where the
-output is an amplified and inverted version of the input (i.e. G is
-negative).</p>
-<h3 id="part-a-the-basic-inverting-amplifier">Part A: The Basic Inverting Amplifier</h3>
-<ul>
-<li>
-<p>Wire the following circuit using 10 kΩ resistors for both R~1~ and
-R~F~.\
-\
-<img alt="" src="../../figs/img175.png" />{width="332" height="187"}</p>
-</li>
-<li>
-<p>Set the function generator to produce a 1 V p-p, 100 Hz sine wave.
-Measure the voltage gain, G~v~=V~out~/V~in~. Since 100 Hz is within the
-frequency range of the DMM, you could use either the DMM or the scope to
-measure V~out~ and V~in~. However, you should always use the scope to
-<em>view</em> the waveform being measured to make sure it is what you think it
-is. We will see several waveforms in this lab that aren't.</p>
-</li>
-<li>
-<p>Note that the output is inverted with respect to the input. <strong>Take a
-screenshot for your report.</strong></p>
-</li>
-<li>
-<p>Replace R~F~ with a 100 kΩ resistor. <strong>Measure the gain.</strong></p>
-</li>
-<li>
-<p>Increase the input amplitude until output clipping occurs. <strong>What is
-the clipping level? Is it the same as in Exp. 4.1?</strong></p>
-</li>
-<li>
-<p>Reduce the input amplitude until the output is 20 V p-p.</p>
-</li>
-<li>
-<p>Increase the frequency until the output amplitude drops to 10 V p-p<strong>.
-You should see a triangular output waveform</strong>. This is because there is
-a limit to the maximum rate at which the output voltage can change,
-called the <em>slew rate.</em> <strong>Set the input to triangle and square wave and
-see how the output changes.</strong></p>
-</li>
-<li>
-<p>Reset the function generator for a 100 Hz sine wave and reduce the
-amplitude to produce a 1 V p-p output. Again increase the frequency
-until the output is 0.7 V p-p. <strong>At what frequency does this occur?</strong>
-Observe that the output is still sinusoidal. This is the actual cutoff
-frequency or <em>bandwidth</em> of the amplifier.</p>
-</li>
-</ul>
+<h2 id="interlude">Interlude</h2>
+<h2 id="standard-signal-levels">Standard Signal Levels</h2>
+<p>In the next experiment, we are going to build an amplifier to increase the
+"low" output voltage of the microphone to a "usable level." What should that
+level be?</p>
+<p>There are several criteria we could use. In the previous experiments we found
+that there was a maximum output signal level the op-amp can produce without
+clipping. Clearly our standard level should be less than this. In fact it
+should be significantly less to allow for peaks which exceed the "average"
+value of the signal. (Recording engineers call this "headroom.") Another
+criterion would be to have a standard signal level which is compatible with our
+signal sinks. A signal of about <span>\(0.5\)</span> to <span>\(1.0 V_{ pp }\)</span> gives a fairly loud
+sound when connected to the handset earpiece, the speaker, or the sound card
+line in.  Since <span>\(1 V\)</span> is a nice round number, and is comfortably less than the
+clipping level, we will choose <span>\(1 V_{ pp }\)</span> as our standard signal level.</p>
               
             </div>
           </div>
@@ -453,10 +402,10 @@ frequency or <em>bandwidth</em> of the amplifier.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../file.24/" class="btn btn-neutral float-right" title="Standard Signal Levels">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../experiment_4-3/" class="btn btn-neutral float-right" title="Transducer Amplifiers">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../exp4.1/" class="btn btn-neutral" title="The 741 Op-Amp"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../experiment_4-2/" class="btn btn-neutral" title="The Inverting Configuration"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -482,10 +431,10 @@ frequency or <em>bandwidth</em> of the amplifier.</p>
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../exp4.1/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../experiment_4-2/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../file.24/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../experiment_4-3/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

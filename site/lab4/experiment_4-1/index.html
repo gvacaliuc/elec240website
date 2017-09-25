@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Before Lab - ELEC 240 Labs</title>
+  <title>The 741 Op-Amp - ELEC 240 Labs</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Before Lab";
-    var mkdocs_page_input_path = "lab4/file.22.md";
-    var mkdocs_page_url = "/lab4/file.22/";
+    var mkdocs_page_name = "The 741 Op-Amp";
+    var mkdocs_page_input_path = "lab4/experiment_4-1.md";
+    var mkdocs_page_url = "/lab4/experiment_4-1/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -212,37 +212,50 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../file.21/">Introduction</a>
+    <a class="" href="../introduction/">Introduction</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../before-lab/">Before Lab</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../organizing-your-breadboard/">Organizing Your Breadboard</a>
                 </li>
                 <li class=" current">
                     
-    <a class="current" href="./">Before Lab</a>
+    <a class="current" href="./">The 741 Op-Amp</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#before-lab">Before Lab</a></li>
+    <li class="toctree-l3"><a href="#experiment-41">Experiment 4.1</a></li>
+    
+
+    <li class="toctree-l3"><a href="#the-741-op-amp">The 741 Op-Amp</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#equipment">Equipment</a></li>
+        
+            <li><a class="toctree-l4" href="#part-a-powering-up-the-741-op-amp">Part A: Powering up the 741 Op Amp</a></li>
+        
+            <li><a class="toctree-l4" href="#part-b-open-loop-response">Part B: Open-Loop Response</a></li>
+        
+        </ul>
     
 
     </ul>
                 </li>
                 <li class="">
                     
-    <a class="" href="../file.23/">Organizing Your Breadboard</a>
+    <a class="" href="../experiment_4-2/">The Inverting Configuration</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../exp4.1/">The 741 Op-Amp</a>
+    <a class="" href="../standard-signal-levels/">Standard Signal Levels</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../exp4.2/">The Inverting Configuration</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../file.24/">Standard Signal Levels</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../exp4.3/">Transducer Amplifiers</a>
+    <a class="" href="../experiment_4-3/">Transducer Amplifiers</a>
                 </li>
     </ul>
 	    </li>
@@ -365,7 +378,7 @@
         
       
     
-    <li>Before Lab</li>
+    <li>The 741 Op-Amp</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -377,18 +390,164 @@
               
                 <p>ELEC 240 Lab</p>
 <hr />
-<h1 id="before-lab">Before Lab</h1>
-<p>Up to now we've been building fairly simple circuits, measuring them,
-and taking them apart. This week we will begin building simple
-subsystems, some of which we will want to use in subsequent labs.
-Although as subsystems they are simple, as circuits they are quite a bit
-more complex than those we've built so far, and wiring them will require
-a bit more thought on how the components should be laid out and
-connected on the breadboard. You should look over the section on
-organizing your breadboard and develop a plan of attack for this week's
-session. Also, since you have several op-amps in your parts kit, you
-could save some time by wiring up all (or several) of this week's
-circuits before coming to lab.</p>
+<h2 id="experiment-41">Experiment 4.1</h2>
+<h2 id="the-741-op-amp">The 741 Op-Amp</h2>
+<h3 id="_1"></h3>
+<h3 id="equipment">Equipment</h3>
+<ul>
+<li>741 Op Amp</li>
+<li>10 Ω Resistor</li>
+<li>10 kΩ Resistor</li>
+<li>100 Ω Resistor</li>
+</ul>
+<h3 id="part-a-powering-up-the-741-op-amp">Part A: Powering up the 741 Op Amp</h3>
+<p>The 741 operational amplifier, or op-amp, comes in an 8-pin dual inline package
+(DIP) which looks like this:  </p>
+<p><center>
+<img alt="" src="../figs/741_photo2.jpg" />
+</center>  </p>
+<p>If you look closely at the package, you will find a notch at one end or a dot
+in one corner. This tells us how to find Pin 1: the dot is located next to Pin
+1 and the notch is located between Pins 1 and 8. The rest of the pins are
+numbered like this:  </p>
+<p><center>
+<img alt="" src="../figs/741_pkg.gif" />
+</center>  </p>
+<p>Pin 8 is not connected (NC). Pins 1 and 5 are used to eliminate the offset
+voltage. We won't be using this feature, so don't connect anything to these
+pins. The remaining pins give us the following circuit symbol for our op-amp:  </p>
+<p><center>
+<img alt="" src="../figs/img173.png" />
+</center></p>
+<p>For more information, see the <a href="http://www.ti.com/lit/ds/symlink/lm741.pdf">741 data
+sheet</a>.  </p>
+<p>In order to function, the op-amp must be connected to an external <em>power
+supply</em>. Since we want to produce both positive and negative output voltages,
+we need both positive and negative voltages for the power supply. These are
+labeled <span>\(V_{CC+}\)</span> and <span>\(V_{CC-}\)</span> on the diagram. For a 741, the nominal values
+are <span>\(V_{CC+} = 15 V\)</span> and <span>\(V_{CC-} = -15 V\)</span>.</p>
+<p>To avoid clutter, we won't show the power supply terminals (pins 4 and 7) on
+any of the subsequent circuit diagrams. However, they must be connected or your
+amplifier will not operate.</p>
+<p>Note that there is no ground terminal on the op-amp. The zero reference point
+is established by the external circuit and is not important to the op-amp
+itself.</p>
+<ol>
+<li>
+<p>If you have not already done so, wire the bus strips on your breadboard to
+   provide positive power, negative power and ground buses.  Whatever color
+   scheme you have chosen for your wires, you should use the green binding post
+   for ground, the black for <span>\(-15 V\)</span>, and the red for <span>\(+15 V\)</span>.</p>
+</li>
+<li>
+<p>Plug an op-amp into the breadboard so that it straddles the gap between the
+   top and bottom sections of the socket strip. If you have wired the power
+   buses as suggested above, Pin 1 should be to the left.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Do not try to unplug the op-amp with your thumb and
+forefinger. It's a good way to end up with the op-amp plugged into your
+fingertip. Use the pliers or <a href="../../misc_images/#ic-puller">IC puller</a>
+from your toolkit.</p>
+</div>
+</li>
+<li>
+<p>Connect Pin 4 (<span>\(V_{CC-}\)</span>) to the negative power supply bus (<span>\(-15 V\)</span>).
+   Connect Pin 7 (<span>\(V_{CC+}\)</span>) to the positive power supply bus (<span>\(+15 V\)</span>).  </p>
+</li>
+</ol>
+<p><center>
+<img alt="" src="../figs/opamp_pwr.jpg" />
+</center></p>
+<ol>
+<li>
+<p>Set up the <span>\(\pm 25V\)</span> power supply dongle. Turn on the power supply and set
+   the VirtualBench voltage control to 15 volts.</p>
+</li>
+<li>
+<p>Turn off the supply and connect the supply to the breadboard with banana
+   plug patch cables. Connect the <span>\(-25V\)</span> terminal to the black binding post on
+   your breadboard, the <span>\(+25V\)</span> terminal to the red breadboard binding post, and
+   the GROUND terminal to the green breadboard binding post. Note that none of
+   the power supply output terminals are connected to ground.  If we want the
+   power supply zero volt reference connected to ground, we must make the
+   connection ourselves.</p>
+</li>
+</ol>
+<h3 id="part-b-open-loop-response">Part B: Open-Loop Response</h3>
+<ol>
+<li>
+<p>With the power turned off, wire the following circuit. Note that the input
+   to the op amp is a <span>\(1000:1\)</span> voltage divider, so that a <span>\(1 V\)</span> signal at
+   <span>\(v_{in}\)</span> results in a <span>\(1mV\)</span> signal at the input of the op-amp.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>The components we've used so far have been simple (only two terminals)
+and fairly rugged (connecting a resistor or capacitor "backwards" won't
+harm it). The op-amp has four times as many pins, so it's easier to
+make a mistake in wiring it. Unfortunately, it's also considerably more
+delicate, so connecting it incorrectly can destroy it (often without so
+much as a puff of smoke to let you know that it has become an
+inoperational amplifier. Always wire your circuit with the power
+turned off and check your wiring carefully before turning the power
+on.</p>
+<p><center>
+<img alt="" src="../figs/img174.png" />  </p>
+<p><img alt="" src="../figs/open_loop.jpg" />
+</center></p>
+</div>
+</li>
+<li>
+<p>Set the function generator to produce a <span>\(2 V_{pp}\)</span>, 20 Hz sine wave.</p>
+</li>
+<li>
+<p>Connect the function generator output to <span>\(v_{in}\)</span> of the circuit above.
+   Connect <code>CH1</code> of the scope to <span>\(v_{in}\)</span> and <code>CH2</code> to <span>\(v_{out}\)</span>. Set the <code>CH2</code>
+   <code>VOLTS/DIV</code> to 5. Make sure both channels of the scope are on DC.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You should see a badly distorted (clipped) waveform at <span>\(v_{out}\)</span>. If you
+don't, try increasing the function generator output.</p>
+</div>
+</li>
+<li>
+<p>Adjust the distorted waveform (will look like a square wave) so that it is
+   symmetric about the x-axis. <strong>Note the positive and negative peak values of
+   <span>\(v_{out}\)</span>.</strong></p>
+</li>
+<li>
+<p>Connect a 100Ω resistor from <span>\(v_{out}\)</span> to ground. <strong>What happens to the
+   output signal?</strong></p>
+</li>
+<li>
+<p>Remove the 100Ω resistor from the op amp output.</p>
+</li>
+<li>
+<p>Set the FGEN to square wave. <strong>Now what is the shape of the <span>\(v_{out}\)</span>
+   waveform?</strong> Does the output change slope as fast as the input does? This is
+   called slew-rate limiting.</p>
+</li>
+<li>
+<p>Make sure the DC offset on the FGEN is zero. <strong>Does the output also show
+   zero DC offset?</strong></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We have just seen a number of the shortcomings of a real (as opposed to
+an ideal) operational amplifier: clipping, which limits the maximum
+amplitude of the output; slew-rate limiting, which limits the maximum
+slope of the output; and offset, which gives a non-zero output for zero
+input.</p>
+<p>When we reduce the overall gain with feedback, some of these (e.g.
+offset) are reduced significantly, and we get an output which is a
+faithful reproduction of the input. However, other limits (such as
+maximum output level) must be respected for this fidelity to remain.</p>
+</div>
+</li>
+<li>
+<p><strong>Summarize why, if we want to amplify our signal with an op-amp, operating
+   it in open loop is not the ideal solution.</strong></p>
+</li>
+</ol>
               
             </div>
           </div>
@@ -396,10 +555,10 @@ circuits before coming to lab.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../file.23/" class="btn btn-neutral float-right" title="Organizing Your Breadboard">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../experiment_4-2/" class="btn btn-neutral float-right" title="The Inverting Configuration">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../file.21/" class="btn btn-neutral" title="Introduction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../organizing-your-breadboard/" class="btn btn-neutral" title="Organizing Your Breadboard"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -425,10 +584,10 @@ circuits before coming to lab.</p>
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../file.21/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../organizing-your-breadboard/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../file.23/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../experiment_4-2/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

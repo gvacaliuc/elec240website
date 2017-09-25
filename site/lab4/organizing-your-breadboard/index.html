@@ -18,8 +18,8 @@
   <script>
     // Current page data
     var mkdocs_page_name = "Organizing Your Breadboard";
-    var mkdocs_page_input_path = "lab4/file.23.md";
-    var mkdocs_page_url = "/lab4/file.23/";
+    var mkdocs_page_input_path = "lab4/organizing-your-breadboard.md";
+    var mkdocs_page_url = "/lab4/organizing-your-breadboard/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -212,11 +212,11 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../file.21/">Introduction</a>
+    <a class="" href="../introduction/">Introduction</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../file.22/">Before Lab</a>
+    <a class="" href="../before-lab/">Before Lab</a>
                 </li>
                 <li class=" current">
                     
@@ -245,19 +245,19 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../exp4.1/">The 741 Op-Amp</a>
+    <a class="" href="../experiment_4-1/">The 741 Op-Amp</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../exp4.2/">The Inverting Configuration</a>
+    <a class="" href="../experiment_4-2/">The Inverting Configuration</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../file.24/">Standard Signal Levels</a>
+    <a class="" href="../standard-signal-levels/">Standard Signal Levels</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../exp4.3/">Transducer Amplifiers</a>
+    <a class="" href="../experiment_4-3/">Transducer Amplifiers</a>
                 </li>
     </ul>
 	    </li>
@@ -394,93 +394,104 @@
 <hr />
 <h2 id="prelude">Prelude</h2>
 <h2 id="organizing-your-breadboard">Organizing Your Breadboard</h2>
-<p>The first three Labs have been something of a "warmup" in terms of
-utilizing the breadboard. We've used only one or two of the interface
-components at a time and we've built circuits consisting of 2 or 3
-components which we've disassembled at the end of lab. With this Lab we
-will begin constructing more complicated circuits having more external
-connections. Since some of these will perform functions we will need in
-other Labs, we will want to leave them in place on the breadboard for
-future use. To keep this from degenerating into chaos, we need a plan
-for organizing the layout and wiring on the breadboard and interface
-board.</p>
-<p>There are several aspects to this organization ranging from small
-details to the big picture.</p>
+<p>The first three Labs have been something of a "warmup" in terms of utilizing
+the breadboard. We've used only one or two of the interface components at a
+time and we've built circuits consisting of 2 or 3 components which we've
+disassembled at the end of lab. With this Lab we will begin constructing more
+complicated circuits having more external connections. Since some of these will
+perform functions we will need in other Labs, we will want to leave them in
+place on the breadboard for future use. To keep this from degenerating into
+chaos, we need a plan for organizing the layout and wiring on the breadboard
+and interface board.</p>
+<p>There are several aspects to this organization ranging from small details to
+the big picture.</p>
 <h4 id="color-coding">Color Coding</h4>
-<p>There are different colored wires available to use. You could just pick
-pieces of wire at random, or you could try to use the different colors
-to designate different signals. There aren't enough colors for each
-signal to have its own, but you can use different colors to denote
-different classes of signals.</p>
-<p>One set of signals you should color code are power and ground. In
-particular, you should have a different color for +15 V, -15 V, and
-ground and you should not use any of these colors for other signals. It
-would be nice to use "standard" colors for these, but unfortunately
-there are several competing standards. One color that nearly everyone
-agrees on is that red should be the positive power supply voltage. Most
-automotive and electronic wiring uses black to denote ground. Electronic
-wiring which uses black for ground often uses blue for the negative
-supply. However, our power supply and breadboard use green to denote
-ground (the convention used in house wiring) and use black to denote the
+<p>There are different colored wires available to use. You could just pick pieces
+of wire at random, or you could try to use the different colors to designate
+different signals. There aren't enough colors for each signal to have its own,
+but you can use different colors to denote different classes of signals.</p>
+<p>One set of signals you should color code are power and ground. In particular,
+you should have a different color for <span>\(+15 V\)</span>, <span>\(-15 V\)</span>, and ground and you should
+not use any of these colors for other signals. It would be nice to use
+"standard" colors for these, but unfortunately there are several competing
+standards. One color that nearly everyone agrees on is that red should be the
+positive power supply voltage. Most automotive and electronic wiring uses black
+to denote ground. Electronic wiring which uses black for ground often uses blue
+for the negative supply. However, our power supply and breadboard use green to
+denote ground (the convention used in house wiring) and use black to denote the
 negative supply.</p>
-<p>So we have two possible "standard" color codes for power: (1) red = +,
-green = gnd, black = -, and (2) red = +, black = gnd, blue  = -. You
-could use either of these, or make up your own. The pictures in this lab
-use set (1).</p>
-<p>Another useful thing to color code would be the wires or "probes" from
-the interface board connector. That way you can tell which wire is <code>CH1</code>
-of the scope or which is the function generator output without having to
-trace from one end of the wire to the other.</p>
+<p>So we have two possible "standard" color codes for power: </p>
+<ol>
+<li>red = +, green = gnd, black = -</li>
+<li>red = +, black = gnd, blue  = -</li>
+</ol>
+<p>You could use either of these, or make up your own. The pictures in this lab
+use set 1.</p>
+<p>Another useful thing to color code would be the wires or "probes" from the
+interface board connector. That way you can tell which wire is <code>CH1</code> of the
+scope or which is the function generator output without having to trace from
+one end of the wire to the other.</p>
 <h4 id="power-bussing">Power Bussing</h4>
-<p>Each of the power bus strips has three rows of contacts, so we can
-distribute ground, +15 V, and -15 V throughout the entire breadboard
-area. Remembering to connect the two halves of each row together, we get
-the following layout for power:</p>
-<p><img alt="\includegraphics[scale=0.650000]{pwr_bus3.ps}" src="../../figs/img172.png" />{width="595"
-height="299"}</p>
+<p>Each of the power bus strips has three rows of contacts, so we can distribute
+ground, <span>\(+15 V\)</span>, and <span>\(-15 V\)</span> throughout the entire breadboard area. Remembering
+to connect the two halves of each row together, we get the following layout for
+power:</p>
+<p><center>
+<img alt="" src="../figs/img172.png" />
+</center></p>
 <h4 id="interface-board-connector-assignments">Interface Board Connector Assignments</h4>
 <p>Some of the connectors on the Interface Board are dedicated to a single
-function (e.g. the telephone handset or the sound card). Others (e.g.
-the BNC and phone jacks) are more flexible and may be connected to a
-variety of signal sources or destinations. It will be helpful to
-establish standard assignments for these connectors as well.</p>
-<p>In the instructions and photographs, we will be using the following
-assignment:</p>
-<hr />
-<p><strong>Connector</strong>
-  <strong>Socket Pin</strong>
-  <strong>Signal</strong></p>
-<p>J1-1
-  1
-  Oscilloscope channel 1</p>
-<p>J1-2
-  2
-  Oscilloscope channel 2</p>
-<p>J1-3
-  3
-  Function generator output</p>
-<p>J1-6
-  8
-  Microphone</p>
-<hr />
+function (e.g. the telephone handset or the sound card). Others (e.g.  the BNC
+and phone jacks) are more flexible and may be connected to a variety of signal
+sources or destinations. It will be helpful to establish standard assignments
+for these connectors as well.</p>
+<p>In the instructions and photographs, we will be using the following assignment:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Connector</strong></th>
+<th><strong>Socket Pin</strong></th>
+<th><strong>Signal</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>J1-1</td>
+<td>1</td>
+<td>Oscilloscope channel 1</td>
+</tr>
+<tr>
+<td>J1-2</td>
+<td>2</td>
+<td>Oscilloscope channel 2</td>
+</tr>
+<tr>
+<td>J1-3</td>
+<td>3</td>
+<td>Function generator output</td>
+</tr>
+<tr>
+<td>J1-6</td>
+<td>8</td>
+<td>Microphone</td>
+</tr>
+</tbody>
+</table>
 <h4 id="overall-layout">Overall Layout</h4>
-<p>When building a fairly complex circuit like you will in Lab 10,
-involving at least 4 op-amps and a dozen or so resistors and capacitors,
-good engineering practice is to break down a complex system into a
-number of simple subsystems, each of which performs a single,
-well-defined function.</p>
-<p>In the unlikely event that your circuit does not work perfectly the
-first time you turn it on, it will make it easier for you (and your
-labbie) to debug it if each of these subcircuits is laid out (neatly, of
-course) on its own little patch of breadboard and is connected to the
-other subcircuits in such a way that it may be easilly disconnected from
-them for testing in isolation.</p>
-<p>One of the circuits we will build this week, the microphone amplifier
-and mixer, will be used in most of our subsequent labs. You should put
-it in a location which will will not get in the way of building other
-circuits, but will be convenient for connecting to the interface board
-and these other circuits. The righthand quarter of the top socket strip
-is a good location.</p>
+<p>When building a fairly complex circuit like you will in Lab 10, involving at
+least 4 op-amps and a dozen or so resistors and capacitors, good engineering
+practice is to break down a complex system into a number of simple subsystems,
+each of which performs a single, well-defined function.</p>
+<p>In the unlikely event that your circuit does not work perfectly the first time
+you turn it on, it will make it easier for you (and your labbie) to debug it if
+each of these subcircuits is laid out (neatly, of course) on its own little
+patch of breadboard and is connected to the other subcircuits in such a way
+that it may be easilly disconnected from them for testing in isolation.</p>
+<p>One of the circuits we will build this week, the microphone amplifier and
+mixer, will be used in most of our subsequent labs. You should put it in a
+location which will will not get in the way of building other circuits, but
+will be convenient for connecting to the interface board and these other
+circuits. The righthand quarter of the top socket strip is a good location.</p>
               
             </div>
           </div>
@@ -488,10 +499,10 @@ is a good location.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../exp4.1/" class="btn btn-neutral float-right" title="The 741 Op-Amp">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../experiment_4-1/" class="btn btn-neutral float-right" title="The 741 Op-Amp">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../file.22/" class="btn btn-neutral" title="Before Lab"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../before-lab/" class="btn btn-neutral" title="Before Lab"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -517,10 +528,10 @@ is a good location.</p>
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../file.22/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../before-lab/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../exp4.1/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../experiment_4-1/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
