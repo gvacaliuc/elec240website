@@ -14,8 +14,8 @@ The Laboratories
 
 -   Lab 1: [Basic Electrical Measurements](./lab1)
 -   Lab 2: [Signal Sources and Sinks](./lab2)
--   Lab 3: [Signal Processing I: Basic Circuits](./lab3)
--   Lab 4: [Signal Processing II: Active Circuits](./lab4)
+-   Lab 3: [Basic Circuits](./lab3)
+-   Lab 4: [Active Circuits](./lab4)
 -   Lab 5: [More Opamp Circuits](./lab5)
 -   Lab 6: [Signal Analysis and Characterization](./lab6)
 -   Lab 7: [Digital Signal Processing](./lab7)

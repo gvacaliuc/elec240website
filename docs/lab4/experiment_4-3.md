@@ -97,7 +97,7 @@ convenient part of the breadboard (see discussion in [Organizing your
 Breadboard](./organizing-your-breadboard)) and leave it assembled when lab is
 over.
 
-1. Look back in your lab notebook to find the value you measured for the output
+1. Look back in your lab report to find the value you measured for the output
    voltage of the dynamic microphone. **Calculate the gain $G$** required to
    amplify this to a $1 V_{ pp }$ signal.
 

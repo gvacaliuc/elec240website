@@ -5,8 +5,8 @@ ELEC 240 Lab
 Lab 3
 =====
 
-Signal Processing I: Basic Circuits
-===================================
+Basic Circuits
+==============
 
 ### [Introduction](./introduction)
 

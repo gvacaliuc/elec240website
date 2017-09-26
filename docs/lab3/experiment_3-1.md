@@ -13,8 +13,7 @@ Resistive Voltage Dividers
 * Test board
 * Resistors
 * 1-kΩ Potentiometer
-
-[BNC T Connector](../misc_images/#bnc-t)
+* [BNC T Connector](../misc_images/#bnc-t)
 
 ### Part A: Measuring AC Voltage with the DMM
 
@@ -85,16 +84,6 @@ Resistive Voltage Dividers
         ignored it can reduce the performance of the system, or keep it from
         working altogether.
 
-    !!! note
-        A more accurate model of the system we measured would be:
-
-        <center>
-        ![](./figs/img163.png)
-        </center>
-
-7. Based on your measurements, **what are the output resistance ($R_S$) of the
-   function generator and the input resistance ($R_L$) of the scope?**
-
 ### Part C: The Potentiometer
 
 A potentiometer (pot for short) is a fixed value resistor with a third, movable
@@ -143,65 +132,10 @@ $$
 
 3. Set the function generator to produce a $2 V_{pp}$ 100-Hz sine wave.
 
-4. Set the potentiometer adjustment screw to midscale and **measure
-   $v_{out}$.**
+4. Using a screwdriver from your toolkit, turn the crosshairs on the potentiometer to the midpoint. **Note down $v_{out}$.**
+
+![](./figs/pot_crosshairs.png)
 
 5. The pot has a scale divided into 10 equal divisions, presumably representing
    10 equal divisions of resistance. Set the pot to each of these 10 divisions
-   and measure $v_{out}$. **Is this presumption correct?**
-
-### Part D: Thevenin Equivalent Circuit of a Microphone
-
-1. Recall that the Thevenin theory states that any DC circuit can be modeled as
-   a power source and resistance. If a known resistive load is attached to a
-   'blackbox' circuit, such as an unknown power supply, the Thevenin
-   equivalence can be found for this blackbox circuit. **How do you find the
-   Thevenin equivalent circuit?**
-
-2. Another advantage of knowing the Thevenin equivalence of a blackbox circuit
-   is that we can determine a load resistance that maximizes the power transfer
-   to the load. **What should the load resistance be for maximum power
-   transfer?**
-
-    !!! note
-        Thevenin theory not only applies to power supplies and function
-        generators, but also to sensors. When sensors detect signals and
-        provide some outputs, they can be considered as sources with dependent
-        voltage or current supplies.
-
-    !!! note
-        Recall that a speaker produces sound by converting current flowing
-        through the voice coil into mechanical motion of the speaker cone. By
-        reversing this process, it is also possible to use a speaker as a
-        microphone. Sound waves will cause the speaker cone and voice coil to
-        move. As the voice coil moves through the permanent magnet, a current
-        is induced in the voice coil and a voltage appears across the voice
-        coil.
-
-3. Two speakers will be used here as a pair. One of them is the speaker,
-   converting the sine wave generated from function generator to sound. The
-   other plays the role of a microphone, and reverses the sound to electrical
-   waves. They are connected as below. 
-   
-    <center>
-    ![](./figs/img201.png)
-    </center>
-
-    Now the two wires connected to the microphone (the upper speaker) can be
-    considered as the two terminals of the load resistance. The whole system
-    consisting of the function generator, the speaker and the microphone should
-    be seen as a circuit with a sine wave power supply (Thevenin voltage) and
-    an internal resistance (Thevenin resistance).
-
-4. Set the `FGEN` to generate a sinusoid within audible range and connect the
-   upper speaker (microphone) to the oscilloscope. **Measure the peak-to-peak
-   amplitude, which will be the Thevenin voltage.**
-
-5. Connect different resistances between 1 and 10 ohms to the output of the
-   microphone and measure the load voltage $V_L$ of these resistances.
-
-6. **Calculate the Thevenin resistance of the system for each load and the
-   power transferred to each load resistance. What is the average Thevenin
-   resistance and is there any significant variation between measurements?**
-
-7. **Draw the power vs. resistance diagram** and find the maximum point.
+   and measure $v_{out}$. **Is this presumption correct?** If the pot you selected does not have division markings, approximate 4-6 equal divisions and do the measurements.
