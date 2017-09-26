@@ -53,8 +53,8 @@ labeled $V_{CC+}$ and $V_{CC-}$ on the diagram. For a 741, the nominal values
 are $V_{CC+} = 15 V$ and $V_{CC-} = -15 V$.
 
 To avoid clutter, we won't show the power supply terminals (pins 4 and 7) on
-any of the subsequent circuit diagrams. *However, pins 4 and 7 must be connected to the power supply or your
-amplifier will not operate.*
+any of the subsequent circuit diagrams. *However, pins 4 and 7 must be
+connected to the power supply or your amplifier will not operate.*
 
 Note that there is no ground terminal on the op-amp. The zero reference point
 is established by the external circuit and is not important to the op-amp
@@ -78,18 +78,26 @@ itself.
 3. Connect Pin 4 ($V_{CC-}$) to the negative power supply bus ($-15 V$).
    Connect Pin 7 ($V_{CC+}$) to the positive power supply bus ($+15 V$).  
 
-<center>
-![](./figs/opamp_pwr.jpg)
-</center>
+    <center>
+    ![](./figs/opamp_pwr.jpg)
+    </center>
 
-4. In VirtualBench, there are three power supplies, labeled $+6V$, $+25V$, and $-25V$, which indicate their max output voltages. Set the $+/-25V$ supplies to $+/-15V$. Turn the power supply on, and use your DMM to verify that the output from the power supply dongle is what you set it at. 
+4. In VirtualBench, there are three power supplies, labeled $+6V$, $+25V$, and
+   $-25V$, which indicate their max output voltages. Set the $+/-25V$ supplies
+   to $+/-15V$. Turn the power supply on, and use your DMM to verify that the
+   output from the power supply dongle is what you set it at. 
 
-5. Temporarily turn off the supply. Using banana plug patch cables, connect the $-25V$ terminal to the black binding post on
-   your breadboard and the $+25V$ terminal to the red breadboard binding post. To make a ground connection, connect the *common* terminal (circled in black) to the *ground* terminal (circled in green) with a banana plug patch cable. Use a second banana plug patch cable to connect the common terminal to the green breadboard binding post.
+5. Temporarily turn off the supply. Using banana plug patch cables, connect the
+   $-25V$ terminal to the black binding post on your breadboard and the $+25V$
+   terminal to the red breadboard binding post. To make a ground connection,
+   connect the *common* terminal (circled in black) to the *ground* terminal
+   (circled in green) with a banana plug patch cable. Use a second banana plug
+   patch cable to connect the common terminal to the green breadboard binding
+   post.
 
-<center>
-![](./figs/common-gnd.png)
-</center>
+    <center>
+    ![](./figs/common-gnd.png)
+    </center>
 
 ### Part B: Open-Loop Response
 
