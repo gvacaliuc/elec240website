@@ -411,19 +411,18 @@ signals of only a few millivolts, while our output transducers (speaker and
 LED) required signals of a few volts. To make up this discrepancy, we need to
 amplify the signal levels produced by the input transducers.</p>
 <h3 id="part-a-photodiode-amplifier">Part A: Photodiode Amplifier</h3>
-<p>The inverting op-amp circuit works by taking the current that flows into
-the "virtual ground" at the inverting input and forcing it to flow in
-the feedback resistor. Since the voltage across <span>\(R_F\)</span> is equal to
-<span>\(R_FI_F\)</span>, the output voltage (on the other terminal of <span>\(R_F\)</span> is
-proportional to the current flowing into the virtual ground. What if
-instead of this current originating from the voltage across <span>\(R_1\)</span>, it
-instead came directly from a current source? Well, the output voltage
-would still be proportional to it: <span>\(v_{out} = -R_FI_F = -R_FI_{in}\)</span>, i.e.,
-we have an amplifier which accepts a current as an input and produces a
-voltage as an output. This is called a <em>transresistance amplifier</em>.
+<p>The inverting op-amp circuit works by taking the current that flows into the
+"virtual ground" at the inverting input and forcing it to flow in the feedback
+resistor. Since the voltage across <span>\(R_F\)</span> is equal to <span>\(R_FI_F\)</span>, the output
+voltage (on the other terminal of <span>\(R_F\)</span> is proportional to the current flowing
+into the virtual ground. What if instead of this current originating from the
+voltage across <span>\(R_1\)</span>, it instead came directly from a current source? Well, the
+output voltage would still be proportional to it: <span>\(v_{out} = -R_FI_F =
+-R_FI_{in}\)</span>, i.e., we have an amplifier which accepts a current as an input and
+produces a voltage as an output. This is called a <em>transresistance amplifier</em>.
 (Since a resistance converts its current to a voltage (<span>\(v=Ri\)</span>), a
-transresistance converts a current in one part of the circuit to a
-voltage in another.)</p>
+transresistance converts a current in one part of the circuit to a voltage in
+another.)</p>
 <p>In Lab 2 we measured the <em>voltage</em> across the photodiode and found some fairly
 distorted waveforms. It turns out that the <em>current</em> produced by a photodiode
 is proportional to the intensity of the light falling on it, while the voltage
@@ -452,9 +451,9 @@ would have a much better transducer.</p>
    with the photodiode in Exp. 2.3 Part B).</p>
 </li>
 <li>
-<p>Hold the LED directly above the photodiode and observe <span>\(v_{out}\)</span>. <strong>Is it less
-   distorted than in Lab 2?</strong> Switch the function generator to sine wave and
-   observe the waveshape.</p>
+<p>Hold the LED directly above the photodiode and observe <span>\(v_{out}\)</span>. <strong>Is it
+   less distorted than in Lab 2?</strong> Switch the function generator to sine wave
+   and observe the waveshape.</p>
 </li>
 <li>
 <p>Switch the function generator to square wave and increase the amplitude to
@@ -486,7 +485,7 @@ Breadboard</a>) and leave it assembled when lab is
 over.</p>
 <ol>
 <li>
-<p>Look back in your lab notebook to find the value you measured for the output
+<p>Look back in your lab report to find the value you measured for the output
    voltage of the dynamic microphone. <strong>Calculate the gain <span>\(G\)</span></strong> required to
    amplify this to a <span>\(1 V_{ pp }\)</span> signal.</p>
 </li>

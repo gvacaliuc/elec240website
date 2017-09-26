@@ -207,8 +207,6 @@
         
             <li><a class="toctree-l4" href="#part-c-the-potentiometer">Part C: The Potentiometer</a></li>
         
-            <li><a class="toctree-l4" href="#part-d-thevenin-equivalent-circuit-of-a-microphone">Part D: Thevenin Equivalent Circuit of a Microphone</a></li>
-        
         </ul>
     
 
@@ -401,8 +399,8 @@
 <li>Test board</li>
 <li>Resistors</li>
 <li>1-kΩ Potentiometer</li>
+<li><a href="../../misc_images/#bnc-t">BNC T Connector</a></li>
 </ul>
-<p><a href="../../misc_images/#bnc-t">BNC T Connector</a></p>
 <h3 id="part-a-measuring-ac-voltage-with-the-dmm">Part A: Measuring AC Voltage with the DMM</h3>
 <ol>
 <li>
@@ -481,17 +479,6 @@ careful design, this interaction can be minimized or accounted for. If
 ignored it can reduce the performance of the system, or keep it from
 working altogether.</p>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>A more accurate model of the system we measured would be:</p>
-<p><center>
-<img alt="" src="../figs/img163.png" />
-</center></p>
-</div>
-</li>
-<li>
-<p>Based on your measurements, <strong>what are the output resistance (<span>\(R_S\)</span>) of the
-   function generator and the input resistance (<span>\(R_L\)</span>) of the scope?</strong></p>
 </li>
 </ol>
 <h3 id="part-c-the-potentiometer">Part C: The Potentiometer</h3>
@@ -541,78 +528,14 @@ brown-black-orange. The values of these colors are 1, 0, and 3, so a
 <p>Set the function generator to produce a <span>\(2 V_{pp}\)</span> 100-Hz sine wave.</p>
 </li>
 <li>
-<p>Set the potentiometer adjustment screw to midscale and <strong>measure
-   <span>\(v_{out}\)</span>.</strong></p>
-</li>
-<li>
-<p>The pot has a scale divided into 10 equal divisions, presumably representing
-   10 equal divisions of resistance. Set the pot to each of these 10 divisions
-   and measure <span>\(v_{out}\)</span>. <strong>Is this presumption correct?</strong></p>
+<p>Using a screwdriver from your toolkit, turn the crosshairs on the potentiometer to the midpoint. <strong>Note down <span>\(v_{out}\)</span>.</strong></p>
 </li>
 </ol>
-<h3 id="part-d-thevenin-equivalent-circuit-of-a-microphone">Part D: Thevenin Equivalent Circuit of a Microphone</h3>
+<p><img alt="" src="../figs/pot_crosshairs.png" /></p>
 <ol>
-<li>
-<p>Recall that the Thevenin theory states that any DC circuit can be modeled as
-   a power source and resistance. If a known resistive load is attached to a
-   'blackbox' circuit, such as an unknown power supply, the Thevenin
-   equivalence can be found for this blackbox circuit. <strong>How do you find the
-   Thevenin equivalent circuit?</strong></p>
-</li>
-<li>
-<p>Another advantage of knowing the Thevenin equivalence of a blackbox circuit
-   is that we can determine a load resistance that maximizes the power transfer
-   to the load. <strong>What should the load resistance be for maximum power
-   transfer?</strong></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Thevenin theory not only applies to power supplies and function
-generators, but also to sensors. When sensors detect signals and
-provide some outputs, they can be considered as sources with dependent
-voltage or current supplies.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Recall that a speaker produces sound by converting current flowing
-through the voice coil into mechanical motion of the speaker cone. By
-reversing this process, it is also possible to use a speaker as a
-microphone. Sound waves will cause the speaker cone and voice coil to
-move. As the voice coil moves through the permanent magnet, a current
-is induced in the voice coil and a voltage appears across the voice
-coil.</p>
-</div>
-</li>
-<li>
-<p>Two speakers will be used here as a pair. One of them is the speaker,
-   converting the sine wave generated from function generator to sound. The
-   other plays the role of a microphone, and reverses the sound to electrical
-   waves. They are connected as below. </p>
-<p><center>
-<img alt="" src="../figs/img201.png" />
-</center></p>
-<p>Now the two wires connected to the microphone (the upper speaker) can be
-considered as the two terminals of the load resistance. The whole system
-consisting of the function generator, the speaker and the microphone should
-be seen as a circuit with a sine wave power supply (Thevenin voltage) and
-an internal resistance (Thevenin resistance).</p>
-</li>
-<li>
-<p>Set the <code>FGEN</code> to generate a sinusoid within audible range and connect the
-   upper speaker (microphone) to the oscilloscope. <strong>Measure the peak-to-peak
-   amplitude, which will be the Thevenin voltage.</strong></p>
-</li>
-<li>
-<p>Connect different resistances between 1 and 10 ohms to the output of the
-   microphone and measure the load voltage <span>\(V_L\)</span> of these resistances.</p>
-</li>
-<li>
-<p><strong>Calculate the Thevenin resistance of the system for each load and the
-   power transferred to each load resistance. What is the average Thevenin
-   resistance and is there any significant variation between measurements?</strong></p>
-</li>
-<li>
-<p><strong>Draw the power vs. resistance diagram</strong> and find the maximum point.</p>
-</li>
+<li>The pot has a scale divided into 10 equal divisions, presumably representing
+   10 equal divisions of resistance. Set the pot to each of these 10 divisions
+   and measure <span>\(v_{out}\)</span>. <strong>Is this presumption correct?</strong> If the pot you selected does not have division markings, approximate 4-6 equal divisions and do the measurements.</li>
 </ol>
               
             </div>

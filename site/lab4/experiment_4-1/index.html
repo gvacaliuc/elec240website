@@ -427,8 +427,8 @@ we need both positive and negative voltages for the power supply. These are
 labeled <span>\(V_{CC+}\)</span> and <span>\(V_{CC-}\)</span> on the diagram. For a 741, the nominal values
 are <span>\(V_{CC+} = 15 V\)</span> and <span>\(V_{CC-} = -15 V\)</span>.</p>
 <p>To avoid clutter, we won't show the power supply terminals (pins 4 and 7) on
-any of the subsequent circuit diagrams. However, they must be connected or your
-amplifier will not operate.</p>
+any of the subsequent circuit diagrams. <em>However, pins 4 and 7 must be
+connected to the power supply or your amplifier will not operate.</em></p>
 <p>Note that there is no ground terminal on the op-amp. The zero reference point
 is established by the external circuit and is not important to the op-amp
 itself.</p>
@@ -441,7 +441,7 @@ itself.</p>
 </li>
 <li>
 <p>Plug an op-amp into the breadboard so that it straddles the gap between the
-   top and bottom sections of the socket strip. If you have wired the power
+   top and bottom sections of the socket strip (see picture below). If you have wired the power
    buses as suggested above, Pin 1 should be to the left.</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
@@ -454,24 +454,27 @@ from your toolkit.</p>
 <li>
 <p>Connect Pin 4 (<span>\(V_{CC-}\)</span>) to the negative power supply bus (<span>\(-15 V\)</span>).
    Connect Pin 7 (<span>\(V_{CC+}\)</span>) to the positive power supply bus (<span>\(+15 V\)</span>).  </p>
-</li>
-</ol>
 <p><center>
 <img alt="" src="../figs/opamp_pwr.jpg" />
 </center></p>
-<ol>
-<li>
-<p>Set up the <span>\(\pm 25V\)</span> power supply dongle. Turn on the power supply and set
-   the VirtualBench voltage control to 15 volts.</p>
 </li>
 <li>
-<p>Turn off the supply and connect the supply to the breadboard with banana
-   plug patch cables. Connect the <span>\(-25V\)</span> terminal to the black binding post on
-   your breadboard, the <span>\(+25V\)</span> terminal to the red breadboard binding post, and
-   the GROUND terminal to the green breadboard binding post. Note that none of
-   the power supply output terminals are connected to ground.  If we want the
-   power supply zero volt reference connected to ground, we must make the
-   connection ourselves.</p>
+<p>In VirtualBench, there are three power supplies, labeled <span>\(+6V\)</span>, <span>\(+25V\)</span>, and
+   <span>\(-25V\)</span>, which indicate their max output voltages. Set the <span>\(+/-25V\)</span> supplies
+   to <span>\(+/-15V\)</span>. Turn the power supply on, and use your DMM to verify that the
+   output from the power supply dongle is what you set it at. </p>
+</li>
+<li>
+<p>Temporarily turn off the supply. Using banana plug patch cables, connect the
+   <span>\(-25V\)</span> terminal to the black binding post on your breadboard and the <span>\(+25V\)</span>
+   terminal to the red breadboard binding post. To make a ground connection,
+   connect the <em>common</em> terminal (circled in black) to the <em>ground</em> terminal
+   (circled in green) with a banana plug patch cable. Use a second banana plug
+   patch cable to connect the common terminal to the green breadboard binding
+   post.</p>
+<p><center>
+<img alt="" src="../figs/common-gnd.png" />
+</center></p>
 </li>
 </ol>
 <h3 id="part-b-open-loop-response">Part B: Open-Loop Response</h3>
