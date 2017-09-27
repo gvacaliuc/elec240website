@@ -83,8 +83,8 @@ itself.
     </center>
 
 4. In VirtualBench, there are three power supplies, labeled $+6V$, $+25V$, and
-   $-25V$, which indicate their max output voltages. Set the $+/-25V$ supplies
-   to $+/-15V$. Turn the power supply on, and use your DMM to verify that the
+   $-25V$, which indicate their max output voltages. Set the $\pm 25V$ supplies
+   to $\pm 15V$. Turn the power supply on, and use your DMM to verify that the
    output from the power supply dongle is what you set it at. 
 
 5. Temporarily turn off the supply. Using banana plug patch cables, connect the
