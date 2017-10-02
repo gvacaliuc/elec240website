@@ -18,8 +18,8 @@
   <script>
     // Current page data
     var mkdocs_page_name = "Building a Function Generator";
-    var mkdocs_page_input_path = "lab5/exp5.1.md";
-    var mkdocs_page_url = "/lab5/exp5.1/";
+    var mkdocs_page_input_path = "lab5/experiment_5-1.md";
+    var mkdocs_page_url = "/lab5/experiment_5-1/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -97,6 +97,10 @@
                 <li class="">
                     
     <a class="" href="../../references/color_code/">Resistor Color Code</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../references/using-spice/">Tips for Using Spice</a>
                 </li>
     </ul>
 	    </li>
@@ -251,7 +255,7 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../file.28/">Introduction</a>
+    <a class="" href="../introduction/">Introduction</a>
                 </li>
                 <li class=" current">
                     
@@ -276,7 +280,7 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../exp5.2/">Bode Plots</a>
+    <a class="" href="../experiment_5-2/">Bode Plots</a>
                 </li>
     </ul>
 	    </li>
@@ -398,56 +402,62 @@
 <li>Capacitors according to your design</li>
 </ul>
 <h3 id="part-a-build-a-function-generator">Part A: Build a Function Generator</h3>
-<p>In this lab experiment, we will be building our own function generator
-using two new types of op amp circuits.</p>
+<p>In this lab experiment, we will be building our own function generator using
+two new types of op amp circuits.</p>
+<ol>
+<li>
+<p>Wire up the following RC relaxation oscillator circuit (see Introduction to
+   read about its functionality):  </p>
+<p><center>
+<img alt="" src="../figs/multivib.png" />
+</center></p>
 <ul>
 <li>
-<p>Wire up the following RC relaxation oscillator circuit (see
-Introduction to read about its functionality):\
-<img alt="" src="../../figs/multivib.png" />{width="559" height="391"}\
-\</p>
+<p><strong>Is the output as expected? Provide a screenshot in your report.</strong>  </p>
 </li>
 <li>
-<p><strong>Is the output as expected? Provide a screenshot in your report.</strong></p>
+<p><strong>What is the frequency of oscillation?</strong>  </p>
 </li>
 <li>
-<p><strong>What is the frequency of oscillation?</strong></p>
+<p><strong>The frequency should be equal to <span>\(f = \frac{1}{2.2*R1*C1}\)</span>. Is
+  this what you measure?</strong>  </p>
+</li>
+<li>
+<p><strong>Does the frequency change as expected when R1 is changed?</strong>  </p>
 </li>
 </ul>
-<p>o The frequency should be equal to $f = \frac{1}{2.2*R1*C1}$. Is
-this what you measure?****</p>
+</li>
+<li>
+<p>Cascade an integrator circuit to the output as shown below:  </p>
+<p><center>
+<img alt="" src="../figs/integrator.png" />
+</center></p>
 <ul>
-<li>
-<p><strong>Does the frequency change as expected when R1 is changed?</strong></p>
-</li>
-<li>
-<p>Cascade an integrator circuit to the output as shown below:\
-<img alt="" src="../../figs/integrator.png" />{width="580" height="264"} ****</p>
-</li>
-<li>
-<p><strong>Is the integrator working as expected? Explain and provide a
-screenshot.</strong></p>
-</li>
-<li>
-<p>Measure the DC offset of Vout2. ****</p>
-</li>
+<li><strong>Is the integrator working as expected? Explain and provide a
+  screenshot.</strong></li>
 </ul>
-<p>o *Note: DC offset is the average voltage of your waveform.<strong>*</strong></p>
-<ul>
-<li>
-<p>Eliminate the DC offset by placing a DC blocking capacitor (any
-capacitor between 0.1uF and 1uF) in between the RC relaxation oscillator
-and integrator. <strong>Provide a screenshot.</strong></p>
 </li>
 <li>
-<p>Now add on to your circuit so that it also generates a sinusoid.
-<strong>Provide a screenshot.</strong></p>
+<p><strong>Measure the DC offset of <code>Vout2</code></strong></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>DC offset is the average voltage of your waveform.</p>
+</div>
+</li>
+<li>
+<p>Eliminate the DC offset by placing a DC blocking capacitor (any capacitor
+   between <span>\(0.1\mu F\)</span> and <span>\(1\mu F\)</span>) in between the RC relaxation oscillator and
+   integrator. <strong>Provide a screenshot.</strong></p>
+</li>
+<li>
+<p>Now add on to your circuit so that it also generates a sinusoid.  <strong>Provide
+   a screenshot.</strong></p>
 </li>
 <li>
 <p>Build a gain stage to your circuit to modulate the amplitude of your
-sinusoidal output.****</p>
+   sinusoidal output.</p>
 </li>
-</ul>
+</ol>
               
             </div>
           </div>
@@ -455,10 +465,10 @@ sinusoidal output.****</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../exp5.2/" class="btn btn-neutral float-right" title="Bode Plots">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../experiment_5-2/" class="btn btn-neutral float-right" title="Bode Plots">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../file.28/" class="btn btn-neutral" title="Introduction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../introduction/" class="btn btn-neutral" title="Introduction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -484,10 +494,10 @@ sinusoidal output.****</p>
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../file.28/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../introduction/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../exp5.2/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../experiment_5-2/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

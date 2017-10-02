@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Introduction - ELEC 240 Labs</title>
+  <title>Tips for Using Spice - ELEC 240 Labs</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Introduction";
-    var mkdocs_page_input_path = "lab5/file.28.md";
-    var mkdocs_page_url = "/lab5/file.28/";
+    var mkdocs_page_name = "Tips for Using Spice";
+    var mkdocs_page_input_path = "references/using-spice.md";
+    var mkdocs_page_url = "/references/using-spice/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -80,23 +80,41 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../references/patch-cords-and-cables/">Patch Cords and Cables</a>
+    <a class="" href="../patch-cords-and-cables/">Patch Cords and Cables</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../references/breadboard/">The Breadboard</a>
+    <a class="" href="../breadboard/">The Breadboard</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../references/interface/">The Interface Modules</a>
+    <a class="" href="../interface/">The Interface Modules</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../references/wiring/">Wiring</a>
+    <a class="" href="../wiring/">Wiring</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../references/color_code/">Resistor Color Code</a>
+    <a class="" href="../color_code/">Resistor Color Code</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Tips for Using Spice</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#tips-for-using-spice">Tips for Using Spice</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#keyboard-shortcuts">Keyboard Shortcuts</a></li>
+        
+            <li><a class="toctree-l4" href="#performing-an-ac-analysis">Performing an AC Analysis</a></li>
+        
+        </ul>
+    
+
+    </ul>
                 </li>
     </ul>
 	    </li>
@@ -247,22 +265,19 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../">Home</a>
-                </li>
-                <li class=" current">
-                    
-    <a class="current" href="./">Introduction</a>
-    <ul class="subnav">
-            
-    </ul>
+    <a class="" href="../../lab5/">Home</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../exp5.1/">Building a Function Generator</a>
+    <a class="" href="../../lab5/introduction/">Introduction</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../exp5.2/">Bode Plots</a>
+    <a class="" href="../../lab5/experiment_5-1/">Building a Function Generator</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab5/experiment_5-2/">Bode Plots</a>
                 </li>
     </ul>
 	    </li>
@@ -358,11 +373,11 @@
     
       
         
-          <li>Lab 5 &raquo;</li>
+          <li>References &raquo;</li>
         
       
     
-    <li>Introduction</li>
+    <li>Tips for Using Spice</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -372,42 +387,86 @@
           <div role="main">
             <div class="section">
               
-                <p>### ELEC 240 Lab # Introduction This week we are going to look at
-some more types of op amp circuits. Using these op amp circuits, we will
-build our own function generator. The first type of op amp circuit is a
-square-wave generator, or also called an RC relaxation oscillator. We do
-this by operating the op amp as a comparator. A comparator's output
-toggles between +Vcc and -Vcc at a frequency dependent on the
-charge/discharge rate of a capacitor through a feedback resistor. When
-the output is high the capacitor charges. Once the voltage across the
-capacitor reaches a certain positive reference voltage, the output is
-driven negative. Once the capacitor charges to the negative reference
-voltage, the output is driven high. With positive feedback, this cycle
-continues and we see a square wave oscillation on the output. The
-frequency of the oscillation is $f = \frac{1}{2*RC}$. Next we will
-create an integrator, which performs the mathematical operation of
-integration with respect to time. How could we use an integrator to
-create different waveform shapes for our function generator? The
-integrator works by passing a current that charges or discharges a
-capacitor in the negative feedback loop. To analyze an integrator, first
-assume that the opamp is ideal. The integrator looks like as below,
-<img alt="" src="../../figs/img202.png" />{width="399" height="225"}
-and uses the ideal constraints below.
-$i_f + i_s = 0$ $v_n = v_p$
-We can define the currents as
-$i_s = \frac{v_s}{R_s}$ $i_f = {C_f}\frac{dv_o}{dt}$
-with substitution into the first ideal constraint equation
-$\frac{dv_o}{dt} = - {\frac{1}{{R_s}C_f}}{v_s}$
-and multiplying both sides by $dt$ and integrate:
-$v_o = - {\frac{1}{{R_s}C_f}}\int_{t_o}\^t {v_s}dt +
-v_o(t_o)$
-The equation states that the output voltage of an integrator equals the
-initial value of the voltage plus an inverted, scaled, replica of the
-integral of the input voltage. If the initial voltage is zero, then the
-output reduces to:
-$v_o = - {\frac{1}{{R_s}C_f}}\int_{t_o}\^t {v_s}dt$
-Finally we will amplify our output with an inverting amplifier like we
-built last time.</p>
+                <p>ELEC 240 Lab</p>
+<hr />
+<h2 id="tips-for-using-spice">Tips for Using Spice</h2>
+<p>Here is a collection of pointers and instructions to refer to when using Spice.
+This should be enough to get you started, but you can also refer to this <a href="http://www.eecg.toronto.edu/~kphang/teaching/spice/">user
+manual</a>.</p>
+<ul>
+<li>
+<p>Place components by going to the Edit menu or shortcut buttons.</p>
+</li>
+<li>
+<p>The opamp is found under Edit <span>\(\rightarrow\)</span> Components <span>\(\rightarrow\)</span> OpAmps
+  <span>\(\rightarrow\)</span> opamp. The voltage source is found under Edit <span>\(\rightarrow\)</span>
+  Components <span>\(\rightarrow\)</span> voltage. Connect components using Edit
+  <span>\(\rightarrow\)</span> Wire (or the shortcut button F3).</p>
+</li>
+<li>
+<p>Set the voltage source  to AC by right-clicking it and selecting Advanced.
+  Set AC amplitude to 1.</p>
+</li>
+<li>
+<p>Enter in R and C values by right-clicking these components.  </p>
+</li>
+<li>
+<p>Optional label nets (i.e., wires) by right-clicking on nets.  </p>
+</li>
+</ul>
+<h3 id="keyboard-shortcuts">Keyboard Shortcuts</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Shortcut</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctrl-R</td>
+<td>Rotate</td>
+</tr>
+<tr>
+<td>Delete or F5</td>
+<td>Delete</td>
+</tr>
+<tr>
+<td>F6</td>
+<td>Copy</td>
+</tr>
+<tr>
+<td>F7</td>
+<td>Move</td>
+</tr>
+<tr>
+<td>F8</td>
+<td>Drag</td>
+</tr>
+<tr>
+<td>Esc</td>
+<td>Exit a mode</td>
+</tr>
+</tbody>
+</table>
+<h3 id="performing-an-ac-analysis">Performing an AC Analysis</h3>
+<ol>
+<li>
+<p>Click on the Running Man icon and select AC analysis (or go to Simulate
+   <span>\(\rightarrow\)</span> Run).</p>
+</li>
+<li>
+<p>Use a decade frequency sweep with at least 10 points per decade over the
+   range of 1 Hz to 10 MHz. This will appear as a Spice directive on your
+   schematic as <code>.ac dec 10 1 10meg</code></p>
+</li>
+<li>
+<p>Click on the <code>Vout</code> node for gain and phase plots to appear. You will
+   notice that the gain is displayed in dB and phase in degrees. The x-axis
+   will be logarithmic, i.e., the step size is <span>\(10^n\)</span>, where <span>\(n \in
+   \mathbb{Z}_+\)</span>.  Each of the steps is called a decade (dec).</p>
+</li>
+</ol>
               
             </div>
           </div>
@@ -415,10 +474,10 @@ built last time.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../exp5.1/" class="btn btn-neutral float-right" title="Building a Function Generator">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../lab1/" class="btn btn-neutral float-right" title="Home">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../" class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../color_code/" class="btn btn-neutral" title="Resistor Color Code"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -444,10 +503,10 @@ built last time.</p>
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../color_code/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../exp5.1/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../../lab1/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
