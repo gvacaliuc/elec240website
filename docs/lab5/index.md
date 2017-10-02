@@ -2,19 +2,12 @@ ELEC 240 Lab
 
 ------------------------------------------------------------------------
 
-Laboratory 5
-============
+# Laboratory 5: More Op-Amp Circuits
 
-More Op Amp Circuits
-====================
+## [Introduction](./introduction)
 
-[](file.28)
+## Experiments
 
-### Introduction
-
-Experiments
------------
-
--   Experiment 5.1: [Building a Function Generator](exp5.1)
--   Experiment 5.2: [Bode Plots](exp5.2)
+* Experiment 5.1: [Building a Function Generator](./experiment_5-1)
+* Experiment 5.2: [Bode Plots](./experiment_5-2)
 
