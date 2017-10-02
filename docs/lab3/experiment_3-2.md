@@ -63,44 +63,12 @@ stands for (Simulation Program with Integrated Circuit Emphasis).
    below are specifically for Windows.  
 
 2. Click on New Schematic and create the same circuit you built on your
-   breadboard by following the instructions below:
+   breadboard by following the [instructions](../references/using-spice) on
+   spice provided in the references section.
 
-    !!! tip
-        * Place components by going to the Edit menu or shortcut buttons.
-        * The opamp is found under Edit $\rightarrow$ Components $\rightarrow$ 
-          [OpAmps] $\rightarrow$ opamp. The voltage source is found under 
-          Edit $\rightarrow$ Components $\rightarrow$ voltage. Connect 
-          components using Edit $\rightarrow$ Wire (or the shortcut button F3).
-        * Some convenient shortcuts are listed below.  
-        * Set the voltage source  to AC by right-clicking it and selecting
-          Advanced. Set AC amplitude to 1.
-        * Enter in R and C values by right-clicking these components.
-        * Optional label nets (i.e., wires) by right-clicking on nets.
-
-|  **Shortcut**   | **Description** |
-|  ------------   | --------------- |
-|     Ctrl-R      |      Rotate     |
-|   Delete or F5  |      Delete     |
-|        F6       |       Copy      |
-|        F7       |       Move      |
-|        F8       |       Drag      |
-|        Esc      |   Exit a mode   |
-
-
-3. Perform an AC analysis using the instructions below. An AC analysis will
-   evaluate the gain (Vout/Vin) and phase over a specified range of frequencies
-   and plot it.
-
-    !!! tip
-        * Click on the Running Man icon and select AC analysis (or go to 
-          Simulate $\rightarrow$ Run).
-        * Use a decade frequency sweep with at least 10 points per decade 
-          over the range of 1 Hz to 10 MHz. This will appear as a Spice directive
-          on your schematic as `.ac dec 10 1 10meg`
-        * Click on the $V_{out}$ node for gain and phase plots to appear. You will
-          notice that the gain is displayed in dB and phase in degrees. The x-axis
-          will be logarithmic, i.e., the step size is $10^n$, where $n \in
-          \mathbb{Z}_+$.  Each of the steps is called a decade (dec).
+3. Perform an AC analysis using the
+   [instructions](../references/using-spice/#performing-an-ac-analysis)
+   provided in the references section.
 
 4. **Take a screenshot of your plots.**  
 
