@@ -2,19 +2,19 @@ ELEC 240 Lab
 
 ------------------------------------------------------------------------
 
-Laboratory 5
-============
+Lab 5
+=====
 
-More Op Amp Circuits
-====================
+Signal Analysis and Characterization
+====================================
 
-[](file.28)
-
-### Introduction
+### [Introduction](./introduction)
 
 Experiments
 -----------
 
--   Experiment 5.1: [Building a Function Generator](exp5.1)
--   Experiment 5.2: [Bode Plots](exp5.2)
+* Prelude: [Prelude](./prelude)
+* Experiment 5.1: [Virtual Instruments with Labview](./experiment_5-1)
+* Experiment 5.2: [Signal Acquisition](./experiment_5-2)
+* Experiment 5.3: [The Spectrum of Acoustic Signals](./experiment_5-3)
 
