@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Bode Plots - ELEC 240 Labs</title>
+  <title>Experiment 5.2 - ELEC 240 Labs</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,7 +17,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Bode Plots";
+    var mkdocs_page_name = "Experiment 5.2";
     var mkdocs_page_input_path = "lab5/experiment_5-2.md";
     var mkdocs_page_url = "/lab5/experiment_5-2/";
   </script>
@@ -97,10 +97,6 @@
                 <li class="">
                     
     <a class="" href="../../references/color_code/">Resistor Color Code</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../references/using-spice/">Tips for Using Spice</a>
                 </li>
     </ul>
 	    </li>
@@ -259,88 +255,40 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../experiment_5-1/">Building a Function Generator</a>
+    <a class="" href="../prelude/">Prelude</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../experiment_5-1/">Experiment 5.1</a>
                 </li>
                 <li class=" current">
                     
-    <a class="current" href="./">Bode Plots</a>
+    <a class="current" href="./">Experiment 5.2</a>
     <ul class="subnav">
             
     <li class="toctree-l3"><a href="#experiment-52">Experiment 5.2</a></li>
     
 
-    <li class="toctree-l3"><a href="#frequency-response">Frequency Response</a></li>
+    <li class="toctree-l3"><a href="#signal-acquisition">Signal Acquisition</a></li>
     
         <ul>
         
             <li><a class="toctree-l4" href="#equipment">Equipment</a></li>
         
-            <li><a class="toctree-l4" href="#part-a-measuring-frequency-response">Part A: Measuring Frequency Response</a></li>
+            <li><a class="toctree-l4" href="#part-a-acquiring-signals">Part A: Acquiring Signals</a></li>
         
-            <li><a class="toctree-l4" href="#part-b-circuit-simulation">Part B: Circuit Simulation</a></li>
+            <li><a class="toctree-l4" href="#part-b-the-spectrum-of-triangle-and-square-waves">Part B: The Spectrum of Triangle and Square Waves</a></li>
+        
+            <li><a class="toctree-l4" href="#part-c-the-spectrum-and-frequency-response">Part C: The Spectrum and Frequency Response</a></li>
         
         </ul>
     
 
     </ul>
                 </li>
-    </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <span class="caption-text">Lab 6</span>
-    <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../lab6/">Home</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../lab6/file.26/">Introduction</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../lab6/file.27/">Decibels</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../lab6/exp6.1/">Measuring Signal Spectrum</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../lab6/exp6.2/">The Spectrum of Acoustic Signals</a>
-                </li>
-    </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <span class="caption-text">Lab 7</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../../lab7/">Home</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../lab7/exp7.1/">Sampling and Quantization</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../lab7/exp7.2/">Recording a Reference Signal</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../lab7/exp7.3/">Signal Processing</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../lab7/exp7.4/">Filtering, Continued</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../lab7/exp7.5/">Some DSP Applications</a>
+    <a class="" href="../experiment_5-3/">Experiment 5.3</a>
                 </li>
     </ul>
 	    </li>
@@ -382,7 +330,7 @@
         
       
     
-    <li>Bode Plots</li>
+    <li>Experiment 5.2</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -395,112 +343,172 @@
                 <p>ELEC 240 Lab</p>
 <hr />
 <h2 id="experiment-52">Experiment 5.2</h2>
-<h2 id="frequency-response">Frequency Response</h2>
+<h2 id="signal-acquisition">Signal Acquisition</h2>
+<h3 id="_1"></h3>
 <h3 id="equipment">Equipment</h3>
 <ul>
 <li>Test board</li>
-<li>Integrator from last experiment</li>
-<li>1kΩ and 100Ω resistors</li>
-<li>Lab computer or laptop</li>
+<li>2.2 <span>\(k\Omega\)</span> Resistor</li>
+<li>0.33 <span>\(\mu F\)</span> Capacitor</li>
 </ul>
-<h3 id="part-a-measuring-frequency-response">Part A: Measuring Frequency Response</h3>
-<p>In this part of the lab you will use look at the frequency response of your
-integrator.</p>
+<h3 id="part-a-acquiring-signals">Part A: Acquiring Signals</h3>
+<p>In this section you will learn how to acquire a signal into Labview using the
+Data Acquisition (DAQ) card (inside your PC) via the DAQ cable that is
+connected to your lab PC:</p>
+<p><center>
+<img alt="" src="../figs/daq.jpg" />
+</center></p>
 <ol>
 <li>
-<p>Disconnect the input and output from your integrator and modify it as shown
-   below. For the input, connect a <span>\(1 V_{pp}\)</span> sinusoidal signal from your
-   VirtualBench function generator.</p>
+<p>Copy the VI you created from Experiment 5.1 and give it a new name.</p>
+</li>
+<li>
+<p>We want to modify the Block Diagram to process an external signal read via
+    the DAQ cable. Delete the generated waveforms, i.e., Sine Wave and White
+    Noise blocks, Add block, and Frequency and Amplitude controls.</p>
 <p><center>
-<img alt="" src="../figs/spiceintegrator.png" />
+<img alt="" src="../figs/bd6.png" />
 </center></p>
 </li>
 <li>
-<p>Record output peak-to-peak voltage values for the following frequencies:  </p>
-<ul>
-<li>10Hz</li>
-<li>100Hz</li>
-<li>500 Hz</li>
-<li>800 Hz</li>
-<li>1kHz</li>
-<li>1.5kHz</li>
-<li>2kHz</li>
-<li>5kHz</li>
-<li>10kHz</li>
-<li>50kHz</li>
-</ul>
+<p>In the Functions palette, go to Programming <span>\(\rightarrow\)</span> Measurement I/O
+    <span>\(\rightarrow\)</span> NI DAQmx <span>\(\rightarrow\)</span> DAQAssist.</p>
 </li>
 <li>
-<p>Calculate the gain in decibels (dB) for your circuit at each of these
-   frequencies</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<span>\[
-\text{Gain}(dB) = 20*log_{10}\left(\frac{Vout}{Vin}\right)
-\]</span></div>
+<p>Select Acquire Signals <span>\(\rightarrow\)</span> Analog Input <span>\(\rightarrow\)</span> Voltage.</p>
 </li>
 <li>
-<p>Plot <span>\(\text{Gain}(dB)\)</span> vs. <span>\(\text{Frequency}(Hz)\)</span> in Matlab. At what frequency does
-   the gain begin to drop?</p>
+<p>Select the input channel we will connect our FGEN signal to, in this case,
+    A/D input 4, or ai4.</p>
 </li>
 <li>
-<p><strong>Does the cutoff frequency, <span>\(f_c\)</span> roughly equal <span>\(\frac{1}{2*\pi*R5*C2}\)</span>?</strong></p>
+<p>At the bottom of the DAQ Assistant window that pops up, change the
+    Acquisition Mode to Continuous Samples and select OK.</p>
+</li>
+<li>
+<p>In the Block Diagram window, connect the data output to the broken wire
+    from the Power Spectrum block. Create controls for the input pins <code>number
+    of samples</code> and <code>rate</code>.</p>
+<p><center>
+<img alt="" src="../figs/bd7.png" />
+</center></p>
+</li>
+<li>
+<p>Your VI is ready to acquire signals from your test board. <strong>Show a
+    screenshot of your VI.</strong> Connect the DAQ cable to J3-1 on your test board.</p>
+</li>
+<li>
+<p>Connect the output of the FGEN to CH1 of the oscilloscope and to A/D input
+    4 (pin 46).</p>
+</li>
+<li>
+<p>Set the FGEN to produce a <span>\(2 V_{ pp }\)</span>, 500 Hz sine wave.</p>
+</li>
+<li>
+<p>In the Front Panel, set the rate to 10k and number of samples to 5k. </p>
+</li>
+<li>
+<p>Right-click on the time-domain waveform's x-axis to uncheck Autoscale X.
+    Change the max value of the time scale by double-clicking the max number so
+    that roughly 2-3 periods are displayed.</p>
+</li>
+<li>
+<p>Change the max frequency in the power spectrum plot as well to a reasonable
+    viewing window.</p>
+</li>
+<li>
+<p>Run your VI and <strong>take a screenshot.</strong></p>
+</li>
+<li>
+<p>Add some additional information to your Front Panel, RMS voltage (called
+    the Average DC/RMS block), and peak-to-peak voltage, and any other
+    interesting info you might find in Labview built-ins (if you can't find
+    these function blocks, use the Search feature). <strong>Show a screenshot.</strong></p>
+</li>
+<li>
+<p><strong>How does the display look when you disconnect the FGEN? Does your VI
+    detect any noise?</strong></p>
 </li>
 </ol>
-<h3 id="part-b-circuit-simulation">Part B: Circuit Simulation</h3>
-<p>The remainder of the lab can be done from a computer (lab computer or personal
-laptop). We will be using circuit simulation software called LTSpice. Spice
-stands for (Simulation Program with Integrated Circuit Emphasis).</p>
+<h3 id="part-b-the-spectrum-of-triangle-and-square-waves">Part B: The Spectrum of Triangle and Square Waves</h3>
 <ol>
 <li>
-<p>Download LTspice from linear.com. There are Windows and Mac versions
-   available. Please note that the instructions below are specifically for
-   Windows.</p>
+<p>The Fourier series of a triangle wave has only odd harmonics, which fall
+    off at the rate of <span>\(\frac{1}{n}2T\)</span> (12 dB/octave). Turn dB option on for your
+    spectral plot for better viewing. Set the function generator to produce a
+    triangle wave and see if this is the case. <strong>What happens when you vary the
+    symmetry?</strong></p>
 </li>
 <li>
-<p>Click on New Schematic and create the same circuit you built on your
-   breadboard shown above.  Refer to the <a href="../../references/using-spice">tips</a> in
-   the references section for help with Spice.</p>
+<p>The square wave also consists only of odd harmonics, but falling off as
+    <span>\(\frac{1}{n}T\)</span> (6 dB/octave). Set the function generator to square wave and
+    <strong>comment on the spectrum.</strong> Vary duty cycle. <strong>What do you observe?</strong>
+    Depending on the exact frequency you may see a number of extraneous
+    harmonics. These are due to the phenomenon ofT<em>aliasing</em>Twhich we will
+    examine later.</p>
 </li>
 <li>
-<p>The component opamp is just a symbol of an opamp and in order for Spice to
-   see the model, you need to place a Spice Directive calling the location:
-   Edit <span>\(\rightarrow\)</span> Spice Directive. Then enter <code>.lib opamp.sub</code></p>
+<p>Your spectrum analyzer displays magnitude and frequency on a linear scale.
+    It is sometimes useful to view the spectrum on a semi-log or log-log plot.
+    Stop executing the program, right-click on the spectrum display (gray area)
+    and click on Properties <span>\(\rightarrow\)</span> Scales. Select Log. Adjust the
+    amplitude if necessary to obtain a good display. <strong>Do you notice the
+    hyperbolic shape in which the harmonics fall off?</strong></p>
 </li>
 <li>
-<p>Set the voltage source to AC by right-clicking it and selecting Advanced.
-   Set AC amplitude to 1.</p>
+<p>Now get a log-log plot with magnitude in dB by changing the Y-scale to Log
+    and setting a multiplier of 20 (under Scale Factors). <strong>Note that the <span>\(1/f\)</span>
+    fall off is now a "linear" 20 dB/decade slope.</strong></p>
 </li>
 <li>
-<p>Enter in <span>\(R\)</span> and <span>\(C\)</span> values by right-clicking these components.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Optionally label nets (i.e., wires) by right-clicking on nets.</p>
-</div>
+<p>Switch the function generator to a triangle wave. <strong>Is the slope now 40
+    dB/decade?</strong> Set the spectrum analyzer back to linear display (both 
+    magnitude and frequency). Note the shape of the spectrum.</p>
 </li>
 <li>
-<p>Perform an AC analysis using the <a href="../../references/using-spice"> instructions </a>
-   provided in the references section. An AC analysis will evaluate the gain
-   (Vout/Vin) and phase over a specified range of frequencies and plot it.</p>
+<p>Set the function generator to square wave. Set the Duty Cycle to 15%. You
+    should now have a waveform consisting of narrow pulses. Note the shape of
+    the spectrum. It should have the <span>\(sin(x)/x\)</span> (sinc) shape you saw in
+    ELEC241.</p>
 </li>
 <li>
-<p>Click on the <code>Vout</code> node for gain and phase plots to appear. You will notice
-   that the gain is displayed in dB and phase in degrees. The x-axis will be
-   logarithmic, i.e., the step size is <span>\(10n\)</span>, where <span>\(n\)</span> is a non-negative
-   integer. Each of the steps is called a decade (<code>dec</code>).</p>
+<p>Set the spectrum analyzer back to dB magnitude and log frequency. Set the
+    duty cycle to 50%.</p>
+</li>
+</ol>
+<h3 id="part-c-the-spectrum-and-frequency-response">Part C: The Spectrum and Frequency Response</h3>
+<ol>
+<li>
+<p>Wire the circuit below. This is the same circuit we used in Lab 3, so you
+    should have its transfer function in your lab report.</p>
+<p><center>
+<img alt="" src="../figs/img181.png" />
+</center></p>
 </li>
 <li>
-<p><strong>Take a screenshot of your plots.</strong></p>
+<p>Connect the output of the function generator to <span>\(v_{in}\)</span>. Also connect
+   CH1 of the scope and A/D input 4 (pin 46) to <span>\(v_{in}\)</span>.</p>
 </li>
 <li>
-<p><strong>What is the gain at low frequencies? What is the cutoff frequency?  What
-   is the slope of the gain with respect to frequency for high frequencies
-   (express in terms of dB/dec)? Do these values match what you measured on
-   your breadboard?</strong></p>
+<p>Set the function generator to produce a 50 Hz sine wave at 1 <span>\(V_{rms}\)</span>.</p>
 </li>
 <li>
-<p><strong>What is the phase for very low frequencies? At 0dB? And for very high
-    frequencies? Can you explain why?</strong></p>
+<p>Move CH1 of the scope and A/D input 4 to <span>\(v_{out}\)</span>.</p>
+</li>
+<li>
+<p>Increase the frequency of the function generator and observe the behavior
+    of the spectrum display. The tip of the peak corresponding to the
+    fundamental of the sine wave will trace out the magnitude of the transfer
+    function of our circuit.</p>
+</li>
+<li>
+<p>Since the transfer function falls off as <span>\(1/f\)</span> for high frequencies, we
+   expect the output to fall 6dB/octave (an octave is a factor of two) for
+   frequencies well above the cutoff frequency T. <strong>Check the response at 1
+   kHz, 2 kHz, and 4 kHz and see how well this holds.</strong></p>
+</li>
+<li>
+<p>Turn off the function generator.</p>
 </li>
 </ol>
               
@@ -510,10 +518,10 @@ stands for (Simulation Program with Integrated Circuit Emphasis).</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../lab6/" class="btn btn-neutral float-right" title="Home">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../experiment_5-3/" class="btn btn-neutral float-right" title="Experiment 5.3">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../experiment_5-1/" class="btn btn-neutral" title="Building a Function Generator"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../experiment_5-1/" class="btn btn-neutral" title="Experiment 5.1"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -542,7 +550,7 @@ stands for (Simulation Program with Integrated Circuit Emphasis).</p>
         <span><a href="../experiment_5-1/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../../lab6/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../experiment_5-3/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

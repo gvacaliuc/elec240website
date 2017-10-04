@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Building a Function Generator - ELEC 240 Labs</title>
+  <title>Experiment 5.1 - ELEC 240 Labs</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,7 +17,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Building a Function Generator";
+    var mkdocs_page_name = "Experiment 5.1";
     var mkdocs_page_input_path = "lab5/experiment_5-1.md";
     var mkdocs_page_url = "/lab5/experiment_5-1/";
   </script>
@@ -97,10 +97,6 @@
                 <li class="">
                     
     <a class="" href="../../references/color_code/">Resistor Color Code</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../references/using-spice/">Tips for Using Spice</a>
                 </li>
     </ul>
 	    </li>
@@ -257,21 +253,27 @@
                     
     <a class="" href="../introduction/">Introduction</a>
                 </li>
+                <li class="">
+                    
+    <a class="" href="../prelude/">Prelude</a>
+                </li>
                 <li class=" current">
                     
-    <a class="current" href="./">Building a Function Generator</a>
+    <a class="current" href="./">Experiment 5.1</a>
     <ul class="subnav">
             
     <li class="toctree-l3"><a href="#experiment-51">Experiment 5.1</a></li>
     
 
-    <li class="toctree-l3"><a href="#function-generator">Function Generator</a></li>
+    <li class="toctree-l3"><a href="#virtual-instruments-with-labview">Virtual Instruments with Labview</a></li>
     
         <ul>
         
             <li><a class="toctree-l4" href="#equipment">Equipment</a></li>
         
-            <li><a class="toctree-l4" href="#part-a-build-a-function-generator">Part A: Build a Function Generator</a></li>
+            <li><a class="toctree-l4" href="#part-a-generating-a-signal">Part A: Generating a Signal</a></li>
+        
+            <li><a class="toctree-l4" href="#part-b-creating-a-spectrum-analyzer">Part B: Creating a Spectrum Analyzer</a></li>
         
         </ul>
     
@@ -280,65 +282,11 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../experiment_5-2/">Bode Plots</a>
-                </li>
-    </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <span class="caption-text">Lab 6</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../../lab6/">Home</a>
+    <a class="" href="../experiment_5-2/">Experiment 5.2</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../lab6/file.26/">Introduction</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../lab6/file.27/">Decibels</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../lab6/exp6.1/">Measuring Signal Spectrum</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../lab6/exp6.2/">The Spectrum of Acoustic Signals</a>
-                </li>
-    </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <span class="caption-text">Lab 7</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../../lab7/">Home</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../lab7/exp7.1/">Sampling and Quantization</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../lab7/exp7.2/">Recording a Reference Signal</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../lab7/exp7.3/">Signal Processing</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../lab7/exp7.4/">Filtering, Continued</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../lab7/exp7.5/">Some DSP Applications</a>
+    <a class="" href="../experiment_5-3/">Experiment 5.3</a>
                 </li>
     </ul>
 	    </li>
@@ -380,7 +328,7 @@
         
       
     
-    <li>Building a Function Generator</li>
+    <li>Experiment 5.1</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -393,69 +341,240 @@
                 <p>ELEC 240 Lab</p>
 <hr />
 <h2 id="experiment-51">Experiment 5.1</h2>
-<h2 id="function-generator">Function Generator</h2>
+<h2 id="virtual-instruments-with-labview">Virtual Instruments with Labview</h2>
+<h3 id="_1"></h3>
 <h3 id="equipment">Equipment</h3>
 <ul>
-<li>Test board</li>
-<li>LM741 (4x)</li>
-<li>Resistors according to your design</li>
-<li>Capacitors according to your design</li>
+<li>Lab PC</li>
 </ul>
-<h3 id="part-a-build-a-function-generator">Part A: Build a Function Generator</h3>
-<p>In this lab experiment, we will be building our own function generator using
-two new types of op amp circuits.</p>
+<h3 id="part-a-generating-a-signal">Part A: Generating a Signal</h3>
+<p>In this section, you will learn how to use the software Labview (installed on
+your lab PC) to analyze the frequency content of a signal. The frequency
+content can be viewed by plotting the signal's frequency spectrum. The spectrum
+of a sine wave should be pretty boring. By definition it consists of a single
+component at the fundamental frequency whose amplitude is equal to the
+amplitude of the waveform. Nevertheless, it is useful being able to see the
+amplitude and frequency in a single picture, as well as being able to assess
+how "pure" (i.e. how truly sinusoidal) the purported sine wave actually is.</p>
 <ol>
+<li>From the Start menu, open the program NI Labview 2016. Click on Start
+    Labview.</li>
 <li>
-<p>Wire up the following RC relaxation oscillator circuit (see Introduction to
-   read about its functionality):  </p>
-<p><center>
-<img alt="" src="../figs/multivib.png" />
-</center></p>
-<ul>
-<li>
-<p><strong>Is the output as expected? Provide a screenshot in your report.</strong>  </p>
-</li>
-<li>
-<p><strong>What is the frequency of oscillation?</strong>  </p>
-</li>
-<li>
-<p><strong>The frequency should be equal to <span>\(f = \frac{1}{2.2*R1*C1}\)</span>. Is
-  this what you measure?</strong>  </p>
-</li>
-<li>
-<p><strong>Does the frequency change as expected when R1 is changed?</strong>  </p>
-</li>
-</ul>
-</li>
-<li>
-<p>Cascade an integrator circuit to the output as shown below:  </p>
-<p><center>
-<img alt="" src="../figs/integrator.png" />
-</center></p>
-<ul>
-<li><strong>Is the integrator working as expected? Explain and provide a
-  screenshot.</strong></li>
-</ul>
-</li>
-<li>
-<p><strong>Measure the DC offset of <code>Vout2</code></strong></p>
+<p>In the window that opens up, select Create Project, and then select Blank
+    VI.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>DC offset is the average voltage of your waveform.</p>
+<p>VI stands for Virtual Instrument. Labview is a versatile software tool
+that allows you to custom-build instrumentation that can acquire,
+generate, process, and analyze signals according to your design needs.</p>
 </div>
 </li>
 <li>
-<p>Eliminate the DC offset by placing a DC blocking capacitor (any capacitor
-   between <span>\(0.1\mu F\)</span> and <span>\(1\mu F\)</span>) in between the RC relaxation oscillator and
-   integrator. <strong>Provide a screenshot.</strong></p>
+<p>Two windows will pop up, one titled Front Panel and the other titled Block
+    Diagram. Let's first create the Front Panel of your virtual instrument,
+    so bring that window to the foreground, which should also bring up a
+    Controls palette window. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the Controls palette does not pop up automatically, you can open it
+by selecting View <span>\(\rightarrow\)</span> Controls Palette, or by right-clicking
+on a blank area of the front panel.</p>
+</div>
 </li>
 <li>
-<p>Now add on to your circuit so that it also generates a sinusoid.  <strong>Provide
-   a screenshot.</strong></p>
+<p>The Controls palette contains objects that can be added to form the user
+    interface. There are two types of objects: controls and indicators. A
+    control is an input from the user that gets passed to the virtual
+    instrument, while an indicator is an output display (numeric or plot), from
+    the virtual instrument. From the Controls palette, select Modern
+    <span>\(\rightarrow\)</span> Numeric <span>\(\rightarrow\)</span> Dial. Left-click on the Front Panel to
+    place the dial onto the panel.</p>
 </li>
 <li>
-<p>Build a gain stage to your circuit to modulate the amplitude of your
-   sinusoidal output.</p>
+<p>Next, place a Numeric Control from the Numeric subpalette.</p>
+</li>
+<li>
+<p>Then from the Control palette, select Modern <span>\(\rightarrow\)</span> Graph
+    <span>\(\rightarrow\)</span> Waveform Graph. Your Front Panel should like the figure
+    below.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Waveform Graph accepts and plots an array of data values all at once.
+This is different from Waveform Chart, which scrolls data continuously
+and refreshes the display as new data is added.</p>
+<p><center>
+<img alt="" src="../figs/fp1.png" />
+</center></p>
+</div>
+</li>
+<li>
+<p>Now click on the Block Diagram window to bring it up. You should see three
+    nodes already placed on it, which correspond to the objects placed on the
+    Front Panel.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Notice the small black arrows which indicate the direction of data flow
+(into or out of the node). Nodes are color-coded, which indicates the
+data type. In this case, the nodes are orange, the color code for
+floating point. The DBL marking indicates double precision.</p>
+</div>
+</li>
+<li>
+<p>You should now see a Functions palette in place of the Control palette.
+    Under the Programming subpalette, select Waveform <span>\(\rightarrow\)</span> Analog Wfm
+    <span>\(\rightarrow\)</span> Generation <span>\(\rightarrow\)</span> Sine Wfm and place it on the Block
+    Diagram.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Waveform is a unique cluster data type of Labview that contains three
+elements of information. The first element is an array of signal
+amplitude values, the second is the start time of the signal, and the
+third is the time interval between data points. Bundling many different
+kinds of information such as the waveform data type is called a cluster
+data type.</p>
+</div>
+</li>
+<li>
+<p>From the same Generation menu, place a Uniform White Noise block on your
+    Block Diagram.</p>
+</li>
+<li>
+<p>Add one more block to your diagram, the Add block, located at Programming
+    <span>\(\rightarrow\)</span> Numeric <span>\(\rightarrow\)</span> Add. Your Block Diagram should look
+    something like this:</p>
+<p><center>
+<img alt="" src="../figs/bd1.png" />
+</center></p>
+</li>
+<li>
+<p>When you hover the mouse pointer over any block, you will see that all the
+    input and output pins appear. When you hover over any of these pins, the
+    mouse pointer symbol changes to look like a spool of wire. Click on the
+    Dial output pin (orange) and wire it to the Frequency input pin of the Sine
+    Waveform block.</p>
+<div class="admonition tip">
+<p class="admonition-title">Wiring Tips</p>
+<ul>
+<li>While wiring, you can left-click to lock the wire in place and continue
+  to route the wire the way you want to.</li>
+<li>Move wires around by clicking and dragging.</li>
+<li>Escape wiring mode by right-clicking, or just delete the undesired wire
+  with Delete. </li>
+<li>Remove all broken wires from the Block Diagram by pressing Ctrl-B.</li>
+<li>Make your wiring look pretty by right-clicking a wire and selecting
+  Clean Up Wire.</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Wire the Numeric Control to Amplitude to the Amplitude pin of Sine
+    Waveform.</p>
+</li>
+<li>
+<p>Change the <code>Dial</code> label to <code>Frequency (Hz)</code>, and
+    <code>Numeric</code> label to <code>Amplitude</code> by double-clicking the labels.</p>
+</li>
+<li>
+<p>Right-click on the amplitude input of the Uniform White Noise Waveform
+    block and select Create <span>\(\rightarrow\)</span> Constant. The default constant will
+    be 1 which is what we will use.</p>
+<p><center>
+<img alt="" src="../figs/bd2.png" />
+</center></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can change a constant by double-clicking the value. However, while
+a VI is running, a constant cannot be changed.</p>
+</div>
+</li>
+<li>
+<p>Finish wiring your block diagram so that it looks like this:</p>
+<p><center>
+<img alt="" src="../figs/bd3.png" />
+</center></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The maroon wire indicates the information passed is of the waveform
+data type.</p>
+</div>
+</li>
+<li>
+<p>Check if the Run button at the top left of the screen is a white arrow. If
+    it looks like a broken gray arrow, there is some error in your block
+    diagram (i.e., such as broken wires).</p>
+</li>
+<li>
+<p>In the Front Panel, set your frequency to 2 Hz, and amplitude to 5. Press
+    the white arrow Run. You should see a waveform like displayed below.</p>
+<p><center>
+<img alt="" src="../figs/fp2.png" />
+</center></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can numerically enter the frequency if you want by right-clicking
+the dial, and selecting Visible Items <span>\(\rightarrow\)</span> Digital Display.</p>
+</div>
+</li>
+</ol>
+<h3 id="part-b-creating-a-spectrum-analyzer">Part B: Creating a Spectrum Analyzer</h3>
+<ol>
+<li>
+<p>Next we will perform a frequency spectrum analysis on this noisy sine wave
+    using a built-in Labview Power Spectrum function that uses the Fast Fourier
+    Transform (FFT) algorithm. Go to the Block Diagram window and add the FFT
+    Power Spectrum block located at Waveform <span>\(\rightarrow\)</span> Analog Wfm
+    <span>\(\rightarrow\)</span> Measurements <span>\(\rightarrow\)</span> FFT Power Spectrum and PSD. Place
+    this block in your Block Diagram, and add a new Waveform Graph to your
+    Front Panel. Label your new graph as Power Spectrum, and change the x-axis
+    label to Frequency.</p>
+<p><center>
+<img alt="" src="../figs/bd4.png" />
+</center></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The pink wire indicates a generic cluster data type.</p>
+</div>
+</li>
+<li>
+<p>In order to make our spectrum analyzer capable of handling changing
+    signals, we will add a while loop around the block diagram so it runs
+    continuously until the VI is stopped. In the Functions palette, go to
+    Programming <span>\(\rightarrow\)</span> Structures <span>\(\rightarrow\)</span> While Loop, click once
+    at the top left of your block diagram, and draw a loop around your block
+    diagram.</p>
+</li>
+<li>
+<p>In the Front Panel window, place a Stop button control under Modern
+    <span>\(\rightarrow\)</span> Boolean <span>\(\rightarrow\)</span> Stop Button. A Stop node should be
+    automatically placed on your block diagram. Move it near the red dot (Loop
+    Condition) and connect the Stop node to it. </p>
+<p><center>
+<img alt="" src="../figs/bd5.png" />
+</center></p>
+</li>
+<li>
+<p>In the Front Panel, change the frequency range to 0-500Hz by
+    double-clicking on the dial's highest marking. </p>
+</li>
+<li>
+<p>Set the dial to 200 Hz and Run. <strong>Take a screenshot of the spectral plot.</strong></p>
+</li>
+<li>
+<p>Turn the dial to various frequencies and <strong>comment on how the spectral plot
+    changes.</strong> You can stop the VI by pressing the Stop button.</p>
+</li>
+<li>
+<p>Now let's find out what the other built-in features of the Power Spectrum
+    block are. Go to your Block Diagram and right-click on the window pin.
+    Select Create <span>\(\rightarrow\)</span> Control. This will drop a control object
+    labeled <code>window</code> on your Front Panel. Do the same for the <code>dB On</code> and
+    <code>averaging parameters</code> pins. Play around with the different controls you
+    created and <strong>comment on how the different settings affect your spectral
+    plot.</strong></p>
+</li>
+<li>
+<p><strong>Take a screenshot of the Block Diagram and Front Panel of the spectrum
+    analyzer you have just built.</strong></p>
 </li>
 </ol>
               
@@ -465,10 +584,10 @@ two new types of op amp circuits.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../experiment_5-2/" class="btn btn-neutral float-right" title="Bode Plots">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../experiment_5-2/" class="btn btn-neutral float-right" title="Experiment 5.2">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../introduction/" class="btn btn-neutral" title="Introduction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../prelude/" class="btn btn-neutral" title="Prelude"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -494,7 +613,7 @@ two new types of op amp circuits.</p>
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../introduction/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../prelude/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
         <span style="margin-left: 15px"><a href="../experiment_5-2/" style="color: #fcfcfc">Next &raquo;</a></span>

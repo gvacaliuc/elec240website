@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Sampling and Quantization - ELEC 240 Labs</title>
+  <title>Experiment 5.3 - ELEC 240 Labs</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Sampling and Quantization";
-    var mkdocs_page_input_path = "lab7/exp7.1.md";
-    var mkdocs_page_url = "/lab7/exp7.1/";
+    var mkdocs_page_name = "Experiment 5.3";
+    var mkdocs_page_input_path = "lab5/experiment_5-3.md";
+    var mkdocs_page_url = "/lab5/experiment_5-3/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -97,10 +97,6 @@
                 <li class="">
                     
     <a class="" href="../../references/color_code/">Resistor Color Code</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../references/using-spice/">Tips for Using Spice</a>
                 </li>
     </ul>
 	    </li>
@@ -251,96 +247,46 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../lab5/">Home</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../lab5/introduction/">Introduction</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../lab5/experiment_5-1/">Building a Function Generator</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../lab5/experiment_5-2/">Bode Plots</a>
-                </li>
-    </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <span class="caption-text">Lab 6</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../../lab6/">Home</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../lab6/file.26/">Introduction</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../lab6/file.27/">Decibels</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../lab6/exp6.1/">Measuring Signal Spectrum</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../lab6/exp6.2/">The Spectrum of Acoustic Signals</a>
-                </li>
-    </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <span class="caption-text">Lab 7</span>
-    <ul class="subnav">
-                <li class="">
-                    
     <a class="" href="../">Home</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../introduction/">Introduction</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../prelude/">Prelude</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../experiment_5-1/">Experiment 5.1</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../experiment_5-2/">Experiment 5.2</a>
                 </li>
                 <li class=" current">
                     
-    <a class="current" href="./">Sampling and Quantization</a>
+    <a class="current" href="./">Experiment 5.3</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#experiment-71">Experiment 7.1</a></li>
+    <li class="toctree-l3"><a href="#experiment-53">Experiment 5.3</a></li>
     
 
-    <li class="toctree-l3"><a href="#sampling-and-quantization">Sampling and Quantization</a></li>
+    <li class="toctree-l3"><a href="#the-spectrum-of-acoustic-signals">The Spectrum of Acoustic Signals</a></li>
     
         <ul>
         
             <li><a class="toctree-l4" href="#equipment">Equipment</a></li>
         
-            <li><a class="toctree-l4" href="#part-a-sample-rate-and-aliasing">Part A: Sample Rate and Aliasing</a></li>
+            <li><a class="toctree-l4" href="#part-a-the-spectrum-of-speech-signals">Part A: The Spectrum of Speech Signals</a></li>
         
-            <li><a class="toctree-l4" href="#part-b-amplitude-quantization">Part B: Amplitude Quantization</a></li>
+            <li><a class="toctree-l4" href="#part-b-analyzing-an-unknown-signal">Part B: Analyzing an Unknown Signal</a></li>
         
         </ul>
     
 
     </ul>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../exp7.2/">Recording a Reference Signal</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../exp7.3/">Signal Processing</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../exp7.4/">Filtering, Continued</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../exp7.5/">Some DSP Applications</a>
                 </li>
     </ul>
 	    </li>
@@ -378,11 +324,11 @@
     
       
         
-          <li>Lab 7 &raquo;</li>
+          <li>Lab 5 &raquo;</li>
         
       
     
-    <li>Sampling and Quantization</li>
+    <li>Experiment 5.3</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -394,131 +340,146 @@
               
                 <p>ELEC 240 Lab</p>
 <hr />
-<h2 id="experiment-71">Experiment 7.1</h2>
-<h2 id="sampling-and-quantization">Sampling and Quantization</h2>
+<h2 id="experiment-53">Experiment 5.3</h2>
+<h2 id="the-spectrum-of-acoustic-signals">The Spectrum of Acoustic Signals</h2>
+<h3 id="_1"></h3>
 <h3 id="equipment">Equipment</h3>
 <ul>
 <li>Test board</li>
+<li>Telephone handset</li>
+<li>Smartphone</li>
 </ul>
-<h3 id="part-a-sample-rate-and-aliasing">Part A: Sample Rate and Aliasing</h3>
-<p>When we convert a continuous, analog signal to a digital signal
-(digitize it), we <em>sample</em> its value at regular intervals. The sequence
-of numbers that results represents the original signal at these sample
-points, but ignores what goes on between them. If the signal is
-sufficiently well-behaved (i.e. it satisfies the Nyquist criterion and
-contains no energy at frequencies greater than half the sampling
-frequency), then these sample points are enough to represent the
-original signal exactly. But if the original signal contains a frequency
-greater than half the sampling rate, that frequency will be <em>aliased</em> to
-a lower frequency.</p>
-<p>Let's start by looking at what sampling looks like in the time domain.</p>
-<ul>
+<h3 id="part-a-the-spectrum-of-speech-signals">Part A: The Spectrum of Speech Signals</h3>
+<ol>
 <li>
-<p>Connect the function generator output and CH1 of the scope to A/D
-input4 (pin 46 on the interface board socket strip).</p>
+<p>Connect the power supply to your test board (if you haven't already done
+   so), plug the dynamic microphone into J1-6, and verify that the mixer
+   circuit you built last week still works.</p>
 </li>
 <li>
-<p>Set the function generator to produce a 5 V p-p, 300 Hz sine wave.</p>
+<p>Connect CH1 of the scope and A/D input 4 to <span>\(v_{out}\)</span>of the mixer circuit.</p>
 </li>
 <li>
-<p>Download the <a href="../../labview/Lab7_Spectrum_Analyzer.vi">spectrum analyzer</a>
-and open in Labview. Set "number of samples per channel" and "rate" to</p>
+<p>Set the spectrum analyzer to dB magnitude scale and linear frequency scale.</p>
 </li>
 <li>
-<p>Set "averaging mode" to RMS averaging. Start the program by
-pressing the run button or by pressing CTRL-R with the cursor over the
-window.</p>
+<p>Produce a sustained vowel (a, e, i, o, u) sound. Note the form of the
+   spectrum. It should consist of a series of peaks, like the signals from the
+   function generator, but unlike the function generator signals where the
+   harmonics fall off monotonically, the amplitudes of the harmonics in a
+   speech signal rise and fall with increasing frequency.</p>
 </li>
 <li>
-<p>Here's what we have:\
-<img alt="" src="../../figs/img183.png" />{width="318" height="113"}</p>
+<p>To make it easier to study the spectrum, you can "freeze" the display by
+   pressing the STOP button (continue producing the sound until the freezing is
+   complete). If you like, you can get a printout of the display by selecting
+   "Print Window" from the File menu.</p>
 </li>
 <li>
-<p>Right-click on the black box indicating waveform type above the Signal
-waveform, which says Dev1/ai4. Select Common Plots and select the 2nd
-option (points only). You should see about three cycles of a sine wave
-displayed in the waveform graph. Unlike last week's display, the samples
-are shown as individual dots, rather than connected line segments.</p>
+<p>Estimate the fundamental frequency (pitch) of the waveform. Notice that
+   unlike the function generator signals, the fundamental is not necessarily
+   the strongest component. It may be difficult to get an accurate estimate if
+   the fundamental is low in frequency (e.g. a male voice). One way to improve
+   accuracy is to find the frequency of one of the higher harmonics and divide
+   by its order.</p>
 </li>
 <li>
-<p>Slowly increase the frequency to 2 kHz and note how the waveform
-becomes less clear.</p>
+<p>While trying to keep the same pitch, produce different sustained vowel
+   sounds. Note how the "envelope" of the spectrum (the line connecting the
+   tips of the peaks) changes while the positions of the lines remains the
+   same.</p>
 </li>
 <li>
-<p>At 2 kHz, press STOP. You should see either several lines or several
-overlapping sine waves. This is an illusion caused by the fact that only
-a few samples of each cycle are being taken.</p>
+<p>Now, produce the same sustained vowel sound (your choice) while varying the
+   pitch. Notice how the overall shape of the spectrum remains the same as the
+   lines move up and down.</p>
 </li>
 <li>
-<p>Make a sketch to illustrate what happens when the frequency of the
-waveform is equal to a small submultiple (1/5, in this case) of the
-sampling rate.</p>
+<p>Play some music from a single musical instrument from your phone, into the
+   microphone. Note the nature of the spectrum.</p>
 </li>
 <li>
-<p>To see the actual underlying waveform more clearly, switch the display
-to connected lines: Place the cursor on the box marked "display style"
-underneath the display and select the continuous line style from the
-"Common Plots" submenu.</p>
+<p>A soft whistle should be very close to a pure tone. Whistle a tone of about
+    1 kHz into the microphone and see if this is the case.</p>
 </li>
 <li>
-<p>Restart the program and continue increasing the frequency of the
-function generator until you reach 5 kHz, stopping at several points
-along the way to examine the waveform. When the function generator
-frequency is exactly half the sampling frequency the samples will
-alternate the same positive and negative values. (This may be easier to
-see by switching to the vertical line plot display style.)</p>
+<p>Plug in the telephone handset. Verify that the carbon microphone input to
+    the mixer still works by speaking into the handset microphone.</p>
 </li>
 <li>
-<p>Continue increasing the function generator frequency. Notice that as
-you approach 10 kHz, you begin to see a well-defined sine wave which
-<em>decreases</em> in frequency as you increase the function generator
-frequency. This is the <em>alias</em> of the generator frequency. At exactly 10
-kHz you should get a zero frequency sine wave.</p>
+<p>Whistle the same note into the handset microphone and observe the spectrum
+    display. Does it have the same harmonic content as with the dynamic
+    microphone? Since the acoustic signal was the same, the difference must be
+    caused by distortion in the microphone.<strong>Which microphone has the least
+    distortion?</strong></p>
 </li>
 <li>
-<p>Continue increasing the function generator frequency past 10 kHz. Note
-that you once again have a sine wave that increases in frequency as the
-input frequency increases.</p>
+<p>Blow into the microphone and note the shape of the spectrum. This is
+    a<em>broadband</em>, random signal.</p>
 </li>
 <li>
-<p><strong>Explain the concept of aliasing, folding, and the Nyquist criterion,
-and relate to your results.</strong></p>
+<p>Produce an 'sh' sound. Note the shape of the spectrum. This is called
+    anunvoiced fricative.</p>
 </li>
 <li>
-<p>Try square and triangle waves of various frequencies and see what
-happens to them as the frequency changes. ****</p>
+<p>Now try a 'zh' sound (a<em>voiced fricative</em>). How does its spectrum compare
+    with the one in the previous step?</p>
 </li>
 <li>
-<p>Press the STOP button and exit the waveform view program. <strong>\
-\
-</strong></p>
+<p>Based on your observations of different speech sounds, <strong>can you determine
+    an approximate bandwidth for speech?</strong>i.e. is there a frequency below
+    which "most" of the energy of the speech signals is concentrated?</p>
 </li>
-</ul>
-<h3 id="part-b-amplitude-quantization">Part B: Amplitude Quantization</h3>
-<p>Once the input signal has been sampled, it must be represented as a
-number in the computer. Since there are a limited number of bits
-available to encode the number (12 in this case), there are only a
-limited number of values that can be exactly represented. Values in
-between two successive encodings must be rounded or truncated to one or
-the other. This process of forcing the continuous input range into a
-discrete set of values is called <em>quantization</em>.</p>
-<ul>
+</ol>
+<h3 id="part-b-analyzing-an-unknown-signal">Part B: Analyzing an Unknown Signal</h3>
+<ol>
 <li>
-<p>On the left hand side of the spectrum analyzer are two controls which
-control the quantization of the sampled signal. The <em>full scale</em> control
-sets the maximum allowed bits of the signal. The number of bits control
-sets the <em>number of bits</em> that may be represented within the allowed
-range.</p>
+<p>Plug the sound card cable from the Lab PC into J2-1.</p>
 </li>
 <li>
-<p>Experiment with different values for <em>full scale</em> and <em>number of
-bits</em>. What do you notice in the waveform display? What is the relation
-between the number of levels and spectrum of the resulting signal?</p>
+<p>We want to be able to hear the signal, so connect one side of the handset
+   earpiece to the mixer output. Ground the other side of the handset earpiece.</p>
 </li>
 <li>
-<p>Stop and exit the spectrum analyzer program.</p>
+<p>To play the sound card through our mixer, we will need to add a third input.
+   To do this, add a 100 <span>\(k\Omega\)</span> resistor (R3) to the mixer circuit so that it looks
+   like this: </p>
 </li>
-</ul>
+</ol>
+<p><center>
+   <img alt="" src="../figs/img182.png" />
+   </center>
+4. Connect the sound card line out (pin 20 on the interface board socket strip)
+   to <span>\(v_{sound}\)</span>.</p>
+<ol>
+<li>
+<p>Unplug the dynamic microphone from J1-6. Unscrew the cover from the
+   mouthpiece of the telephone handset, and remove the microphone cartridge.
+   Now the only input to the mixer is from the sound card.</p>
+</li>
+<li>
+<p>Download and play the <a href="../signals/shepard30.au">Mystery Signal</a> from Lab 2
+   (with any Windows default player). You should be able to hear it through the
+   earpiece and see it on the spectrum analyzer display.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>It may be easier to see what's going on if you set the spectrum
+analyzer display to linear magnitude and log frequency.</p>
+</div>
+</li>
+<li>
+<p>Based on what you see on the spectrum display, can you explain how the
+   mystery signal works? Hint: focus on a single peak and note how it changes
+   from one tone to the next.</p>
+</li>
+<li>
+<p>Put the telephone handset back together.</p>
+</li>
+<li>
+<p>Exit Labview. Disconnect the DAQ cable carefully, so that the cable's pins
+    don't bend or break off.</p>
+</li>
+</ol>
               
             </div>
           </div>
@@ -526,10 +487,10 @@ between the number of levels and spectrum of the resulting signal?</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../exp7.2/" class="btn btn-neutral float-right" title="Recording a Reference Signal">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../misc_images/" class="btn btn-neutral float-right" title="Home">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../" class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../experiment_5-2/" class="btn btn-neutral" title="Experiment 5.2"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -555,10 +516,10 @@ between the number of levels and spectrum of the resulting signal?</p>
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../experiment_5-2/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../exp7.2/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../../misc_images/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

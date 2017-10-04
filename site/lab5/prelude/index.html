@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Filtering, Continued - ELEC 240 Labs</title>
+  <title>Prelude - ELEC 240 Labs</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Filtering, Continued";
-    var mkdocs_page_input_path = "lab7/exp7.4.md";
-    var mkdocs_page_url = "/lab7/exp7.4/";
+    var mkdocs_page_name = "Prelude";
+    var mkdocs_page_input_path = "lab5/prelude.md";
+    var mkdocs_page_url = "/lab5/prelude/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -97,10 +97,6 @@
                 <li class="">
                     
     <a class="" href="../../references/color_code/">Resistor Color Code</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../references/using-spice/">Tips for Using Spice</a>
                 </li>
     </ul>
 	    </li>
@@ -251,83 +247,33 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../lab5/">Home</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../lab5/introduction/">Introduction</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../lab5/experiment_5-1/">Building a Function Generator</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../lab5/experiment_5-2/">Bode Plots</a>
-                </li>
-    </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <span class="caption-text">Lab 6</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../../lab6/">Home</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../lab6/file.26/">Introduction</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../lab6/file.27/">Decibels</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../lab6/exp6.1/">Measuring Signal Spectrum</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../lab6/exp6.2/">The Spectrum of Acoustic Signals</a>
-                </li>
-    </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <span class="caption-text">Lab 7</span>
-    <ul class="subnav">
-                <li class="">
-                    
     <a class="" href="../">Home</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../exp7.1/">Sampling and Quantization</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../exp7.2/">Recording a Reference Signal</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../exp7.3/">Signal Processing</a>
+    <a class="" href="../introduction/">Introduction</a>
                 </li>
                 <li class=" current">
                     
-    <a class="current" href="./">Filtering, Continued</a>
+    <a class="current" href="./">Prelude</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#experiment-74">Experiment 7.4</a></li>
+    <li class="toctree-l3"><a href="#prelude-decibels">Prelude: Decibels</a></li>
     
 
     </ul>
                 </li>
                 <li class="">
                     
-    <a class="" href="../exp7.5/">Some DSP Applications</a>
+    <a class="" href="../experiment_5-1/">Experiment 5.1</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../experiment_5-2/">Experiment 5.2</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../experiment_5-3/">Experiment 5.3</a>
                 </li>
     </ul>
 	    </li>
@@ -365,11 +311,11 @@
     
       
         
-          <li>Lab 7 &raquo;</li>
+          <li>Lab 5 &raquo;</li>
         
       
     
-    <li>Filtering, Continued</li>
+    <li>Prelude</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -381,75 +327,58 @@
               
                 <p>ELEC 240 Lab</p>
 <hr />
-<h2 id="experiment-74">Experiment 7.4</h2>
-<p>### Part A: New Filters Since multiplying a time function by
-$cos(2f_0n)$ shifts the spectrum of the signal by $f_0$ in the
-frequency domain, we can shift the frequency response of a filter by
-multiplying its time domain representation (its unit-pulse response) by
-$cos(2f_0n)$. In the case of an FIR filter, this is particularly
-handy, because the unit-sample response *is* the filter. So if we
-multiply the coefficients of an FIR filter by $cos(2f_0n)$ we get a
-new filter having the same *shape* as the old one (including
-*negative* frequencies) but centered about $f_0$ rather than zero.
-We saw this happen indirectly when we changed the sign of $a_1$ in
-our first-order IIR filter. The frequency response went from low pass to
-high pass and the new pulse response contained the same values as the
-old, but they alternated in sign, i.e. were multiplied by:
-$cos(2\pi\frac{1}{2}n) = cos({\pi}n) = (-1)\^n$ Let's try this with
-an FIR filter. Generate a length 50 FIR filter having a bandwidth of
-1000 Hz. ```matlab b0=fir1(50,1000/5000); ``` Plot its frequency
-response to verify it is correct. ```matlab freqz(b0,1) ``` Create
-a new filter by multiplying the coefficients by $cos({\pi}n)$.
-```matlab b1 = b0 .* cos(pi*[0:50]); ``` Once again we have a
-high pass filter, but this time much more nearly ideal than our simple
-IIR. ```matlab freqz(b1,1) ``` Apply this filter to your speech
-reference signal. ```matlab out1=filter(b1, 1, sig1); ``` Listen
-to the filter output and plot its spectrogram. What happens if we don't
-shift all the way to $\frac{Fs}{2}$? Let's try this, but with a
-narrower filter. Generate a length 50 FIR filter having a bandwidth of
-200 Hz. ```matlab b=fir1(50,200/5000); ``` Plot its frequency
-response to verify it is correct. ```matlab freqz(b,1) ``` Shift
-its response up to 2 kHz ($0.2*Fs$). ```matlab b2 = b .*
-cos(0.4*pi*[0:50]); freqz(b2,1) ``` **What is the bandwidth of
-this bandpass filter? How does it relate to the bandwidth of the lowpass
-filter?** Apply it to your speech reference signal. ```matlab
-out2=filter(b2, 1, sig1); ``` Listen to the filter output and plot
-its spectrogram. Hint: When a signal is so small that it is hard to
-hear, or so large that it distorts, use the ```soundsc()```
-function instead of ```sound()```. This scales the signal to just
-fill the available output range. ```matlab soundsc(out2, Fs) ```
-### Part B: Better IIR Filters So far, we've seen that long (in our
-case) FIR filters can be pretty good and that short filters of either
-type are pretty bad. What about long IIR filters? It turns out that if
-we let our transfer function have both a numerator and a denominator
-(i.e., both $a$ and $b$ coefficients) we can get filters of 'good'
-shape with a modest number of total coefficients. Filters of this form
-have been used in analog circuits (where filter order corresponds to the
-number of inductors and capacitors and op amps, and hence smaller is
-better) and the techniques for designing them carry over to digital
-filters. One of these is the Butterworth, which we've already seen.
-Another is the Elliptic or Cauer filter (so called because its design
-involves the use of the Jacobi elliptic function). Let's design an
-$8\^{th}$ order Elliptic low pass filter with a cutoff frequency of
-$\frac{Fs}{8}$: ```matlab [b,a] = ellip(8, 1, 60, 1000/5000);
-freqz(b,a) ``` The first argument (8) is the filter order. The second
-argument (1) is the *passband ripple*, the amount (in dB) that we're
-willing to allow the actual value of the transfer function in the
-passband to deviate from the desired value (1, or 0 dB). The third
-argument (60) is the maximum value (in dB) that we're willing to allow
-the transfer function to have in the stopband. Subject to these
-constraints, the Elliptic design gives us the shortest possible
-*transition band*, the region where the transfer function is changing
-from one to zero. Apply this filter to your reference signal, listen to
-the results, and look at the spectrogram. **Can you see the difference
-between this filter and the 'equivalent' FIR filter ($b_0$)? Can you
-hear it?** **Write a summary of each of the different types of
-filter we've looked at (boxcar, first order IIR, Butterworth, fir1,
-elliptic). Consider such factors as the shape of the frequency response,
-phase characteristics, computational complexity, etc.** **Is any one
-type of filter clearly the "best" (or the "worst")? If not, can you
-identify circumstances where a particular filter *would* be the best
-choice (or should *not* be chosen)?**</p>
+<h2 id="prelude-decibels">Prelude: Decibels</h2>
+<p>You've probably heard the term <em>decibel</em> used in conjunction with sound levels:
+having a muffler louder than 85 dB will get you a ticket, and listening to
+music at 110 dB will damage your hearing. You've probably also noticed the
+button marked <code>ATT -20dB</code> on the function generator, so decibels don't just
+have to do with sound. </p>
+<p>So what exactly
+is a decibel? It's a logarithmic way of expressing the ratio of two
+power levels (or sound pressure levels, or voltage levels, or any other
+kinds of levels). More precisely, </p>
+<span>\[
+\text{power ratio in dB} = 10\log\left(\frac{P_1}{P_0}\right)
+\]</span><p>where <span>\(P_0\)</span> and <span>\(P_1\)</span> are the two powers being compared, and <span>\(\log()\)</span> refers to
+the common, or base 10 logarithm. </p>
+<p>If we have two <em>voltage</em> levels, <span>\(V_0\)</span> and
+<span>\(V_0\)</span> across the same load resistance, <span>\(R_L\)</span>, then </p>
+<span>\[
+\begin{aligned}
+10 \log\left(\frac{P_1}{P_0}\right) &amp;= 10 \log\left(\frac{{V_1}^2/R_L}{{V_0}^2/R_L}\right) \\
+&amp;= 20 \log\left(\frac{V_1}{V_0}\right)
+\end{aligned}
+\]</span><p>Why logarithmic? The smallest perceivable sound level corresponds to an
+acoustic power density of approximately <span>\(10^{-12}
+\frac{\text{W}}{\text{m}^2}\)</span>. But the level at which the sensation of sound
+begins to give way to the sensation of pain is about <span>\(1
+\frac{\text{W}}{\text{m}^2}\)</span>.  To cope with this large dynamic range without
+loosing track of the number of zeros after the decimal point, a logarithmic
+scale is useful. It's important to remember that a decibel measurement
+expresses a <em>ratio</em>. So it always makes sense to say that a signal <span>\(x\)</span>'s
+amplitude is so many dB greater (or less) than signal <span>\(y\)</span>'s amplitude.  But if
+we say that a signal is <em>equal</em> to some number of decibels, then there must be
+a reference level. For sound, that reference level is usually taken as
+<span>\(10^{-12} \frac{\text{W}}{\text{m}^2}\)</span> which corresponds to a pressure of
+<span>\(10^{-5} \frac{\text{N}}{\text{m}^2}\)</span>. If we call this the reference pressure
+level, <span>\(p_0\)</span>, we get the definition of <em>sound pressure level</em></p>
+<span>\[
+\text{SPL} = 20 \log\left(\frac{p}{p_0}\right)
+\]</span><p>where we use 20 instead of 10 since power is proportional to the square of the
+pressure. In a circuit, the choice of a reference level is not quite so
+obvious. For voltages, the typical choice is 1 V, which gives "decibels
+relative to 1 Volt" or dBV for short. Other forms you may encounter are dBW
+(relative to 1 watt) or dBm (relative to 1 mW). It is sometimes stated that the
+response of a filter falls off at "20dB per decade" or "6dB per octave". This
+is just another way of saying that the response varies as <span>\(1/f\)</span>. In other
+words, if <span>\(f_2\)</span> is 10 times <span>\(f_1\)</span> (i.e. the frequencies are separated by one
+decade) then <span>\(\vert H(f_2)\vert\)</span> will be <span>\(1/10\)</span> of <span>\(\vert H(f_2)\vert\)</span>. Since
+<span>\(20 \log(1/10) = -20\)</span> then we have a loss of 20 dB (or a gain of -20 dB) for
+each decade increase in frequency. Similarly, for two frequencies separated by
+one octave (a factor of two) we would have <span>\(20 \log(1/2) = -6.02\)</span> or
+approximately 6 dB per octave. For more information, check out the article on
+<a href="http://artsites.ucsc.edu/ems/music/tech_background/te-06/teces_06.html">Decibels</a>
+at UCSC Electronic Music Studios.</p>
               
             </div>
           </div>
@@ -457,10 +386,10 @@ choice (or should *not* be chosen)?**</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../exp7.5/" class="btn btn-neutral float-right" title="Some DSP Applications">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../experiment_5-1/" class="btn btn-neutral float-right" title="Experiment 5.1">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../exp7.3/" class="btn btn-neutral" title="Signal Processing"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../introduction/" class="btn btn-neutral" title="Introduction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -486,10 +415,10 @@ choice (or should *not* be chosen)?**</p>
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../exp7.3/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../introduction/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../exp7.5/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../experiment_5-1/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
