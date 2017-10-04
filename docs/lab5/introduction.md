@@ -2,62 +2,18 @@ ELEC 240 Lab
 
 ------------------------------------------------------------------------
 
-# Introduction 
+Introduction
+============
 
-This week we are going to look at some more types of op amp circuits. Using
-these op amp circuits, we will build our own function generator. 
+This week we are going to take a break from circuits (well, almost) and spend
+our time looking more closely at signals. We already have a number of
+parameters to characterize simple, periodic signals, such as amplitude, period,
+and waveshape. But we need a way to describe more complex signals, both
+periodic and non-periodic, other than by drawing pictures of them. The way we
+will do that is by Fourier analysis, specifically the *Fourier Transform*.
 
-The first type of op amp circuit is a square-wave generator, or also called an
-RC relaxation oscillator. We do this by operating the op amp as a comparator. A
-comparator's output toggles between $+V_{cc}$ and $-V_{cc}$ at a frequency
-dependent on the charge/discharge rate of a capacitor through a feedback
-resistor. When the output is high the capacitor charges. Once the voltage
-across the capacitor reaches a certain positive reference voltage, the output
-is driven negative.  Once the capacitor charges to the negative reference
-voltage, the output is driven high. With positive feedback, this cycle
-continues and we see a square wave oscillation on the output. The frequency of
-the oscillation is $f = \frac{1}{2*RC}$. 
-
-Next we will create an integrator, which performs the mathematical operation of
-integration with respect to time. How could we use an integrator to create
-different waveform shapes for our function generator? The integrator works by
-passing a current that charges or discharges a capacitor in the negative
-feedback loop. To analyze an integrator, first assume that the opamp is ideal.
-The integrator looks like as below, 
-
-<center>
-![](./figs/img202.png)
-</center>
-
-and uses the ideal constraints, $i_f + i_s = 0$ and $v_n = v_p$. We can
-define the currents as 
-
-$$
-\begin{aligned}
-i_s &= \frac{v_s}{R_s} \\
-i_f &= {C_f}\frac{dv_o}{dt}
-\end{aligned}
-$$
-
-After substituting the above into the first ideal constraint equation, we have
-
-$$
-\begin{aligned}
-\frac{dv_o}{dt} &= -{\frac{1}{{R_s}C_f}}{v_s} \\
-dv_o &= -{\frac{1}{{R_s}C_f}}{v_s}\,dt \\
-v_0 &= - {\frac{1}{{R_s}C_f}}\int_{t_o}^t {v_s}dt + v_o(t_o)
-\end{aligned}
-$$
-
-after multiplying by $dt$ and integrating.
-
-The equation states that the output voltage of an integrator equals the initial
-value of the voltage plus an inverted, scaled, replica of the integral of the
-input voltage. If the initial voltage is zero, then the output reduces to:
-
-$$
-v_o = - {\frac{1}{{R_s}C_f}}\int_{t_o}^t {v_s}\,dt
-$$
-
-Finally we will amplify our output with an inverting amplifier like we built
-last time.
+The formula for the Fourier Transform has an elegant simplicity to it, but
+actually trying to evaluate it, for other than very simple signals, is an
+exercise in extreme computation. Fortunately, computation is what computers
+excel at, so we will use our Lab PC to compute the Fourier Transform with a
+software called Labview.

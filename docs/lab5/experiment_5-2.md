@@ -5,95 +5,145 @@ ELEC 240 Lab
 Experiment 5.2
 --------------
 
-Frequency Response
+Signal Acquisition 
 ------------------
+
+### 
 
 ### Equipment
 
 * Test board
-* Integrator from last experiment
-* 1kΩ and 100Ω resistors
-* Lab computer or laptop
+* 2.2 $k\Omega$ Resistor
+* 0.33 $\mu F$ Capacitor
 
-### Part A: Measuring Frequency Response
 
-In this part of the lab you will use look at the frequency response of your
-integrator.
+### Part A: Acquiring Signals
 
-1. Disconnect the input and output from your integrator and modify it as shown
-   below. For the input, connect a $1 V_{pp}$ sinusoidal signal from your
-   VirtualBench function generator.
+In this section you will learn how to acquire a signal into Labview using the
+Data Acquisition (DAQ) card (inside your PC) via the DAQ cable that is
+connected to your lab PC:
+
+<center>
+![](./figs/daq.jpg)
+</center>
+
+1. Copy the VI you created from Experiment 5.1 and give it a new name.
+
+2.	We want to modify the Block Diagram to process an external signal read via
+    the DAQ cable. Delete the generated waveforms, i.e., Sine Wave and White
+    Noise blocks, Add block, and Frequency and Amplitude controls.
 
     <center>
-    ![](./figs/spiceintegrator.png)
+    ![](./figs/bd6.png)
     </center>
 
-2. Record output peak-to-peak voltage values for the following frequencies:  
-    * 10Hz
-    * 100Hz
-    * 500 Hz
-    * 800 Hz
-    * 1kHz
-    * 1.5kHz
-    * 2kHz
-    * 5kHz
-    * 10kHz
-    * 50kHz
+3.	In the Functions palette, go to Programming $\rightarrow$ Measurement I/O
+    $\rightarrow$ NI DAQmx $\rightarrow$ DAQAssist.
 
-3. Calculate the gain in decibels (dB) for your circuit at each of these
-   frequencies
+4.	Select Acquire Signals $\rightarrow$ Analog Input $\rightarrow$ Voltage.
 
-    !!! tip
-        $$
-        \text{Gain}(dB) = 20*log_{10}\left(\frac{Vout}{Vin}\right)
-        $$
+5.	Select the input channel we will connect our FGEN signal to, in this case,
+    A/D input 4, or ai4.
 
-4. Plot $\text{Gain}(dB)$ vs. $\text{Frequency}(Hz)$ in Matlab. At what frequency does
-   the gain begin to drop?
+6.	At the bottom of the DAQ Assistant window that pops up, change the
+    Acquisition Mode to Continuous Samples and select OK.
 
-5. **Does the cutoff frequency, $f_c$ roughly equal $\frac{1}{2*\pi*R5*C2}$?**
+7.	In the Block Diagram window, connect the data output to the broken wire
+    from the Power Spectrum block. Create controls for the input pins `number
+    of samples` and `rate`.
 
-### Part B: Circuit Simulation
+    <center>
+    ![](./figs/bd7.png)
+    </center>
 
-The remainder of the lab can be done from a computer (lab computer or personal
-laptop). We will be using circuit simulation software called LTSpice. Spice
-stands for (Simulation Program with Integrated Circuit Emphasis).
+8.	Your VI is ready to acquire signals from your test board. **Show a
+    screenshot of your VI.** Connect the DAQ cable to J3-1 on your test board.
 
-1. Download LTspice from linear.com. There are Windows and Mac versions
-   available. Please note that the instructions below are specifically for
-   Windows.
+9.	Connect the output of the FGEN to CH1 of the oscilloscope and to A/D input
+    4 (pin 46).
 
-2. Click on New Schematic and create the same circuit you built on your
-   breadboard shown above.  Refer to the [tips](../references/using-spice) in
-   the references section for help with Spice.
+10. Set the FGEN to produce a $2 V_{ pp }$, 500 Hz sine wave.
 
-3. The component opamp is just a symbol of an opamp and in order for Spice to
-   see the model, you need to place a Spice Directive calling the location:
-   Edit $\rightarrow$ Spice Directive. Then enter `.lib opamp.sub`
+11. In the Front Panel, set the rate to 10k and number of samples to 5k. 
 
-4. Set the voltage source to AC by right-clicking it and selecting Advanced.
-   Set AC amplitude to 1.
+12. Right-click on the time-domain waveform's x-axis to uncheck Autoscale X.
+    Change the max value of the time scale by double-clicking the max number so
+    that roughly 2-3 periods are displayed.
 
-5. Enter in $R$ and $C$ values by right-clicking these components.
+13. Change the max frequency in the power spectrum plot as well to a reasonable
+    viewing window.
 
-    !!! tip
-        Optionally label nets (i.e., wires) by right-clicking on nets.
+14. Run your VI and **take a screenshot.**
 
-6. Perform an AC analysis using the [ instructions ](../references/using-spice)
-   provided in the references section. An AC analysis will evaluate the gain
-   (Vout/Vin) and phase over a specified range of frequencies and plot it.
+15. Add some additional information to your Front Panel, RMS voltage (called
+    the Average DC/RMS block), and peak-to-peak voltage, and any other
+    interesting info you might find in Labview built-ins (if you can't find
+    these function blocks, use the Search feature). **Show a screenshot.**
 
-7. Click on the `Vout` node for gain and phase plots to appear. You will notice
-   that the gain is displayed in dB and phase in degrees. The x-axis will be
-   logarithmic, i.e., the step size is $10n$, where $n$ is a non-negative
-   integer. Each of the steps is called a decade (`dec`).
+16. **How does the display look when you disconnect the FGEN? Does your VI
+    detect any noise?**
 
-8. **Take a screenshot of your plots.**
+### Part B: The Spectrum of Triangle and Square Waves
+1.	The Fourier series of a triangle wave has only odd harmonics, which fall
+    off at the rate of $\frac{1}{n}2T$ (12 dB/octave). Turn dB option on for your
+    spectral plot for better viewing. Set the function generator to produce a
+    triangle wave and see if this is the case. **What happens when you vary the
+    symmetry?**
+    
+2.	The square wave also consists only of odd harmonics, but falling off as
+    $\frac{1}{n}T$ (6 dB/octave). Set the function generator to square wave and
+    **comment on the spectrum.** Vary duty cycle. **What do you observe?**
+    Depending on the exact frequency you may see a number of extraneous
+    harmonics. These are due to the phenomenon ofT*aliasing*Twhich we will
+    examine later.
 
-9. **What is the gain at low frequencies? What is the cutoff frequency?  What
-   is the slope of the gain with respect to frequency for high frequencies
-   (express in terms of dB/dec)? Do these values match what you measured on
-   your breadboard?**
+3.	Your spectrum analyzer displays magnitude and frequency on a linear scale.
+    It is sometimes useful to view the spectrum on a semi-log or log-log plot.
+    Stop executing the program, right-click on the spectrum display (gray area)
+    and click on Properties $\rightarrow$ Scales. Select Log. Adjust the
+    amplitude if necessary to obtain a good display. **Do you notice the
+    hyperbolic shape in which the harmonics fall off?**
 
-10. **What is the phase for very low frequencies? At 0dB? And for very high
-    frequencies? Can you explain why?**
+4.	Now get a log-log plot with magnitude in dB by changing the Y-scale to Log
+    and setting a multiplier of 20 (under Scale Factors). **Note that the $1/f$
+    fall off is now a "linear" 20 dB/decade slope.**
+
+5.  Switch the function generator to a triangle wave. **Is the slope now 40
+    dB/decade?** Set the spectrum analyzer back to linear display (both 
+    magnitude and frequency). Note the shape of the spectrum.
+
+6.	Set the function generator to square wave. Set the Duty Cycle to 15%. You
+    should now have a waveform consisting of narrow pulses. Note the shape of
+    the spectrum. It should have the $sin(x)/x$ (sinc) shape you saw in
+    ELEC241.
+
+7.	Set the spectrum analyzer back to dB magnitude and log frequency. Set the
+    duty cycle to 50%.
+
+### Part C: The Spectrum and Frequency Response
+
+1.	Wire the circuit below. This is the same circuit we used in Lab 3, so you
+    should have its transfer function in your lab report.
+
+    <center>
+    ![](./figs/img181.png)
+    </center>
+
+2. Connect the output of the function generator to $v_{in}$. Also connect
+   CH1 of the scope and A/D input 4 (pin 46) to $v_{in}$.
+
+3.	Set the function generator to produce a 50 Hz sine wave at 1 $V_{rms}$.
+
+4.	Move CH1 of the scope and A/D input 4 to $v_{out}$.
+
+5.	Increase the frequency of the function generator and observe the behavior
+    of the spectrum display. The tip of the peak corresponding to the
+    fundamental of the sine wave will trace out the magnitude of the transfer
+    function of our circuit.
+
+6. Since the transfer function falls off as $1/f$ for high frequencies, we
+   expect the output to fall 6dB/octave (an octave is a factor of two) for
+   frequencies well above the cutoff frequency T. **Check the response at 1
+   kHz, 2 kHz, and 4 kHz and see how well this holds.**
+
+7. Turn off the function generator.
