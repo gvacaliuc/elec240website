@@ -57,16 +57,16 @@ how "pure" (i.e. how truly sinusoidal) the purported sine wave actually is.
 
 6.	Then from the Control palette, select Modern $\rightarrow$ Graph
     $\rightarrow$ Waveform Graph. Your Front Panel should like the figure
-    below.
+    below:
+
+    <center>
+    ![](./figs/fp1.png)
+    </center>
 
     !!! note
         Waveform Graph accepts and plots an array of data values all at once.
         This is different from Waveform Chart, which scrolls data continuously
         and refreshes the display as new data is added.
-
-        <center>
-        ![](./figs/fp1.png)
-        </center>
 
 7.	Now click on the Block Diagram window to bring it up. You should see three
     nodes already placed on it, which correspond to the objects placed on the

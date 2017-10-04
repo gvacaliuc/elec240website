@@ -89,12 +89,12 @@ connected to your lab PC:
     spectral plot for better viewing. Set the function generator to produce a
     triangle wave and see if this is the case. **What happens when you vary the
     symmetry?**
-    
+
 2.	The square wave also consists only of odd harmonics, but falling off as
     $\frac{1}{n}T$ (6 dB/octave). Set the function generator to square wave and
     **comment on the spectrum.** Vary duty cycle. **What do you observe?**
     Depending on the exact frequency you may see a number of extraneous
-    harmonics. These are due to the phenomenon ofT*aliasing*Twhich we will
+    harmonics. These are due to the phenomenon of *aliasing* which we will
     examine later.
 
 3.	Your spectrum analyzer displays magnitude and frequency on a linear scale.
