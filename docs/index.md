@@ -16,9 +16,7 @@ The Laboratories
 -   Lab 2: [Signal Sources and Sinks](./lab2)
 -   Lab 3: [Basic Circuits](./lab3)
 -   Lab 4: [Active Circuits](./lab4)
--   Lab 5: [More Opamp Circuits](./lab5)
--   Lab 6: [Signal Analysis and Characterization](./lab6)
--   Lab 7: [Digital Signal Processing](./lab7)
+-   Lab 5: [Signal Analysis and Characterization](./lab5)
 
 References
 ----------
