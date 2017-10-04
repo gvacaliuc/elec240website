@@ -49,9 +49,9 @@ pages:
   - {Home: lab5/index.md}
   - {Introduction: lab5/introduction.md}
   - {Prelude: lab5/prelude.md}
-  - {Experiment 5.1: lab5/experiment_5-1.md}
-  - {Experiment 5.2: lab5/experiment_5-2.md}
-  - {Experiment 5.3: lab5/experiment_5-3.md}
+  - {Virtual Instruments with Labview: lab5/experiment_5-1.md}
+  - {Signal Acquisition: lab5/experiment_5-2.md}
+  - {The Spectrum of Acoustic Signals: lab5/experiment_5-3.md}
 #- Lab 6:
   #- {Home: lab6/index.md}
   #- {Introduction: lab6/file.26.md}
