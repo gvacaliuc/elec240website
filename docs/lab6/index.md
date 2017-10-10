@@ -2,20 +2,24 @@ ELEC 240 Lab
 
 ------------------------------------------------------------------------
 
-Laboratory 6
-============
+Lab 6
+=====
 
-Signal Analysis and Characterization
-====================================
+Digital Signal Processing
+=========================
 
-[](file.26)
+### [Introduction] (./introduction)
 
 ### Introduction
 
 Experiments
 -----------
 
--   Prelude: [Decibels](file.27)
--   Experiment 6.1: [Measuring Signal Spectrum](exp6.1)
--   Experiment 6.2: [The Spectrum of Acoustic Signals](exp6.2)
+* Experiment 6.1: [Sampling and Quantization](./experiment_6-1)
+* Experiment 6.2: [Recording a Reference Signal](./experiment_6-2)
+* Experiment 6.3: [Signal Processing](./experiment_6-3)
+* Experiment 6.4: [Filtering, Continued](./experiment_6-4)
+* Experiment 6.5: [Some DSP Applications](./experiment_6-5)
+
+
 

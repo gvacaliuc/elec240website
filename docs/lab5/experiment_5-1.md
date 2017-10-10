@@ -27,13 +27,13 @@ VI stands for Virtual Instrument. Labview is a versatile software tool that allo
 If the Controls palette does not pop up automatically, you can open it by selecting View->Controls Palette, or by right-clicking on a blank area of the front panel.
 4.	The Controls palette contains objects that can be added to form the user interface. There are two types of objects: controls and indicators. A control is an input from the user that gets passed to the virtual instrument, while an indicator is an output display (numeric or plot), from the virtual instrument. From the Controls palette, select Modern->Numeric->Dial. Left-click on the Front Panel to place the dial onto the panel.
 5.	Next, place a Numeric Control from the Numeric subpalette.
-6.	Then from the Control palette, select Modern->Graph->Waveform Graph. Your Front Panel should like the figure below.
-!!! note
-Waveform Graph accepts and plots an array of data values all at once. This is different from Waveform Chart, which scrolls data continuously and refreshes the display as new data is added.
-
+6.	Then from the Control palette, select Modern->Graph->Waveform Graph. Your Front Panel should look like the figure below.
 <center>
 ![](./figs/fp1.png)
 </center>
+
+!!! note
+Waveform Graph accepts and plots an array of data values all at once. This is different from Waveform Chart, which scrolls data continuously and refreshes the display as new data is added.
 
 7.	Now click on the Block Diagram window to bring it up. You should see three nodes already placed on it, which correspond to the objects placed on the Front Panel.
 !!! note
