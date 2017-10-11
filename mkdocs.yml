@@ -54,7 +54,7 @@ pages:
   - {The Spectrum of Acoustic Signals: lab5/experiment_5-3.md}
 - Lab 6:
   - {Home: lab6/index.md}
-  - {Introduction: lab6/introduction}
+  - {Introduction: lab6/introduction.md}
   - {Sampling and Quantization: lab6/experiment_6-1.md}
   - {Recording a Reference Signal: lab6/experiment_6-2.md}
   - {Signal Processing in Matlab: lab6/experiment_6-3.md}
