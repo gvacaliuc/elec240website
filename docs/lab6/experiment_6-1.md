@@ -50,6 +50,10 @@ Let's start by looking at what sampling looks like in the time domain.
    the waveform graph. Unlike last week's display, the samples are shown as
    individual dots, rather than connected line segments.
 
+    <center>
+    ![](./figs/lv1.png)
+    </center>
+
 7. Slowly increase the frequency to 2 kHz and note how the waveform becomes
    less clear.
 
