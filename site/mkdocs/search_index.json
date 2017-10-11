@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/", 
-            "text": "ELEC 240 Lab Manual\n\n\nBefore Going to Lab\n\n\n\n\nIntroduction\n\n\nLab Station Handbook\n\n\nTools and Resources\n\n\nVirtualBench\n\n\n\n\nThe Laboratories\n\n\n\n\nLab 1: \nBasic Electrical Measurements\n\n\nLab 2: \nSignal Sources and Sinks\n\n\nLab 3: \nBasic Circuits\n\n\nLab 4: \nActive Circuits\n\n\nLab 5: \nSignal Analysis and Characterization\n\n\nLab 6: \nSignal Analysis and Characterization\n\n\n\n\nReferences\n\n\nResistor Color Code\n\n\n741 Op-Amp Pin Configuration\n\n\nBreadboard Pin Configuration", 
+            "text": "ELEC 240 Lab Manual\n\n\nBefore Going to Lab\n\n\n\n\nIntroduction\n\n\nLab Station Handbook\n\n\nTools and Resources\n\n\nVirtualBench\n\n\n\n\nThe Laboratories\n\n\n\n\nLab 1: \nBasic Electrical Measurements\n\n\nLab 2: \nSignal Sources and Sinks\n\n\nLab 3: \nBasic Circuits\n\n\nLab 4: \nActive Circuits\n\n\nLab 5: \nSignal Analysis and Characterization\n\n\nLab 6: \nDigital Signal Processing\n\n\n\n\nReferences\n\n\nResistor Color Code\n\n\n741 Op-Amp Pin Configuration\n\n\nBreadboard Pin Configuration", 
             "title": "Home"
         }, 
         {
@@ -17,7 +17,7 @@
         }, 
         {
             "location": "/#the-laboratories", 
-            "text": "Lab 1:  Basic Electrical Measurements  Lab 2:  Signal Sources and Sinks  Lab 3:  Basic Circuits  Lab 4:  Active Circuits  Lab 5:  Signal Analysis and Characterization  Lab 6:  Signal Analysis and Characterization", 
+            "text": "Lab 1:  Basic Electrical Measurements  Lab 2:  Signal Sources and Sinks  Lab 3:  Basic Circuits  Lab 4:  Active Circuits  Lab 5:  Signal Analysis and Characterization  Lab 6:  Digital Signal Processing", 
             "title": "The Laboratories"
         }, 
         {
