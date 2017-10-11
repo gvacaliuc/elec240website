@@ -8,14 +8,12 @@ Laboratory 6
 Signal Analysis and Characterization
 ====================================
 
-[](file.26)
-
-### Introduction
+### [Introduction](./introduction)
 
 Experiments
 -----------
 
--   Prelude: [Decibels](file.27)
--   Experiment 6.1: [Measuring Signal Spectrum](exp6.1)
--   Experiment 6.2: [The Spectrum of Acoustic Signals](exp6.2)
+-   Prelude: [Decibels](./prelude)
+-   Experiment 6.1: [Measuring Signal Spectrum](./experiment_6-1)
+-   Experiment 6.2: [The Spectrum of Acoustic Signals](./experiment_6-2)
 
