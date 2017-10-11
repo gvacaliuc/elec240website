@@ -2,124 +2,186 @@ ELEC 240 Lab
 
 ------------------------------------------------------------------------
 
-Experiment 6.2
+Experiment 7.2
 --------------
 
-The Spectrum of Acoustic Signals
---------------------------------
+The first step in batch processing is to record the input signal as a disk
+file. We will use a Labview program to do this, then use Matlab to do the
+signal processing itself.
 
 ### Equipment
 
-* Test board
 * Telephone handset
-* Mobile phone
+* Dynamic microphone
+* Test board
+* A musical instrument if you have one!
 
-### Part A: The Spectrum of Speech Signals
+### Part A: Digital Recording
 
-1. Connect the power supply to your breadboard (if you haven't already done
-   so), plug the dynamic microphone into J1-6, and verify that the mixer
-   circuit you build last week still works.
+1. Connect the cable from the DAQ card to J3-1 on the rightmost interface
+   module. Plug the sound card cable into J2-1. Plug the phone handset into
+   J1-7.
 
-2. Connect CH1 of the scope and A/D input 4 to $v_{out}$ of the mixer circuit.
-
-3. Set the spectrum analyzer to dB magnitude scale and Linear frequency scale.
-
-4. Produce a sustained vowel (a, e, i, o, u) sound. Note the form of the
-   spectrum. It should consist of a series of peaks, like the signals from the
-   function generator, but unlike the function generator signals where the
-   harmonics fall off monotonically, the amplitudes of the harmonics in a
-   speech signal rise and fall with increasing frequency.
-
-5. To make it easier to study the spectrum, you can "freeze" the display by
-   pressing the STOP button (continue producing the sound until the freezing is
-   complete). If you like, you can get a printout of the display by selecting
-   "Print Window" from the File menu.
-
-6. Estimate the fundamental frequency (pitch) of the waveform. Notice that
-   unlike the function generator signals, the fundamental is not necessarily
-   the strongest component. 
-   
-    !!! tip
-        It may be difficult to get an accurate estimate if the fundamental is
-        low in frequency (e.g. a male voice). One way to improve accuracy is to
-        find the frequency of one of the higher harmonics and divide by its
-        order.
-
-7. While trying to keep the same pitch, produce different sustained vowel
-   sounds. Note how the "envelope" of the spectrum (the line connecting the
-   tips of the peaks) changes while the positions of the lines remains the
-   same.
-
-8. Now, produce the same sustained vowel sound (your choice) while varying the
-   pitch. Notice how the overall shape of the spectrum remains the same as the
-   lines move up and down.
-
-9. Play some music from a single musical instrument from your phone, into the
-   microphone. Note the nature of the spectrum.
-
-10. A soft whistle should be very close to a pure tone. Whistle a tone of about
-    1 kHz into the microphone and see if this is the case.
-
-11. Plug in the telephone handset. Verify that the carbon microphone input to
-    the mixer still works by speaking into the handset microphone.
-
-12. Whistle the same note into the handset microphone and observe the spectrum
-    display. Does it have the same harmonic content as with the dynamic
-    microphone? Since the acoustic signal was the same, the difference must be
-    caused by distortion in the microphone. **Which microphone has the least
-    distortion?**
-
-13. Blow into the microphone and note the shape of the spectrum. This is a
-    *broadband*, random signal.
-
-14. Produce an 'sh' sound. Note the shape of the spectrum. This is called an
-    *unvoiced fricative*.
-
-15. Now try a 'zh' sound (a *voiced fricative*). How does its spectrum compare
-    with the one in the previous step?
-
-16. Based on your observations of different speech sounds, **can you determine
-    an approximate bandwidth for speech?** i.e. is there a frequency below
-    which "most" of the energy of the speech signals is concentrated?
-
-### Part B: Analyzing an Unknown Signal
-
-1. Plug the sound card cable from the Lab PC into J2-1.
-
-2. We want to be able to hear the signal, so connect one side of the handset
-   earpiece to the mixer output. Ground the other side of the handset earpiece.
-
-3. To play the sound card through our mixer, we will need to add a third input.
-   To do this, add a 100-$k\Omega$ resistor ($R_3$) to the mixer circuit so that it
-   looks like this:
+2. Build the following two circuits. The top one will be used to amplify and
+   record your voice via the dynamic microphone, and the bottom one will play
+   back audio from the computer to the phone handset.
 
     <center>
-    ![](./figs/img182.png)
+    ![](./figs/img281.png)
     </center>
 
-4. Connect the sound card line out (pin 20 on the interface board socket strip)
-   to $v_{sound}$.
+3. Verify that the audio output is working by playing this [test
+   signal.](./signals/sine.au)
 
-5. Unplug the dynamic microphone from J1-6. Unscrew the cover from the
-   mouthpiece of the telephone handset, and remove the microphone cartridge.
-   Now the only input to the mixer is from the sound card.
+4. Download [Recorder](./labview/Recorder.vi) and open in Labview. This program
+   will record four seconds of a signal to a file.
 
-6. Download and play the [Mystery Signal](./signals/shepard30.au) from Lab
-   2 (with any Windows default player). You should be able to hear it through
-   the earpiece and see it on the spectrum analyzer display.
+5. Make sure Dev1 is selected as your device name. Start the program by
+   pressing the Run button or CTRL-R.
 
-    !!! tip
-        It may be easier to see what's going on if you set the spectrum
-        analyzer display to linear magnitude and log frequency.
+6. When ready to record, press the `START RECORDING` button. Wait for the green
+   indicator to come on and speak a significant phrase (e.g. "My labbies are so
+   great") into the microphone. You should see the signal on the waveform chart
+   as it is being recorded.
 
-7. Based on what you see on the spectrum display, can you explain how the
-   mystery signal works? Hint: focus on a single peak and note how it changes
-   from one tone to the next.
+7. After four seconds a window will pop up asking you to save the signal to a
+   file. Save it as `sig1.tdms`. The default location will be in the C drive
+   under folder Temp.
 
-8. Put the telephone handset back together.
+8. Navigate to the saved file and right-click on the file. Select Open With
+   $\rightarrow$  Excel Importer.
 
-9. Exit the spectrum analyzer program. Disconnect the DAQ cable from the
-   interface board by using the ejector levers. 
-   
-    !!! caution
-        Do not try to remove it by pulling on the cable.
+9. Go to the sheet called Untitled. You will see the sampled data in the sheet
+   called Untitled. Note that the samples have been scaled so that their value
+   corresponds to the signal value in volts. Save the excel file as `sig1.xlsx`
+   and close.
+
+10. Make a second recording of whistling a tune, playing your flute, or some
+    other sequence of tones with a "simple" harmonic structure. Or play a pure
+    tone via your smart phone (find an app or search on youtube).  Save this as
+    `sig2.xlsx`.
+
+### Part B: Loading the Signals into Matlab
+
+1. Load Matlab from the Start menu by following the All Programs  $\rightarrow$
+   Matlab  $\rightarrow$  Matlab R2015a. (You could also transfer the files to
+   your laptop and work with Matlab on your own computer.)
+
+Our signals were recorded with a sampling rate of 10 kHz. We can save a
+little typing by defining a Matlab variable for the sampling frequency:
+
+```matlab
+Fs=10000; 
+```
+
+Select the button "Import Data". Navigate to the data location and double-click
+on the file `sig1.xlsx`. Select the Untitled sheet. Rename Column B (default is
+Voltage) as `sig1`. Click on Import Selection. You should now have a vector
+named `sig1` Play it back by typing the following command: 
+
+```matlab
+sound(sig1, Fs)
+```
+
+**What happens if you reduce `Fs` by half?** Repeat steps 3 and 4 for your
+second signal (sig2). 
+
+### Part C: Spectral Analysis 
+
+Display the spectrogram of your signal: 
+
+```matlab
+specgram(sig1, 256, Fs);
+```
+
+The number $n = 256$ in the above command is the length of the signal chunk
+used in computing the Fourier transform.  For our sample rate of 10 kHz, this
+corresponds to a time interval of 25.6 ms and a frequency resolution of about
+40 Hz. We can get finer resolution in time or frequency (but not both at the
+same time) by decreasing or increasing this number. Try values of 128 and 512
+and see what difference they make in the spectrogram. With 512 you should be
+able to see the individual harmonics of the pitch frequency. If you have a low
+pitched voice, you may be able to see the individual pitch pulses with length 128. 
+
+Can you distinguish the voiced from the unvoiced sounds? **What are the
+time and frequency resolutions corresponding to these transform lengths? Does
+the appearance of the different spectrograms support your answer?** 
+
+!!! tip
+    The `figure()` command allows you to display several plots or spectrograms
+    at one time
+
+
+```matlab
+specgram(sig1, 128, Fs)
+```
+
+will create a new plot window (Figure 2) and display the new spectrogram in it.
+To go back to Figure 1, just type `figure(1)`. The spectrogram is simply a
+concatenation of the spectra of individual chunks of the signal, which we can
+compute individually. Use the time scale on the spectrogram to find a strong
+voiced region of the signal (say, for example at $t=1.5s$). Since the sampling
+rate is 10 kHz, this corresponds to a sample index of $t*10000$ ($15000$ in our
+example). Extract a chunk of length 256 from the signal at this point: 
+
+```matlab
+chunk=sig1(15000:15255);
+```
+
+Examine your chunk with the plot command: 
+
+```matlab
+plot(chunk) 
+```
+
+Now take the DFT of this chunk of the signal: 
+
+```matlab
+spectrum = fft(chunk);
+```
+
+Let's first try to plot the spectrum in the 'obvious' way:
+
+```matlab
+plot(spectrum)
+```
+
+The result is not what we expected! The spectrum is a complex valued sequence,
+and Matlab plots complex functions as the real vs. imaginary part. A more
+satisfying picture can be had with: 
+
+```matlab
+ plot(abs(spectrum));
+```
+
+Note that this plots both positive and negative frequencies. To get a more
+traditional plot: 
+
+```matlab
+ plot(abs(spectrum(1:129)));
+```
+
+Can you see the shape of this curve in the spectrogram at the point where you
+took your chunk? The spectrogram uses a logarithmic scale for magnitude, so you
+might try one of the following:
+
+```matlab
+plot(log(abs(spectrum(1:129))));
+```
+
+```matlab
+semilogy(abs(spectrum(1:129)));
+``` 
+
+**Take a screenshot.**
+
+Display the spectrogram of your musical signal.
+
+```matlab
+specgram(sig2, 256, Fs);
+```
+
+**Can you identify the individual notes in the tune?** Different instruments
+have different harmonic structures: a flute has few harmonics, an oboe or
+trumpet has many, a clarinet has no even harmonics. **Analyze the harmonic
+structure of your tones.**

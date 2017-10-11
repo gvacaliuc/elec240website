@@ -5,15 +5,15 @@ ELEC 240 Lab
 Laboratory 6
 ============
 
-Signal Analysis and Characterization
-====================================
+Digital Signal Processing
+=========================
 
 ### [Introduction](./introduction)
 
 Experiments
 -----------
 
--   Prelude: [Decibels](./prelude)
--   Experiment 6.1: [Measuring Signal Spectrum](./experiment_6-1)
--   Experiment 6.2: [The Spectrum of Acoustic Signals](./experiment_6-2)
+* Experiment 6.1: [Sampling and Quantization](./experiment_6-1)
+* Experiment 6.2: [Recording a Reference Signal](./experiment_6-2)
+* Experiment 6.3: [Signal Processing in Matlab](./experiment_6-3)
 

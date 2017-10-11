@@ -31,7 +31,7 @@ Let's start by looking at what sampling looks like in the time domain.
 
 2. Set the function generator to produce a $5 V_{ pp }$, 300 Hz sine wave.
 
-3. Download the [spectrum analyzer](../labview/Lab7_Spectrum_Analyzer.vi) and
+3. Download the [spectrum analyzer](./labview/Lab7_Spectrum_Analyzer.vi) and
    open in Labview. Set "number of samples per channel" and "rate" to 10000.
    Set "averaging mode" to RMS averaging. Start the program by pressing the run
    button or by pressing CTRL-R with the cursor over the window.

@@ -2,135 +2,141 @@ ELEC 240 Lab
 
 ------------------------------------------------------------------------
 
-Experiment 6.1
+Experiment 7.1
 --------------
 
-Measuring a Signal's Spectrum
------------------------------
-
-### 
+Sampling and Quantization
+-------------------------
 
 ### Equipment
 
 * Test board
-* 2.2 kΩ Resistor
-* 0.33 µF Capacitor
+* Lab PC
 
-### Part A: The Spectrum of a Sine Wave
+### Part A: Sample Rate and Aliasing
 
-The spectrum of a sine wave should be pretty boring. By definition it consists
-of a single component at the fundamental frequency whose amplitude is equal to
-the amplitude of the waveform. Nevertheless, it is useful being able to see the
-amplitude and frequency in a single picture, as well as being able to assess
-how "pure" (i.e. how truly sinusoidal) the purported sine wave actually is.
+When we convert a continuous, analog signal to a digital signal (digitize it),
+we *sample* its value at regular intervals. The sequence of numbers that
+results represents the original signal at these sample points, but ignores what
+goes on between them. If the signal is sufficiently well-behaved (i.e. it
+satisfies the Nyquist criterion and contains no energy at frequencies greater
+than half the sampling frequency), then these sample points are enough to
+represent the original signal exactly. But if the original signal contains a
+frequency greater than half the sampling rate, that frequency will be *aliased*
+to a lower frequency.  
 
-1. Connect the cable from the DAQ card to J3-1 on the rightmost interface
-   module.
+Let's start by looking at what sampling looks like in the time domain.
 
-2. Connect the output of the function generator to CH1 of the scope and to A/D
-   input 4 (pin 46 on the bottom interface board socket connector).
+1. Connect the function generator output and CH1 of the scope to A/D input4
+   (pin 46 on the interface board socket strip).
 
-3. Set the function generator to produce 2 V p-p, 500 Hz sine wave.
+2. Set the function generator to produce a $5 V_{ pp }$, 300 Hz sine wave.
 
-4. Download the [spectrum analyzer](../labview/Lab6_Spectrum_Analyzer.vi) and
-   open in Labview. Set "number of samples per channel" and "rate" to
-   10000. Set "averaging mode" to RMS averaging.
-
-5. Start the instrument by selecting Run from the Operate menu, or by pressing
-   the run button (the small arrow just below the menu bar). The instrument is
-   divided into a display area (the large black area on the left with green
-   lines and text) and a control area (the gray area on the right). For now,
-   let's concentrate on the display area. It should look something like this:
-
-    <center>
-    ![](./figs/spec_an_display_new.jpg)
-    </center>
-
-6. The top portion is the waveform display. It should be showing a sine wave,
-   just like the scope. Vary the function generator amplitude control and
-   verify that these values change appropriately.
+3. Download the [spectrum analyzer](./labview/Lab7_Spectrum_Analyzer.vi) and
+   open in Labview. Set "number of samples per channel" and "rate" to 10000.
+   Set "averaging mode" to RMS averaging. Start the program by pressing the run
+   button or by pressing CTRL-R with the cursor over the window.
 
     !!! note
-        There is some additional information about the signal just above the
-        waveform display. The line labeled 'Signal Amplitude' gives three
-        different measurements of the signal amplitude. Vrms: the RMS voltage;
-        dBV: the RMS voltage in decibels relative to 1V; Vp-p: the peak-to-peak
-        voltage.
+        Here's what we have:
 
-7. Disconnect the function generator. What remains is a *noise* signal which is
-   being generated within the rest of the system. In this case it has both a
-   *random* component (the "grass") and a periodic component (the 3.3 kHz
-   signal).
+        <center>
+        ![](./figs/img183.png)
+        </center>
 
-8. Reconnect the function generator. **Vary the frequency and observe how the
-   spectrum display changes**.
+6. Right-click on the black box indicating waveform type above the Signal
+   waveform, which says Dev1/ai4. Select Common Plots and select the 2nd option
+   (points only). You should see about three cycles of a sine wave displayed in
+   the waveform graph. Unlike last week's display, the samples are shown as
+   individual dots, rather than connected line segments.
 
-### Part B: The Spectrum of Triangle and Square Waves
+7. Slowly increase the frequency to 2 kHz and note how the waveform becomes
+   less clear.
 
-1. The Fourier series of a triangle wave has only odd harmonics, which fall off
-   as $\frac{1}{n}^2$ (12 dB/octave). Set the function generator to produce a
-   triangle wave and see if this is the case. **Are there any even harmonics?
-   If so, why are they there? What happens when you vary the duty cycle?**
+8. At 2 kHz, press `STOP`. You should see either several lines or several
+   overlapping sine waves. This is an illusion caused by the fact that only a
+   few samples of each cycle are being taken.
 
-2. The square wave also consists only of odd harmonics, but falling off as
-   $\frac{1}{n}$ (6 dB/octave). Set the function generator to square wave and
-   observe the spectrum. Vary duty cycle. Depending on the exact frequency you
-   may see a number of extraneous harmonics. These are due to the phenomenon of
-   *aliasing* which we will examine later.
+9. Make a sketch to illustrate what happens when the frequency of the waveform
+   is equal to a small submultiple (1/5, in this case) of the sampling rate.
 
-3. The spectrum analyzer labeled "Spectrum" displays magnitude and frequency on
-   a linear scale. It is sometimes useful to view the spectrum on a semi-log or
-   log-log plot. Stop executing the program, right-click on the spectrum
-   display (gray area) and click on Properties $\rightarrow$ Scales.  Select
-   Log. Adjust the amplitude if necessary to obtain a good display.  Note the
-   hyperbolic shape of the $\frac{1}{n}$ fall off in magnitude.
+10. To see the actual underlying waveform more clearly, switch the display to
+    connected lines: Place the cursor on the box marked "display style"
+    underneath the display and select the continuous line style from the
+    "Common Plots" submenu.
 
-4. Now get a log-log plot with magnitude in dB by changing the Y-scale to Log
-   and setting a multiplier of 20 (under Scale Factors). Note that the
-   $\frac{1}{f}$ fall off is now a "linear" 20 dB/decade slope.
+11. Restart the program and continue increasing the frequency of the function
+    generator until you reach 5 kHz, stopping at several points along the way
+    to examine the waveform. When the function generator frequency is exactly
+    half the sampling frequency the samples will alternate the same positive
+    and negative values. (This may be easier to see by switching to the
+    vertical line plot display style.)
 
-5. Switch the function generator to triangle wave. **Is the slope now 40
-   dB/decade, as we expect?** Set the spectrum analyzer back to linear display
-   (both magnitude and frequency). Note the shape of the spectrum.
+12. Add a fundamental frequency indicator (Frequency.vi) to your block diagram to display the frequency numerically.
 
-6. Set the function generator to square wave. Set the Duty Cycle to 15%.  You
-   should now have a waveform consisting of narrow pulses. Note the shape of
-   the spectrum. It should have the $sin(x)/x$ (sinc) shape you saw in ELEC241.
+13. Continue increasing the function generator frequency. Notice that as you
+    approach 10 kHz, you begin to see a well-defined sine wave which
+    *decreases* in frequency as you increase the function generator frequency.
+    This is the *alias* of the generator frequency. At exactly 10 kHz you
+    should get a zero frequency sine wave.
 
-7. Set the spectrum analyzer back to dB magnitude and log frequency. Set the
-   duty cycle to 50%.
+14. Continue increasing the function generator frequency past 10 kHz. Note that
+    you once again have a sine wave that increases in frequency as the input
+    frequency increases. **Do the input frequency and displayed frequency
+    match? Pick two input frequencies to comment on.**
 
-### Part C: The Spectrum and Frequency Response
+15. **Explain the concept of aliasing, folding, and the Nyquist criterion, and
+    relate to your results.**
 
-1. Wire the following circuit:
+16. Try square and triangle waves of various frequencies and comment on what
+    happens to them as the frequency changes.
+
+17. Press the `STOP` button and exit the waveform view program.
+
+
+### Part B: Amplitude Quantization
+
+Once the input signal has been sampled, it must be represented as a number in
+the computer. Since there are a limited number of bits available to encode the
+number (12 in this case), there are only a limited number of values that can be
+exactly represented. Values in between two successive encodings must be rounded
+or truncated to one or the other. This process of forcing the continuous input
+range into a discrete set of values is called *quantization*.
+
+
+1. Let's add a quantizer to our spectrum analyzer VI. Add the following blocks
+   and connections to your VI. See the note below for the locations of function
+   blocks.
 
     <center>
-    ![](./figs/img181.png)
+    ![](./figs/lv2.png)
     </center>
 
     !!! note
-        This is the same circuit we used in Lab 3, so you should have its
-        transfer function in your lab notebook.
+        All function blocks are found under Express $\rightarrow$ Arithmetic
+        and Comparison $\rightarrow$ Express Numeric. The above function blocks
+        include Divide, Multiply, Round to Nearest (indicated by square
+        brackets) and Scale by Power of 2 ($\alpha 2^n$).
 
-2. Connect the output of the function generator to $v_{in}$. Also connect CH1
-   of the scope and A/D input 4 to $v_{in}$.
+2. Connect the data signal to the leftmost Divide block, so that the full block
+   diagram looks like this:
 
-3. Set the function generator to produce a 50 Hz sine wave at 1 $V_{rms}$ (0
-   dBV).
+    <center>
+    ![](./figs/lv3.png)
+    </center>
 
-4. Move CH1 of the scope and A/D input 4 to $v_{out}$.
+3. On the left hand side of the spectrum analyzer are two controls which
+   control the quantization of the sampled signal. The *full scale* control
+   sets the maximum allowed bits of the signal. The number of bits control sets
+   the *number of bits* that may be represented within the allowed range. Set
+   the *full scale* to 12 and experiment with higher and lower *number of
+   bits*. **What do you notice in the waveform display?**
 
-5. Increase the frequency of the function generator and observe the behavior of
-   the spectrum display. The tip of the peak corresponding to the fundamental
-   of the sine wave will trace out the magnitude of the transfer function of
-   our circuit. Note the two numbers above the spectrum display. They give the
-   magnitude and frequency of the largest peak in the spectrum. The "Peak
-   Frequency" readout should correspond to the frequency setting of the
-   function generator.
+4. Change the input to the PS/PSD block to be the quantized signal instead of
+   the signal coming from the DAQ cable. **How does the spectrum change with
+   quantization?**
 
-6. Since the transfer function falls off as $\frac{1}{f}$ for high frequencies,
-   we expect the output to fall 6 dB per octave for frequencies well above the
-   cutoff frequency. **Check the response at 1 kHz, 2 kHz, and 4 kHz and see
-   how well this holds.**
+5. Change the input to the PS/PSD block back to be the signal coming from the
+   DAQ.
 
-7. Turn off the function generator.
+6. Stop and exit the VI.
