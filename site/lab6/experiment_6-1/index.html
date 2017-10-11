@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Measuring Signal Spectrum - ELEC 240 Labs</title>
+  <title>Sampling and Quantization - ELEC 240 Labs</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,7 +17,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Measuring Signal Spectrum";
+    var mkdocs_page_name = "Sampling and Quantization";
     var mkdocs_page_input_path = "lab6/experiment_6-1.md";
     var mkdocs_page_url = "/lab6/experiment_6-1/";
   </script>
@@ -284,29 +284,23 @@
                     
     <a class="" href="../introduction/">Introduction</a>
                 </li>
-                <li class="">
-                    
-    <a class="" href="../prelude/">Decibels</a>
-                </li>
                 <li class=" current">
                     
-    <a class="current" href="./">Measuring Signal Spectrum</a>
+    <a class="current" href="./">Sampling and Quantization</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#experiment-61">Experiment 6.1</a></li>
+    <li class="toctree-l3"><a href="#experiment-71">Experiment 7.1</a></li>
     
 
-    <li class="toctree-l3"><a href="#measuring-a-signals-spectrum">Measuring a Signal's Spectrum</a></li>
+    <li class="toctree-l3"><a href="#sampling-and-quantization">Sampling and Quantization</a></li>
     
         <ul>
         
             <li><a class="toctree-l4" href="#equipment">Equipment</a></li>
         
-            <li><a class="toctree-l4" href="#part-a-the-spectrum-of-a-sine-wave">Part A: The Spectrum of a Sine Wave</a></li>
+            <li><a class="toctree-l4" href="#part-a-sample-rate-and-aliasing">Part A: Sample Rate and Aliasing</a></li>
         
-            <li><a class="toctree-l4" href="#part-b-the-spectrum-of-triangle-and-square-waves">Part B: The Spectrum of Triangle and Square Waves</a></li>
-        
-            <li><a class="toctree-l4" href="#part-c-the-spectrum-and-frequency-response">Part C: The Spectrum and Frequency Response</a></li>
+            <li><a class="toctree-l4" href="#part-b-amplitude-quantization">Part B: Amplitude Quantization</a></li>
         
         </ul>
     
@@ -315,42 +309,11 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../experiment_6-2/">The Spectrum of Acoustic Signals</a>
-                </li>
-    </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <span class="caption-text">Lab 7</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../../lab7/">Home</a>
+    <a class="" href="../experiment_6-2/">Recording a Reference Signal</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../lab7/experiment_7-1/">Sampling and Quantization</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../lab7/experiment_7-2/">Recording a Reference Signal</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../lab7/experiment_7-3/">Signal Processing</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../lab7/experiment_7-4/">Filtering, Continued</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../lab7/experiment_7-5/">Some DSP Applications</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../lab7/notes/">Notes Table</a>
+    <a class="" href="../experiment_6-3/">Signal Processing in Matlab</a>
                 </li>
     </ul>
 	    </li>
@@ -392,7 +355,7 @@
         
       
     
-    <li>Measuring Signal Spectrum</li>
+    <li>Sampling and Quantization</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -404,158 +367,156 @@
               
                 <p>ELEC 240 Lab</p>
 <hr />
-<h2 id="experiment-61">Experiment 6.1</h2>
-<h2 id="measuring-a-signals-spectrum">Measuring a Signal's Spectrum</h2>
-<h3 id="_1"></h3>
+<h2 id="experiment-71">Experiment 7.1</h2>
+<h2 id="sampling-and-quantization">Sampling and Quantization</h2>
 <h3 id="equipment">Equipment</h3>
 <ul>
 <li>Test board</li>
-<li>2.2 kΩ Resistor</li>
-<li>0.33 µF Capacitor</li>
+<li>Lab PC</li>
 </ul>
-<h3 id="part-a-the-spectrum-of-a-sine-wave">Part A: The Spectrum of a Sine Wave</h3>
-<p>The spectrum of a sine wave should be pretty boring. By definition it consists
-of a single component at the fundamental frequency whose amplitude is equal to
-the amplitude of the waveform. Nevertheless, it is useful being able to see the
-amplitude and frequency in a single picture, as well as being able to assess
-how "pure" (i.e. how truly sinusoidal) the purported sine wave actually is.</p>
+<h3 id="part-a-sample-rate-and-aliasing">Part A: Sample Rate and Aliasing</h3>
+<p>When we convert a continuous, analog signal to a digital signal (digitize it),
+we <em>sample</em> its value at regular intervals. The sequence of numbers that
+results represents the original signal at these sample points, but ignores what
+goes on between them. If the signal is sufficiently well-behaved (i.e. it
+satisfies the Nyquist criterion and contains no energy at frequencies greater
+than half the sampling frequency), then these sample points are enough to
+represent the original signal exactly. But if the original signal contains a
+frequency greater than half the sampling rate, that frequency will be <em>aliased</em>
+to a lower frequency.  </p>
+<p>Let's start by looking at what sampling looks like in the time domain.</p>
 <ol>
 <li>
-<p>Connect the cable from the DAQ card to J3-1 on the rightmost interface
-   module.</p>
+<p>Connect the function generator output and CH1 of the scope to A/D input4
+   (pin 46 on the interface board socket strip).</p>
 </li>
 <li>
-<p>Connect the output of the function generator to CH1 of the scope and to A/D
-   input 4 (pin 46 on the bottom interface board socket connector).</p>
+<p>Set the function generator to produce a <span>\(5 V_{ pp }\)</span>, 300 Hz sine wave.</p>
 </li>
 <li>
-<p>Set the function generator to produce 2 V p-p, 500 Hz sine wave.</p>
-</li>
-<li>
-<p>Download the <a href="../../labview/Lab6_Spectrum_Analyzer.vi">spectrum analyzer</a> and
-   open in Labview. Set "number of samples per channel" and "rate" to</p>
-</li>
-<li>
-<p>Set "averaging mode" to RMS averaging.</p>
-</li>
-<li>
-<p>Start the instrument by selecting Run from the Operate menu, or by pressing
-   the run button (the small arrow just below the menu bar). The instrument is
-   divided into a display area (the large black area on the left with green
-   lines and text) and a control area (the gray area on the right). For now,
-   let's concentrate on the display area. It should look something like this:</p>
-<p><center>
-<img alt="" src="../figs/spec_an_display_new.jpg" />
-</center></p>
-</li>
-<li>
-<p>The top portion is the waveform display. It should be showing a sine wave,
-   just like the scope. Vary the function generator amplitude control and
-   verify that these values change appropriately.</p>
+<p>Download the <a href="../labview/Lab7_Spectrum_Analyzer.vi">spectrum analyzer</a> and
+   open in Labview. Set "number of samples per channel" and "rate" to 10000.
+   Set "averaging mode" to RMS averaging. Start the program by pressing the run
+   button or by pressing CTRL-R with the cursor over the window.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>There is some additional information about the signal just above the
-waveform display. The line labeled 'Signal Amplitude' gives three
-different measurements of the signal amplitude. Vrms: the RMS voltage;
-dBV: the RMS voltage in decibels relative to 1V; Vp-p: the peak-to-peak
-voltage.</p>
+<p>Here's what we have:</p>
+<p><center>
+<img alt="" src="../figs/img183.png" />
+</center></p>
 </div>
 </li>
 <li>
-<p>Disconnect the function generator. What remains is a <em>noise</em> signal which is
-   being generated within the rest of the system. In this case it has both a
-   <em>random</em> component (the "grass") and a periodic component (the 3.3 kHz
-   signal).</p>
+<p>Right-click on the black box indicating waveform type above the Signal
+   waveform, which says Dev1/ai4. Select Common Plots and select the 2nd option
+   (points only). You should see about three cycles of a sine wave displayed in
+   the waveform graph. Unlike last week's display, the samples are shown as
+   individual dots, rather than connected line segments.</p>
 </li>
 <li>
-<p>Reconnect the function generator. <strong>Vary the frequency and observe how the
-   spectrum display changes</strong>.</p>
+<p>Slowly increase the frequency to 2 kHz and note how the waveform becomes
+   less clear.</p>
+</li>
+<li>
+<p>At 2 kHz, press <code>STOP</code>. You should see either several lines or several
+   overlapping sine waves. This is an illusion caused by the fact that only a
+   few samples of each cycle are being taken.</p>
+</li>
+<li>
+<p>Make a sketch to illustrate what happens when the frequency of the waveform
+   is equal to a small submultiple (1/5, in this case) of the sampling rate.</p>
+</li>
+<li>
+<p>To see the actual underlying waveform more clearly, switch the display to
+    connected lines: Place the cursor on the box marked "display style"
+    underneath the display and select the continuous line style from the
+    "Common Plots" submenu.</p>
+</li>
+<li>
+<p>Restart the program and continue increasing the frequency of the function
+    generator until you reach 5 kHz, stopping at several points along the way
+    to examine the waveform. When the function generator frequency is exactly
+    half the sampling frequency the samples will alternate the same positive
+    and negative values. (This may be easier to see by switching to the
+    vertical line plot display style.)</p>
+</li>
+<li>
+<p>Add a fundamental frequency indicator (Frequency.vi) to your block diagram to display the frequency numerically.</p>
+</li>
+<li>
+<p>Continue increasing the function generator frequency. Notice that as you
+    approach 10 kHz, you begin to see a well-defined sine wave which
+    <em>decreases</em> in frequency as you increase the function generator frequency.
+    This is the <em>alias</em> of the generator frequency. At exactly 10 kHz you
+    should get a zero frequency sine wave.</p>
+</li>
+<li>
+<p>Continue increasing the function generator frequency past 10 kHz. Note that
+    you once again have a sine wave that increases in frequency as the input
+    frequency increases. <strong>Do the input frequency and displayed frequency
+    match? Pick two input frequencies to comment on.</strong></p>
+</li>
+<li>
+<p><strong>Explain the concept of aliasing, folding, and the Nyquist criterion, and
+    relate to your results.</strong></p>
+</li>
+<li>
+<p>Try square and triangle waves of various frequencies and comment on what
+    happens to them as the frequency changes.</p>
+</li>
+<li>
+<p>Press the <code>STOP</code> button and exit the waveform view program.</p>
 </li>
 </ol>
-<h3 id="part-b-the-spectrum-of-triangle-and-square-waves">Part B: The Spectrum of Triangle and Square Waves</h3>
+<h3 id="part-b-amplitude-quantization">Part B: Amplitude Quantization</h3>
+<p>Once the input signal has been sampled, it must be represented as a number in
+the computer. Since there are a limited number of bits available to encode the
+number (12 in this case), there are only a limited number of values that can be
+exactly represented. Values in between two successive encodings must be rounded
+or truncated to one or the other. This process of forcing the continuous input
+range into a discrete set of values is called <em>quantization</em>.</p>
 <ol>
 <li>
-<p>The Fourier series of a triangle wave has only odd harmonics, which fall off
-   as <span>\(\frac{1}{n}^2\)</span> (12 dB/octave). Set the function generator to produce a
-   triangle wave and see if this is the case. <strong>Are there any even harmonics?
-   If so, why are they there? What happens when you vary the duty cycle?</strong></p>
-</li>
-<li>
-<p>The square wave also consists only of odd harmonics, but falling off as
-   <span>\(\frac{1}{n}\)</span> (6 dB/octave). Set the function generator to square wave and
-   observe the spectrum. Vary duty cycle. Depending on the exact frequency you
-   may see a number of extraneous harmonics. These are due to the phenomenon of
-   <em>aliasing</em> which we will examine later.</p>
-</li>
-<li>
-<p>The spectrum analyzer labeled "Spectrum" displays magnitude and frequency on
-   a linear scale. It is sometimes useful to view the spectrum on a semi-log or
-   log-log plot. Stop executing the program, right-click on the spectrum
-   display (gray area) and click on Properties <span>\(\rightarrow\)</span> Scales.  Select
-   Log. Adjust the amplitude if necessary to obtain a good display.  Note the
-   hyperbolic shape of the <span>\(\frac{1}{n}\)</span> fall off in magnitude.</p>
-</li>
-<li>
-<p>Now get a log-log plot with magnitude in dB by changing the Y-scale to Log
-   and setting a multiplier of 20 (under Scale Factors). Note that the
-   <span>\(\frac{1}{f}\)</span> fall off is now a "linear" 20 dB/decade slope.</p>
-</li>
-<li>
-<p>Switch the function generator to triangle wave. <strong>Is the slope now 40
-   dB/decade, as we expect?</strong> Set the spectrum analyzer back to linear display
-   (both magnitude and frequency). Note the shape of the spectrum.</p>
-</li>
-<li>
-<p>Set the function generator to square wave. Set the Duty Cycle to 15%.  You
-   should now have a waveform consisting of narrow pulses. Note the shape of
-   the spectrum. It should have the <span>\(sin(x)/x\)</span> (sinc) shape you saw in ELEC241.</p>
-</li>
-<li>
-<p>Set the spectrum analyzer back to dB magnitude and log frequency. Set the
-   duty cycle to 50%.</p>
-</li>
-</ol>
-<h3 id="part-c-the-spectrum-and-frequency-response">Part C: The Spectrum and Frequency Response</h3>
-<ol>
-<li>
-<p>Wire the following circuit:</p>
+<p>Let's add a quantizer to our spectrum analyzer VI. Add the following blocks
+   and connections to your VI. See the note below for the locations of function
+   blocks.</p>
 <p><center>
-<img alt="" src="../figs/img181.png" />
+<img alt="" src="../figs/lv2.png" />
 </center></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This is the same circuit we used in Lab 3, so you should have its
-transfer function in your lab notebook.</p>
+<p>All function blocks are found under Express <span>\(\rightarrow\)</span> Arithmetic
+and Comparison <span>\(\rightarrow\)</span> Express Numeric. The above function blocks
+include Divide, Multiply, Round to Nearest (indicated by square
+brackets) and Scale by Power of 2 (<span>\(\alpha 2^n\)</span>).</p>
 </div>
 </li>
 <li>
-<p>Connect the output of the function generator to <span>\(v_{in}\)</span>. Also connect CH1
-   of the scope and A/D input 4 to <span>\(v_{in}\)</span>.</p>
+<p>Connect the data signal to the leftmost Divide block, so that the full block
+   diagram looks like this:</p>
+<p><center>
+<img alt="" src="../figs/lv3.png" />
+</center></p>
 </li>
 <li>
-<p>Set the function generator to produce a 50 Hz sine wave at 1 <span>\(V_{rms}\)</span> (0
-   dBV).</p>
+<p>On the left hand side of the spectrum analyzer are two controls which
+   control the quantization of the sampled signal. The <em>full scale</em> control
+   sets the maximum allowed bits of the signal. The number of bits control sets
+   the <em>number of bits</em> that may be represented within the allowed range. Set
+   the <em>full scale</em> to 12 and experiment with higher and lower <em>number of
+   bits</em>. <strong>What do you notice in the waveform display?</strong></p>
 </li>
 <li>
-<p>Move CH1 of the scope and A/D input 4 to <span>\(v_{out}\)</span>.</p>
+<p>Change the input to the PS/PSD block to be the quantized signal instead of
+   the signal coming from the DAQ cable. <strong>How does the spectrum change with
+   quantization?</strong></p>
 </li>
 <li>
-<p>Increase the frequency of the function generator and observe the behavior of
-   the spectrum display. The tip of the peak corresponding to the fundamental
-   of the sine wave will trace out the magnitude of the transfer function of
-   our circuit. Note the two numbers above the spectrum display. They give the
-   magnitude and frequency of the largest peak in the spectrum. The "Peak
-   Frequency" readout should correspond to the frequency setting of the
-   function generator.</p>
+<p>Change the input to the PS/PSD block back to be the signal coming from the
+   DAQ.</p>
 </li>
 <li>
-<p>Since the transfer function falls off as <span>\(\frac{1}{f}\)</span> for high frequencies,
-   we expect the output to fall 6 dB per octave for frequencies well above the
-   cutoff frequency. <strong>Check the response at 1 kHz, 2 kHz, and 4 kHz and see
-   how well this holds.</strong></p>
-</li>
-<li>
-<p>Turn off the function generator.</p>
+<p>Stop and exit the VI.</p>
 </li>
 </ol>
               
@@ -565,10 +526,10 @@ transfer function in your lab notebook.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../experiment_6-2/" class="btn btn-neutral float-right" title="The Spectrum of Acoustic Signals">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../experiment_6-2/" class="btn btn-neutral float-right" title="Recording a Reference Signal">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../prelude/" class="btn btn-neutral" title="Decibels"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../introduction/" class="btn btn-neutral" title="Introduction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -594,7 +555,7 @@ transfer function in your lab notebook.</p>
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../prelude/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../introduction/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
         <span style="margin-left: 15px"><a href="../experiment_6-2/" style="color: #fcfcfc">Next &raquo;</a></span>
