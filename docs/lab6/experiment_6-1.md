@@ -59,15 +59,11 @@ Let's start by looking at what sampling looks like in the time domain.
 
 8. At 2 kHz, press `STOP`. You should see either several lines or several
    overlapping sine waves. This is an illusion caused by the fact that only a
-   few samples of each cycle are being taken.
+   few samples of each cycle are being taken. **How many samples are being
+   taken per cycle? Take a screenshot.**
 
-9. Make a sketch to illustrate what happens when the frequency of the waveform
-   is equal to a small submultiple (1/5, in this case) of the sampling rate.
-
-10. To see the actual underlying waveform more clearly, switch the display to
-    connected lines: Place the cursor on the box marked "display style"
-    underneath the display and select the continuous line style from the
-    "Common Plots" submenu.
+10. To see the actual underlying waveform more clearly, switch the display to a
+    continuous line style from the "Common Plots" submenu.
 
 11. Restart the program and continue increasing the frequency of the function
     generator until you reach 5 kHz, stopping at several points along the way
@@ -76,7 +72,8 @@ Let's start by looking at what sampling looks like in the time domain.
     and negative values. (This may be easier to see by switching to the
     vertical line plot display style.)
 
-12. Add a fundamental frequency indicator (Frequency.vi) to your block diagram to display the frequency numerically.
+12. Add a fundamental frequency indicator (Frequency.vi) to your block diagram
+    to display the frequency numerically.
 
 13. Continue increasing the function generator frequency. Notice that as you
     approach 10 kHz, you begin to see a well-defined sine wave which

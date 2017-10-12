@@ -81,9 +81,9 @@ y = filter(b, a, x);
 
 Choosing the values of the $a_k$'s and $b_k$'s is the art of *filter design,*
 which we'll look at in the next part. For now, we'll just try a few simple
-values for *a* and *b*. As a tip, record the characteristics of each filter we
-look at - you will be asked to summarize each type at the end of experiment
-9.4. 
+values for $\vec{a}$ and $\vec{b}$. As a tip, record the characteristics of
+each filter we look at - you will be asked to summarize each type at the end of
+experiment 9.4. 
 
 !!! tip 
     Record the characteristics of each filter as you look at them - **you will
@@ -109,7 +109,7 @@ freqz(b, a)
 **Take a screenshot.**
 
 Note that the frequency axis is labeled in terms of the Nyquist frequency,
-which is the sampling rate. So for our sampling rate, 1 corresponds to 5 kHz.
+which is half the sampling rate. So for our sampling rate, 1 corresponds to 5 kHz.
 Although it is a little distorted because of the logarithmic scaling, this is a
 close relative of our old friend $sin(x)/x$. Also note that the jumps in phase
 are caused by a change in sign of the transfer function (the magnitude is
@@ -229,9 +229,11 @@ Note that we now have a filter of order 50.  How would you like to design and
 build an analog (RLC) filter of this order?! **Look at the unit-sample and
 frequency response of this filter. What function does the unit-sample response
 remind you of?** Note that this filter has a much more ideal shape than any of
-the others. Finally apply this filter to the reference signal. **Can you tell
-the difference in the sound or the spectrogram between the effects of this
-filter and the length 5 filter?** 
+the others. 
+
+Finally apply this filter to the reference signal. **Can you tell the
+difference in the sound or the spectrogram between the effects of this filter
+and the length 5 filter?** 
 
 !!! caution
     You will need your signals `sig1` and `sig2` for the next lab so make sure

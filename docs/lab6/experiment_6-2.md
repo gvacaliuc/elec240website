@@ -64,7 +64,7 @@ signal processing itself.
 ### Part B: Loading the Signals into Matlab
 
 1. Load Matlab from the Start menu by following the All Programs  $\rightarrow$
-   Matlab  $\rightarrow$  Matlab R2015a. (You could also transfer the files to
+   Matlab  $\rightarrow$  Matlab R2017a. (You could also transfer the files to
    your laptop and work with Matlab on your own computer.)
 
 Our signals were recorded with a sampling rate of 10 kHz. We can save a
@@ -76,15 +76,24 @@ Fs=10000;
 
 Select the button "Import Data". Navigate to the data location and double-click
 on the file `sig1.xlsx`. Select the Untitled sheet. Rename Column B (default is
-Voltage) as `sig1`. Click on Import Selection. You should now have a vector
-named `sig1` Play it back by typing the following command: 
+Voltage) as `sig1`. Click on Import Selection.  
+
+You should now have a table of values named something like "sig1S1". Convert it
+from a table to an array of values with the command:
+
+```matlab
+sig1=table2array(sig1S1)
+```
+
+Play it back by typing the following command: 
 
 ```matlab
 sound(sig1, Fs)
 ```
 
-**What happens if you reduce `Fs` by half?** Repeat steps 3 and 4 for your
-second signal (sig2). 
+**What happens if you reduce `Fs` by half?** 
+
+Repeat steps 3 and 4 for your second signal (sig2). 
 
 ### Part C: Spectral Analysis 
 
@@ -94,25 +103,26 @@ Display the spectrogram of your signal:
 specgram(sig1, 256, Fs);
 ```
 
-The number $n = 256$ in the above command is the length of the signal chunk
-used in computing the Fourier transform.  For our sample rate of 10 kHz, this
-corresponds to a time interval of 25.6 ms and a frequency resolution of about
-40 Hz. We can get finer resolution in time or frequency (but not both at the
-same time) by decreasing or increasing this number. Try values of 128 and 512
-and see what difference they make in the spectrogram. With 512 you should be
-able to see the individual harmonics of the pitch frequency. If you have a low
-pitched voice, you may be able to see the individual pitch pulses with length 128. 
+The number n=256 in the above command is the length of the signal chunk used in
+computing the Fourier transform. For our sample rate of 10 kHz, **what is the
+time resolution (n/fs)? What is the frequency resolution (fs/n)?**
 
-Can you distinguish the voiced from the unvoiced sounds? **What are the
-time and frequency resolutions corresponding to these transform lengths? Does
-the appearance of the different spectrograms support your answer?** 
+We can get finer resolution in time or frequency (but not both at the same
+time) by decreasing or increasing this number. Try values of 128 and 512 and
+**comment on what difference they make in the spectrogram.** With 512 you
+should be able to see the individual harmonics of the pitch frequency. If you
+have a low pitched voice, you may be able to see the individual pitch pulses
+with length 128. Can you distinguish the voiced from the unvoiced sounds?
+
+**What are the time and frequency resolutions corresponding to these transform
+lengths?**
 
 !!! tip
     The `figure()` command allows you to display several plots or spectrograms
     at one time
 
-
 ```matlab
+figure(2)
 specgram(sig1, 128, Fs)
 ```
 
