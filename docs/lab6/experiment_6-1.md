@@ -33,7 +33,7 @@ Let's start by looking at what sampling looks like in the time domain.
 1. Connect the function generator output to CH1 of the scope and to A/D
 input4 (pin 46 on the interface board socket strip).
 2. Set the function generator to produce a 5 V p-p, 300 Hz sine wave.
-3. Open your spectrum analyzer VI you built last week in Labview. (Or download the [spectrum analyzer](../labview/Lab6_Spectrum_Analyzer.vi). Set "number of samples per channel" and "rate" to
+3. Open your spectrum analyzer VI you built last week in Labview. (Or download the [spectrum analyzer](../labview/Lab5-Spectrum_Analyzer.vi). Set "number of samples per channel" and "rate" to
 10000. Set "averaging mode" to RMS averaging. Start the program by
 pressing the run button or by pressing CTRL-R with the cursor over the
 window.

@@ -45,19 +45,22 @@ The first step in batch processing is to record the input signal as a disk file.
 
 ### Part B: Loading the Signals into Matlab
 
-1. Load Matlab from the Start menu by following the All Programs -> Matlab -> Matlab R2017a. (You could also transfer the files to your laptop and work with Matlab on your own computer.)
+1. Load Matlab from the Start menu by going to All Programs -> Matlab -> Matlab R2017a. (You could also transfer the files to your laptop and work with Matlab on your own computer.)
 
 2. Our signals were recorded with a sampling rate of 10 kHz. We can create a Matlab variable for the sampling frequency: 
 >> Fs=10000;
 
-3. Select the button "Import Data". Navigate to the data location and double-click on the file "sig1.xlsx". Select the Untitled sheet. Rename Column B (default is Voltage) as sig1. Click on Import Selection.
+3. Select the button "Import Data". Navigate to the data location and double-click on the file "sig1.xlsx". Click on Import Selection.
 
-4. You should now have a vector named "sig1" Play it back by typing the following command: 
+4. You should now have a table of values named something like "sig1S1". Convert it from a table to an array of values with the command:
+>> sig1=table2array(sig1S1)
+
+5. Play it back by typing the following command: 
 >> sound(sig1, Fs)
 
-5. **What happens if you reduce Fs by half?**
+6. **What happens if you reduce Fs by half?**
 
-6. Repeat steps 3 and 4 for your second signal (sig2).
+7. Repeat steps 3-5 for your second signal (sig2).
 
 ### Part C: Spectral Analysis
 

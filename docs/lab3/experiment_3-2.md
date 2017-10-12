@@ -13,8 +13,8 @@ Filters and Transfer Function
 ### Equipment
 
 * Test board
-* 2.2 kâ„¦ Resistor
-* 0.33 ÂµF [Capacitor](../misc_images/#ceramic-caps2)
+* $2.2 k\Omega$ Resistor
+* $0.33 \mu F$ [Capacitor](../misc_images/#ceramic-caps2)
 
 ### Part A: Measuring the Transfer Function
 
@@ -23,16 +23,15 @@ than measuring the attenuation of a resistive voltage divider.  We have to make
 the measurement at a number of frequencies, and we must measure phase as well
 as amplitude.
 
-1. Select a 2.2 kâ„¦ Resistor and a 0.33 ÂµF [Capacitor](../misc_images/#ceramic-caps2).
+1. Select a 2.2 $k\Omega$ Resistor and a 0.33 $\mu F$ [Capacitor](../misc_images/#ceramic-caps2).
 
     !!! note
         Ceramic capacitors use the same labeling codes as the
-        potentiometers except that the units are picofarads (pF) instead of
-        ohms. So a 0.33 ÂµF capacitor would be a 330,000 pF capacitor which would
+        potentiometers except that the units are picofarads ($pF$) instead of
+        ohms. So a 0.33 $\mu F$ capacitor would be a 330,000 $pF$ capacitor which would
         have the code 334 = $33*10^4$.
 
 2. Wire the following circuit:
-
     <center>
     ![](./figs/img171.png)
     </center>
@@ -54,41 +53,52 @@ as amplitude.
 
 ### Part B: Circuit Simulation
 
-The remainder of the lab can be done from a computer (lab computer or personal laptop). We will be using circuit simulation software called LTSpice. Spice stands for (Simulation Program with Integrated Circuit Emphasis). 
-1. Open LTSpice which is installed on the lab computers. If you are using a personal laptop, you can download LTspice from linear.com – there are Windows and Mac versions available.  Please note that the instructions below are specifically for Windows. 
-2. Click on New Schematic and create the same circuit you built on your breadboard by following the instructions below:
-* Place components by going to the Edit menu or shortcut buttons.
-* The opamp is found under Edit->Components->[OpAmps]->opamp. The voltage source is found under Edit->Components->voltage. Connect components using Edit->Wire (or the shortcut button F3).
-* Some convenient shortcuts are:
-|  **Shortcut**   | **Description** |
-|  ------------   | --------------- |
-|     Ctrl-R      |      Rotate     |
-|   Delete or F5  |      Delete     |
-|        F6       |       Copy      |
-|        F7       |       Move      |
-|        F8       |       Drag      |
-|        Esc      |   Exit a mode   |
+The remainder of the lab can be done from a computer (lab computer or personal
+laptop). We will be using circuit simulation software called LTSpice. Spice
+stands for (Simulation Program with Integrated Circuit Emphasis).
 
+1. Open LTSpice which is installed on the lab computers. If you are using a
+   personal laptop, you can download LTspice [here](https://linear.com). There
+   are Windows and Mac versions available.  Please note that the instructions
+   below are specifically for Windows.  
 
-* Set the voltage source  to AC by right-clicking it and selecting Advanced. Set AC amplitude to 1.
-* Enter in R and C values by right-clicking these components.
-* Optional – label nets (i.e., wires) by right-clicking on nets.
-3. Perform an AC analysis. An AC analysis will evaluate the gain (Vout/Vin) and phase over a specified range of frequencies and plot it.
-* Click on the Running Man icon and select AC analysis (or go to Simulate->Run).
-* Use a decade frequency sweep with at least 10 points per decade over the range of 1 Hz to 10 MHz. This will appear as a Spice directive on your schematic as 
-.ac dec 10 1 10meg
-* Click on the Vout node for gain and phase plots to appear. You will notice that the gain is displayed in dB and phase in degrees. The x-axis will be logarithmic, i.e., the step size is 10n, where n is 0,1,2… Each of the steps is called a decade (dec).
-4. **Take a screenshot of your plots.**
-5. **What is the gain at low frequencies (1Hz)? Indicate the gain in dB as well as in V/V.** This is called the DC gain.
-6. **At what frequency does the gain fall 3dB below DC gain?** Thare are many names for this frequency including 3dB, cutoff, or corner frequency. It is also called the half-power frequency, because at this frequency, the output power has dropped to half of its peak value. This half-power frequency defines the *bandwidth* of the filter. 
-7. Notice how the gain plot is linear with a negative slope beyond the cutoff frequency. **What is the slope of the gain plot at high frequencies ($>1kHz$)? Express in terms of $dB/dec$.** This is called the *gain rolloff*.
-8. What is the phase for very low frequencies? And for very high frequencies? Can you explain why?**
+2. Click on New Schematic and create the same circuit you built on your
+   breadboard by following the [instructions](../references/using-spice) on
+   spice provided in the references section.
+
+3. Perform an AC analysis using the
+   [instructions](../references/using-spice/#performing-an-ac-analysis)
+   provided in the references section.
+
+4. **Take a screenshot of your plots.**  
+
+5. **What is the gain at low frequencies (1Hz)? Indicate the gain in dB as well
+   as in V/V.** This is called the DC gain.  
+
+6. **At what frequency does the gain fall 3dB below DC gain?** Thare are many
+   names for this frequency including 3dB, cutoff, or corner frequency. It is
+   also called the half-power frequency, because at this frequency, the output
+   power has dropped to half of its peak value. This half-power frequency
+   defines the *bandwidth* of the filter.  
+
+7. Notice how the gain plot is linear with a negative slope beyond the cutoff
+   frequency. **What is the slope of the gain plot at high frequencies
+   ($>1kHz$)? Express in terms of $dB/dec$.** This is called the *gain
+   rolloff*.  
+
+8. What is the phase for very low frequencies? And for very high frequencies?
+   **Can you explain why?**  
+
 9. Now cascade another lowpass filter to your circuit:
     <center>
     ![](./figs/RC_2ndorder.png)
-    </center>
-10. Run an AC Analysis of this new circuit, and click on its output node to display gain and phase plots (the output will be at the node between R2 and C2). **Take a screenshot of your plot. What is the new gain rolloff ($dB/dec$)? The phase at low and high frequencies?**
-11. **Did the cutoff frequency change?**
+    </center>  
+
+10. Run an AC Analysis of this new circuit, and click on its output node to
+    display gain and phase plots (the output will be at the node between R2 and
+    C2). **Take a screenshot of your plot. What is the new gain rolloff
+    ($dB/dec$)? The phase at low and high frequencies?**  
+
+11. **Did the cutoff frequency change?**  
+
 12. **What are the pros and cons of cascading two identical filters?**
-
-

@@ -17,6 +17,7 @@ The Laboratories
 -   Lab 3: [Basic Circuits](./lab3)
 -   Lab 4: [Active Circuits](./lab4)
 -   Lab 5: [Signal Analysis and Characterization](./lab5)
+-   Lab 6: [Digital Signal Processing](./lab6)
 
 References
 ----------

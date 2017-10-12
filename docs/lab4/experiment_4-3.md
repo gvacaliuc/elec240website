@@ -28,19 +28,18 @@ amplify the signal levels produced by the input transducers.
 
 ### Part A: Photodiode Amplifier
 
-The inverting op-amp circuit works by taking the current that flows into
-the "virtual ground" at the inverting input and forcing it to flow in
-the feedback resistor. Since the voltage across $R_F$ is equal to
-$R_FI_F$, the output voltage (on the other terminal of $R_F$ is
-proportional to the current flowing into the virtual ground. What if
-instead of this current originating from the voltage across $R_1$, it
-instead came directly from a current source? Well, the output voltage
-would still be proportional to it: $v_{out} = -R_FI_F = -R_FI_{in}$, i.e.,
-we have an amplifier which accepts a current as an input and produces a
-voltage as an output. This is called a *transresistance amplifier*.
+The inverting op-amp circuit works by taking the current that flows into the
+"virtual ground" at the inverting input and forcing it to flow in the feedback
+resistor. Since the voltage across $R_F$ is equal to $R_FI_F$, the output
+voltage (on the other terminal of $R_F$ is proportional to the current flowing
+into the virtual ground. What if instead of this current originating from the
+voltage across $R_1$, it instead came directly from a current source? Well, the
+output voltage would still be proportional to it: $v_{out} = -R_FI_F =
+-R_FI_{in}$, i.e., we have an amplifier which accepts a current as an input and
+produces a voltage as an output. This is called a *transresistance amplifier*.
 (Since a resistance converts its current to a voltage ($v=Ri$), a
-transresistance converts a current in one part of the circuit to a
-voltage in another.)
+transresistance converts a current in one part of the circuit to a voltage in
+another.)
 
 In Lab 2 we measured the *voltage* across the photodiode and found some fairly
 distorted waveforms. It turns out that the *current* produced by a photodiode
@@ -66,9 +65,9 @@ would have a much better transducer.
    the BNC clip leads. Connect your red LED to the clip leads (like you did
    with the photodiode in Exp. 2.3 Part B).
 
-5. Hold the LED directly above the photodiode and observe $v_{out}$. **Is it less
-   distorted than in Lab 2?** Switch the function generator to sine wave and
-   observe the waveshape.
+5. Hold the LED directly above the photodiode and observe $v_{out}$. **Is it
+   less distorted than in Lab 2?** Switch the function generator to sine wave
+   and observe the waveshape.
 
 6. Switch the function generator to square wave and increase the amplitude to
    maximum. Slowly separate the LED from the photodiode, adjusting the
