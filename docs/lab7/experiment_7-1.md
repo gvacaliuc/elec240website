@@ -257,7 +257,7 @@ Let’s build this full-adder on our breadboard.
     connection to your logic gates in Step 4.
 
     <center>
-    ![](./figs/outputLED.png)
+    ![](./figs/switch.png)
     </center>
 
 2.  Next, insert the NAND IC (74HC00) and XOR IC (74HC86) on your breadboard,
@@ -276,13 +276,13 @@ Let’s build this full-adder on our breadboard.
     ![](./figs/fulladder_3.png)
     </center>
 
-5.  We want to include some indicator of what our Sum and Carry output is For
+5.  We want to include some indicator of what our Sum and Carry output is. For
     this we will use LEDs, that will light up when the output is 1. Wire the
     following connections to your S and C outputs. (The resistor in series
     avoids excessive voltage drop across the LED).
 
     <center>
-    ![](./figs/switch.png)
+    ![](./figs/outputLED.png)
     </center>
 
 6.  Your full-adder is done! Now test if it works, by checking all possible
