@@ -319,6 +319,25 @@
           
             <li class="toctree-l1">
 		
+    <span class="caption-text">Lab 7</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../lab7/">Home</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab7/introduction/">Introduction</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lab7/experiment_7-1/">Digital Logic</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <span class="caption-text">Miscellanous Images</span>
     <ul class="subnav">
                 <li class="">
@@ -423,9 +442,9 @@ a_0y(n) = \sum_{k=1}^{M} a_ky(n-k) + \sum_{k=1}^{N} b_kx(n-k)
 
 <p>Choosing the values of the <span>\(a_k\)</span>'s and <span>\(b_k\)</span>'s is the art of <em>filter design,</em>
 which we'll look at in the next part. For now, we'll just try a few simple
-values for <em>a</em> and <em>b</em>. As a tip, record the characteristics of each filter we
-look at - you will be asked to summarize each type at the end of experiment
-9.4. </p>
+values for <span>\(\vec{a}\)</span> and <span>\(\vec{b}\)</span>. As a tip, record the characteristics of
+each filter we look at - you will be asked to summarize each type at the end of
+experiment 9.4. </p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Record the characteristics of each filter as you look at them - <strong>you will
@@ -446,7 +465,7 @@ filter: </p>
 
 <p><strong>Take a screenshot.</strong></p>
 <p>Note that the frequency axis is labeled in terms of the Nyquist frequency,
-which is the sampling rate. So for our sampling rate, 1 corresponds to 5 kHz.
+which is half the sampling rate. So for our sampling rate, 1 corresponds to 5 kHz.
 Although it is a little distorted because of the logarithmic scaling, this is a
 close relative of our old friend <span>\(sin(x)/x\)</span>. Also note that the jumps in phase
 are caused by a change in sign of the transfer function (the magnitude is
@@ -541,9 +560,10 @@ very long ones.  Try the same cutoff frequency with 50 coefficients: </p>
 build an analog (RLC) filter of this order?! <strong>Look at the unit-sample and
 frequency response of this filter. What function does the unit-sample response
 remind you of?</strong> Note that this filter has a much more ideal shape than any of
-the others. Finally apply this filter to the reference signal. <strong>Can you tell
-the difference in the sound or the spectrogram between the effects of this
-filter and the length 5 filter?</strong> </p>
+the others. </p>
+<p>Finally apply this filter to the reference signal. <strong>Can you tell the
+difference in the sound or the spectrogram between the effects of this filter
+and the length 5 filter?</strong> </p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>You will need your signals <code>sig1</code> and <code>sig2</code> for the next lab so make sure
@@ -556,7 +576,7 @@ you save them!</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../misc_images/" class="btn btn-neutral float-right" title="Home">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../lab7/" class="btn btn-neutral float-right" title="Home">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../experiment_6-2/" class="btn btn-neutral" title="Recording a Reference Signal"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -588,7 +608,7 @@ you save them!</p>
         <span><a href="../experiment_6-2/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../../misc_images/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../../lab7/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
