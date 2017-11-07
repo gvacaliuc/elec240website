@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/", 
-            "text": "ELEC 240 Lab Manual\n\n\nBefore Going to Lab\n\n\n\n\nIntroduction\n\n\nLab Station Handbook\n\n\nTools and Resources\n\n\nVirtualBench\n\n\n\n\nThe Laboratories\n\n\n\n\nLab 1: \nBasic Electrical Measurements\n\n\nLab 2: \nSignal Sources and Sinks\n\n\nLab 3: \nBasic Circuits\n\n\nLab 4: \nActive Circuits\n\n\nLab 5: \nSignal Analysis and Characterization\n\n\nLab 6: \nDigital Signal Processing\n\n\nLab 7: \nDigital Logic\n\n\n\n\nReferences\n\n\nResistor Color Code\n\n\n741 Op-Amp Pin Configuration\n\n\nBreadboard Pin Configuration", 
+            "text": "ELEC 240 Lab Manual\n\n\nBefore Going to Lab\n\n\n\n\nIntroduction\n\n\nLab Station Handbook\n\n\nTools and Resources\n\n\nVirtualBench\n\n\n\n\nThe Laboratories\n\n\n\n\nLab 1: \nBasic Electrical Measurements\n\n\nLab 2: \nSignal Sources and Sinks\n\n\nLab 3: \nBasic Circuits\n\n\nLab 4: \nActive Circuits\n\n\nLab 5: \nSignal Analysis and Characterization\n\n\nLab 6: \nDigital Signal Processing\n\n\nLab 7: \nDigital Logic\n\n\nLab 8: \nIntro to Soldering\n\n\nFinal Lab: \nBuilding an EMG\n\n\n\n\nReferences\n\n\nResistor Color Code\n\n\n741 Op-Amp Pin Configuration\n\n\nBreadboard Pin Configuration", 
             "title": "Home"
         }, 
         {
@@ -17,7 +17,7 @@
         }, 
         {
             "location": "/#the-laboratories", 
-            "text": "Lab 1:  Basic Electrical Measurements  Lab 2:  Signal Sources and Sinks  Lab 3:  Basic Circuits  Lab 4:  Active Circuits  Lab 5:  Signal Analysis and Characterization  Lab 6:  Digital Signal Processing  Lab 7:  Digital Logic", 
+            "text": "Lab 1:  Basic Electrical Measurements  Lab 2:  Signal Sources and Sinks  Lab 3:  Basic Circuits  Lab 4:  Active Circuits  Lab 5:  Signal Analysis and Characterization  Lab 6:  Digital Signal Processing  Lab 7:  Digital Logic  Lab 8:  Intro to Soldering  Final Lab:  Building an EMG", 
             "title": "The Laboratories"
         }, 
         {
@@ -1304,6 +1304,156 @@
             "location": "/lab7/experiment_7-1/#part-c-constructing-the-full-adder", 
             "text": "Let\u2019s build this full-adder on our breadboard.    Place the DIP switch on your breadboard, and set all the switches to the\n    off position. Let switch 1 (SW1) be x, SW2 be y, and SW3 be z.  Wire the\n    following connections to each of your switches as shown below. The pins on\n    the side of the off position should be wired to ground. The 330-\u2126 resistor\n    acts to prevent a short between power supply and ground when the switch is\n    closed. TTL (transistor-transistor logic) indicates where you will make the\n    connection to your logic gates in Step 4.       Next, insert the NAND IC (74HC00) and XOR IC (74HC86) on your breadboard,\n    checking that the notches on the ICs both face the same direction.       Wire  \\(V_{cc}\\)  and GND for the two ICs, where  \\(V_{cc} = 5V\\) .    Wire the logic circuit together with the pin assignments as shown\n    below:       We want to include some indicator of what our Sum and Carry output is. For\n    this we will use LEDs, that will light up when the output is 1. Wire the\n    following connections to your S and C outputs. (The resistor in series\n    avoids excessive voltage drop across the LED).       Your full-adder is done! Now test if it works, by checking all possible\n    input combinations from your full-adder truth table.  Take a photo for\n    each input combination (showing switch and LEDs) to include in your\n    report.", 
             "title": "Part C: Constructing the Full-Adder"
+        }, 
+        {
+            "location": "/lab8/", 
+            "text": "ELEC 240 Lab\n\n\n\n\nLaboratory 8\n\n\nIntroduction to Soldering\n\n\nIntroduction\n\n\nProcedures\n\n\n\n\nSoldering Your Kit\n\n\nReport Guide\n\n\nSign Off Sheet", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/lab8/#laboratory-8", 
+            "text": "", 
+            "title": "Laboratory 8"
+        }, 
+        {
+            "location": "/lab8/#introduction-to-soldering", 
+            "text": "", 
+            "title": "Introduction to Soldering"
+        }, 
+        {
+            "location": "/lab8/#introduction", 
+            "text": "", 
+            "title": "Introduction"
+        }, 
+        {
+            "location": "/lab8/#procedures", 
+            "text": "Soldering Your Kit  Report Guide  Sign Off Sheet", 
+            "title": "Procedures"
+        }, 
+        {
+            "location": "/lab8/introduction/", 
+            "text": "ELEC 240 Lab\n\n\n\n\nIntroduction\n\n\nIn this lab, you will be working \nindividually.\n This lab introduces you to\nbasic soldering techniques. Because there is some safety and technical training\ninvolved, you are required to attend a lab session to start work on your\nsoldering project. After that, you may come in on your own time to finish up\nyour project if needed, provided you agree to follow correct safety procedures.", 
+            "title": "Introduction"
+        }, 
+        {
+            "location": "/lab8/introduction/#introduction", 
+            "text": "In this lab, you will be working  individually.  This lab introduces you to\nbasic soldering techniques. Because there is some safety and technical training\ninvolved, you are required to attend a lab session to start work on your\nsoldering project. After that, you may come in on your own time to finish up\nyour project if needed, provided you agree to follow correct safety procedures.", 
+            "title": "Introduction"
+        }, 
+        {
+            "location": "/lab8/soldering/", 
+            "text": "ELEC 240 Lab\n\n\n\n\nBuilding a Velleman Kit\n\n\nEquipment\n\n\n\n\nVelleman soldering kit of your choice\n\n\nHakko soldering iron\n\n\nRosic core solder\n\n\nWire stripper/cutter\n\n\nDesoldering wick\n\n\nThird hand PCB clamp\n\n\nBending tools (pliers, x-mas tree)\n\n\nSafety glasses\n\n\nFlux\n\n\nMultimeter\n\n\nWater squeeze bottle\n\n\nProcedure\n\n\n\n\nSteps\n\n\n\n\n\n\nPick a Velleman soldering kit from the options provided you in lab.\n\n\n\n\n\n\nPull out the instructions manual of your kit and take a moment to ensure\n   all the parts are included. You can also find the instructions online at\n   [www.velleman.eu](http://www.velleman.eu. , by searching for your kit part\n   number.\n\n\n\n\n\n\nFollow along and participate in the in-class lab training.\n\n\n\n\n\n\nBegin on your soldering kit when instructed to do so, following the\n   step-by-step instructions for your kit.\n\n\n\n\n\n\nOnce completed, demonstrate your soldering skills and functional gadget to\n   a labbie or instructor and get it signed off on the form below.\n\n\n\n\n\n\nClean up after yourself.", 
+            "title": "Building a Velleman Kit"
+        }, 
+        {
+            "location": "/lab8/soldering/#building-a-velleman-kit", 
+            "text": "", 
+            "title": "Building a Velleman Kit"
+        }, 
+        {
+            "location": "/lab8/soldering/#equipment", 
+            "text": "Velleman soldering kit of your choice  Hakko soldering iron  Rosic core solder  Wire stripper/cutter  Desoldering wick  Third hand PCB clamp  Bending tools (pliers, x-mas tree)  Safety glasses  Flux  Multimeter  Water squeeze bottle  Procedure", 
+            "title": "Equipment"
+        }, 
+        {
+            "location": "/lab8/soldering/#steps", 
+            "text": "Pick a Velleman soldering kit from the options provided you in lab.    Pull out the instructions manual of your kit and take a moment to ensure\n   all the parts are included. You can also find the instructions online at\n   [www.velleman.eu](http://www.velleman.eu. , by searching for your kit part\n   number.    Follow along and participate in the in-class lab training.    Begin on your soldering kit when instructed to do so, following the\n   step-by-step instructions for your kit.    Once completed, demonstrate your soldering skills and functional gadget to\n   a labbie or instructor and get it signed off on the form below.    Clean up after yourself.", 
+            "title": "Steps"
+        }, 
+        {
+            "location": "/lab8/report/", 
+            "text": "ELEC 240 Lab\n\n\n\n\nReport Template\n\n\nWrite up a lab report (\n\\(\\LaTeX\\)\n not required for this one. that includes the\nfollowing sections:\n\n\n\n\n\n\nIntroduction\n\n\n\n\nPurpose of lab\n\n\nDescription of what your gadget is supposed to do\n\n\n\n\n\n\n\n\nProcedure. Provide a general methodology for soldering a pcb (in\n    list format), as if you were training someone else to solder.\n    Include some safety tips, clever techniques, etc. that you\n    picked up from your own experience.\n\n\n\n\n\n\nResults\n\n\n\n\n\n\nDoes your gadget work? If not, why not?\n\n\n\n\n\n\nSchematic description. Take a look at the schematic of your\n    gadget (provided in the instructions manual) and \u201creverse\n    engineer\u201d how it works. You may need to look up part numbers\n    of components online and understand what each\n    component does.\n\n\n\n\n\n\n\n\n\n\nConclusions\n\n\n\n\n\n\nWhat did you learn from this lab (include new things\n  learned, and mistakes you learned from)?\n\n\n\n\n\n\nWhat would you do differently next time?\n\n\n\n\n\n\nAny additional feedback on this lab?\n\n\n\n\n\n\n\n\n\n\nSign-off Sheet", 
+            "title": "Report"
+        }, 
+        {
+            "location": "/lab8/report/#report-template", 
+            "text": "Write up a lab report ( \\(\\LaTeX\\)  not required for this one. that includes the\nfollowing sections:    Introduction   Purpose of lab  Description of what your gadget is supposed to do     Procedure. Provide a general methodology for soldering a pcb (in\n    list format), as if you were training someone else to solder.\n    Include some safety tips, clever techniques, etc. that you\n    picked up from your own experience.    Results    Does your gadget work? If not, why not?    Schematic description. Take a look at the schematic of your\n    gadget (provided in the instructions manual) and \u201creverse\n    engineer\u201d how it works. You may need to look up part numbers\n    of components online and understand what each\n    component does.      Conclusions    What did you learn from this lab (include new things\n  learned, and mistakes you learned from)?    What would you do differently next time?    Any additional feedback on this lab?      Sign-off Sheet", 
+            "title": "Report Template"
+        }, 
+        {
+            "location": "/lab8/sign-off-sheet/", 
+            "text": "ELEC 240 Lab\n\n\n\n\nSign Off Sheet\n\n\nGet signatures from a labbie/instructor for each of the following as you work\non the following items, and turn in this sheet along with your lab report.\n\n\n\n\n\n\nShow a labbie how safely you work\n\n\n\n\n\n\nCan you desolder an ugly solder joint?\n\n\n\n\n\n\nShow off your PCB soldering masterpiece\n\n\n\n\n\n\nDemo your gadget", 
+            "title": "Sign Off Sheet"
+        }, 
+        {
+            "location": "/lab8/sign-off-sheet/#sign-off-sheet", 
+            "text": "Get signatures from a labbie/instructor for each of the following as you work\non the following items, and turn in this sheet along with your lab report.    Show a labbie how safely you work    Can you desolder an ugly solder joint?    Show off your PCB soldering masterpiece    Demo your gadget", 
+            "title": "Sign Off Sheet"
+        }, 
+        {
+            "location": "/final-lab/", 
+            "text": "ELEC 240 Lab\n\n\n\n\nFinal Project\n\n\nBuilding an Electromyogram\n\n\nIntroduction\n\n\n\n\n\n\nProject Specification\n\n\nDeliverables", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/final-lab/#final-project", 
+            "text": "", 
+            "title": "Final Project"
+        }, 
+        {
+            "location": "/final-lab/#building-an-electromyogram", 
+            "text": "", 
+            "title": "Building an Electromyogram"
+        }, 
+        {
+            "location": "/final-lab/#introduction", 
+            "text": "Project Specification  Deliverables", 
+            "title": "Introduction"
+        }, 
+        {
+            "location": "/final-lab/introduction/", 
+            "text": "ELEC 240 Lab\n\n\n\n\nThe Project Objective\n\n\nIn this final project, we will be seeing (and hearing) how our body uses\nelectricity to communicate. The first step to doing this is to sense the\nelectrical activity. Electrodes are electrical conductors that sense ion\ndistributions on tissue and convert that ion current into an electrical\ncurrent. For this project, we will pick a noninvasive option for sensing\nbioelectrical signals by using body surface electrodes to detect the\nelectrical activity that occurs when a muscle contracts.\n\n\nThis electrical activity is in the microvolts range and not detectable\ndirectly by our lab instruments. So we will need to amplify and filter the\nsignal, and create appropriate interfacing that will allow us to both\nvisualize and hear the signal, and give us some interesting information about\nit.\n\n\nMuscle Bioelectrical Signals\n\n\nWhen you decide to move a muscle, upper motor neurons from your motor cortex\ntravel to your spinal cord where they synapse with lower motor neurons. These\nlower motor neurons synapse with multiple muscle fibers to form a motor unit.\nEach muscle fiber is made up of actin/myosin chains that slide across each\nother when there is a specific voltage potential, changing the muscle fiber\nshape.\n\n\nWhen a motor neuron fires an electrical impulse creating an action potential,\nacetylcholine is released at the synapse, or the neuromuscular junction,\ncausing a change in the electrical potential of the muscle. This causes\nvoltage-gated calcium channels to open and propagate the action potential\nacross the muscle cells, creating a muscle contraction.\n\n\nThe action potentials that occur in the muscle can be sensed by body surface\nelectrodes. We will build an instrument called an electromyogram (EMG) that\nwill amplify and process this signal into a detectable and informative signal.\n\n\nIf you'd like to learn more about this process and how you can simulate simple\nneurons, ELEC382: \"Introduction to Computational Neuroscience\" is a great course\nfor it!", 
+            "title": "Introduction"
+        }, 
+        {
+            "location": "/final-lab/introduction/#the-project-objective", 
+            "text": "In this final project, we will be seeing (and hearing) how our body uses\nelectricity to communicate. The first step to doing this is to sense the\nelectrical activity. Electrodes are electrical conductors that sense ion\ndistributions on tissue and convert that ion current into an electrical\ncurrent. For this project, we will pick a noninvasive option for sensing\nbioelectrical signals by using body surface electrodes to detect the\nelectrical activity that occurs when a muscle contracts.  This electrical activity is in the microvolts range and not detectable\ndirectly by our lab instruments. So we will need to amplify and filter the\nsignal, and create appropriate interfacing that will allow us to both\nvisualize and hear the signal, and give us some interesting information about\nit.", 
+            "title": "The Project Objective"
+        }, 
+        {
+            "location": "/final-lab/introduction/#muscle-bioelectrical-signals", 
+            "text": "When you decide to move a muscle, upper motor neurons from your motor cortex\ntravel to your spinal cord where they synapse with lower motor neurons. These\nlower motor neurons synapse with multiple muscle fibers to form a motor unit.\nEach muscle fiber is made up of actin/myosin chains that slide across each\nother when there is a specific voltage potential, changing the muscle fiber\nshape.  When a motor neuron fires an electrical impulse creating an action potential,\nacetylcholine is released at the synapse, or the neuromuscular junction,\ncausing a change in the electrical potential of the muscle. This causes\nvoltage-gated calcium channels to open and propagate the action potential\nacross the muscle cells, creating a muscle contraction.  The action potentials that occur in the muscle can be sensed by body surface\nelectrodes. We will build an instrument called an electromyogram (EMG) that\nwill amplify and process this signal into a detectable and informative signal.  If you'd like to learn more about this process and how you can simulate simple\nneurons, ELEC382: \"Introduction to Computational Neuroscience\" is a great course\nfor it!", 
+            "title": "Muscle Bioelectrical Signals"
+        }, 
+        {
+            "location": "/final-lab/project-specification/", 
+            "text": "ELEC 240 Lab\n\n\n\n\nEMG System\n\n\nThe EMG block diagram will look like this:\n\n\n\n\nAs you can see, there are multiple amplification stages of the signal sensed\nby the electrodes, along with other blocks that alter the signal.  Each is\ndescribed below:\n\n\n\n\n\n\n4X Gain Instrumentation Amplifier\n: Instrumentation amplifiers are used\ncommonly in measurement and test equipment, for which the impedance is\nunknown. Instrumentation amps have inbuilt input buffer amplifiers so no input\nimpedance matching is required. These amplifiers reject noise and are used\nwhen accuracy is required. We will use an \nAD623N\n instrumentation\namplifier.\n\n\n\n\n\n\nDC Blocking\n: Any amplification stage will amplify both the AC and DC\nsignal. Since we are interested in the microvolt ac signal of the action\npotentials, we will block the amplified dc voltage with a large value\ncapacitor.\n\n\n\n\n\n\n220X Gain+5kHz\n Lowpass Filter: This is the major gain stage of our EMG.\nThis amplification stage will be done using a \nTLC2272\n precision amplifier,\nwired as a differential amplifier. This IC has two op amps within it so we\nwill use one for this stage and the other for the voltage reference circuit.\nThe \nTLC2272\n op amp can be wired to provide both gain and lowpass filtering.\nAlthough the significant range of EMG signal is around 5-500 Hz, we will\ndesign a lowpass filter to have a bandwidth of 5kHz for now.\n\n\n\n\n\n\nOutput Amplitude\n: The amplified DC term will need to be filtered out\nagain with a big capacitor. Secondly, we can adjust the amplitude of the\nsignal with a potentiometer that will eventually control the volume out of our\nspeaker in the next stage.\n\n\n\n\n\n\n20X Gain\n: The speaker requires a special amplifier called a \nLM386\n \nwhich is an audio power amplifier. This op amp amplifies low power electronic\nsignals to a level strong enough for driving high power speakers.\n\n\n\n\n\n\nBattery\n: A 9-V battery will be used.\n\n\n\n\n\n\nPower Indicator\n: We can test whether our circuit is being powered by\nplacing an LED in parallel with the battery. The LED will light up when\ncurrent is being drawn from the battery.\n\n\n\n\n\n\nVoltage reference and buffer\n: The 220X gain amplifier requires a voltage\nreference signal equal to \n\\(V_{ dd }/2\\)\n when we use it as a differential amplifier. To\ncreate this voltage \n\\(V_{dd}/2\\)\n we can use the second opamp in the \nTLC2272\n IC as a\nvoltage buffer to create this voltage. Using an opamp instead of a voltage\ndivider allows us to create the desired voltage without the output (diff amp)\nloading the input (\n\\(V_{dd}/2\\)\n reference).\n\n\n\n\n\n\nSpeaker\n: We will use the speakers from previous labs to hear the muscle\nactivity we are sensing.\n\n\n\n\n\n\nLabview\n: We will feed the bioelectrical signal to Labview to view what\nit looks like and analyze its frequencies, using some of the techniques learned\nthis semester such as FFT.\n\n\n\n\n\n\nSchematic\n\n\nThis is a nearly complete schematic of our EMG:\n\n\n\n\nBuild up your circuit on your breadboard following the schematic shown above.\nYou will need to refer to the following datasheets to calculate some component\nvalues, understand pinouts, and build some of the system blocks:\n\n\nDatasheets:\n\n\n\n\nAD623\n\n\nTLC2272\n\n\nLM386", 
+            "title": "Project Specification"
+        }, 
+        {
+            "location": "/final-lab/project-specification/#emg-system", 
+            "text": "The EMG block diagram will look like this:   As you can see, there are multiple amplification stages of the signal sensed\nby the electrodes, along with other blocks that alter the signal.  Each is\ndescribed below:    4X Gain Instrumentation Amplifier : Instrumentation amplifiers are used\ncommonly in measurement and test equipment, for which the impedance is\nunknown. Instrumentation amps have inbuilt input buffer amplifiers so no input\nimpedance matching is required. These amplifiers reject noise and are used\nwhen accuracy is required. We will use an  AD623N  instrumentation\namplifier.    DC Blocking : Any amplification stage will amplify both the AC and DC\nsignal. Since we are interested in the microvolt ac signal of the action\npotentials, we will block the amplified dc voltage with a large value\ncapacitor.    220X Gain+5kHz  Lowpass Filter: This is the major gain stage of our EMG.\nThis amplification stage will be done using a  TLC2272  precision amplifier,\nwired as a differential amplifier. This IC has two op amps within it so we\nwill use one for this stage and the other for the voltage reference circuit.\nThe  TLC2272  op amp can be wired to provide both gain and lowpass filtering.\nAlthough the significant range of EMG signal is around 5-500 Hz, we will\ndesign a lowpass filter to have a bandwidth of 5kHz for now.    Output Amplitude : The amplified DC term will need to be filtered out\nagain with a big capacitor. Secondly, we can adjust the amplitude of the\nsignal with a potentiometer that will eventually control the volume out of our\nspeaker in the next stage.    20X Gain : The speaker requires a special amplifier called a  LM386  \nwhich is an audio power amplifier. This op amp amplifies low power electronic\nsignals to a level strong enough for driving high power speakers.    Battery : A 9-V battery will be used.    Power Indicator : We can test whether our circuit is being powered by\nplacing an LED in parallel with the battery. The LED will light up when\ncurrent is being drawn from the battery.    Voltage reference and buffer : The 220X gain amplifier requires a voltage\nreference signal equal to  \\(V_{ dd }/2\\)  when we use it as a differential amplifier. To\ncreate this voltage  \\(V_{dd}/2\\)  we can use the second opamp in the  TLC2272  IC as a\nvoltage buffer to create this voltage. Using an opamp instead of a voltage\ndivider allows us to create the desired voltage without the output (diff amp)\nloading the input ( \\(V_{dd}/2\\)  reference).    Speaker : We will use the speakers from previous labs to hear the muscle\nactivity we are sensing.    Labview : We will feed the bioelectrical signal to Labview to view what\nit looks like and analyze its frequencies, using some of the techniques learned\nthis semester such as FFT.", 
+            "title": "EMG System"
+        }, 
+        {
+            "location": "/final-lab/project-specification/#schematic", 
+            "text": "This is a nearly complete schematic of our EMG:   Build up your circuit on your breadboard following the schematic shown above.\nYou will need to refer to the following datasheets to calculate some component\nvalues, understand pinouts, and build some of the system blocks:", 
+            "title": "Schematic"
+        }, 
+        {
+            "location": "/final-lab/project-specification/#datasheets", 
+            "text": "AD623  TLC2272  LM386", 
+            "title": "Datasheets:"
+        }, 
+        {
+            "location": "/final-lab/deliverables/", 
+            "text": "ELEC 240 Lab\n\n\n\n\nDeliverables\n\n\nTo complete this lab, you need to develop 4 things:\n\n\n\n\na working EMG device\n\n\na polished Labview interface\n\n\na lab report\n\n\na product demo\n\n\n\n\nwhere the device is described in the \nProject\nSpecification\n and the rest are described below.\n\n\nLabview Interface\n\n\nThe Labview interface can be as detailed as you like but the minimum\nrequirements are:\n\n\n\n\n\n\nUser-friendly look\n\n\n\n\n\n\nTime-domain waveform with averaging capability (for smoother waveform).\n\n\n\n\n\n\nVoltage threshold indication\n\n\n\n\n\n\nFrequency-domain waveform with information on what frequencies are being\n   seen\n\n\n\n\n\n\nAdditional filtering ability (500Hz LPF)\n\n\n\n\n\n\nFinal Report and Demo\n\n\nAfter you have created your working EMG, write up a lab report (in the same\nformat as previous lab reports) and submit one final report per lab group.\n\n\nYou will also schedule a 5-min demo for the last week of classes. Walk us\nthrough the design, the Labview interface, any problems you encountered, and be\nready to answer a few questions about your project.", 
+            "title": "Deliverables"
+        }, 
+        {
+            "location": "/final-lab/deliverables/#deliverables", 
+            "text": "To complete this lab, you need to develop 4 things:   a working EMG device  a polished Labview interface  a lab report  a product demo   where the device is described in the  Project\nSpecification  and the rest are described below.", 
+            "title": "Deliverables"
+        }, 
+        {
+            "location": "/final-lab/deliverables/#labview-interface", 
+            "text": "The Labview interface can be as detailed as you like but the minimum\nrequirements are:    User-friendly look    Time-domain waveform with averaging capability (for smoother waveform).    Voltage threshold indication    Frequency-domain waveform with information on what frequencies are being\n   seen    Additional filtering ability (500Hz LPF)", 
+            "title": "Labview Interface"
+        }, 
+        {
+            "location": "/final-lab/deliverables/#final-report-and-demo", 
+            "text": "After you have created your working EMG, write up a lab report (in the same\nformat as previous lab reports) and submit one final report per lab group.  You will also schedule a 5-min demo for the last week of classes. Walk us\nthrough the design, the Labview interface, any problems you encountered, and be\nready to answer a few questions about your project.", 
+            "title": "Final Report and Demo"
         }, 
         {
             "location": "/misc_images/", 
