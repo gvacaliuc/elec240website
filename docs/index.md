@@ -19,6 +19,7 @@ The Laboratories
 -   Lab 5: [Signal Analysis and Characterization](./lab5)
 -   Lab 6: [Digital Signal Processing](./lab6)
 -   Lab 7: [Digital Logic](./lab7)
+-   Lab 8: [Intro to Soldering](./lab8)
 
 References
 ----------
