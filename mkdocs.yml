@@ -68,6 +68,11 @@ pages:
   - {Building a Velleman Kit: lab8/soldering.md}
   - {Report: lab8/report.md}
   - {Sign Off Sheet: lab8/sign-off-sheet.md}
+- Final Lab:
+  - {Home: final-lab/index.md}
+  - {Introduction: final-lab/introduction.md}
+  - {Project Specification : final-lab/project-specification.md}
+  - {Deliverables: final-lab/deliverables.md}
 - Miscellanous Images:
   - {Home: misc_images/index.md}
 docs_dir: ./docs
