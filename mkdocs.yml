@@ -62,6 +62,12 @@ pages:
   - {Home: lab7/index.md}
   - {Introduction: lab7/introduction.md}
   - {Digital Logic: lab7/experiment_7-1.md}
+- Lab 8:
+  - {Home: lab8/index.md}
+  - {Introduction: lab8/introduction.md}
+  - {Building a Velleman Kit: lab8/soldering.md}
+  - {Report: lab8/report.md}
+  - {Sign Off Sheet: lab8/sign-off-sheet.md}
 - Miscellanous Images:
   - {Home: misc_images/index.md}
 docs_dir: ./docs
