@@ -20,6 +20,7 @@ The Laboratories
 -   Lab 6: [Digital Signal Processing](./lab6)
 -   Lab 7: [Digital Logic](./lab7)
 -   Lab 8: [Intro to Soldering](./lab8)
+-   Final Lab: [Building an EMG](./final-lab)
 
 References
 ----------
